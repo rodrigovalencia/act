@@ -2,9 +2,42 @@
 
 namespace App;
 
+use App\Fabricante;
+use App\FabricanteComponente;
 use Illuminate\Database\Eloquent\Model;
 
 class TipoActivo extends Model
 {
-    //
+	protected $table = 'TipoActivo';
+	public $timestamps = false;
+
+	protected $fillable = [
+		'nombre',
+	];
+
+	/*
+	 * Atributos 
+	 *
+	 * increments('id')
+	 * string('nombre')
+	 */
+
+	function fabricanteComponente()
+	{
+		return $this->hasMany(
+			FabricanteComponente::class,
+			'TipoActivo_id',
+			'id'
+		);
+	}
+
+	function fabricantes()
+	{
+		return $this->belongsToMany(
+			Fabricante::class,
+			'Fabricante_TipoActivo',
+			'TipoActivo_id',
+			'Fabricante_id'
+		);
+	}
 }
