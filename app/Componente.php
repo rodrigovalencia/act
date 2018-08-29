@@ -2,6 +2,12 @@
 
 namespace App;
 
+use App\Activo;
+use App\CategoriaComponente;
+use App\EstadoComponente;
+use App\Mantencion_Activo_Componente;
+use App\Reparacion_Activo_Componente;
+use App\TipoComponente;
 use Illuminate\Database\Eloquent\Model;
 
 class Componente extends Model
@@ -67,7 +73,21 @@ class Componente extends Model
 		)->withPivot('fecha');
 	}
 
-// Falta la relacion con las reparaciones y las mantenciones
+	function mantenciones()
+	{
+		return $this->hasMany(
+			Mantencion_Activo_Componente::class,
+			'Componente_id',
+			'id'
+		);
+	}
 
-
+	function reparaciones()
+	{
+		return $this->hasMany(
+			Reparacion_Activo_Componente::class,
+			'Componente_id',
+			'id'
+		);
+	}
 }

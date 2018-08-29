@@ -15,7 +15,6 @@ class CreateProgramacionsTable extends Migration
 	{
 		Schema::create('Programacion', function (Blueprint $table) {
 			$table->increments('id');
-			$table->unsignedInteger('Usuario_id');
 			$table->string('documento');
 		});
 	}

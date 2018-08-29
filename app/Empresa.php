@@ -31,4 +31,14 @@ class Empresa extends Model
 			'id'
 		);
 	}
+	
+	function propiedades()
+	{
+		return $this->belongsToMany(
+			Activo::class,
+			'Activo_Empresa',
+			'Empresa_id',
+			'Activo_id'
+		)->withPivot('documento');
+	}
 }

@@ -138,7 +138,7 @@ class Contrato extends Model
 		);
 	}
 
-	function servicios()
+	function radiosComodato()
 	{
 		return $this->belongsToMany(
 			RadioTrabajo::class,

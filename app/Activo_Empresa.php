@@ -4,21 +4,23 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Reparacion_Activo extends Model
+class Activo_Empresa extends Model
 {
-	protected $table = 'Reparacion_Activo';
+	protected $table = 'Activo_Empresa';
 	public $timestamps = false;
 
 	protected $fillable = [
-		// 'Reparacion_id',
 		// 'Activo_id',
+		// 'Empresa_id',
+		// 'documento',
 	];
 
 	/*
 	 * Atributos 
 	 *
 	 * increments('id')
-	 * unsignedInteger('Reparacion_id')
 	 * unsignedInteger('Activo_id')
+	 * unsignedInteger('Empresa_id')
+	 * string('documento')
 	 */
 }

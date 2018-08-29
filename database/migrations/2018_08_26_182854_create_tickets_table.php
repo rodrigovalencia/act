@@ -24,7 +24,6 @@ class CreateTicketsTable extends Migration
 			$table->unsignedInteger('Ubicacion_id');
 			$table->text('observaciones');
 			$table->text('observaciones2');
-			$table->unsignedInteger('Servicio_id');
 		});
 	}
 
