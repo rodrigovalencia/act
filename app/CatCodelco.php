@@ -2,16 +2,16 @@
 
 namespace App;
 
+use App\Codelco;
 use Illuminate\Database\Eloquent\Model;
 
 class CatCodelco extends Model
 {
-	protected $table = 'CatCodelco';
+	protected $table = 'SubCatCodelco';
 	public $timestamps = false;
 
 	protected $fillable = [
 		'nombre',
-
 	];
 
 	/*
@@ -19,20 +19,14 @@ class CatCodelco extends Model
 	*
 	* increments('id')
 	* string('nombre')
-	* unsignedInteger('CatTicketCodelco_id')
 	*/
 
-	function SubCatCodelco()
+	function codelco()
 	{
-		return $this->belongsTo(
-			SubCatCodelco::class,
-			'SubCatCodelco',
+		return $this->hasMany(
+			Codelco::class,
+			'CatCodelco_id',
 			'id'
 		);
-	}
-
-	function CatTicket()
-	{
-		return $this->morphMany('CategoriaTicket','Categoria');
 	}
 }

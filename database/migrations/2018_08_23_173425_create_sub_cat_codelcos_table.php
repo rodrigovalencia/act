@@ -13,7 +13,7 @@ class CreateSubCatCodelcosTable extends Migration
 	 */
 	public function up()
 	{
-		Schema::create('SubCatCodelco', function (Blueprint $table) {
+		Schema::create('CatCodelco', function (Blueprint $table) {
 			$table->increments('id');
 			$table->string('nombre');
 		});
@@ -26,6 +26,6 @@ class CreateSubCatCodelcosTable extends Migration
 	 */
 	public function down()
 	{
-		Schema::dropIfExists('SubCatCodelco');
+		Schema::dropIfExists('CatCodelco');
 	}
 }

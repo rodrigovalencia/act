@@ -13,10 +13,10 @@ class CreateCatCodelcosTable extends Migration
 	 */
 	public function up()
 	{
-		Schema::create('CatCodelco', function (Blueprint $table) {
+		Schema::create('Codelco', function (Blueprint $table) {
 			$table->increments('id');
 			$table->string('nombre');
-			$table->unsignedInteger('CatTicketCodelco_id');
+			$table->unsignedInteger('CatCodelco_id');
 		});
 	}
 
@@ -27,6 +27,6 @@ class CreateCatCodelcosTable extends Migration
 	 */
 	public function down()
 	{
-		Schema::dropIfExists('CatCodelco');
+		Schema::dropIfExists('Codelco');
 	}
 }
