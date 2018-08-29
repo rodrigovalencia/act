@@ -15,7 +15,7 @@ class Usuario extends Model
 		'nombre',
 		'apPaterno',
 		'apMaterno',
-		'numContacto',
+		'fono',
 		'mail',
 		'usuarioActivo',
 		// 'Rol_id',
@@ -31,9 +31,9 @@ class Usuario extends Model
 	 * string('pass')
 	 * string('nombre')
 	 * string('apPaterno')
-	 * string('apMaterno')
-	 * string('numContacto')
-	 * string('mail')
+	 * string('apMaterno')->nullable()
+	 * string('fono')
+	 * string('mail')->nullable()
 	 * boolean('usuarioActivo')
 	 * unsignedInteger('Rol_id')
 	 * unsignedInteger('Ubicacion_id')

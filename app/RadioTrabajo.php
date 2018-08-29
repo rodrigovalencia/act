@@ -37,7 +37,7 @@ class RadioTrabajo extends Model
 	 * increments('id')
 	 * string('serie')
 	 * string('idSistema')
-	 * string('flashPrort')
+	 * string('flashPort')->nullable()
 	 * string('centroCostos')
 	 * boolean('comodato')
 	 * unsignedInteger('Modelo_id')
@@ -45,7 +45,7 @@ class RadioTrabajo extends Model
 	 * unsignedInteger('Area_id')
 	 * unsignedInteger('Contrato_id')
 	 * unsignedInteger('Mandante_id')
-	 * unsignedInteger('Tercero_id')
+	 * unsignedInteger('Tercero_id')->nullable()
 	 * unsignedInteger('Equipo_id')->nullable()
 	 */
 

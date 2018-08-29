@@ -19,7 +19,7 @@ class CreateReparacionActivoComponentesTable extends Migration
 			$table->unsignedInteger('Activo_id');
 			$table->unsignedInteger('Componente_id');
 			$table->unsignedInteger('Resultado_id');
-			$table->string('comentario');
+			$table->string('comentario')->nullable();
 		});
 	}
 

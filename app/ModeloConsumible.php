@@ -22,7 +22,7 @@ class ModeloConsumible extends Model
 	 *
 	 * increments('id')
 	 * string('nombre')
-	 * string('documento')
+	 * string('documento')->nullable()
 	 * unsignedInteger('Fabricante_id')
 	 */
 

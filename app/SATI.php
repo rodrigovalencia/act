@@ -44,7 +44,7 @@ class SATI extends Model
 	 * string('nombre')
 	 * string('nombre2')->nullable()
 	 * string('apPaterno')
-	 * string('apMaterno')
+	 * string('apMaterno')->nullable()
 	 * string('userID')
 	 * date('fTerminoContrato')
 	 * string('cecoGrafo')

@@ -24,9 +24,9 @@ class Persona extends Model
 	 * increments('id')
 	 * integer('rut')
 	 * string('nombre')
-	 * string('nombre2')
+	 * string('nombre2')->nullable()
 	 * string('apPaterno')
-	 * string('apMaterno')
+	 * string('apMaterno')->nullable()
 	 */
 
 	function oradorCap()

@@ -35,8 +35,8 @@ class Capacitacion extends Model
 	 * unsignedInteger('Persona_id')
 	 * unsignedInteger('Usuario_id')
 	 * unsignedInteger('Categoria_id')
-	 * string('documento')
-	 * string('documento2')
+	 * string('documento')->nullable()
+	 * string('documento2')->nullable()
 	 */
 
 	function orador()

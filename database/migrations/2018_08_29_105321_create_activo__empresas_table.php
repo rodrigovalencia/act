@@ -17,7 +17,7 @@ class CreateActivoEmpresasTable extends Migration
 			$table->increments('id');
 			$table->unsignedInteger('Activo_id');
 			$table->unsignedInteger('Empresa_id');
-			$table->string('documento');
+			$table->string('documento')->nullable();
 		});
 	}
 

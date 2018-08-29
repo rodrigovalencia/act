@@ -17,9 +17,9 @@ class CreatePersonasTable extends Migration
 			$table->increments('id');
 			$table->integer('rut');
 			$table->string('nombre');
-			$table->string('nombre2');
+			$table->string('nombre2')->nullable();
 			$table->string('apPaterno');
-			$table->string('apMaterno');
+			$table->string('apMaterno')->nullable();
 		});
 	}
 

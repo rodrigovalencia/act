@@ -21,6 +21,6 @@ class Activo_Empresa extends Model
 	 * increments('id')
 	 * unsignedInteger('Activo_id')
 	 * unsignedInteger('Empresa_id')
-	 * string('documento')
+	 * string('documento')->nullable()
 	 */
 }

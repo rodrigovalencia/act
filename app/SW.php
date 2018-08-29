@@ -26,7 +26,7 @@ class SW extends Model
 	 * string('nombre')
 	 * unsignedInteger('ModeloSW_id')
 	 * string('version')
-	 * string('documento')
+	 * string('documento')->nullable()
 	 */
 
 	function licencias()

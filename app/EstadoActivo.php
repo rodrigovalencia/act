@@ -18,7 +18,7 @@ class EstadoActivo extends Model
 	 * Atributos 
 	 *
 	 * increments('id')
-	 * string('idCodelco')
+	 * string('idCodelco')->nullable()
 	 * string('nombre')
 	 */
 

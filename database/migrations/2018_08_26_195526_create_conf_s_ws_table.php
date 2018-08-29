@@ -16,7 +16,7 @@ class CreateConfSWsTable extends Migration
 		Schema::create('ConfSW', function (Blueprint $table) {
 			$table->increments('id');
 			$table->string('descripcion');
-			$table->string('comentario');
+			$table->string('comentario')->nullable();
 		});
 	}
 

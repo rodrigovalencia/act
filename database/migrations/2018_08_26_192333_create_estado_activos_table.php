@@ -15,7 +15,7 @@ class CreateEstadoActivosTable extends Migration
 	{
 		Schema::create('EstadoActivo', function (Blueprint $table) {
 			$table->increments('id');
-			$table->string('idCodelco');
+			$table->string('idCodelco')->nullable();
 			$table->string('nombre');
 		});
 	}

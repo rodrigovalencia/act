@@ -18,7 +18,7 @@ class CreateCanalsTable extends Migration
 			$table->unsignedInteger('AreaCanal_id');
 			$table->integer('numero');
 			$table->string('nombre');
-			$table->string('abreviacion');
+			$table->string('abreviacion')->nullable();
 		});
 	}
 

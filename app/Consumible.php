@@ -24,7 +24,7 @@ class Consumible extends Model
 	 *
 	 * increments('id')
 	 * string('nombre')
-	 * integer('stock')
+	 * integer('stock')->default(0)
 	 * unsignedInteger('TipoConsumible_id')
 	 * unsignedInteger('ModeloConsumible_id')
 	 */

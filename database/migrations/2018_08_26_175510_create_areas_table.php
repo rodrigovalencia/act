@@ -16,8 +16,8 @@ class CreateAreasTable extends Migration
 		Schema::create('Area', function (Blueprint $table) {
 			$table->increments('id');
 			$table->string('nombre');
-			$table->double('lat')->nulable();
-			$table->double('lon')->nulable();
+			$table->double('lat')->nullable();
+			$table->double('lon')->nullable();
 			$table->unsignedInteger('Ubicacion_id');
 		});
 	}

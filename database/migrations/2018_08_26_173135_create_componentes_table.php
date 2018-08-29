@@ -17,6 +17,7 @@ class CreateComponentesTable extends Migration
 			$table->increments('id');
 			$table->string('nombre');
 			$table->string('caracteristica');
+			$table->text('descripcion')->nullable();
 			$table->string('nSerie');
 			$table->unsignedInteger('Activo_id');
 			$table->unsignedInteger('TipoComponente_id');
