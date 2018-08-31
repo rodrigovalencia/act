@@ -20,8 +20,7 @@ class CreateRadioTrabajosTable extends Migration
 			$table->string('flashPort')->nullable();
 			$table->string('centroCostos');
 			$table->boolean('comodato');
-			$table->unsignedInteger('Modelo_id');
-			$table->unsignedInteger('TipoModelo_id');
+			$table->unsignedInteger('ModeloRadio_id');
 			$table->unsignedInteger('Area_id');
 			$table->unsignedInteger('Contrato_id');
 			$table->unsignedInteger('Mandante_id');

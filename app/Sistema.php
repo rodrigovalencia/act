@@ -2,7 +2,7 @@
 
 namespace App;
 
-use App\TipoModelo;
+use App\ModeloRadio;
 use Illuminate\Database\Eloquent\Model;
 
 class Sistema extends Model
@@ -21,10 +21,10 @@ class Sistema extends Model
 	 * string('nombre')
 	 */
 
-	function tiposModelos()
+	function modelosRadio()
 	{
 		return $this->hasMany(
-			TipoModelo::class,
+			ModeloRadio::class,
 			'Sistema_id',
 			'id'
 		);
