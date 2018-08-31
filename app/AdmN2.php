@@ -11,7 +11,6 @@ class AdmN2 extends Model
 
 	protected $fillable = [
 		'nombre',
-
 	];
 
 	/*
@@ -22,7 +21,7 @@ class AdmN2 extends Model
 	* unsignedInteger('AdmN1_id')
 	*/
 
-	function AdmN3()
+	function admN3()
 	{
 		return $this->hasMany(
 			AdmN3::class,
@@ -31,11 +30,11 @@ class AdmN2 extends Model
 		);		
 	}
 
-	function AdmN1()
+	function admN1()
 	{
 		return $this->belongsTo(
 			AdmN1::class,
-			'AdmN1',
+			'AdmN1_id',
 			'id'
 		);
 	}

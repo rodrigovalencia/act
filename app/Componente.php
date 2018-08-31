@@ -65,7 +65,7 @@ class Componente extends Model
 		);
 	}
 
-	function estadosComponenete()
+	function estadosComponente()
 	{
 		return $this->belongsToMany(
 			EstadoComponente::class,

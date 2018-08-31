@@ -43,7 +43,7 @@ class Capacitacion extends Model
 	{
 		return $this->belongsTo(
 			Persona::class,
-			'Persona_ids',
+			'Persona_id',
 			'id'
 		);
 	}

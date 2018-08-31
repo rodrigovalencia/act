@@ -48,7 +48,7 @@ class Activo extends Model
 	{
 		return $this->belongsToMany(
 			Empresa::class,
-			'Propietario_Activo',
+			'Activo_Empresa',
 			'Activo_id',
 			'Empresa_id'
 		);

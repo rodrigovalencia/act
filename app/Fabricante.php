@@ -42,7 +42,7 @@ class Fabricante extends Model
 		);
 	}
 
-	function rol()
+	function modeloConsumible()
 	{
 		return $this->hasMany(
 			ModeloConsumible::class,

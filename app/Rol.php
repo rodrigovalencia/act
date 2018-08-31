@@ -2,6 +2,7 @@
 
 namespace App;
 
+use App\Usuario;
 use Illuminate\Database\Eloquent\Model;
 
 class Rol extends Model
@@ -24,7 +25,7 @@ class Rol extends Model
 	function usuarios()
 	{
 		return $this->hasMany(
-			'App\Usuario',
+			Usuario::class,
 			'Rol_id',
 			'id'
 		);

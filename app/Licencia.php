@@ -59,7 +59,7 @@ class Licencia extends Model
 		);
 	}
 
-	function insSWs()
+	function instancias()
 	{
 		return $this->hasMany(
 			InstSW::class,

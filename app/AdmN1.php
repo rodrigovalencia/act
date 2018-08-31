@@ -11,7 +11,6 @@ class AdmN1 extends Model
 
 	protected $fillable = [
 		'nombre',
-
 	];
 
 	/*
@@ -21,7 +20,7 @@ class AdmN1 extends Model
 	* string('nombre')
 	*/
 
-	function AdmN2()
+	function admN2()
 	{
 		return $this->hasMany(
 			AdmN2::class,

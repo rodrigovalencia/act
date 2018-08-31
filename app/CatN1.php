@@ -11,7 +11,6 @@ class CatN1 extends Model
 
 	protected $fillable = [
 		'nombre',
-
 	];
 
 	/*
@@ -21,7 +20,7 @@ class CatN1 extends Model
 	* string('nombre')
 	*/
 
-	function CatN2()
+	function catN2()
 	{
 		return $this->hasMany(
 			CatN2::class,

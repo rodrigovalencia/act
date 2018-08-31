@@ -14,7 +14,6 @@ class Administrativo extends Model
 
 	protected $fillable = [
 		'nombre',
-
 	];
 
 	/*
@@ -25,7 +24,7 @@ class Administrativo extends Model
 	* unsignedInteger('AdmN4_id')
 	*/
 
-	function CategoriaTicket()
+	function categoriaTicket()
 	{
 		return $this->hasMany(
 			CategoriaTicket::class,
@@ -34,16 +33,16 @@ class Administrativo extends Model
 		);		
 	}
 
-	function AdmN4()
+	function admN4()
 	{
 		return $this->belongsTo(
 			AdmN4::class,
-			'AdmN4',
+			'AdmN4_id',
 			'id'
 		);
 	}
 
-	function CatTicket()
+	function catTicket()
 	{
 		return $this->morphMany('CategoriaTicket','Categoria');
 	}

@@ -11,7 +11,6 @@ class Centinela extends Model
 
 	protected $fillable = [
 		'nombre',
-
 	];
 
 	/*
@@ -22,25 +21,16 @@ class Centinela extends Model
 	* unsignedInteger('CatN2_id')
 	*/
 
-	function CategoriaTicket()
-	{
-		return $this->hasMany(
-			CategoriaTicket::class,
-			'Categoria_id',
-			'id'
-		);		
-	}
-
-	function CatN5()
+	function catN5()
 	{
 		return $this->belongsTo(
 			CatN5::class,
-			'CatN5',
+			'CatN5_id',
 			'id'
 		);
 	}
 	
-	function CatTicket()
+	function catTicket()
 	{
 		return $this->morphMany('CategoriaTicket','Categoria');
 	}	

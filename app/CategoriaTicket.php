@@ -24,7 +24,7 @@ class CategoriaTicket extends Model
 	 * unsignedInteger('EstadoActivo_id')
 	 */
 
-	public function Categoria()
+	public function categoria()
 	{
 		return $this->morphTo();
 	}

@@ -24,7 +24,7 @@ class Mantencion extends Model
 	 * unsignedInteger('TipoMantencion_id')
 	 */
 
-	public function servicio()
+	function servicio()
 	{
 		return $this->morphMany(
 			Servicio::class, 

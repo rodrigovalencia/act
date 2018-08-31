@@ -23,7 +23,7 @@ class Codelco extends Model
 	* unsignedInteger('CatCodelco_id')
 	*/
 
-	function CatCodelco()
+	function catCodelco()
 	{
 		return $this->belongsTo(
 			CatCodelco::class,
@@ -32,7 +32,7 @@ class Codelco extends Model
 		);
 	}
 
-	function CatTicket()
+	function catTicket()
 	{
 		return $this->morphMany('CategoriaTicket','Categoria');
 	}

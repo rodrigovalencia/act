@@ -15,7 +15,7 @@ class CreateEmpresasTable extends Migration
 	{
 		Schema::create('Empresa', function (Blueprint $table) {
 			$table->increments('id');
-			$table->integer('rut');
+			$table->integer('rut')->nullable();
 			$table->string('nombre');
 		});
 	}
