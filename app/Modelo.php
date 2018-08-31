@@ -80,15 +80,6 @@ class Modelo extends Model
 		);
 	}
 
-	function radiosTrabajo()
-	{
-		return $this->hasMany(
-			RadioTrabajo::class,
-			'Modelo_id',
-			'id'
-		);
-	}
-
 	function impresoras()
 	{
 		return $this->hasMany(

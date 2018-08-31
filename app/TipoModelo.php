@@ -2,8 +2,7 @@
 
 namespace App;
 
-use App\RadioTrabajo;
-use App\Sistema;
+use App\ModeloRadio;
 use Illuminate\Database\Eloquent\Model;
 
 class TipoModelo extends Model
@@ -13,7 +12,6 @@ class TipoModelo extends Model
 
 	protected $fillable = [
 		'nombre',
-		// 'Sistema_id',
 	];
 
 	/*
@@ -21,23 +19,13 @@ class TipoModelo extends Model
 	 *
 	 * increments('id')
 	 * string('nombre')
-	 * unsignedInteger('Sistema_id')
 	 */
 
-	function radios()
+	function modelosRadio()
 	{
 		return $this->hasMany(
-			RadioTrabajo::class,
+			ModeloRadio::class,
 			'TipoModelo_id',
-			'id'
-		);
-	}
-
-	function sistema()
-	{
-		return $this->belongsTo(
-			Sistema::class,
-			'Sistema_id',
 			'id'
 		);
 	}

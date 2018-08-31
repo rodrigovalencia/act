@@ -22,8 +22,7 @@ class RadioTrabajo extends Model
 		'flashPrort',
 		'centroCostos',
 		'comodato',
-		// 'Modelo_id',
-		// 'TipoModelo_id',
+		// 'ModeloRadio_id',
 		// 'Area_id',
 		// 'Contrato_id',
 		// 'Mandante_id',
@@ -40,8 +39,7 @@ class RadioTrabajo extends Model
 	 * string('flashPort')->nullable()
 	 * string('centroCostos')
 	 * boolean('comodato')
-	 * unsignedInteger('Modelo_id')
-	 * unsignedInteger('TipoModelo_id')
+	 * unsignedInteger('ModeloRadio_id')
 	 * unsignedInteger('Area_id')
 	 * unsignedInteger('Contrato_id')
 	 * unsignedInteger('Mandante_id')
@@ -57,20 +55,11 @@ class RadioTrabajo extends Model
 		);
 	}
 
-	function modelo()
+	function modeloRadio()
 	{
 		return $this->belongsTo(
-			Modelo::class,
-			'Modelo_id',
-			'id'
-		);
-	}
-
-	function tipoModelo()
-	{
-		return $this->belongsTo(
-			TipoModelo::class,
-			'TipoModelo_id',
+			ModeloRadio::class,
+			'ModeloRadio_id',
 			'id'
 		);
 	}

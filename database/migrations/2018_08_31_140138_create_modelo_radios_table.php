@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateTipoModelosTable extends Migration
+class CreateModeloRadiosTable extends Migration
 {
 	/**
 	 * Run the migrations.
@@ -13,9 +13,13 @@ class CreateTipoModelosTable extends Migration
 	 */
 	public function up()
 	{
-		Schema::create('TipoModelo', function (Blueprint $table) {
+		Schema::create('ModeloRadio', function (Blueprint $table) {
 			$table->increments('id');
 			$table->string('nombre');
+			$table->unsignedInteger('Sistema_id');
+			$table->unsignedInteger('TipoModelo_id');
+			$table->unsignedInteger('Fabricante_id');
+			$table->string('documento')->nullable();
 		});
 	}
 
@@ -26,6 +30,6 @@ class CreateTipoModelosTable extends Migration
 	 */
 	public function down()
 	{
-		Schema::dropIfExists('TipoModelo');
+		Schema::dropIfExists('ModeloRadio');
 	}
 }
