@@ -16,7 +16,7 @@ class CreateComputadorsTable extends Migration
 		Schema::create('Computador', function (Blueprint $table) {
 			$table->increments('id');
 			$table->string('mac');
-			$table->string('ip');
+			$table->string('ip')->nullable();
 			$table->unsignedInteger('Modelo_id');
 			$table->unsignedInteger('Area_id');
 			$table->unsignedInteger('Contrato_id');

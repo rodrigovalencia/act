@@ -19,9 +19,9 @@ class CreateUsuariosTable extends Migration
 			$table->string('pass');
 			$table->string('nombre');
 			$table->string('apPaterno');
-			$table->string('apMaterno');
-			$table->string('numContacto');
-			$table->string('mail');
+			$table->string('apMaterno')->nullable();
+			$table->string('fono');
+			$table->string('mail')->nullable();
 			$table->boolean('usuarioActivo');
 			$table->unsignedInteger('Rol_id');
 			$table->unsignedInteger('Ubicacion_id');

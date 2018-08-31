@@ -11,10 +11,10 @@ class ActivoLog extends Model
 	public $timestamps = false;
 
 	protected $fillable = [
-		'Activo_id',
-		'SubActividad_id',
-		'Usuario_id',
-		'Ubicacion_id',
+		// 'Activo_id',
+		// 'SubActividad_id',
+		// 'Usuario_id',
+		// 'Ubicacion_id',
 		'fecha',
 	];
 

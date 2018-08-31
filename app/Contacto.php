@@ -24,10 +24,10 @@ class Contacto extends Model
 	 * increments('id')
 	 * string('nombre')
 	 * string('apPaterno')
-	 * string('apMaterno')
-	 * string('fono')
+	 * string('apMaterno')->nullable()
+	 * string('fono')->nullable()
 	 * dateTime('fecha')
-	 * string('documento')
+	 * string('documento')->nullable()
 	 */
 
 	function solicitante()

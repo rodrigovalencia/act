@@ -17,10 +17,10 @@ class CreateContactosTable extends Migration
 			$table->increments('id');
 			$table->string('nombre');
 			$table->string('apPaterno');
-			$table->string('apMaterno');
-			$table->string('fono');
+			$table->string('apMaterno')->nullable();
+			$table->string('fono')->nullable();
 			$table->dateTime('fecha');
-			$table->string('documento');
+			$table->string('documento')->nullable();
 		});
 	}
 

@@ -26,7 +26,7 @@ class Canal extends Model
 	 * unsignedInteger('AreaCanal_id')
 	 * integer('numero')
 	 * string('nombre')
-	 * string('abreviacion')
+	 * string('abreviacion')->nullable()
 	 */
 
 	function perfilZonaCanal()

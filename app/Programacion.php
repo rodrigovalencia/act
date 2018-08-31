@@ -19,7 +19,7 @@ class Programacion extends Model
 	 * Atributos 
 	 *
 	 * increments('id')
-	 * string('documento')
+	 * string('documento')->nullable()
 	 */
 
 	public function servicio()

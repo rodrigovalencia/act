@@ -1,0 +1,15 @@
+
+ Seeders -> tenemos los datos reales
+ Factoryes	-> datos falsos
+ 			-> fakerSeeder (Cambio de ambiente)
+
+----> <----
+
+ Seeder -> recopilar informacion de la tabla
+ Factory -> desarrollar factory
+
+----> <---- back End Listo
+
+--> rutas
+--> controladores
+--> vistas

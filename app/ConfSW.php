@@ -21,7 +21,7 @@ class ConfSW extends Model
 	 *
 	 * increments('id')
 	 * string('descripcion')
-	 * string('comentario')
+	 * string('comentario')->nullable()
 	 */
 
 	public function configuracion()

@@ -22,8 +22,8 @@ class CreateCapacitacionsTable extends Migration
 			$table->unsignedInteger('Persona_id');
 			$table->unsignedInteger('Usuario_id');
 			$table->unsignedInteger('Categoria_id');
-			$table->string('documento');
-			$table->string('documento2');
+			$table->string('documento')->nullable();
+			$table->string('documento2')->nullable();
 		});
 	}
 

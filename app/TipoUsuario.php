@@ -2,6 +2,7 @@
 
 namespace App;
 
+use App\Usuario;
 use Illuminate\Database\Eloquent\Model;
 
 class TipoUsuario extends Model
@@ -23,7 +24,7 @@ class TipoUsuario extends Model
 	function usuarios()
 	{
 		return $this->hasMany(
-			'App\Usuario',
+			Usuario::class,
 			'TipoUsuario_id',
 			'id'
 		);

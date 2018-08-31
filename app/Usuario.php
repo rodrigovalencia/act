@@ -2,6 +2,10 @@
 
 namespace App;
 
+use App\Rol;
+use App\Servicio;
+use App\TipoUsuario;
+use App\Ubicacion;
 use Illuminate\Database\Eloquent\Model;
 
 class Usuario extends Model
@@ -15,7 +19,7 @@ class Usuario extends Model
 		'nombre',
 		'apPaterno',
 		'apMaterno',
-		'numContacto',
+		'fono',
 		'mail',
 		'usuarioActivo',
 		// 'Rol_id',
@@ -31,9 +35,9 @@ class Usuario extends Model
 	 * string('pass')
 	 * string('nombre')
 	 * string('apPaterno')
-	 * string('apMaterno')
-	 * string('numContacto')
-	 * string('mail')
+	 * string('apMaterno')->nullable()
+	 * string('fono')
+	 * string('mail')->nullable()
 	 * boolean('usuarioActivo')
 	 * unsignedInteger('Rol_id')
 	 * unsignedInteger('Ubicacion_id')
@@ -43,7 +47,7 @@ class Usuario extends Model
 	function rol()
 	{
 		return $this->belongsTo(
-			'App\Rol',
+			Rol::class,
 			'Rol_id',
 			'id'
 		);
@@ -52,7 +56,7 @@ class Usuario extends Model
 	function tipoUsuario()
 	{
 		return $this->belongsTo(
-			'App\TipoUsuario',
+			TipoUsuario::class,
 			'TipoUsuario_id',
 			'id'
 		);
@@ -61,7 +65,7 @@ class Usuario extends Model
 	function ubicacion()
 	{
 		return $this->belongsTo(
-			'App\Ubicacion',
+			Ubicacion::class,
 			'Ubicacion_id',
 			'id'
 		);
@@ -70,7 +74,7 @@ class Usuario extends Model
 	function servicios()
 	{
 		return $this->belongsToMany(
-			'App\Servicio',
+			Servicio::class,
 			'Servicio_Usuario',
 			'Usuario_id',
 			'Servicio_id'

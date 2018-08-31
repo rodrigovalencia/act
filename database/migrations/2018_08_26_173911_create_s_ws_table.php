@@ -18,7 +18,7 @@ class CreateSWsTable extends Migration
 			$table->string('nombre');
 			$table->unsignedInteger('ModeloSW_id');
 			$table->string('version');
-			$table->string('documento');
+			$table->string('documento')->nullable();
 		});
 	}
 

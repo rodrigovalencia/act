@@ -22,7 +22,7 @@ class ConfEquipo_Activo extends Model
 	 * increments('id')
 	 * unsignedInteger('ConfEquipo_id')
 	 * unsignedInteger('Activo_id')
-	 * string('detalle')
-	 * string('observacion')
+	 * string('detalle') !!lo que hay que hacer
+	 * string('observacion')->nullable() !!observaciones a la ejecucion
 	 */
 }

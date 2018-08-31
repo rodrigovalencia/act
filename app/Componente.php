@@ -18,6 +18,7 @@ class Componente extends Model
 	protected $fillable = [
 		'nombre',
 		'caracteristica',
+		'descripcion',
 		'nSerie',
 		// 'Activo_id',
 		// 'TipoComponente_id',
@@ -30,6 +31,7 @@ class Componente extends Model
 	 * increments('id')
 	 * string('nombre')
 	 * string('caracteristica')
+	 * text('descripcion')->nullable()
 	 * string('nSerie')
 	 * unsignedInteger('Activo_id')
 	 * unsignedInteger('TipoComponente_id')
@@ -63,7 +65,7 @@ class Componente extends Model
 		);
 	}
 
-	function estadosComponenete()
+	function estadosComponente()
 	{
 		return $this->belongsToMany(
 			EstadoComponente::class,

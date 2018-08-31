@@ -12,9 +12,9 @@ class Servicio extends Model
 	public $timestamps = false;
 
 	protected $fillable = [
-		'Ticket_id',
-		'Servicio_id',
-		'Servicio_type',
+		// 'Ticket_id',
+		// 'Servicio_id',
+		// 'Servicio_type',
 	];
 
 	/*
@@ -26,7 +26,7 @@ class Servicio extends Model
 	 * string('Servicio_type')
 	 */
 
-	public function Servicio()
+	function Servicio()
 	{
 		return $this->morphTo();
 	}

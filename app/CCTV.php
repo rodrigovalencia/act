@@ -27,8 +27,8 @@ class CCTV extends Model
 	 * Atributos 
 	 *
 	 * increments('id')
-	 * string('mac')
-	 * string('ip')
+	 * string('mac')->nullable()
+	 * string('ip')->nullable()
 	 * unsignedInteger('Modelo_id')
 	 * unsignedInteger('Area_id')
 	 * unsignedInteger('Contrato_id')

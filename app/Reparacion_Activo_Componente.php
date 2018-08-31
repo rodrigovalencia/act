@@ -29,7 +29,7 @@ class Reparacion_Activo_Componente extends Model
 	 * unsignedInteger('Activo_id')
 	 * unsignedInteger('Componente_id')
 	 * unsignedInteger('Resultado_id')
-	 * string('comentario')
+	 * string('comentario')->nullable()
 	 */
 
 

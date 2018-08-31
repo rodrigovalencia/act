@@ -18,7 +18,7 @@ class CreateConfEquipoActivosTable extends Migration
 			$table->unsignedInteger('ConfEquipo_id');
 			$table->unsignedInteger('Activo_id');
 			$table->string('detalle');
-			$table->string('observacion');
+			$table->string('observacion')->nullable();
 		});
 	}
 

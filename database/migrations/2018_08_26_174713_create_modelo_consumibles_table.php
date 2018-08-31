@@ -16,7 +16,7 @@ class CreateModeloConsumiblesTable extends Migration
 		Schema::create('ModeloConsumible', function (Blueprint $table) {
 			$table->increments('id');
 			$table->string('nombre');
-			$table->string('documento');
+			$table->string('documento')->nullable();
 			$table->unsignedInteger('Fabricante_id');
 		});
 	}

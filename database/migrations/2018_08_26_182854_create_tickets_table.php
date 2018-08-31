@@ -17,13 +17,13 @@ class CreateTicketsTable extends Migration
 			$table->increments('id');
 			$table->date('fInicio');
 			$table->date('fCompromiso');
-			$table->date('fTermino');
+			$table->date('fTermino')->nullable();
 			$table->unsignedInteger('CategoriaTicket_id');
 			$table->unsignedInteger('Solicita_id');
-			$table->unsignedInteger('Retira_id');
+			$table->unsignedInteger('Retira_id')->nullable();
 			$table->unsignedInteger('Ubicacion_id');
 			$table->text('observaciones');
-			$table->text('observaciones2');
+			$table->text('observaciones2')->nullable();
 		});
 	}
 

@@ -20,7 +20,7 @@ class CreateSATIsTable extends Migration
 			$table->string('nombre');
 			$table->string('nombre2')->nullable();
 			$table->string('apPaterno');
-			$table->string('apMaterno');
+			$table->string('apMaterno')->nullable();
 			$table->string('userID');
 			$table->date('fTerminoContrato');
 			$table->string('cecoGrafo');

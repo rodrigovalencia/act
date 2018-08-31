@@ -28,7 +28,7 @@ class Computador extends Model
 	 *
 	 * increments('id')
 	 * string('mac')
-	 * string('ip')
+	 * string('ip')->nullable()
 	 * unsignedInteger('Modelo_id')
 	 * unsignedInteger('Area_id')
 	 * unsignedInteger('Contrato_id')

@@ -30,8 +30,8 @@ class Area extends Model
 	 *
 	 * increments('id')
 	 * string('nombre')
-	 * double('lat')->nulable()
-	 * double('lon')->nulable()
+	 * double('lat')->nullable()
+	 * double('lon')->nullable()
 	 * unsignedInteger('Ubicacion_id')
 	 */
 

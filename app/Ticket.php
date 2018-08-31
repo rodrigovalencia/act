@@ -34,13 +34,13 @@ class Ticket extends Model
 	 * increments('id')
 	 * date('fInicio')
 	 * date('fCompromiso')
-	 * date('fTermino')
+	 * date('fTermino')->nullable()
 	 * unsignedInteger('CategoriaTicket_id')
 	 * unsignedInteger('Solicita_id')
-	 * unsignedInteger('Retira_id')
+	 * unsignedInteger('Retira_id')->nullable()
 	 * unsignedInteger('Ubicacion_id')
 	 * text('observaciones')
-	 * text('observaciones2')
+	 * text('observaciones2')->nullable()
 	 */
 
 	function catTicket()
