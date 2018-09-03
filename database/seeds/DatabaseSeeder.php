@@ -21,6 +21,10 @@ class DatabaseSeeder extends Seeder
         	TipoModeloSeeder::class,
         	
         	ModeloRadioSeeder::class,
+
+        	CatN1_Seeder::class,
+        	CatN2_Seeder::class,
+        	CatN3_Seeder::class,
         ]);
     }
 }
