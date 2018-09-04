@@ -171,7 +171,7 @@ class Administrativo_Seeder extends Seeder
 			->where('AdmN1.nombre', 'GESTION ADMINISTRATIVA')
 			->where('AdmN2.nombre', 'ESP')
 			->where('AdmN3.nombre', 'Operación')
-			->where('AdmN4.nombre', 'Reunión de Tareas Criticas')
+			->where('AdmN4.nombre', 'Reunion Tareas Criticas')
 			->first()->id;
 
 		Administrativo::create([
@@ -219,7 +219,7 @@ class Administrativo_Seeder extends Seeder
 			->where('AdmN1.nombre', 'GESTION ADMINISTRATIVA')
 			->where('AdmN2.nombre', 'MET')
 			->where('AdmN3.nombre', 'Seguridad')
-			->where('AdmN4.nombre', 'Reunión de Comité Paritario')
+			->where('AdmN4.nombre', 'Reunión Comité Paritario')
 			->first()->id;
 
 		Administrativo::create([
