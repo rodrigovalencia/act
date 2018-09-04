@@ -17,21 +17,21 @@ class CatEquipo_Seeder extends Seeder
 		CatEquipo::create([
 			'nombre' => 'EQUIPO APOYO'
 		]);
-		CatEquipo::create([
-			'nombre' => 'EQUIPO BASE'
-		]);
+
 		CatEquipo::create([
 			'nombre' => 'EQUIPO CARGUIO'
 		]);
+
 		CatEquipo::create([
 			'nombre' => 'EQUIPO LIVIANO'
 		]);
+
 		CatEquipo::create([
 			'nombre' => 'EQUIPO PERFORADOR'
 		]);
+
 		CatEquipo::create([
 			'nombre' => 'TRANSPORTE'
 		]);
-
     }
 }

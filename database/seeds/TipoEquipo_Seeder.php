@@ -54,17 +54,6 @@ class TipoEquipo_Seeder extends Seeder
 			'CatEquipo_id' => $catID,
 		]);
 
-		$catID = CatEquipo::where('nombre', 'EQUIPO BASE')->value('id');
-
-		TipoEquipo::create([
-			'nombre' => 'OFICINA',
-			'CatEquipo_id' => $catID,
-		]);
-		TipoEquipo::create([
-			'nombre' => 'CONSOLA',
-			'CatEquipo_id' => $catID,
-		]);
-
 		$catID = CatEquipo::where('nombre', 'EQUIPO CARGUIO')->value('id');
 
 		TipoEquipo::create([
