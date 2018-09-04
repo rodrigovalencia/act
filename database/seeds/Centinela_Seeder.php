@@ -1,5 +1,12 @@
 <?php
 
+use App\CatN1;
+use App\CatN2;
+use App\CatN3;
+use App\CatN4;
+use App\CatN5;
+use App\Centinela;
+
 use Illuminate\Database\Seeder;
 
 class Centinela_Seeder extends Seeder

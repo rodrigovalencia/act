@@ -1,6 +1,7 @@
 <?php
 
 use App\CatN1;
+
 use Illuminate\Database\Seeder;
 
 class CatN1_Seeder extends Seeder
@@ -21,10 +22,6 @@ class CatN1_Seeder extends Seeder
 		
 		CatN1::create([
 			'nombre' => 'REQUERIMIENTOS'
-		]);
-		
-		CatN1::create([
-			'nombre' => 'GESTION ADMINISTRATIVA'
 		]);
 	}
 }

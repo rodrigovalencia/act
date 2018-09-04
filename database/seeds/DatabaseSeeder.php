@@ -29,6 +29,20 @@ class DatabaseSeeder extends Seeder
 			CatN5_Seeder::class,
 			Centinela_Seeder::class,
 
+			CatCodelco_Seeder::class,
+			Codelco_Seeder::class,
+
+			AdmN1_Seeder::class,
+			AdmN2_Seeder::class,
+			AdmN3_Seeder::class,
+			AdmN4_Seeder::class,
+			Administrativo_Seeder::class,
+
+			TipoContrato_Seeder::class,
+			Estado_Seeder::class,
+
+			CatEquipo_Seeder::class,
+			TipoEquipo_Seeder::class,
 			
 		]);
 	}
