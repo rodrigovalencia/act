@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class CatCodelco extends Model
 {
-	protected $table = 'SubCatCodelco';
+	protected $table = 'CatCodelco';
 	public $timestamps = false;
 
 	protected $fillable = [

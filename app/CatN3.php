@@ -38,4 +38,14 @@ class CatN3 extends Model
 			'id'
 		);
 	}
+
+	function catN2_Name()
+	{
+		return $this->catN2->nombre;
+	}
+
+	function catN1_Name()
+	{
+		return $this->catN2->catN1_Name();
+	}
 }
