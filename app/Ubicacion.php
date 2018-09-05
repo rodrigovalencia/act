@@ -79,4 +79,13 @@ class Ubicacion extends Model
 			'id'
 		);
 	}
+
+	function contratos()
+	{
+		return $this->hasMany(
+			Contrato::class,
+			'Ubicacion_id',
+			'id'
+		);
+	}
 }

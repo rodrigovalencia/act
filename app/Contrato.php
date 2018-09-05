@@ -25,7 +25,7 @@ class Contrato extends Model
 		'fInicio',
 		'fTermino',
 		// 'Empresa_id',
-		// 'Faena_id',
+		// 'Ubicacion_id',
 	];
 
 	/*
@@ -36,7 +36,7 @@ class Contrato extends Model
 	 * date('fInicio')
 	 * date('fTermino')
 	 * unsignedInteger('Empresa_id')
-	 * unsignedInteger('Faena_id')
+	 * unsignedInteger('Ubicacion_id')
 	 */
 
 	function empresa()
@@ -48,11 +48,11 @@ class Contrato extends Model
 		);
 	}
 
-	function faena()
+	function ubicacion()
 	{
 		return $this->belongsTo(
-			Faena::class,
-			'Faena_id',
+			Ubicacion::class,
+			'Ubicacion_id',
 			'id'
 		);
 	}

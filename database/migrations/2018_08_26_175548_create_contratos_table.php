@@ -19,7 +19,7 @@ class CreateContratosTable extends Migration
 			$table->date('fInicio');
 			$table->date('fTermino');
 			$table->unsignedInteger('Empresa_id');
-			$table->unsignedInteger('Faena_id');
+			$table->unsignedInteger('Ubicacion_id');
 		});
 	}
 

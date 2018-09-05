@@ -30,13 +30,4 @@ class Faena extends Model
 			'id'
 		);
 	}
-
-	function contratos()
-	{
-		return $this->hasMany(
-			Contrato::class,
-			'Faena_id',
-			'id'
-		);
-	}
 }
