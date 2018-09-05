@@ -10,6 +10,7 @@ use App\DispRed;
 use App\Fabricante;
 use App\Impresora;
 use App\Monitor;
+use App\Procedimiento;
 use App\RadioComercial;
 use App\RadioTrabajo;
 use App\Repetidor;
@@ -22,8 +23,9 @@ class Modelo extends Model
 
 	protected $fillable = [
 		'nombre',
-		// 'Fabricante_id',
 		'documento',
+		// 'Fabricante_id',
+		// 'Procedimiento_id',
 	];
 
 	/*
@@ -31,8 +33,9 @@ class Modelo extends Model
 	 *
 	 * increments('id')
 	 * string('nombre')
-	 * unsignedInteger('Fabricante_id')
 	 * string('documento')->nullable()
+	 * unsignedInteger('Fabricante_id')
+	 * unsignedInteger('Procedimiento_id')
 	 */
 
 	function fabricante()
@@ -40,6 +43,15 @@ class Modelo extends Model
 		return $this->belongsTo(
 			Fabricante::class,
 			'Fabricante_id',
+			'id'
+		);
+	}
+
+	function procedimiento()
+	{
+		return $this->belongsTo(
+			Procedimiento::class,
+			'Procedimiento_id',
 			'id'
 		);
 	}

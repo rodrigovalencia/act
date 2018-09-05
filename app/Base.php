@@ -2,40 +2,40 @@
 
 namespace App;
 
-use App\TipoEquipo;
+use App\TipoBase;
 use App\URadio;
 use Illuminate\Database\Eloquent\Model;
 
-class Equipo extends Model
+class Base extends Model
 {
-	protected $table = 'Equipo';
+	protected $table = 'Base';
 	public $timestamps = false;
 
 	protected $fillable = [
-		'nombre',
-		// 'TipoEquipo_id',
+		'direccion',
+		'TipoBase_id',
 	];
 
 	/*
 	 * Atributos 
 	 *
 	 * increments('id')
-	 * integer('nombre')
-     * unsignedInteger('TipoEquipo_id')
+	 * string('direccion')
+	 * unsignedInteger('TipoBase_id')
 	 */
 
 	public function URadio()
 	{
 		return $this->morphMany(
 			URadio::class,
-			'URadio'
+			'Uradio'
 		);
 	}
 
-	function tipoEquipo()
+	function tipoBase()
 	{
 		return $this->belongsTo(
-			TipoEquipo::class,
+			TipoBase::class,
 			'TipoEquipo_id',
 			'id'
 		);

@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateRadioComercialsTable extends Migration
+class CreateURadiosTable extends Migration
 {
 	/**
 	 * Run the migrations.
@@ -13,13 +13,11 @@ class CreateRadioComercialsTable extends Migration
 	 */
 	public function up()
 	{
-		Schema::create('RadioComercial', function (Blueprint $table) {
+		Schema::create('URadio', function (Blueprint $table) {
 			$table->increments('id');
-			$table->string('serie');
-			$table->unsignedInteger('Modelo_id');
 			$table->unsignedInteger('Ubicacion_id');
-			$table->unsignedInteger('Responsable_id');
-			$table->unsignedInteger('URadio_id');
+			$table->integer('URadio_id');
+			$table->string('URadio_type');
 		});
 	}
 
@@ -30,6 +28,6 @@ class CreateRadioComercialsTable extends Migration
 	 */
 	public function down()
 	{
-		Schema::dropIfExists('RadioComercial');
+		Schema::dropIfExists('URadio');
 	}
 }

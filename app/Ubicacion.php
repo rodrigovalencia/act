@@ -5,6 +5,7 @@ namespace App;
 use App\Faena;
 use App\Monitor;
 use App\RadioComercial;
+use App\URadio;
 use Illuminate\Database\Eloquent\Model;
 
 class Ubicacion extends Model
@@ -75,6 +76,15 @@ class Ubicacion extends Model
 	{
 		return $this->hasMany(
 			RadioComercial::class,
+			'Ubicacion_id',
+			'id'
+		);
+	}
+
+	function ubicacionesRadios()
+	{
+		return $this->hasMany(
+			URadio::class,
 			'Ubicacion_id',
 			'id'
 		);

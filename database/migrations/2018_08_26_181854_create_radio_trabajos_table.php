@@ -25,7 +25,7 @@ class CreateRadioTrabajosTable extends Migration
 			$table->unsignedInteger('Contrato_id');
 			$table->unsignedInteger('Mandante_id');
 			$table->unsignedInteger('Tercero_id')->nullable();
-			$table->unsignedInteger('Equipo_id')->nullable();
+			$table->unsignedInteger('URadio_id')->nullable();
 		});
 	}
 

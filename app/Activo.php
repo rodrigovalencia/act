@@ -9,6 +9,7 @@ use App\Empresa;
 use App\EstadoActivo;
 use App\Mantencion;
 use App\Mantencion_Activo_Componente;
+use App\PlanMantenimiento;
 use App\Programacion_Activo;
 use App\Reparacion;
 use App\Reparacion_Activo_Componente;
@@ -128,6 +129,16 @@ class Activo extends Model
 			'Activo_id',
 			'id'
 		);
+	}
+
+	function planesMantenimiento()
+	{
+		return $this->belongsToMany(
+			PlanMantenimiento::class,
+			'Activo_PlanMantenimiento',
+			'Activo_id'
+			'PlanMantenimiento_id',
+		)->withPivot('fUltima', 'periodo');
 	}
 
 	public function Activo()

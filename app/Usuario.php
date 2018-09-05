@@ -2,6 +2,7 @@
 
 namespace App;
 
+use App\ActualizacionPlan;
 use App\Rol;
 use App\Servicio;
 use App\TipoUsuario;
@@ -78,6 +79,15 @@ class Usuario extends Model
 			'Servicio_Usuario',
 			'Usuario_id',
 			'Servicio_id'
+		);
+	}
+
+	function actualizaciones()
+	{
+		return $this->hasMany(
+			ActualizacionPlan::class,
+			'Usuario_id',
+			'id'
 		);
 	}
 }

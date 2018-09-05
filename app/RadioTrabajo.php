@@ -5,10 +5,10 @@ namespace App;
 use App\Activo;
 use App\Area;
 use App\Contrato;
-use App\Equipo;
 use App\Modelo;
 use App\SATI;
 use App\TipoModelo;
+use App\URadio;
 use Illuminate\Database\Eloquent\Model;
 
 class RadioTrabajo extends Model
@@ -27,7 +27,7 @@ class RadioTrabajo extends Model
 		// 'Contrato_id',
 		// 'Mandante_id',
 		// 'Tercero_id',
-		// 'Equipo_id',
+		// 'URadio_id',
 	];
 
 	/*
@@ -44,7 +44,7 @@ class RadioTrabajo extends Model
 	 * unsignedInteger('Contrato_id')
 	 * unsignedInteger('Mandante_id')
 	 * unsignedInteger('Tercero_id')->nullable()
-	 * unsignedInteger('Equipo_id')->nullable()
+	 * unsignedInteger('URadio_id')->nullable()
 	 */
 
 	public function activo()
@@ -100,11 +100,11 @@ class RadioTrabajo extends Model
 		);
 	}
 
-	function equipo()
+	function ubicacionRadio()
 	{
 		return $this->belongsTo(
-			Equipo::class,
-			'Equipo_id',
+			URadio::class,
+			'URadio_id',
 			'id'
 		);
 	}

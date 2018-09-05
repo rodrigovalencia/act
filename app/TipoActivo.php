@@ -4,6 +4,7 @@ namespace App;
 
 use App\Fabricante;
 use App\FabricanteComponente;
+use App\PlanMantenimiento;
 use Illuminate\Database\Eloquent\Model;
 
 class TipoActivo extends Model
@@ -38,6 +39,15 @@ class TipoActivo extends Model
 			'Fabricante_TipoActivo',
 			'TipoActivo_id',
 			'Fabricante_id'
+		);
+	}
+
+	function fabricanteComponente()
+	{
+		return $this->hasOne(
+			PlanMantenimiento::class,
+			'TipoActivo_id',
+			'id'
 		);
 	}
 }

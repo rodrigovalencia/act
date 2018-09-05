@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateModelosTable extends Migration
+class CreateBasesTable extends Migration
 {
 	/**
 	 * Run the migrations.
@@ -13,12 +13,10 @@ class CreateModelosTable extends Migration
 	 */
 	public function up()
 	{
-		Schema::create('Modelo', function (Blueprint $table) {
+		Schema::create('Base', function (Blueprint $table) {
 			$table->increments('id');
-			$table->string('nombre');
-			$table->string('documento')->nullable();
-			$table->unsignedInteger('Fabricante_id');
-			$table->unsignedInteger('Procedimiento_id');
+			$table->string('direccion');
+			$table->unsignedInteger('TipoBase_id');
 		});
 	}
 
@@ -29,6 +27,6 @@ class CreateModelosTable extends Migration
 	 */
 	public function down()
 	{
-		Schema::dropIfExists('Modelo');
+		Schema::dropIfExists('Base');
 	}
 }

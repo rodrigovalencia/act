@@ -3,9 +3,9 @@
 namespace App;
 
 use App\Activo;
-use App\Equipo;
 use App\Modelo;
 use App\SATI;
+use App\URadio;
 use App\Ubicacion;
 use Illuminate\Database\Eloquent\Model;
 
@@ -19,7 +19,7 @@ class RadioComercial extends Model
 		// 'Modelo_id',
 		// 'Ubicacion_id',
 		// 'Responsable_id',
-		// 'Equipo_id',
+		// 'URadio_id',
 	];
 
 	/*
@@ -30,7 +30,7 @@ class RadioComercial extends Model
 	 * unsignedInteger('Modelo_id')
 	 * unsignedInteger('Ubicacion_id')
 	 * unsignedInteger('Responsable_id')
-	 * unsignedInteger('Equipo_id')
+	 * unsignedInteger('URadio_id')
 	 */
 
 	public function activo()
@@ -68,11 +68,11 @@ class RadioComercial extends Model
 		);
 	}
 
-	function equipo()
+	function ubicacionRadio()
 	{
 		return $this->belongsTo(
-			Equipo::class,
-			'Equipo_id',
+			URadio::class,
+			'URadio_id',
 			'id'
 		);
 	}
