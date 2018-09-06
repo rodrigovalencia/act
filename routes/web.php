@@ -12,5 +12,13 @@
 */
 
 Route::get('/', function () {
-    return view('welcome');
+	return view('welcome');
+});
+
+Route::group(['prefix' => 'administracion'], function(){
+	Route::group(['prefix' => 'SATI'], function(){
+		Route::get('/', function () {
+			return view('admin.SATI.import');
+		});
+	});
 });
