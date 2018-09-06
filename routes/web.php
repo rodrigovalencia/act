@@ -11,14 +11,24 @@
 |
 */
 
-Route::get('/', function () {
-	return view('welcome');
-});
+Route::get('/', [
+	'uses'	=> 'PagesController@index',
+	'as'	=> 'index'
+]);
 
-Route::group(['prefix' => 'administracion'], function(){
-	Route::group(['prefix' => 'SATI'], function(){
-		Route::get('/', function () {
-			return view('admin.SATI.import');
-		});
+Route::prefix('administracion')->group(function(){
+	Route::prefix('cargaCSV')->group(function(){
+		Route::get('SATI', [
+			'uses'	=> 'PagesController@cargarSATI',
+			'as'	=> 'cargarSati'
+		]);
+		Route::get('SATI/show', [
+			'uses'	=> 'PagesController@inspeccionarSATI',
+			'as'	=> 'mostrarSati'
+		]);
+		Route::get('SATI/store', [
+			'uses'	=> 'PagesController@guardarSATI',
+			'as'	=> 'guardarSati'
+		]);
 	});
 });
