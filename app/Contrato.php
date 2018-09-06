@@ -32,7 +32,7 @@ class Contrato extends Model
 	 * Atributos 
 	 *
 	 * increments('id')
-	 * integer('numero')
+	 * unsignedbiginteger('numero')
 	 * date('fInicio')
 	 * date('fTermino')
 	 * unsignedInteger('Empresa_id')

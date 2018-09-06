@@ -13,33 +13,33 @@ class UbicacionSeeder extends Seeder
      */
     public function run()
     {
-    	Ubicacion::truncate()
+    	Ubicacion::truncate();
 
-    	$id = Faena::where('nombre','CODELCO NORTE')->value('id');
+    	$faenaID = Faena::where('nombre', 'CODELCO NORTE')->value('id');
 
 		Ubicacion::create([
 			'nombre' =>'División Chuquicamata',
-			'Faena_id' => $id,
+			'Faena_id' => $faenaID,
 		]);
 
 		Ubicacion::create([
 			'nombre' =>'División Gabriela Mistral',
-			'Faena_id' => $id,
+			'Faena_id' => $faenaID,
 		]);
 
 		Ubicacion::create([
 			'nombre' =>'División Ministro Hales',
-			'Faena_id' => $id,
+			'Faena_id' => $faenaID,
 		]);
 
 		Ubicacion::create([
 			'nombre' =>'División Radomiro Tomic',
-			'Faena_id' => $id,
+			'Faena_id' => $faenaID,
 		]);
 
 		Ubicacion::create([
 			'nombre' =>'Vicepresidencia de Proyectos',
-			'Faena_id' => $id,
+			'Faena_id' => $faenaID,
 		]);
 
     }
