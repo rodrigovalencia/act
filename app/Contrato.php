@@ -8,6 +8,7 @@ use App\CarroAmplificacion;
 use App\Computador;
 use App\ContratoActualizacion;
 use App\DispRed;
+use App\DominioContrato;
 use App\Empresa;
 use App\Faena;
 use App\Impresora;
@@ -25,7 +26,7 @@ class Contrato extends Model
 		'fInicio',
 		'fTermino',
 		// 'Empresa_id',
-		// 'Ubicacion_id',
+		// 'DominioContrato_id',
 	];
 
 	/*
@@ -36,7 +37,7 @@ class Contrato extends Model
 	 * date('fInicio')
 	 * date('fTermino')
 	 * unsignedInteger('Empresa_id')
-	 * unsignedInteger('Ubicacion_id')
+	 * unsignedInteger('DominioContrato_id')
 	 */
 
 	function empresa()
@@ -48,11 +49,11 @@ class Contrato extends Model
 		);
 	}
 
-	function ubicacion()
+	function dominio()
 	{
 		return $this->belongsTo(
-			Ubicacion::class,
-			'Ubicacion_id',
+			DominioContrato::class,
+			'DominioContrato_id',
 			'id'
 		);
 	}

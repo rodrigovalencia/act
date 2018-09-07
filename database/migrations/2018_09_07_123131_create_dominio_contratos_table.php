@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateContratosTable extends Migration
+class CreateDominioContratosTable extends Migration
 {
 	/**
 	 * Run the migrations.
@@ -13,13 +13,10 @@ class CreateContratosTable extends Migration
 	 */
 	public function up()
 	{
-		Schema::create('Contrato', function (Blueprint $table) {
+		Schema::create('DominioContrato', function (Blueprint $table) {
 			$table->increments('id');
-			$table->unsignedbiginteger('numero');
-			$table->date('fInicio');
-			$table->date('fTermino');
-			$table->unsignedInteger('Empresa_id');
-			$table->unsignedInteger('DominioContrato_id');
+			$table->integer('DominioContrato_id');
+			$table->string('DominioContrato_type');
 		});
 	}
 
@@ -30,6 +27,6 @@ class CreateContratosTable extends Migration
 	 */
 	public function down()
 	{
-		Schema::dropIfExists('Contrato');
+		Schema::dropIfExists('DominioContrato');
 	}
 }
