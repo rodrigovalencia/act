@@ -42,7 +42,7 @@ class TipoActivo extends Model
 		);
 	}
 
-	function fabricanteComponente()
+	function planMantenimiento()
 	{
 		return $this->hasOne(
 			PlanMantenimiento::class,

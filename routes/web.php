@@ -18,17 +18,15 @@ Route::get('/', [
 
 Route::prefix('administracion')->group(function(){
 	Route::prefix('cargaCSV')->group(function(){
-		Route::get('SATI', [
-			'uses'	=> 'PagesController@cargarSATI',
-			'as'	=> 'cargarSati'
-		]);
-		Route::get('SATI/show', [
-			'uses'	=> 'PagesController@inspeccionarSATI',
-			'as'	=> 'mostrarSati'
-		]);
-		Route::get('SATI/store', [
-			'uses'	=> 'PagesController@guardarSATI',
-			'as'	=> 'guardarSati'
-		]);
+		Route::prefix('SATI')->group(function(){
+			Route::GET('/', [
+				'uses'	=> 'PagesController@cargarSATI',
+				'as'	=> 'cargarSati'
+			]);
+			Route::POST('store', [
+				'uses'	=> 'PagesController@guardarSATI',
+				'as'	=> 'guardarSati'
+			]);
+		});
 	});
 });

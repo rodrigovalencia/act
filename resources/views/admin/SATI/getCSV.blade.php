@@ -14,26 +14,17 @@
 		<div class="panel panel-default">
 			<div class="panel-heading">Importar archivo CSV SATI's</div>
 			<div class="panel-body">
-				<form class="form-horizontal" method="POST" action="{{-- route('import_parse') --}}" enctype="multipart/form-data">
+				<form class="form-horizontal" method="POST" action="{{ route('guardarSati') }}" enctype="multipart/form-data">
 					{{ csrf_field() }}
-					<div class="form-group{{ $errors->has('csv_file') ? ' has-error' : '' }}">
-						<label for="csv_file" class="col-md-4 control-label">Archivo CSV</label>
+					<div class="form-group{{ $errors->has('archivoCSV') ? ' has-error' : '' }}">
+						<label for="archivoCSV" class="col-md-4 control-label">Archivo CSV</label>
 						<div class="col-md-6">
-							<input id="csv_file" type="file" class="form-control" name="csv_file" required>
-							@if ($errors->has('csv_file'))
+							<input id="archivoCSV" type="file" class="form-control" name="archivoCSV" required>
+							@if ($errors->has('archivoCSV'))
 								<span class="help-block">
-									<strong>{{ $errors->first('csv_file') }}</strong>
+									<strong>{{ $errors->first('archivoCSV') }}</strong>
 								</span>
 							@endif
-						</div>
-					</div>
-					<div class="form-group">
-						<div class="col-md-6 col-md-offset-4">
-							<div class="checkbox">
-								<label>
-									<input type="checkbox" name="header" checked> Archivo contiene cabeceras?
-								</label>
-							</div>
 						</div>
 					</div>
 					<div class="form-group">
