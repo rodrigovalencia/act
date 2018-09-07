@@ -15,11 +15,11 @@ class CreateContratosTable extends Migration
 	{
 		Schema::create('Contrato', function (Blueprint $table) {
 			$table->increments('id');
-			$table->integer('numero');
+			$table->unsignedbiginteger('numero');
 			$table->date('fInicio');
 			$table->date('fTermino');
 			$table->unsignedInteger('Empresa_id');
-			$table->unsignedInteger('Faena_id');
+			$table->unsignedInteger('Ubicacion_id');
 		});
 	}
 

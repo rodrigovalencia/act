@@ -81,10 +81,17 @@ class Ubicacion extends Model
 		);
 	}
 
+<<<<<<< HEAD
 	function ubicacionesRadios()
 	{
 		return $this->hasMany(
 			URadio::class,
+=======
+	function contratos()
+	{
+		return $this->hasMany(
+			Contrato::class,
+>>>>>>> JNunez
 			'Ubicacion_id',
 			'id'
 		);
