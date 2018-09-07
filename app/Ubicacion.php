@@ -87,7 +87,7 @@ class Ubicacion extends Model
 	function ubicacionesRadios()
 	{
 		return $this->hasMany(
-			URadio::class,
+			URadio::class
 		);
 	}
 
