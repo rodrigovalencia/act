@@ -8,6 +8,7 @@ use App\CarroAmplificacion;
 use App\Computador;
 use App\ContratoActualizacion;
 use App\DispRed;
+use App\DominioContrato;
 use App\Empresa;
 use App\Faena;
 use App\Impresora;
@@ -25,18 +26,18 @@ class Contrato extends Model
 		'fInicio',
 		'fTermino',
 		// 'Empresa_id',
-		// 'Faena_id',
+		// 'DominioContrato_id',
 	];
 
 	/*
 	 * Atributos 
 	 *
 	 * increments('id')
-	 * integer('numero')
+	 * unsignedbiginteger('numero')
 	 * date('fInicio')
 	 * date('fTermino')
 	 * unsignedInteger('Empresa_id')
-	 * unsignedInteger('Faena_id')
+	 * unsignedInteger('DominioContrato_id')
 	 */
 
 	function empresa()
@@ -48,11 +49,11 @@ class Contrato extends Model
 		);
 	}
 
-	function faena()
+	function dominio()
 	{
 		return $this->belongsTo(
-			Faena::class,
-			'Faena_id',
+			DominioContrato::class,
+			'DominioContrato_id',
 			'id'
 		);
 	}

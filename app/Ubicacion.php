@@ -2,10 +2,14 @@
 
 namespace App;
 
+use App\Area;
+use App\DominioContrato;
 use App\Faena;
 use App\Monitor;
 use App\RadioComercial;
+use App\Ticket;
 use App\URadio;
+use App\Usuario;
 use Illuminate\Database\Eloquent\Model;
 
 class Ubicacion extends Model
@@ -35,10 +39,9 @@ class Ubicacion extends Model
 		);
 	}
 
-	//¿¿Cuantos monitores??
 	function monitores()
 	{
-		return $this->hasMany(
+		return $this->hasOne(
 			Monitor::class,
 			'Ubicacion_id',
 			'id'
@@ -84,9 +87,15 @@ class Ubicacion extends Model
 	function ubicacionesRadios()
 	{
 		return $this->hasMany(
-			URadio::class,
-			'Ubicacion_id',
-			'id'
+			URadio::class
+		);
+	}
+
+	public function dominio()
+	{
+		return $this->morphMany(
+			DominioContrato::class,
+			'DominioContrato'
 		);
 	}
 }

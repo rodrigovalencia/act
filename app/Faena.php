@@ -2,7 +2,7 @@
 
 namespace App;
 
-use App\Contrato;
+use App\DominioContrato;
 use App\Ubicacion;
 use Illuminate\Database\Eloquent\Model;
 
@@ -31,12 +31,11 @@ class Faena extends Model
 		);
 	}
 
-	function contratos()
+	public function dominio()
 	{
-		return $this->hasMany(
-			Contrato::class,
-			'Faena_id',
-			'id'
+		return $this->morphMany(
+			DominioContrato::class,
+			'DominioContrato'
 		);
 	}
 }

@@ -15,6 +15,9 @@ class DatabaseSeeder extends Seeder
 			TruncateSeeder::class,
 
 			EmpresaSeeder::class,
+
+			FaenaSeeder::class,
+			UbicacionSeeder::class,
 			
 			TipoActivoSeeder::class,
 			FabricanteSeeder::class,
@@ -45,7 +48,11 @@ class DatabaseSeeder extends Seeder
 
 			CatEquipo_Seeder::class,
 			TipoEquipo_Seeder::class,
+
+			// Contrato_Seeder::class,
+			// ContratoInactivo_Seeder::class,
 			
+			FakerSeeder::class,
 		]);
 	}
 }

@@ -69,7 +69,7 @@ class EmpresaSeeder extends Seeder
 			'nombre' => 'AUSTIN GRUA'
 		]);
 		Empresa::create([
-			'nombre' => 'AUSTIN INGENIEROS CHILE LTDA'
+			'nombre' => 'AUSTIN INGENIEROS CHILE LTDA.'
 		]);
 		Empresa::create([
 			'nombre' => 'BAILAC'
@@ -82,7 +82,7 @@ class EmpresaSeeder extends Seeder
 		]);
 		Empresa::create([
 			'nombre' => 'BROAD SPECTRUM'
-		]);
+		]);	
 		Empresa::create([
 			'nombre' => 'BUSES PULLMAN S.A.'
 		]);
@@ -105,7 +105,7 @@ class EmpresaSeeder extends Seeder
 			'nombre' => 'COMPASS'
 		]);
 		Empresa::create([
-			'nombre' => 'CONDOR CHILE LTDA'
+			'nombre' => 'CONDOR CHILE LTDA.'
 		]);
 		Empresa::create([
 			'nombre' => 'CONSORCIO ABA'
@@ -113,6 +113,9 @@ class EmpresaSeeder extends Seeder
 		Empresa::create([
 			'nombre' => 'CONSORCIO CPG'
 		]);
+		Empresa::create([
+			'nombre' => 'CONSORCIO TUNNING-TSE UNOSPA'
+		]);		
 		Empresa::create([
 			'nombre' => 'CONVEYOR BELT TECNOLOGY'
 		]);
@@ -156,6 +159,9 @@ class EmpresaSeeder extends Seeder
 			'nombre' => 'EULEN'
 		]);
 		Empresa::create([
+			'nombre' => 'EXSA CHILE SPA'
+		]);
+		Empresa::create([
 			'nombre' => 'FAM'
 		]);
 		Empresa::create([
@@ -164,6 +170,9 @@ class EmpresaSeeder extends Seeder
 		Empresa::create([
 			'nombre' => 'FLSMIDTH'
 		]);
+		Empresa::create([
+			'nombre' => 'FOURTHANE'
+		]);		
 		Empresa::create([
 			'nombre' => 'GAC'
 		]);
@@ -189,7 +198,7 @@ class EmpresaSeeder extends Seeder
 			'nombre' => 'GLOBAL SERVICE MINE'
 		]);
 		Empresa::create([
-			'nombre' => 'GONZALEZ ACKERKNECHT LTDA'
+			'nombre' => 'GONZALEZ ACKERKNECHT LTDA.'
 		]);
 		Empresa::create([
 			'nombre' => 'GREEN CORE'
@@ -204,13 +213,13 @@ class EmpresaSeeder extends Seeder
 			'nombre' => 'HIDROMEC'
 		]);
 		Empresa::create([
-			'nombre' => 'ICS VALLE DE LA LUNA LTDA'
+			'nombre' => 'ICS VALLE DE LA LUNA LTDA.'
 		]);
 		Empresa::create([
 			'nombre' => 'IN SITU CORE'
 		]);
 		Empresa::create([
-			'nombre' => 'INAMAR LTDA'
+			'nombre' => 'INAMAR LTDA.'
 		]);
 		Empresa::create([
 			'nombre' => 'INCONSULT'
@@ -255,10 +264,10 @@ class EmpresaSeeder extends Seeder
 			'nombre' => 'LOB Constructora'
 		]);
 		Empresa::create([
-			'nombre' => 'LOPEZ NUNEZ Y CIA LTDA'
+			'nombre' => 'LOPEZ NUNEZ Y CIA LTDA.'
 		]);
 		Empresa::create([
-			'nombre' => 'LOPEZ NUÑEZ Y CIA LTDA - GLOBAL SERVICE MINE'
+			'nombre' => 'LOPEZ NUÑEZ Y CIA LTDA. - GLOBAL SERVICE MINE'
 		]);
 		Empresa::create([
 			'nombre' => 'MARTINIC ING. SERV LTDA.'
@@ -342,7 +351,7 @@ class EmpresaSeeder extends Seeder
 			'nombre' => 'QUINTA'
 		]);
 		Empresa::create([
-			'nombre' => 'R&O LTDA'
+			'nombre' => 'R&O LTDA.'
 		]);
 		Empresa::create([
 			'nombre' => 'RELSA'
@@ -363,6 +372,9 @@ class EmpresaSeeder extends Seeder
 			'nombre' => 'SALFACORP'
 		]);
 		Empresa::create([
+			'nombre' => 'SALMAG'
+		]);
+		Empresa::create([
 			'nombre' => 'SANTA ELVIRA'
 		]);
 		Empresa::create([
@@ -372,7 +384,7 @@ class EmpresaSeeder extends Seeder
 			'nombre' => 'SECURITAS'
 		]);
 		Empresa::create([
-			'nombre' => 'SERVINGTEC  MONTAJES LTDA'
+			'nombre' => 'SERVINGTEC  MONTAJES LTDA.'
 		]);
 		Empresa::create([
 			'nombre' => 'SHELL'
@@ -426,7 +438,7 @@ class EmpresaSeeder extends Seeder
 			'nombre' => 'TECNO'
 		]);
 		Empresa::create([
-			'nombre' => 'TECNO CONSTRUCCION Y SERVICIOS LTDA'
+			'nombre' => 'TECNO CONSTRUCCION Y SERVICIOS LTDA.'
 		]);
 		Empresa::create([
 			'nombre' => 'TECNO CYS'
@@ -531,7 +543,7 @@ class EmpresaSeeder extends Seeder
 			'nombre' => 'CONSTRUCTORA ARAUCANÍA LTDA.'
 		]);
 		Empresa::create([
-			'nombre' => 'COSANDO CONT. Y MONTAJE LTDA'
+			'nombre' => 'COSANDO CONT. Y MONTAJE LTDA.'
 		]);
 		Empresa::create([
 			'nombre' => 'CRC'
@@ -609,6 +621,9 @@ class EmpresaSeeder extends Seeder
 			'nombre' => 'MANANTIAL'
 		]);
 		Empresa::create([
+			'nombre' => 'MAGNA IV'
+		]);
+		Empresa::create([
 			'nombre' => 'MARSOL'
 		]);
 		Empresa::create([
@@ -625,6 +640,9 @@ class EmpresaSeeder extends Seeder
 		]);
 		Empresa::create([
 			'nombre' => 'MINARDI'
+		]);
+		Empresa::create([
+			'nombre' => 'MINECOMCAL CHILE'
 		]);
 		Empresa::create([
 			'nombre' => 'NEW TECH COPPER'
@@ -645,10 +663,16 @@ class EmpresaSeeder extends Seeder
 			'nombre' => 'RESITER'
 		]);
 		Empresa::create([
+			'nombre' => 'REVESOL'
+		]);
+		Empresa::create([
 			'nombre' => 'S&R CONSTRUCCION'
 		]);
 		Empresa::create([
 			'nombre' => 'SANTA ELVIRA SOLAR'
+		]);
+		Empresa::create([
+			'nombre' => 'SGS SIGA'
 		]);
 		Empresa::create([
 			'nombre' => 'SIMATRANS'
@@ -809,6 +833,11 @@ class EmpresaSeeder extends Seeder
 		Empresa::create([
 			'nombre' => 'ENAEX SERVICIOS S.A.',
 			'rut' => '76041871'
+		]);
+
+		Empresa::create([
+			'nombre' => 'GEO ATACAMA CONSULTORES LTDA.',
+			'rut' => '78162070'
 		]);
 
 		Empresa::create([
@@ -1012,7 +1041,7 @@ class EmpresaSeeder extends Seeder
 		]);
 
 		Empresa::create([
-			'nombre' => 'CONSORCIO ABENGOA MPM S.A',
+			'nombre' => 'CONSORCIO ABENGOA MPM S.A.',
 			'rut' => '76860706'
 		]);
 
@@ -1122,7 +1151,7 @@ class EmpresaSeeder extends Seeder
 		]);
 
 		Empresa::create([
-			'nombre' => 'SMG INGENIERIA S.A',
+			'nombre' => 'SMG INGENIERIA S.A.',
 			'rut' => '77794540'
 		]);
 
@@ -1267,7 +1296,7 @@ class EmpresaSeeder extends Seeder
 		]);
 
 		Empresa::create([
-			'nombre' => 'B.BOSCH S.A',
+			'nombre' => 'B.BOSCH S.A.',
 			'rut' => '84716400'
 		]);
 
@@ -1392,7 +1421,7 @@ class EmpresaSeeder extends Seeder
 		]);
 
 		Empresa::create([
-			'nombre' => 'BUREAU VERITAS S.A.',
+			'nombre' => 'BUREAU VERITAS CHILE S.A.',
 			'rut' => '96663470'
 		]);
 
@@ -1516,5 +1545,34 @@ class EmpresaSeeder extends Seeder
 			'rut' => '99595800'
 		]);
 
+		Empresa::create([
+			'nombre' => 'AGREDUCAM - ASOC. GREMIAL DE DUENOS DE CAM. CAL',
+			'rut' => '70843700'
+		]);
+
+		Empresa::create([
+			'nombre' => 'INDUSTRIAL Y COMERCIAL MANTOS GROUP S.A.',
+			'rut' => '76439939'
+		]);
+
+		Empresa::create([
+			'nombre' => 'NUEVA ANCOR TECMIN S.A.',
+			'rut' => '76411929'
+		]);
+
+		Empresa::create([
+			'nombre' => 'PARES Y ALVAREZ SERVICIOS PROFESIONALES LTDA.',
+			'rut' => '77995910'
+		]);
+
+		Empresa::create([
+			'nombre' => 'EPIROC CHILE S.A.',
+			'rut' => '91762000'
+		]);
+
+		Empresa::create([
+			'nombre' => 'POWER TRAIN TECHNOLOGIES CHILE S.A.',
+			'rut' => '96849300'
+		]);
 	}
 }
