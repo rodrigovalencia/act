@@ -40,6 +40,10 @@ $factory->define(Contacto::class, function (Faker $faker) {
 });
 
 $factory->define(Ticket::class, function (Faker $faker) {
+	factory(Servicio::class)->create();
+});
+
+$factory->state(Ticket::class, 'definicion', function (Faker $faker) {
 
 	$categoriaticketID = CategoriaTicket::all()->pluck('id')->toArray();
 	$contactoID = Contacto::all()->pluck('id')->toArray();

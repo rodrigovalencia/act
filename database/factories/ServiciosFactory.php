@@ -43,11 +43,43 @@ $factory->define(Servicio_Usuario::class, function (Faker $faker) {
 
 $factory->define(Servicio::class, function (Faker $faker) {
 
-	$ticketID = Ticket::all()->pluck('id')->toArray();
+	$ticket = create(Ticket::class)->states('definicion');
 
-	return [
+	$opcion = $faker->numberBetween($min=0,$max=3);
 
-	];
+	switch ($opcion) {
+		case '0':
+			$aux = $factory(Programacion::class)->create();
+			return [
+				'Ticket_id' => $ticket->id,
+				'Servicio_id' => $aux->id,
+				'Servicio_type' => 'Programacion',
+			];
+			break;
+		case '1':
+			$aux = $factory(Configuracion::class)->create();
+			return [
+				'Ticket_id' => $ticket->id,
+				'Servicio_id' => $aux->id,
+				'Servicio_type' => 'Configuracion',
+			];
+			break;
+		case '2':
+			$aux = $factory(Reparacion::class)->create();
+			return [
+				'Ticket_id' => $ticket->id,
+				'Servicio_id' => $aux->id,
+				'Servicio_type' => 'Reparacion',
+			];
+			break;
+		case '3':
+			$aux = $factory(Mantencion::class)->create();
+			return [
+				'Ticket_id' => $ticket->id,
+				'Servicio_id' => $aux->id,
+				'Servicio_type' => 'Mantencion',
+			];
+			break;
 });
 
 /*Declaracion Factories de Mantenciones */
