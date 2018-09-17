@@ -4,6 +4,7 @@ use App\Actividad;
 use App\Activo;
 use App\ActivoComputo;
 use App\ActivoLog;
+use App\Activo_Empresa;
 use App\Activo_EstadoActivo;
 use App\AreaCanal;
 use App\CCTV;
@@ -24,9 +25,13 @@ use App\ConfSW;
 use App\ConfSW_ActivoComputo;
 use App\Configuracion;
 use App\Consumible;
+use App\Contacto;
 use App\DispRed;
+use App\DocComodato;
+use App\DominioContrato;
 use App\EstadoActivo;
 use App\EstadoComponente;
+use App\EstadoTicket;
 use App\FabricanteComponente;
 use App\FabricanteComponente_TipoComponente;
 use App\Impresora;
@@ -36,6 +41,7 @@ use App\Licencia;
 use App\Mantencion;
 use App\Mantencion_Activo;
 use App\Mantencion_Activo_Componente;
+use App\Modelo;
 use App\ModeloConsumible;
 use App\ModeloSW;
 use App\Monitor;
@@ -57,6 +63,8 @@ use App\ResultadoReparacion;
 use App\Rol;
 use App\SW;
 use App\SubActividad;
+use App\Ticket;
+use App\Ticket_EstadoTicket;
 use App\TipoComponente;
 use App\TipoConsumible;
 use App\TipoKey;
@@ -65,6 +73,7 @@ use App\TipoMantencion;
 use App\TipoProgramacion;
 use App\TipoServicio;
 use App\TipoUsuario;
+use App\URadio;
 use App\Usuario;
 use App\Zona;
 use Illuminate\Database\Seeder;
@@ -79,9 +88,9 @@ class FakerSeeder extends Seeder
 	public function run()
 	{
 		/* Vaciar Tablas de Usuarios */
-		// Rol::truncate();
-		// TipoUsuario::truncate();
-		// Usuario::truncate();
+		Rol::truncate();
+		TipoUsuario::truncate();
+		Usuario::truncate();
 
 		/* Vaciar Tablas de Consumibles */
 		// TipoConsumible::truncate();
@@ -114,8 +123,8 @@ class FakerSeeder extends Seeder
 		// ActivoLog::truncate();
 
 		/* Vaciar Tablas de Procedimientos */
-		TipoServicio::truncate();
-		Procedimiento::truncate();
+		// TipoServicio::truncate();
+		// Procedimiento::truncate();
 
 		/* Vaciar Tablas de Activos */
 		CCTV::truncate();
@@ -129,56 +138,68 @@ class FakerSeeder extends Seeder
 		CableRadiante::truncate();
 		CarroAmplificacion::truncate();
 		Repetidor::truncate();
-		ActivoEmpresa::truncate();
+		Activo_Empresa::truncate();
 		EstadoActivo::truncate();
-		Activo_EstadoActivo::truncate();
 		Activo::truncate();
+		Activo_EstadoActivo::truncate();
+
+		/* Vaciar Tablas Base de Activos */
+		URadio::truncate();
+		DocComodato::truncate();
+		Modelo::truncate();
+		DominioContrato::truncate();
+
+		/* Vaciar Tablas Base de Activos */
+		EstadoTicket::truncate();
+		Ticket_EstadoTicket::truncate();
+		Contacto::truncate();
+		Ticket::truncate();
 
 		/* Vaciar Tablas de Gestion de Software */
-		ModeloSW::truncate();
-		SW::truncate();
-		InstSW::truncate();
-		Licencia::truncate();
-		TipoLicencia::truncate();
-		Key::truncate();
-		TipoKey::truncate();
-		ActivoComputo::truncate();
+		// ModeloSW::truncate();
+		// SW::truncate();
+		// InstSW::truncate();
+		// Licencia::truncate();
+		// TipoLicencia::truncate();
+		// Key::truncate();
+		// TipoKey::truncate();
+		// ActivoComputo::truncate();
 
 		/* Vaciar Tablas de Servicios Mantencion */
-		Mantencion::truncate();
-		TipoMantencion::truncate();
-		ResultadoMantencion::truncate();
-		Mantencion_Activo_Componente::truncate();
-		Mantencion_Activo::truncate();
+		// Mantencion::truncate();
+		// TipoMantencion::truncate();
+		// ResultadoMantencion::truncate();
+		// Mantencion_Activo_Componente::truncate();
+		// Mantencion_Activo::truncate();
 
-		/* Vaciar Tablas de Servicios Mantencion */
-		Reparacion::truncate();
-		ResultadoReparacion::truncate();
-		Reparacion_Activo::truncate();
-		Reparacion_Activo_Componente::truncate();
+		/* Vaciar Tablas de Servicios Reparacion */
+		// Reparacion::truncate();
+		// ResultadoReparacion::truncate();
+		// Reparacion_Activo::truncate();
+		// Reparacion_Activo_Componente::truncate();
 
-		/* Vaciar Tablas de Servicios Mantencion */
-		Configuracion::truncate();
-		ConfSW::truncate();
-		ConfSW_ActivoComputo::truncate();
-		ConfEquipo::truncate();
-		ConfEquipo_Activo::truncate();
+		/* Vaciar Tablas de Servicios Configuracion */
+		// Configuracion::truncate();
+		// ConfSW::truncate();
+		// ConfSW_ActivoComputo::truncate();
+		// ConfEquipo::truncate();
+		// ConfEquipo_Activo::truncate();
 
-		/* Vaciar Tablas de Servicios Mantencion */
-		Programacion::truncate();
-		TipoProgramacion::truncate();
-		Perfil::truncate();
-		Perfil_Zona_Canal::truncate();
-		Zona::truncate();
-		Programacion_Activo_Canal::truncate();
-		Canal::truncate();
-		AreaCanal::truncate();
-		Programacion_Activo::truncate();
+		/* Vaciar Tablas de Servicios Programacion */
+		// Programacion::truncate();
+		// TipoProgramacion::truncate();
+		// Perfil::truncate();
+		// Perfil_Zona_Canal::truncate();
+		// Zona::truncate();
+		// Programacion_Activo_Canal::truncate();
+		// Canal::truncate();
+		// AreaCanal::truncate();
+		// Programacion_Activo::truncate();
 
 		/* Creacion de Factories para Usuarios */
-		// factory(Rol::class, 100)->create();
-		// factory(TipoUsuario::class, 10)->create();
-		// factory(Usuario::class, 20)->create();
+		factory(Rol::class, 100)->create();
+		factory(TipoUsuario::class, 10)->create();
+		factory(Usuario::class, 20)->create();
 
 		/* Creacion de Factories para Consumibles */
 		// factory(TipoConsumible::class, 30)->create();
@@ -212,65 +233,77 @@ class FakerSeeder extends Seeder
 		// factory(ActivoLog::class, 20)->create();
 
 		/* Creacion de Factories para Procedimientos */
-		// factory(TipoServicio::class, 20)->create();
-		// factory(Procedimiento::class, 20)->create();	
+		factory(TipoServicio::class, 20)->create();
+		factory(Procedimiento::class, 20)->create();	
 
+		/* Creacion de Factories para Bases de Activos */
+		factory(Modelo::class, 20)->create();
+		// factory(DocComodato::class, 20)->create();
+		// factory(DominioContrato::class, 20)->create();	
+		
 		/* Creacion de Factories para Activos */
-		factory(CCTV::class, 20)->create();
-		factory(Computador::class, 20)->create();
-		factory(DispRed::class, 20)->create();
-		factory(RadioComercial::class, 20)->create();
-		factory(RadioTrabajo::class, 20)->create();
-		factory(Impresora::class, 20)->create();
-		factory(Monitor::class, 20)->create();
-		factory(Celular::class, 20)->create();
-		factory(CableRadiante::class, 20)->create();
-		factory(CarroAmplificacion::class, 20)->create();
-		factory(Repetidor::class, 20)->create();
+		// factory(CCTV::class, 20)->create();
+		// factory(Computador::class, 20)->create();
+		// factory(DispRed::class, 20)->create();
+		// factory(RadioComercial::class, 20)->create();
+		// factory(RadioTrabajo::class, 20)->create();
+		// factory(Impresora::class, 20)->create();
+		// factory(Monitor::class, 20)->create();
+		// factory(Celular::class, 20)->create();
+		// factory(CableRadiante::class, 20)->create();
+		// factory(CarroAmplificacion::class, 20)->create();
+		// factory(Repetidor::class, 20)->create();
 		factory(EstadoActivo::class, 20)->create();
-		factory(Activo_EstadoActivo::class, 20)->create();
-		factory(Activo::class, 220)->create();
-		factory(ActivoEmpresa::class, 20)->create();
+		factory(URadio::class, 20)->create();
+		factory(Activo::class, 100)->create();
+		// factory(Activo_EstadoActivo::class, 20)->create();
+		factory(Activo_Empresa::class, 100)->create();
+
+		/* Creacion de Factories para Tickets */	
+		factory(EstadoTicket::class, 100)->create();
+		factory(Contacto::class, 100)->create();
+		factory(Ticket::class, 100)->create();
+		factory(Ticket_EstadoTicket::class, 100)->create();
 
 		/* Creacion de Factories para Gestion de Software */
-		factory(ModeloSW::class, 20)->create();
-		factory(SW::class, 20)->create();
-		factory(ActivoComputo::class, 20)->create();
-		factory(InstSW::class, 20)->create();
-		factory(TipoKey::class, 20)->create();
-		factory(TipoLicencia::class, 20)->create();
-		factory(Key::class, 20)->create();
-		factory(Licencia::class, 20)->create();
+		// factory(ModeloSW::class, 20)->create();
+		// factory(SW::class, 20)->create();
+		// factory(ActivoComputo::class, 20)->create();
+		// factory(InstSW::class, 20)->create();
+		// factory(TipoKey::class, 20)->create();
+		// factory(TipoLicencia::class, 20)->create();
+		// factory(Key::class, 20)->create();
+		// factory(Licencia::class, 20)->create();
 
 		/* Creacion de Factories para Mantenciones */
-		factory(TipoMantencion::class, 20)->create();
-		factory(ResultadoMantencion::class, 20)->create();
-		factory(Mantencion::class, 20)->create();
-		factory(Mantencion_Activo_Componente::class, 20)->create();
-		factory(Mantencion_Activo::class, 20)->create();
+		// factory(TipoMantencion::class, 20)->create();
+		// factory(ResultadoMantencion::class, 20)->create();
+		// factory(Mantencion::class, 20)->create();
+		// factory(Mantencion_Activo_Componente::class, 20)->create();
+		// factory(Mantencion_Activo::class, 20)->create();
 
 		/* Creacion de Factories para Reparaciones */
-		factory(ResultadoReparacion::class, 20)->create();
-		factory(Reparacion_Activo_Componente::class, 20)->create();
-		factory(Reparacion_Activo::class, 20)->create();
-		factory(Reparacion::class, 20)->create();
+		// factory(ResultadoReparacion::class, 20)->create();
+		// factory(Reparacion_Activo_Componente::class, 20)->create();
+		// factory(Reparacion_Activo::class, 20)->create();
+		// factory(Reparacion::class, 20)->create();
 
 		/* Creacion de Factories para Configuraciones */
-		factory(ConfSW::class, 20)->create();		
-		factory(ConfEquipo::class, 20)->create();		
-		factory(ConfSW_ActivoComputo::class, 20)->create();		
-		factory(ConfEquipo_Activo::class, 20)->create();		
-		factory(Configuracion::class, 20)->create();	
+		// factory(ConfSW::class, 20)->create();		
+		// factory(ConfEquipo::class, 20)->create();		
+		// factory(ConfSW_ActivoComputo::class, 20)->create();		
+		// factory(ConfEquipo_Activo::class, 20)->create();		
+		// factory(Configuracion::class, 20)->create();	
 
-		/* Creacion de Factories para Configuraciones */
-		factory(Programacion::class, 20)->create();			
-		factory(TipoProgramacion::class, 20)->create();			
-		factory(Perfil::class, 20)->create();			
-		factory(Zona::class, 20)->create();			
-		factory(AreaCanal::class, 20)->create();			
-		factory(Canal::class, 20)->create();			
-		factory(Perfil_Zona_Canal::class, 20)->create();			
-		factory(Programacion_Activo::class, 20)->create();			
-		factory(Programacion_Activo_Canal::class, 20)->create();			
+		/* Creacion de Factories para Programaciones */
+		// factory(Programacion::class, 20)->create();			
+		// factory(TipoProgramacion::class, 20)->create();			
+		// factory(Perfil::class, 20)->create();			
+		// factory(Zona::class, 20)->create();			
+		// factory(AreaCanal::class, 20)->create();			
+		// factory(Canal::class, 20)->create();			
+		// factory(Perfil_Zona_Canal::class, 20)->create();			
+		// factory(Programacion_Activo::class, 20)->create();			
+		// factory(Programacion_Activo_Canal::class, 20)->create();			
 	}
 }

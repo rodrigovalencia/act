@@ -62,7 +62,22 @@ class DatabaseSeeder extends Seeder
 
 			FaenaSeeder::class,
 			UbicacionSeeder::class,
+			AreaSeeder::class,
 			TipoActivoSeeder::class,
+			FabricanteSeeder::class,
+			TipoModeloSeeder::class,
+			SistemaSeeder::class,
+			ModeloRadioSeeder::class,
+			CatEquipo_Seeder::class,
+			TipoEquipo_Seeder::class,	
+			Equipo_Seeder::class,
+			TipoBase_Seeder::class,
+			Base_Seeder::class,
+			EmpresaSeeder::class,
+			Contrato_Seeder::class,
+			ContratoInactivo_Seeder::class,
+			// TipoContrato_Seeder::class,
+			// Estado_Seeder::class,			
 			FakerSeeder::class,
 
 		]);

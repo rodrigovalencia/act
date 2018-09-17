@@ -17,7 +17,7 @@ class Contrato_Seeder extends Seeder
     {
     	Contrato::truncate();
     	
-		$dominioID::where('nombre', 'División Chuquicamata')->value('id');
+		$dominioID = Ubicacion::where('nombre', 'División Chuquicamata')->value('id');
 		$empresaID = Empresa::where('nombre', 'ADM PLANNING CONSULTORES')->value('id');
 
 		Contrato::create([
@@ -676,7 +676,7 @@ class Contrato_Seeder extends Seeder
 			'dominioContrato_id' => $dominioID,
 		]);
 
-		$dominioID::where('nombre', 'División Gabriela Mistral')->value('id');
+		$dominioID = Ubicacion::where('nombre', 'División Gabriela Mistral')->value('id');
 		$empresaID = Empresa::where('nombre', 'ANMAR')->value('id');
 
 
@@ -1106,7 +1106,7 @@ class Contrato_Seeder extends Seeder
 			'dominioContrato_id' => $dominioID,
 		]);
 
-		$dominioID::where('nombre', 'División Ministro Hales')->value('id');
+		$dominioID = Ubicacion::where('nombre', 'División Ministro Hales')->value('id');
 		$empresaID = Empresa::where('nombre', 'AGUAS Y RILES S.A.')->value('id');
 
 		Contrato::create([
@@ -1734,7 +1734,7 @@ class Contrato_Seeder extends Seeder
 			'dominioContrato_id' => $dominioID,
 		]);
 
-		$dominioID::where('nombre', 'División Radomiro Tomic')->value('id');
+		$dominioID = Ubicacion::where('nombre', 'División Radomiro Tomic')->value('id');
 		$empresaID = Empresa::where('nombre', 'AGROAMANCAY S.A.')->value('id');
 
 		Contrato::create([

@@ -38,6 +38,8 @@ $factory->define(Capacitacion::class, function (Faker $faker) {
 		'Persona_id' => $faker->randomElement($personaID),
 		'Usuario_id' => $faker->randomElement($usuarioID),
 		'Categoria_id' => $faker->randomElement($categoriaID),
+		'documento' => $faker->text,
+		'documento2' => $faker->text,
 	];
 });
 

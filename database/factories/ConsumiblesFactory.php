@@ -12,6 +12,7 @@ $factory->define(ModeloConsumible::class, function (Faker $faker) {
 
 	return [
 		'nombre' => $faker->firstName,
+		'documento' => $faker->text,
 		'Fabricante_id' => $faker->randomElement($fabricante),
 	];
 });

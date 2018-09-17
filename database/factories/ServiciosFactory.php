@@ -43,7 +43,7 @@ $factory->define(Servicio_Usuario::class, function (Faker $faker) {
 
 $factory->define(Servicio::class, function (Faker $faker) {
 
-	$ticket = create(Ticket::class)->states('definicion');
+	$ticket = factory(Ticket::class)->create()->states('definicion');
 
 	$opcion = $faker->numberBetween($min=0,$max=3);
 
@@ -80,6 +80,7 @@ $factory->define(Servicio::class, function (Faker $faker) {
 				'Servicio_type' => 'Mantencion',
 			];
 			break;
+	}
 });
 
 /*Declaracion Factories de Mantenciones */
@@ -138,32 +139,26 @@ $factory->define(ResultadoReparacion::class, function (Faker $faker) {
 	];
 });
 
-$factory->define(Reparacion::class, function (Faker $faker) {
-	return [
-		'nombre' => $faker->firstName,
-	];
-});
-
 $factory->define(Reparacion_Activo::class, function (Faker $faker) {
 
-	$reparacionID = Reparacion::all()->pluck('id')->toArray();
+	$aux = factory(Reparacion::class)->create();
 	$activoID = Activo::all()->pluck('id')->toArray();
 
 	return [
-		'Reparacion_id' => $faker->randomElement($reparacionID),
+		'Reparacion_id' => $aux->id,
 		'Activo_id' => $faker->randomElement($activoID),
 	];
 });
 
 $factory->define(Reparacion_Activo_Componente::class, function (Faker $faker) {
 
-	$reparacionID = Reparacion::all()->pluck('id')->toArray();
+	$aux = factory(Reparacion::class)->create();
 	$activoID = Activo::all()->pluck('id')->toArray();
 	$ComponenteID = Componente::all()->pluck('id')->toArray();
 	$ResultadoID = ResultadoReparacion::all()->pluck('id')->toArray();
 
 	return [
-		'Reparacion_id' => $faker->randomElement($reparacionID),
+		'Reparacion_id' => $aux->id,
 		'Activo_id' => $faker->randomElement($activoID),
 		'Componente_id' => $faker->randomElement($activoID),
 		'Resultado_id' => $faker->randomElement($activoID),
@@ -175,11 +170,12 @@ $factory->define(Reparacion_Activo_Componente::class, function (Faker $faker) {
 
 $factory->define(ConfEquipo_Activo::class, function (Faker $faker) {
 
-	$confequipoID = ConfEquipo::all()->pluck('id')->toArray();
+	$aux = factory(ConfEquipo::class)->create();
+
 	$activoID = Activo::all()->pluck('id')->toArray();
 
 	return [
-		'ConfEquipo_id' => $faker->randomElement($confequipoID),
+		'ConfEquipo_id' => $aux->id,
 		'Activo_id' => $faker->randomElement($activoID),
 		'detalle' => $faker->text,
 		'observacion' => $faker->text,
@@ -205,9 +201,25 @@ $factory->define(ConfSW_ActivoComputo::class, function (Faker $faker) {
 });
 
 $factory->define(Configuracion::class, function (Faker $faker) {
-	return [
+	
+	$opcion = $faker->numberBetween($min=0,$max=1);
 
-	];
+	switch ($opcion) {
+		case '0':
+			$aux = ConfSW::all()->pluck('id')->toArray();
+			return [
+				'Configuracion_id' => $faker->randomElement($aux),
+				'Configuracion_type' => 'ConfSW',
+			];
+			break;
+		case '1':
+			$aux = ConfEquipo::all()->pluck('id')->toArray();
+			return [
+				'Configuracion_id' => $faker->randomElement($aux),
+				'Configuracion_type' => 'ConfEquipo',
+			];
+			break;
+	}
 });
 
 /* Declaracion Factories de Programacion de Radios */

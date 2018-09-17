@@ -2,6 +2,7 @@
 
 namespace App\Providers;
 
+use Illuminate\Database\Eloquent\Relations\Relation;
 use Illuminate\Support\ServiceProvider;
 
 class AppServiceProvider extends ServiceProvider
@@ -35,6 +36,26 @@ class AppServiceProvider extends ServiceProvider
 			'CableRadiante'			=>	'App\CableRadiante',
 			'CarroAmplificacion'	=>	'App\CarroAmplificacion',
 			'Repetidor'				=>	'App\Repetidor',
+		]);
+
+		Relation::morphMap([
+			'Equipo'	=>	'App\Equipo',
+			'Base'		=>	'App\Base',
+		]);
+
+		Relation::morphMap([
+			'Ubicacion'	=>	'App\Ubicacion',
+			'Faena'		=>	'App\Faena',
+		]);
+
+		Relation::morphMap([
+			'Computador'	=>	'App\Computador',
+			'DispRed'		=>	'App\DispRed',
+		]);
+
+		Relation::morphMap([
+			'ConfSW'			=>	'App\ConfSW',
+			'ConfEquipo'		=>	'App\ConfEquipo',
 		]);
     }
 

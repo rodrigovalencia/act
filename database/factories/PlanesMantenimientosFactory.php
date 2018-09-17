@@ -27,6 +27,7 @@ $factory->define(ActualizacionPlan::class, function (Faker $faker) {
 	return [
 		'fecha' => $faker->dateTime($max = 'now', $timezone = null),
 		'Usuario_id' => $faker->randomElement($usuario),
+		'documento' => $faker->text,
 		'PlanMantenimiento_id' => $faker->randomElement($plan),
 	];
 });

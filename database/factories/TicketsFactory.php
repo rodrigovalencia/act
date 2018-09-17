@@ -3,8 +3,10 @@
 use App\CategoriaTicket;
 use App\Contacto;
 use App\EstadoTicket;
+use App\Servicio;
 use App\Ticket;
 use App\Ticket_EstadoTicket;
+use App\Ubicacion;
 use App\Usuario;
 use Faker\Generator as Faker;
 

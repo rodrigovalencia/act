@@ -1,6 +1,8 @@
 <?php
 
 use App\ActivoComputo;
+use App\Computador;
+use App\DispRed;
 use App\Fabricante;
 use App\InstSW;
 use App\Key;
@@ -86,7 +88,23 @@ $factory->define(InstSW::class, function (Faker $faker) {
 });
 
 $factory->define(ActivoComputo::class, function (Faker $faker) {
-	return [
-		'nombre' => $faker->firstName,
-	];
+	
+	$opcion = $faker->numberBetween($min=0,$max=1);
+
+	switch ($opcion) {
+		case '0':
+			$aux = Computador::all()->pluck('id')->toArray();
+			return [
+				'DominioContrato_id' => $faker->randomElement($aux),
+				'DominioContrato_type' => 'Computador',
+			];
+			break;
+		case '1':
+			$aux = DispRed::all()->pluck('id')->toArray();
+			return [
+				'DominioContrato_id' => $faker->randomElement($aux),
+				'DominioContrato_type' => 'DispRed',
+			];
+			break;
+	}
 });
