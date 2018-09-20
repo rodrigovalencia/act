@@ -95,15 +95,15 @@ $factory->define(ActivoComputo::class, function (Faker $faker) {
 		case '0':
 			$aux = Computador::all()->pluck('id')->toArray();
 			return [
-				'DominioContrato_id' => $faker->randomElement($aux),
-				'DominioContrato_type' => 'Computador',
+				'ActivoComputo_id' => $faker->randomElement($aux),
+				'ActivoComputo_type' => 'Computador',
 			];
 			break;
 		case '1':
 			$aux = DispRed::all()->pluck('id')->toArray();
 			return [
-				'DominioContrato_id' => $faker->randomElement($aux),
-				'DominioContrato_type' => 'DispRed',
+				'ActivoComputo_id' => $faker->randomElement($aux),
+				'ActivoComputo_type' => 'DispRed',
 			];
 			break;
 	}

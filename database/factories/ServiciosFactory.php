@@ -43,7 +43,7 @@ $factory->define(Servicio_Usuario::class, function (Faker $faker) {
 
 $factory->define(Servicio::class, function (Faker $faker) {
 
-	$ticket = factory(Ticket::class)->create()->states('definicion');
+	$ticket = factory(Ticket::class)->states('definicion')->create();
 
 	$opcion = $faker->numberBetween($min=0,$max=3);
 

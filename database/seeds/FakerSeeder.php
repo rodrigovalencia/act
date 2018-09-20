@@ -150,20 +150,20 @@ class FakerSeeder extends Seeder
 		DominioContrato::truncate();
 
 		/* Vaciar Tablas Base de Activos */
-		EstadoTicket::truncate();
-		Ticket_EstadoTicket::truncate();
-		Contacto::truncate();
-		Ticket::truncate();
+		// EstadoTicket::truncate();
+		// Ticket_EstadoTicket::truncate();
+		// Contacto::truncate();
+		// Ticket::truncate();
 
 		/* Vaciar Tablas de Gestion de Software */
-		// ModeloSW::truncate();
-		// SW::truncate();
-		// InstSW::truncate();
-		// Licencia::truncate();
-		// TipoLicencia::truncate();
-		// Key::truncate();
-		// TipoKey::truncate();
-		// ActivoComputo::truncate();
+		ModeloSW::truncate();
+		SW::truncate();
+		InstSW::truncate();
+		Licencia::truncate();
+		TipoLicencia::truncate();
+		Key::truncate();
+		TipoKey::truncate();
+		ActivoComputo::truncate();
 
 		/* Vaciar Tablas de Servicios Mantencion */
 		// Mantencion::truncate();
@@ -260,20 +260,20 @@ class FakerSeeder extends Seeder
 		factory(Activo_Empresa::class, 100)->create();
 
 		/* Creacion de Factories para Tickets */	
-		factory(EstadoTicket::class, 100)->create();
-		factory(Contacto::class, 100)->create();
-		factory(Ticket::class, 100)->create();
-		factory(Ticket_EstadoTicket::class, 100)->create();
+		// factory(EstadoTicket::class, 100)->create();
+		// factory(Contacto::class, 100)->create();
+		// factory(Ticket::class, 100)->create();
+		// factory(Ticket_EstadoTicket::class, 100)->create();
 
 		/* Creacion de Factories para Gestion de Software */
-		// factory(ModeloSW::class, 20)->create();
-		// factory(SW::class, 20)->create();
-		// factory(ActivoComputo::class, 20)->create();
-		// factory(InstSW::class, 20)->create();
-		// factory(TipoKey::class, 20)->create();
-		// factory(TipoLicencia::class, 20)->create();
-		// factory(Key::class, 20)->create();
-		// factory(Licencia::class, 20)->create();
+		factory(ModeloSW::class, 20)->create();
+		factory(SW::class, 20)->create();
+		factory(ActivoComputo::class, 20)->create();
+		factory(TipoLicencia::class, 20)->create();
+		factory(Licencia::class, 20)->create();
+		factory(InstSW::class, 20)->create();
+		factory(TipoKey::class, 20)->create();
+		factory(Key::class, 20)->create();
 
 		/* Creacion de Factories para Mantenciones */
 		// factory(TipoMantencion::class, 20)->create();
