@@ -90,4 +90,21 @@ class Usuario extends Model
 			'id'
 		);
 	}
+
+	function hasRoles(array $roles)
+	{
+		foreach ($roles as $role) {
+			foreach ($this->roles as $userRoles) {
+				if ($userRoles->name === $role) {
+					return true;
+				}
+			}
+		}
+		return false;
+	}
+
+	public function isAdmin()
+	{
+		return $this->hasRoles(['admin']);
+	}
 }
