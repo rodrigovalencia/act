@@ -22,6 +22,7 @@ class CreateUsuariosTable extends Migration
 			$table->string('apMaterno')->nullable();
 			$table->string('fono');
 			$table->string('mail')->nullable();
+			$table->string('avatar')->nullable();
 			$table->boolean('usuarioActivo');
 			$table->unsignedInteger('Rol_id');
 			$table->unsignedInteger('Ubicacion_id');

@@ -11,18 +11,11 @@
 		@include('layouts.partials.estilos')
 		@stack('estilos')
 	</head>
-	<body class="nav-md footer_fixed">
-		<div class="container body">
-			<div class="main_container">
-				@include('layouts.partials.navegacion')
-				@include('layouts.partials.top_navegacion')
-				<div class="right_col" role="main">
-					@yield('contenido')
-				</div>
-				@include('layouts.partials.pie')
-			</div>
+	<body class="login">
+		<div>
+			@yield('contenido')
+			@include('layouts.partials.acciones')
+			@stack('acciones')
 		</div>
-		@include('layouts.partials.acciones')
-		@stack('acciones')
 	</body>
 </html>

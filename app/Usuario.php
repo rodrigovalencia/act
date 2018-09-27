@@ -22,6 +22,7 @@ class Usuario extends Model
 		'apMaterno',
 		'fono',
 		'mail',
+		'avatar',
 		'usuarioActivo',
 		// 'Rol_id',
 		// 'Ubicacion_id',
@@ -39,6 +40,7 @@ class Usuario extends Model
 	 * string('apMaterno')->nullable()
 	 * string('fono')
 	 * string('mail')->nullable()
+	 * string('avatar')->nullable()
 	 * boolean('usuarioActivo')
 	 * unsignedInteger('Rol_id')
 	 * unsignedInteger('Ubicacion_id')
