@@ -1,6 +1,6 @@
 @extends('layouts.app')
 
-@section('titulo', 'Index')
+@section('titulo', 'Dashboard')
 
 @push('estilos')
 @endpush

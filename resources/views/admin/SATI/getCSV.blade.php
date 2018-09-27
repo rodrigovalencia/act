@@ -9,7 +9,6 @@
 @endpush
 
 @section('contenido')
-<div class="right_col" role="main">
 	<div class="col-md-8 col-md-offset-2">
 		<div class="panel panel-default">
 			<div class="panel-heading">Importar archivo CSV SATI's</div>
@@ -38,5 +37,4 @@
 			</div>
 		</div>
 	</div>
-</div>
 @endsection
