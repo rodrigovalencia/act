@@ -11,6 +11,22 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
+Route::get('/', [
+	'uses'	=> 'PagesController@index',
+	'as'	=> 'index'
+]);
+
+Route::prefix('administracion')->group(function(){
+	Route::prefix('cargaCSV')->group(function(){
+		Route::prefix('SATI')->group(function(){
+			Route::GET('/', [
+				'uses'	=> 'PagesController@cargarSATI',
+				'as'	=> 'cargarSati'
+			]);
+			Route::POST('store', [
+				'uses'	=> 'PagesController@guardarSATI',
+				'as'	=> 'guardarSati'
+			]);
+		});
+	});
 });
