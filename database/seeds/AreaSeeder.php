@@ -1,6 +1,7 @@
 <?php
 
 use App\Area;
+use App\Ubicacion;
 use Illuminate\Database\Seeder;
 
 class AreaSeeder extends Seeder
@@ -164,11 +165,6 @@ class AreaSeeder extends Seeder
 		Area::create([
 			'Ubicacion_id' => $idChuqui,
 			'nombre' => 'Gerencia Sustentabilidad y Asuntos Exter'
-		]);
-
-		Area::create([
-			'Ubicacion_id' => $idChuqui,
-			'nombre' => $idVP
 		]);
 
 		Area::create([
