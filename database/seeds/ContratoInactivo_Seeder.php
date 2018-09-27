@@ -1,6 +1,7 @@
 <?php
 
 use App\Contrato;
+use App\DominioContrato;
 use App\Empresa;
 use App\Ubicacion;
 use Carbon\Carbon;
@@ -8,2125 +9,4018 @@ use Illuminate\Database\Seeder;
 
 class ContratoInactivo_Seeder extends Seeder
 {
-    /**
-     * Run the database seeds.
-     *
-     * @return void
-     */
-    public function run()
-    {
+	/**
+	 * Run the database seeds.
+	 *
+	 * @return void
+	 */
+	public function run()
+	{
 
-		$ubicacionID = Ubicacion::where('nombre', 'División Chuquicamata')->value('id');
-		$empresaID = Empresa::where('nombre', 'ADM PLANNING CONSULTORES')->value('id');
-
-		Contrato::create([
-			'empresa_id' => $empresaID,
-			'numero' =>'4501682830',
-			'finicio' => Carbon::parse('13-02-2017')->format('Y/m/d'),
-			'ftermino' => Carbon::parse('13-02-2019')->format('Y/m/d'),
-			'ubicacion_id' => $ubicacionID,
-		]);
-
-		$empresaID = Empresa::where('nombre', 'AGREDUCAM - ASOC. GREMIAL DE DUENOS DE CAM. CAL')->value('id');
+		$dominioID = Ubicacion::where('nombre', 'División Chuquicamata')->value('id');
+		$empresaID = Empresa::where('nombre', 'ACHIARDI')->value('id');
 
 		Contrato::create([
 			'empresa_id' => $empresaID,
-			'numero' =>'4600015795',
-			'finicio' => Carbon::parse('01-11-2017')->format('Y/m/d'),
-			'ftermino' => Carbon::parse('30-04-2021')->format('Y/m/d'),
-			'ubicacion_id' => $ubicacionID,
+			'numero' => '4600012456',
+			'finicio' => Carbon::parse('17-12-2013')->format('Y/m/d'),
+			'ftermino' => Carbon::parse('13-01-2018')->format('Y/m/d'),
+			'dominioContrato_id' => $dominioID,
 		]);
 
-		$empresaID = Empresa::where('nombre', 'AGROAMANCAY S.A.')->value('id');
+		$contratoID = Contrato::where('numero', '4600012456')->value('id');
+
+		DominioContrato::create([
+			'DominioContrato_id' => $contratoID,
+			'DominioContrato_type' => 'Ubicacion',
+		]);
+
+		$empresaID = Empresa::where('nombre', 'ACT S.A.')->value('id');
 
 		Contrato::create([
 			'empresa_id' => $empresaID,
-			'numero' =>'4501686086',
-			'finicio' => Carbon::parse('25-02-2017')->format('Y/m/d'),
-			'ftermino' => Carbon::parse('25-02-2020')->format('Y/m/d'),
-			'ubicacion_id' => $ubicacionID,
-		]);
-		Contrato::create([
-			'empresa_id' => $empresaID,
-			'numero' =>'4501686080',
-			'finicio' => Carbon::parse('25-02-2017')->format('Y/m/d'),
-			'ftermino' => Carbon::parse('28-02-2020')->format('Y/m/d'),
-			'ubicacion_id' => $ubicacionID,
+			'numero' => '4600012162',
+			'finicio' => Carbon::parse('29-05-2013')->format('Y/m/d'),
+			'ftermino' => Carbon::parse('31-12-2017')->format('Y/m/d'),
+			'dominioContrato_id' => $dominioID,
 		]);
 
-		$empresaID = Empresa::where('nombre', 'AGUAS Y RILES S.A.')->value('id');
+		$contratoID = Contrato::where('numero', '4600012162')->value('id');
 
-		Contrato::create([
-			'empresa_id' => $empresaID,
-			'numero' =>'4501731104',
-			'finicio' => Carbon::parse('10-09-2017')->format('Y/m/d'),
-			'ftermino' => Carbon::parse('10-09-2018')->format('Y/m/d'),
-			'ubicacion_id' => $ubicacionID,
-		]);
-		Contrato::create([
-			'empresa_id' => $empresaID,
-			'numero' =>'4600015769',
-			'finicio' => Carbon::parse('02-10-2017')->format('Y/m/d'),
-			'ftermino' => Carbon::parse('30-09-2020')->format('Y/m/d'),
-			'ubicacion_id' => $ubicacionID,
+		DominioContrato::create([
+			'DominioContrato_id' => $contratoID,
+			'DominioContrato_type' => 'Ubicacion',
 		]);
 
-		$empresaID = Empresa::where('nombre', 'ALPHA')->value('id');
+		$empresaID = Empresa::where('nombre', 'AGROAMANCAY S.A.')-> value('id');
 
 		Contrato::create([
 			'empresa_id' => $empresaID,
-			'numero' =>'4600014952',
-			'finicio' => Carbon::parse('05-09-2016')->format('Y/m/d'),
-			'ftermino' => Carbon::parse('30-09-2019')->format('Y/m/d'),
-			'ubicacion_id' => $ubicacionID,
+			'numero' => '4501336690',
+			'finicio' => Carbon::parse('19-02-2013')->format('Y/m/d'),
+			'ftermino' => Carbon::parse('07-01-2017')->format('Y/m/d'),
+			'dominioContrato_id' => $dominioID,
 		]);
 
-		$empresaID = Empresa::where('nombre', 'ARAMARK')->value('id');
+		$contratoID = Contrato::where('numero', '4501336690')->value('id');
+
+		DominioContrato::create([
+			'DominioContrato_id' => $contratoID,
+			'DominioContrato_type' => 'Ubicacion',
+		]);
+
+		$empresaID = Empresa::where('nombre', 'ANMAR')-> value('id');
 
 		Contrato::create([
 			'empresa_id' => $empresaID,
-			'numero' =>'4600015165',
-			'finicio' => Carbon::parse('01-01-2017')->format('Y/m/d'),
-			'ftermino' => Carbon::parse('01-02-2020')->format('Y/m/d'),
-			'ubicacion_id' => $ubicacionID,
+			'numero' => '4600013300',
+			'finicio' => Carbon::parse('18-10-2014')->format('Y/m/d'),
+			'ftermino' => Carbon::parse('17-04-2014')->format('Y/m/d'),
+			'dominioContrato_id' => $dominioID,
 		]);
 
-		$empresaID = Empresa::where('nombre', 'ATLAS COPCO')->value('id');
+		$contratoID = Contrato::where('numero', '4600013300')->value('id');
+
+		DominioContrato::create([
+			'DominioContrato_id' => $contratoID,
+			'DominioContrato_type' => 'Ubicacion',
+		]);
+
+		$empresaID = Empresa::where('nombre', 'APPLUS NORCONTROL')-> value('id');
 
 		Contrato::create([
 			'empresa_id' => $empresaID,
-			'numero' =>'4600016078',
-			'finicio' => Carbon::parse('03-07-2017')->format('Y/m/d'),
-			'ftermino' => Carbon::parse('03-07-2020')->format('Y/m/d'),
-			'ubicacion_id' => $ubicacionID,
+			'numero' => '4501380796',
+			'finicio' => Carbon::parse('17-07-2013')->format('Y/m/d'),
+			'ftermino' => Carbon::parse('01-09-2015')->format('Y/m/d'),
+			'dominioContrato_id' => $dominioID,
 		]);
 
-		$empresaID = Empresa::where('nombre', 'AVA MONTAJES')->value('id');
+		$contratoID = Contrato::where('numero', '4501380796')->value('id');
+
+		DominioContrato::create([
+			'DominioContrato_id' => $contratoID,
+			'DominioContrato_type' => 'Ubicacion',
+		]);
+
+		$empresaID = Empresa::where('nombre', 'ARAMARK')-> value('id');
 
 		Contrato::create([
 			'empresa_id' => $empresaID,
-			'numero' =>'4600016104',
-			'finicio' => Carbon::parse('05-02-2018')->format('Y/m/d'),
-			'ftermino' => Carbon::parse('04-02-2020')->format('Y/m/d'),
-			'ubicacion_id' => $ubicacionID,
+			'numero' => '4600012212',
+			'finicio' => Carbon::parse('01-06-2013')->format('Y/m/d'),
+			'ftermino' => Carbon::parse('01-06-2016')->format('Y/m/d'),
+			'dominioContrato_id' => $dominioID,
 		]);
 
-		$empresaID = Empresa::where('nombre', 'BESALCO MAQUINARIAS S.A.')->value('id');
+		$contratoID = Contrato::where('numero', '4600012212')->value('id');
 
-		Contrato::create([
-			'empresa_id' => $empresaID,
-			'numero' =>'4600012492',
-			'finicio' => Carbon::parse('04-01-2014')->format('Y/m/d'),
-			'ftermino' => Carbon::parse('31-12-2018')->format('Y/m/d'),
-			'ubicacion_id' => $ubicacionID,
+		DominioContrato::create([
+			'DominioContrato_id' => $contratoID,
+			'DominioContrato_type' => 'Ubicacion',
 		]);
-		Contrato::create([
-			'empresa_id' => $empresaID,
-			'numero' =>'4600012455',
-			'finicio' => Carbon::parse('01-01-2014')->format('Y/m/d'),
-			'ftermino' => Carbon::parse('31-05-2019')->format('Y/m/d'),
-			'ubicacion_id' => $ubicacionID,
-		]);
-
-		$empresaID = Empresa::where('nombre', 'BROAD SPECTRUM')->value('id');
-
-		Contrato::create([
-			'empresa_id' => $empresaID,
-			'numero' =>'4600016174',
-			'finicio' => Carbon::parse('26-02-2018')->format('Y/m/d'),
-			'ftermino' => Carbon::parse('26-02-2021')->format('Y/m/d'),
-			'ubicacion_id' => $ubicacionID,
-		]);
-
-		$empresaID = Empresa::where('nombre', 'C & G SERVICIOS INDUSTRIALES LTDA.')->value('id');
-
 		Contrato::create([
 			'empresa_id' => $empresaID, 
-			'numero' =>'4600014490',
-			'finicio' => Carbon::parse('08-03-2016')->format('Y/m/d'),
-			'ftermino' => Carbon::parse('07-03-2019')->format('Y/m/d'),
-			'ubicacion_id' => $ubicacionID,
-		]);
-
-		$empresaID = Empresa::where('nombre', 'CIMAP LTDA.')->value('id');
-
-		Contrato::create([
-			'empresa_id' => $empresaID,
-			'numero' =>'4600014898',
-			'finicio' => Carbon::parse('27-09-2016')->format('Y/m/d'),
-			'ftermino' => Carbon::parse('27-05-2019')->format('Y/m/d'),
-			'ubicacion_id' => $ubicacionID,
-		]);
-
-		$empresaID = Empresa::where('nombre', 'COLINA VERDE')->value('id');
-
-		Contrato::create([
-			'empresa_id' => $empresaID,
-			'numero' =>'4600014378',
-			'finicio' => Carbon::parse('19-10-2015')->format('Y/m/d'),
-			'ftermino' => Carbon::parse('19-10-2018')->format('Y/m/d'),
-			'ubicacion_id' => $ubicacionID,
-		]);
-
-		$empresaID = Empresa::where('nombre', 'CONSORCIO DEVELP-VESPUCIO SPA')->value('id');
-
-		Contrato::create([
-			'empresa_id' => $empresaID,
-			'numero' =>'4600015560',
-			'finicio' => Carbon::parse('01-06-2017')->format('Y/m/d'),
-			'ftermino' => Carbon::parse('31-05-2019')->format('Y/m/d'),
-			'ubicacion_id' => $ubicacionID,
-		]);
-
-		$empresaID = Empresa::where('nombre', 'CONSORCIO TUNNING-TSE UNOSPA')->value('id');
-
-		Contrato::create([
-			'empresa_id' => $empresaID,
-			'numero' =>'4501767109',
-			'finicio' => Carbon::parse('23-07-2018')->format('Y/m/d'),
-			'ftermino' => Carbon::parse('23-01-2019')->format('Y/m/d'),
-			'ubicacion_id' => $ubicacionID,
-		]);
-
-		$empresaID = Empresa::where('nombre', 'CONTITECH')->value('id');
-
-		Contrato::create([
-			'empresa_id' => $empresaID, 
-			'numero' =>'4600015263',
-			'finicio' => Carbon::parse('02-02-2017')->format('Y/m/d'),
-			'ftermino' => Carbon::parse('31-01-2021')->format('Y/m/d'),
-			'ubicacion_id' => $ubicacionID,
-		]);
-
-		$empresaID = Empresa::where('nombre', 'CSI LTDA.')->value('id');
-
-		Contrato::create([
-			'empresa_id' => $empresaID, 
-			'numero' =>'4501533891',
-			'finicio' => Carbon::parse('01-05-2015')->format('Y/m/d'),
-			'ftermino' => Carbon::parse('30-04-2020')->format('Y/m/d'),
-			'ubicacion_id' => $ubicacionID,
-		]);
-
-		$empresaID = Empresa::where('nombre', 'DERK INGENIERIA Y GEOLOGIA LTDA.')->value('id');
-
-		Contrato::create([
-			'empresa_id' => $empresaID, 
-			'numero' =>'4501648075',
-			'finicio' => Carbon::parse('02-08-2016')->format('Y/m/d'),
-			'ftermino' => Carbon::parse('30-11-2018')->format('Y/m/d'),
-			'ubicacion_id' => $ubicacionID,
-		]);
-		Contrato::create([
-			'empresa_id' => $empresaID,
-			'numero' =>'4501735239',
-			'finicio' => Carbon::parse('23-10-2017')->format('Y/m/d'),
-			'ftermino' => Carbon::parse('23-10-2020')->format('Y/m/d'),
-			'ubicacion_id' => $ubicacionID,
-		]);
-
-		$empresaID = Empresa::where('nombre', 'DETROIT CHILE S.A.')->value('id');
-
-		Contrato::create([
-			'empresa_id' => $empresaID, 
-			'numero' =>'4600014374',
-			'finicio' => Carbon::parse('24-08-2015')->format('Y/m/d'),
-			'ftermino' => Carbon::parse('24-01-2019')->format('Y/m/d'),
-			'ubicacion_id' => $ubicacionID,
-		]);
-
-		$empresaID = Empresa::where('nombre', 'ENAEX SERVICIOS S.A.')->value('id');
-
-		Contrato::create([
-			'empresa_id' => $empresaID, 
-			'numero' =>'4600008863',
-			'finicio' => Carbon::parse('01-07-2010')->format('Y/m/d'),
-			'ftermino' => Carbon::parse('31-10-2018')->format('Y/m/d'),
-			'ubicacion_id' => $ubicacionID,
-		]);
-
-		$empresaID = Empresa::where('nombre', 'EQUIPOS TREX S.P.A.')->value('id');
-
-		Contrato::create([
-			'empresa_id' => $empresaID, 
-			'numero' =>'4600015558',
-			'finicio' => Carbon::parse('24-07-2017')->format('Y/m/d'),
-			'ftermino' => Carbon::parse('24-07-2020')->format('Y/m/d'),
-			'ubicacion_id' => $ubicacionID,
-		]);
-
-		$empresaID = Empresa::where('nombre', 'ESM SPA')->value('id');
-
-		Contrato::create([
-			'empresa_id' => $empresaID,
-			'numero' =>'4600016448',
-			'finicio' => Carbon::parse('01-07-2018')->format('Y/m/d'),
-			'ftermino' => Carbon::parse('30-06-2023')->format('Y/m/d'),
-			'ubicacion_id' => $ubicacionID,
-		]);
-
-		$empresaID = Empresa::where('nombre', 'FINNING CHILE S.A.')->value('id');
-
-		Contrato::create([
-			'empresa_id' => $empresaID, 
-			'numero' =>'4600013080',
-			'finicio' => Carbon::parse('12-02-2014')->format('Y/m/d'),
-			'ftermino' => Carbon::parse('27-04-2019')->format('Y/m/d'),
-			'ubicacion_id' => $ubicacionID,
-		]);
-		Contrato::create([
-			'empresa_id' => $empresaID,
-			'numero' =>'4600014590',
-			'finicio' => Carbon::parse('18-02-2016')->format('Y/m/d'),
-			'ftermino' => Carbon::parse('28-03-2020')->format('Y/m/d'),
-			'ubicacion_id' => $ubicacionID,
-		]);
-		Contrato::create([
-			'empresa_id' => $empresaID,
-			'numero' =>'4600015391',
-			'finicio' => Carbon::parse('10-04-2017')->format('Y/m/d'),
-			'ftermino' => Carbon::parse('10-04-2020')->format('Y/m/d'),
-			'ubicacion_id' => $ubicacionID,
-		]);
-
-		$empresaID = Empresa::where('nombre', 'GEMINIS SPA')->value('id');
-
-		Contrato::create([
-			'empresa_id' => $empresaID, 
-			'numero' =>'4600014763',
-			'finicio' => Carbon::parse('01-07-2016')->format('Y/m/d'),
-			'ftermino' => Carbon::parse('30-06-2019')->format('Y/m/d'),
-			'ubicacion_id' => $ubicacionID,
-		]);
-		Contrato::create([
-			'empresa_id' => $empresaID,
-			'numero' =>'4600007679',
-			'finicio' => Carbon::parse('01-01-2009')->format('Y/m/d'),
-			'ftermino' => Carbon::parse('31-12-2018')->format('Y/m/d'),
-			'ubicacion_id' => $ubicacionID,
-		]);
-
-		$empresaID = Empresa::where('nombre', 'GLOBAL SERVICE SPA')->value('id');
-
-		Contrato::create([
-			'empresa_id' => $empresaID, 
-			'numero' =>'4600016411',
-			'finicio' => Carbon::parse('01-06-2018')->format('Y/m/d'),
-			'ftermino' => Carbon::parse('30-05-2023')->format('Y/m/d'),
-			'ubicacion_id' => $ubicacionID,
-		]);
-
-		$empresaID = Empresa::where('nombre', 'HIDROMFD S.A.')->value('id');
-
-		Contrato::create([
-			'empresa_id' => $empresaID,
-			'numero' =>'4600015784',
-			'finicio' => Carbon::parse('02-10-2017')->format('Y/m/d'),
-			'ftermino' => Carbon::parse('02-10-2019')->format('Y/m/d'),
-			'ubicacion_id' => $ubicacionID,
-		]);
-
-		$empresaID = Empresa::where('nombre', 'HIGH SERVICE')->value('id');
-
-		Contrato::create([
-			'empresa_id' => $empresaID,
-			'numero' =>'4600015330',
-			'finicio' => Carbon::parse('01-03-2017')->format('Y/m/d'),
-			'ftermino' => Carbon::parse('05-04-2020')->format('Y/m/d'),
-			'ubicacion_id' => $ubicacionID,
-		]);
-
-		$empresaID = Empresa::where('nombre', 'INSTALFRIO S.P.A.')->value('id');
-
-		Contrato::create([
-			'empresa_id' => $empresaID,
-			'numero' =>'4600013411',
-			'finicio' => Carbon::parse('20-12-2014')->format('Y/m/d'),
-			'ftermino' => Carbon::parse('20-12-2018')->format('Y/m/d'),
-			'ubicacion_id' => $ubicacionID,
-		]);
-
-		$empresaID = Empresa::where('nombre', 'INTEREXPORT S.A.')->value('id');
-
-		Contrato::create([
-			'empresa_id' => $empresaID,
-			'numero' =>'4501516294',
+			'numero' => '4501509776',
 			'finicio' => Carbon::parse('01-02-2015')->format('Y/m/d'),
-			'ftermino' => Carbon::parse('01-12-2018')->format('Y/m/d'),
-			'ubicacion_id' => $ubicacionID,
+			'ftermino' => Carbon::parse('01-02-2017')->format('Y/m/d'),
+			'dominioContrato_id' => $dominioID,
 		]);
 
-		$empresaID = Empresa::where('nombre', 'INVERSIONES IMPACTO S.A.')->value('id');
+		$contratoID = Contrato::where('numero', '4501509776')->value('id');
+
+		DominioContrato::create([
+			'DominioContrato_id' => $contratoID,
+			'DominioContrato_type' => 'Ubicacion',
+		]);
+
+		$empresaID = Empresa::where('nombre', 'ARCADIS')-> value('id');
 
 		Contrato::create([
 			'empresa_id' => $empresaID,
-			'numero' =>'4600015738',
-			'finicio' => Carbon::parse('11-09-2017')->format('Y/m/d'),
-			'ftermino' => Carbon::parse('11-09-2020')->format('Y/m/d'),
-			'ubicacion_id' => $ubicacionID,
+			'numero' => '4501672787',
+			'finicio' => Carbon::parse('27-01-2017')->format('Y/m/d'),
+			'ftermino' => Carbon::parse('25-11-2017')->format('Y/m/d'),
+			'dominioContrato_id' => $dominioID,
 		]);
 
-		$empresaID = Empresa::where('nombre', 'JKL EIRL')->value('id');
+		$contratoID = Contrato::where('numero', '4501672787')->value('id');
+
+		DominioContrato::create([
+			'DominioContrato_id' => $contratoID,
+			'DominioContrato_type' => 'Ubicacion',
+		]);
+
+		$empresaID = Empresa::where('nombre', 'ASTALDI')-> value('id');
 
 		Contrato::create([
 			'empresa_id' => $empresaID,
-			'numero' =>'4600015143',
-			'finicio' => Carbon::parse('26-12-2016')->format('Y/m/d'),
-			'ftermino' => Carbon::parse('21-12-2019')->format('Y/m/d'),
-			'ubicacion_id' => $ubicacionID,
+			'numero' => '4501364590',
+			'finicio' => Carbon::parse('01-04-2013')->format('Y/m/d'),
+			'ftermino' => Carbon::parse('31-12-2015')->format('Y/m/d'),
+			'dominioContrato_id' => $dominioID,
 		]);
 
-		$empresaID = Empresa::where('nombre', 'JOY GLOBAL CHILE S.A.')->value('id');
+		$contratoID = Contrato::where('numero', '4501364590')->value('id');
+
+		DominioContrato::create([
+			'DominioContrato_id' => $contratoID,
+			'DominioContrato_type' => 'Ubicacion',
+		]);
+
+		$empresaID = Empresa::where('nombre', 'ATLAS COPCO')-> value('id');
 
 		Contrato::create([
 			'empresa_id' => $empresaID,
-			'numero' =>'4600014619',
-			'finicio' => Carbon::parse('15-03-2016')->format('Y/m/d'),
-			'ftermino' => Carbon::parse('14-03-2020')->format('Y/m/d'),
-			'ubicacion_id' => $ubicacionID,
+			'numero' => '4600003512',
+			'finicio' => Carbon::parse('02-08-2004')->format('Y/m/d'),
+			'ftermino' => Carbon::parse('02-06-2015')->format('Y/m/d'),
+			'dominioContrato_id' => $dominioID,
 		]);
 
-		$empresaID = Empresa::where('nombre', 'KOMATSU CHILE S.A.')->value('id');
+		$contratoID = Contrato::where('numero', '4600003512')->value('id');
+
+		DominioContrato::create([
+			'DominioContrato_id' => $contratoID,
+			'DominioContrato_type' => 'Ubicacion',
+		]);
+
+		$empresaID = Empresa::where('nombre', 'AVA MONTAJES')-> value('id');
 
 		Contrato::create([
 			'empresa_id' => $empresaID,
-			'numero' =>'4600009184',
-			'finicio' => Carbon::parse('27-09-2010')->format('Y/m/d'),
-			'ftermino' => Carbon::parse('27-09-2020')->format('Y/m/d'),
-			'ubicacion_id' => $ubicacionID,
-		]);
-		Contrato::create([
-			'empresa_id' => $empresaID,
-			'numero' =>'4600011399',
-			'finicio' => Carbon::parse('01-07-2017')->format('Y/m/d'),
-			'ftermino' => Carbon::parse('30-09-2022')->format('Y/m/d'),
-			'ubicacion_id' => $ubicacionID,
+			'numero' => '4501701063',
+			'finicio' => Carbon::parse('13-06-2017')->format('Y/m/d'),
+			'ftermino' => Carbon::parse('05-05-2018')->format('Y/m/d'),
+			'dominioContrato_id' => $dominioID,
 		]);
 
-		$empresaID = Empresa::where('nombre', 'KONECRANES')->value('id');
+		$contratoID = Contrato::where('numero', '4501701063')->value('id');
 
-		Contrato::create([
-			'empresa_id' => $empresaID,
-			'numero' =>'4600015267',
-			'finicio' => Carbon::parse('01-02-2017')->format('Y/m/d'),
-			'ftermino' => Carbon::parse('30-01-2020')->format('Y/m/d'),
-			'ubicacion_id' => $ubicacionID,
+		DominioContrato::create([
+			'DominioContrato_id' => $contratoID,
+			'DominioContrato_type' => 'Ubicacion',
 		]);
 
-		$empresaID = Empresa::where('nombre', 'LINDE GAS CHILE S.A.')->value('id');
+		$empresaID = Empresa::where('nombre', 'AVANT SERV. INTEGRALES')-> value('id');
 
 		Contrato::create([
 			'empresa_id' => $empresaID,
-			'numero' =>'4600012239',
-			'finicio' => Carbon::parse('01-07-2013')->format('Y/m/d'),
-			'ftermino' => Carbon::parse('01-12-2018')->format('Y/m/d'),
-			'ubicacion_id' => $ubicacionID,
+			'numero' => '4600009769',
+			'finicio' => Carbon::parse('30-10-2014')->format('Y/m/d'),
+			'ftermino' => Carbon::parse('31-03-2016')->format('Y/m/d'),
+			'dominioContrato_id' => $dominioID,
 		]);
 
-		$empresaID = Empresa::where('nombre', 'MAGNA IV')->value('id');
+		$contratoID = Contrato::where('numero', '4600009769')->value('id');
+
+		DominioContrato::create([
+			'DominioContrato_id' => $contratoID,
+			'DominioContrato_type' => 'Ubicacion',
+		]);
+
+		$empresaID = Empresa::where('nombre', 'B.BOSCH S.A.')-> value('id');
 
 		Contrato::create([
 			'empresa_id' => $empresaID,
-			'numero' =>'4501700753',
-			'finicio' => Carbon::parse('10-05-2017')->format('Y/m/d'),
-			'ftermino' => Carbon::parse('28-09-2018')->format('Y/m/d'),
-			'ubicacion_id' => $ubicacionID,
-		]);
-
-		$empresaID = Empresa::where('nombre', 'MINECOMCAL CHILE')->value('id');
-
-		Contrato::create([
-			'empresa_id' => $empresaID,
-			'numero' =>'4600015115',
-			'finicio' => Carbon::parse('11-12-2016')->format('Y/m/d'),
-			'ftermino' => Carbon::parse('30-11-2019')->format('Y/m/d'),
-			'ubicacion_id' => $ubicacionID,
-		]);
-
-		$empresaID = Empresa::where('nombre', 'MINETEC')->value('id');
-
-		Contrato::create([
-			'empresa_id' => $empresaID,
-			'numero' =>'4600016385',
-			'finicio' => Carbon::parse('22-05-2018')->format('Y/m/d'),
-			'ftermino' => Carbon::parse('22-05-2020')->format('Y/m/d'),
-			'ubicacion_id' => $ubicacionID,
-		]);
-
-		$empresaID = Empresa::where('nombre', 'MORGAN INDUSTRIAL S.A.')->value('id');
-
-		Contrato::create([
-			'empresa_id' => $empresaID,
-			'numero' =>'4600015292',
-			'finicio' => Carbon::parse('01-06-2017')->format('Y/m/d'),
-			'ftermino' => Carbon::parse('31-05-2022')->format('Y/m/d'),
-			'ubicacion_id' => $ubicacionID,
-		]);
-
-		$empresaID = Empresa::where('nombre', 'PROMEC S.A.')->value('id');
-
-		Contrato::create([
-			'empresa_id' => $empresaID,
-			'numero' =>'4600012646',
-			'finicio' => Carbon::parse('01-02-2014')->format('Y/m/d'),
-			'ftermino' => Carbon::parse('28-02-2019')->format('Y/m/d'),
-			'ubicacion_id' => $ubicacionID,
-		]);
-
-		$empresaID = Empresa::where('nombre', 'R&Q')->value('id');
-
-		Contrato::create([
-			'empresa_id' => $empresaID,
-			'numero' =>'4501672123',
-			'finicio' => Carbon::parse('21-12-2016')->format('Y/m/d'),
-			'ftermino' => Carbon::parse('11-03-2019')->format('Y/m/d'),
-			'ubicacion_id' => $ubicacionID,
-		]);
-
-		$empresaID = Empresa::where('nombre', 'RADIADORES GOMEZ LTDA.')->value('id');
-
-		Contrato::create([
-			'empresa_id' => $empresaID,
-			'numero' =>'4600015390',
-			'finicio' => Carbon::parse('03-04-2017')->format('Y/m/d'),
-			'ftermino' => Carbon::parse('10-04-2020')->format('Y/m/d'),
-			'ubicacion_id' => $ubicacionID,
-		]);
-
-		$empresaID = Empresa::where('nombre', 'SEGEA LTDA.')->value('id');
-
-		Contrato::create([
-			'empresa_id' => $empresaID,
-			'numero' =>'4501600517',
+			'numero' => '4501614395',
 			'finicio' => Carbon::parse('01-03-2016')->format('Y/m/d'),
-			'ftermino' => Carbon::parse('01-03-2019')->format('Y/m/d'),
-			'ubicacion_id' => $ubicacionID,
+			'ftermino' => Carbon::parse('31-03-2018')->format('Y/m/d'),
+			'dominioContrato_id' => $dominioID,
 		]);
 
-		$empresaID = Empresa::where('nombre', 'SEGURYCEL S.A.')->value('id');
+		$contratoID = Contrato::where('numero', '4501614395')->value('id');
+
+		DominioContrato::create([
+			'DominioContrato_id' => $contratoID,
+			'DominioContrato_type' => 'Ubicacion',
+		]);
+
+		$empresaID = Empresa::where('nombre', 'BUILDTEK S.A.')-> value('id');
 
 		Contrato::create([
 			'empresa_id' => $empresaID,
-			'numero' =>'4600014323',
-			'finicio' => Carbon::parse('14-09-2014')->format('Y/m/d'),
-			'ftermino' => Carbon::parse('14-09-2020')->format('Y/m/d'),
-			'ubicacion_id' => $ubicacionID,
+			'numero' => '4501744479',
+			'finicio' => Carbon::parse('04-12-2017')->format('Y/m/d'),
+			'ftermino' => Carbon::parse('04-07-2018')->format('Y/m/d'),
+			'dominioContrato_id' => $dominioID,
 		]);
 
-		$empresaID = Empresa::where('nombre', 'SEMAR LTDA.')->value('id');
+		$contratoID = Contrato::where('numero', '4501744479')->value('id');
+
+		DominioContrato::create([
+			'DominioContrato_id' => $contratoID,
+			'DominioContrato_type' => 'Ubicacion',
+		]);
+
+		$empresaID = Empresa::where('nombre', 'BUREAU VERITAS CHILE S.A.')-> value('id');
 
 		Contrato::create([
 			'empresa_id' => $empresaID,
-			'numero' =>'4600016142',
-			'finicio' => Carbon::parse('22-01-2018')->format('Y/m/d'),
-			'ftermino' => Carbon::parse('22-01-2021')->format('Y/m/d'),
-			'ubicacion_id' => $ubicacionID,
-		]);
-		Contrato::create([
-			'empresa_id' => $empresaID,
-			'numero' =>'4600015787',
-			'finicio' => Carbon::parse('01-12-2017')->format('Y/m/d'),
-			'ftermino' => Carbon::parse('20-09-2019')->format('Y/m/d'),
-			'ubicacion_id' => $ubicacionID,
+			'numero' => '4600011902',
+			'finicio' => Carbon::parse('01-06-2013')->format('Y/m/d'),
+			'ftermino' => Carbon::parse('14-01-2016')->format('Y/m/d'),
+			'dominioContrato_id' => $dominioID,
 		]);
 
-		$empresaID = Empresa::where('nombre', 'SERCOING LTDA.')->value('id');
+		$contratoID = Contrato::where('numero', '4600011902')->value('id');
 
-		Contrato::create([
-			'empresa_id' => $empresaID,
-			'numero' =>'4600015374',
-			'finicio' => Carbon::parse('28-04-2017')->format('Y/m/d'),
-			'ftermino' => Carbon::parse('27-04-2020')->format('Y/m/d'),
-			'ubicacion_id' => $ubicacionID,
-		]);
-
-		$empresaID = Empresa::where('nombre', 'SES')->value('id');
-
-		Contrato::create([
-			'empresa_id' => $empresaID,
-			'numero' =>'4501655134',
-			'finicio' => Carbon::parse('02-11-2016')->format('Y/m/d'),
-			'ftermino' => Carbon::parse('01-11-2020')->format('Y/m/d'),
-			'ubicacion_id' => $ubicacionID,
-		]);
-		Contrato::create([
-			'empresa_id' => $empresaID,
-			'numero' =>'4600014493',
-			'finicio' => Carbon::parse('08-02-2016')->format('Y/m/d'),
-			'ftermino' => Carbon::parse('08-03-2019')->format('Y/m/d'),
-			'ubicacion_id' => $ubicacionID,
-		]);
-
-		$empresaID = Empresa::where('nombre', 'SGS CHILE LTDA.')->value('id');
-
-		Contrato::create([
-			'empresa_id' => $empresaID,
-			'numero' =>'4501639442',
-			'finicio' => Carbon::parse('02-08-2016')->format('Y/m/d'),
-			'ftermino' => Carbon::parse('02-08-2019')->format('Y/m/d'),
-			'ubicacion_id' => $ubicacionID,
-		]);
-
-		$empresaID = Empresa::where('nombre', 'STEEL INGENIERIA S.A.')->value('id');
-
-		Contrato::create([
-			'empresa_id' => $empresaID,
-			'numero' =>'4600015174',
-			'finicio' => Carbon::parse('25-01-2017')->format('Y/m/d'),
-			'ftermino' => Carbon::parse('25-01-2019')->format('Y/m/d'),
-			'ubicacion_id' => $ubicacionID,
+		DominioContrato::create([
+			'DominioContrato_id' => $contratoID,
+			'DominioContrato_type' => 'Ubicacion',
 		]);
 		Contrato::create([
 			'empresa_id' => $empresaID, 
-			'numero' =>'4600014466',
-			'finicio' => Carbon::parse('26-03-2016')->format('Y/m/d'),
-			'ftermino' => Carbon::parse('26-03-2019')->format('Y/m/d'),
-			'ubicacion_id' => $ubicacionID,
+			'numero' => '4600012203',
+			'finicio' => Carbon::parse('01-06-2013')->format('Y/m/d'),
+			'ftermino' => Carbon::parse('14-01-2016')->format('Y/m/d'),
+			'dominioContrato_id' => $dominioID,
+		]);
+
+		$contratoID = Contrato::where('numero', '4600012203')->value('id');
+
+		DominioContrato::create([
+			'DominioContrato_id' => $contratoID,
+			'DominioContrato_type' => 'Ubicacion',
 		]);
 		Contrato::create([
 			'empresa_id' => $empresaID, 
-			'numero' =>'4600014116',
-			'finicio' => Carbon::parse('16-07-2015')->format('Y/m/d'),
-			'ftermino' => Carbon::parse('14-12-2019')->format('Y/m/d'),
-			'ubicacion_id' => $ubicacionID,
-		]);
-		Contrato::create([
-			'empresa_id' => $empresaID, 
-			'numero' =>'4600015208',
-			'finicio' => Carbon::parse('15-02-2017')->format('Y/m/d'),
-			'ftermino' => Carbon::parse('15-02-2020')->format('Y/m/d'),
-			'ubicacion_id' => $ubicacionID,
-		]);
-
-		$empresaID = Empresa::where('nombre', 'SUATRANS')->value('id');
-
-		Contrato::create([
-			'empresa_id' => $empresaID,
-			'numero' =>'4501210551',
-			'finicio' => Carbon::parse('01-11-2011')->format('Y/m/d'),
-			'ftermino' => Carbon::parse('30-10-2021')->format('Y/m/d'),
-			'ubicacion_id' => $ubicacionID,
-		]);
-
-		$empresaID = Empresa::where('nombre', 'TRANSPORTES DI SEVERINO')->value('id');
-
-		Contrato::create([
-			'empresa_id' => $empresaID,
-			'numero' =>'4600013208',
-			'finicio' => Carbon::parse('01-08-2017')->format('Y/m/d'),
-			'ftermino' => Carbon::parse('31-07-2019')->format('Y/m/d'),
-			'ubicacion_id' => $ubicacionID,
-		]);
-
-		$empresaID = Empresa::where('nombre', 'TRANYMEC')->value('id');
-
-		Contrato::create([
-			'empresa_id' => $empresaID,
-			'numero' =>'4600016188',
-			'finicio' => Carbon::parse('19-02-2018')->format('Y/m/d'),
-			'ftermino' => Carbon::parse('19-02-2020')->format('Y/m/d'),
-			'ubicacion_id' => $ubicacionID,
-		]);
-
-		$empresaID = Empresa::where('nombre', 'TREPSA S.A.')->value('id');
-
-		Contrato::create([
-			'empresa_id' => $empresaID,
-			'numero' =>'4600014360',
-			'finicio' => Carbon::parse('17-08-2015')->format('Y/m/d'),
-			'ftermino' => Carbon::parse('17-02-2019')->format('Y/m/d'),
-			'ubicacion_id' => $ubicacionID,
-		]);
-		Contrato::create([
-			'empresa_id' => $empresaID, 
-			'numero' =>'4600016139',
-			'finicio' => Carbon::parse('01-03-2018')->format('Y/m/d'),
-			'ftermino' => Carbon::parse('28-02-2019')->format('Y/m/d'),
-			'ubicacion_id' => $ubicacionID,
-		]);
-
-		$empresaID = Empresa::where('nombre', 'TTM CHILE S.A.')->value('id');
-
-		Contrato::create([
-			'empresa_id' => $empresaID,
-			'numero' =>'4600016459',
-			'finicio' => Carbon::parse('01-08-2018')->format('Y/m/d'),
-			'ftermino' => Carbon::parse('31-07-2021')->format('Y/m/d'),
-			'ubicacion_id' => $ubicacionID,
-		]);
-
-		$empresaID = Empresa::where('nombre', 'WORLD CLASS')->value('id');
-
-		Contrato::create([
-			'empresa_id' => $empresaID,
-			'numero' =>'4501690654',
-			'finicio' => Carbon::parse('22-05-2017')->format('Y/m/d'),
-			'ftermino' => Carbon::parse('22-05-2019')->format('Y/m/d'),
-			'ubicacion_id' => $ubicacionID,
-		]);
-
-		$empresaID = Empresa::where('nombre', 'ZUBLIN GEOVITAS')->value('id');
-
-		Contrato::create([
-			'empresa_id' => $empresaID,
-			'numero' =>'4501634332',
-			'finicio' => Carbon::parse('01-06-2016')->format('Y/m/d'),
-			'ftermino' => Carbon::parse('16-03-2021')->format('Y/m/d'),
-			'ubicacion_id' => $ubicacionID,
-		]);
-
-		$ubicacionID = Ubicacion::where('nombre', 'División Gabriela Mistral')->value('id');
-		$empresaID = Empresa::where('nombre', 'ANMAR')->value('id');
-
-
-		Contrato::create([
-			'empresa_id' => $empresaID,
-			'numero' => '4501555430',
-			'finicio' => Carbon::parse('29-07-2015')->format('Y/m/d'),
-			'ftermino' => Carbon::parse('29-07-2019')->format('Y/m/d'),
-			'ubicacion_id' => $ubicacionID,
-		]);
-
-		$empresaID = Empresa::where('nombre', 'AYRES SECURITY')->value('id');
-
-		Contrato::create([
-			'empresa_id' => $empresaID,
-			'numero' => '4501569956',
-			'finicio' => Carbon::parse('01-10-2015')->format('Y/m/d'),
-			'ftermino' => Carbon::parse('30-09-2018')->format('Y/m/d'),
-			'ubicacion_id' => $ubicacionID,
-		]);
-
-		$empresaID = Empresa::where('nombre', 'BRIDGESTONE')->value('id');
-
-		Contrato::create([
-			'empresa_id' => $empresaID,
-			'numero' => '4600014727',
-			'finicio' => Carbon::parse('01-06-2016')->format('Y/m/d'),
-			'ftermino' => Carbon::parse('31-12-2019')->format('Y/m/d'),
-			'ubicacion_id' => $ubicacionID,
-		]);
-
-		$empresaID = Empresa::where('nombre', 'BROAD SPECTRUM')->value('id');
-
-		Contrato::create([
-			'empresa_id' => $empresaID,
-			'numero' => '4501793766',
-			'finicio' => Carbon::parse('24-07-2018')->format('Y/m/d'),
-			'ftermino' => Carbon::parse('24-12-2018')->format('Y/m/d'),
-			'ubicacion_id' => $ubicacionID,
-		]);
-		Contrato::create([
-			'empresa_id' => $empresaID, 
-			'numero' => '4600016633',
-			'finicio' => Carbon::parse('27-08-2018')->format('Y/m/d'),
-			'ftermino' => Carbon::parse('02-09-2023')->format('Y/m/d'),
-			'ubicacion_id' => $ubicacionID,
-		]);
-
-		$empresaID = Empresa::where('nombre', 'BUREAU VERITAS CHILE S.A.')->value('id');
-
-		Contrato::create([
-			'empresa_id' => $empresaID,
-			'numero' => '4501605494',
-			'finicio' => Carbon::parse('01-03-2016')->format('Y/m/d'),
-			'ftermino' => Carbon::parse('01-03-2019')->format('Y/m/d'),
-			'ubicacion_id' => $ubicacionID,
-		]);
-
-		$empresaID = Empresa::where('nombre', 'COASIN CHILE S.A.')->value('id');
-
-		Contrato::create([
-			'empresa_id' => $empresaID,
-			'numero' => '4600014270',
-			'finicio' => Carbon::parse('01-10-2015')->format('Y/m/d'),
-			'ftermino' => Carbon::parse('01-10-2018')->format('Y/m/d'),
-			'ubicacion_id' => $ubicacionID,
-		]);
-
-		$empresaID = Empresa::where('nombre', 'COLINA VERDE')->value('id');
-
-		Contrato::create([
-			'empresa_id' => $empresaID,
-			'numero' => '4501749302',
-			'finicio' => Carbon::parse('05-01-2018')->format('Y/m/d'),
-			'ftermino' => Carbon::parse('05-08-2021')->format('Y/m/d'),
-			'ubicacion_id' => $ubicacionID,
-		]);
-
-		$empresaID = Empresa::where('nombre', 'CONSTRUCTORA CERRO NEVADO S.A.')->value('id');
-
-		Contrato::create([
-			'empresa_id' => $empresaID,
-			'numero' => '4600015616',
-			'finicio' => Carbon::parse('05-06-2017')->format('Y/m/d'),
-			'ftermino' => Carbon::parse('05-06-2020')->format('Y/m/d'),
-			'ubicacion_id' => $ubicacionID,
-		]);
-
-		$empresaID = Empresa::where('nombre', 'DISAL CHILE LTDA.')->value('id');
-
-		Contrato::create([
-			'empresa_id' => $empresaID,
-			'numero' => '4501622986',
+			'numero' => '4600014593',
 			'finicio' => Carbon::parse('12-04-2016')->format('Y/m/d'),
-			'ftermino' => Carbon::parse('12-04-2019')->format('Y/m/d'),
-			'ubicacion_id' => $ubicacionID,
+			'ftermino' => Carbon::parse('11-04-2018')->format('Y/m/d'),
+			'dominioContrato_id' => $dominioID,
 		]);
 
-		$empresaID = Empresa::where('nombre', 'ECORA S.A.')->value('id');
+		$contratoID = Contrato::where('numero', '4600014593')->value('id');
+
+		DominioContrato::create([
+			'DominioContrato_id' => $contratoID,
+			'DominioContrato_type' => 'Ubicacion',
+		]);
+
+		$empresaID = Empresa::where('nombre', 'BUSES JM PULLMAN S.A.')-> value('id');
 
 		Contrato::create([
 			'empresa_id' => $empresaID,
-			'numero' => '4501709002',
-			'finicio' => Carbon::parse('06-06-2017')->format('Y/m/d'),
-			'ftermino' => Carbon::parse('31-05-2020')->format('Y/m/d'),
-			'ubicacion_id' => $ubicacionID,
+			'numero' => '4600001221',
+			'finicio' => Carbon::parse('01-07-2015')->format('Y/m/d'),
+			'ftermino' => Carbon::parse('30-06-2016')->format('Y/m/d'),
+			'dominioContrato_id' => $dominioID,
 		]);
 
-		$empresaID = Empresa::where('nombre', 'EMIN')->value('id');
+		$contratoID = Contrato::where('numero', '4600001221')->value('id');
+
+		DominioContrato::create([
+			'DominioContrato_id' => $contratoID,
+			'DominioContrato_type' => 'Ubicacion',
+		]);
+
+		$empresaID = Empresa::where('nombre', 'C & G SERVICIOS INDUSTRIALES LTDA.')-> value('id');
 
 		Contrato::create([
 			'empresa_id' => $empresaID,
-			'numero' => '4501796867',
-			'finicio' => Carbon::parse('26-06-2018')->format('Y/m/d'),
-			'ftermino' => Carbon::parse('04-12-2018')->format('Y/m/d'),
-			'ubicacion_id' => $ubicacionID,
+			'numero' => '4600015890',
+			'finicio' => Carbon::parse('15-01-2018')->format('Y/m/d'),
+			'ftermino' => Carbon::parse('31-03-2018')->format('Y/m/d'),
+			'dominioContrato_id' => $dominioID,
 		]);
 
-		$empresaID = Empresa::where('nombre', 'ENAEX SERVICIOS S.A.')->value('id');
+		$contratoID = Contrato::where('numero', '4600015890')->value('id');
+
+		DominioContrato::create([
+			'DominioContrato_id' => $contratoID,
+			'DominioContrato_type' => 'Ubicacion',
+		]);
+
+		$empresaID = Empresa::where('nombre', 'CARLOS ESCARATE Y CIA. LTDA.')-> value('id');
 
 		Contrato::create([
 			'empresa_id' => $empresaID,
-			'numero' => '4600016344',
-			'finicio' => Carbon::parse('01-07-2018')->format('Y/m/d'),
-			'ftermino' => Carbon::parse('30-06-2023')->format('Y/m/d'),
-			'ubicacion_id' => $ubicacionID,
+			'numero' => '4600011997',
+			'finicio' => Carbon::parse('01-04-2013')->format('Y/m/d'),
+			'ftermino' => Carbon::parse('01-04-2015')->format('Y/m/d'),
+			'dominioContrato_id' => $dominioID,
 		]);
 
-		$empresaID = Empresa::where('nombre', 'GEOROCK S.A.')->value('id');
+		$contratoID = Contrato::where('numero', '4600011997')->value('id');
+
+		DominioContrato::create([
+			'DominioContrato_id' => $contratoID,
+			'DominioContrato_type' => 'Ubicacion',
+		]);
+		Contrato::create([
+			'empresa_id' => $empresaID, 
+			'numero' => '4600011710',
+			'finicio' => Carbon::parse('16-08-2012')->format('Y/m/d'),
+			'ftermino' => Carbon::parse('16-08-2015')->format('Y/m/d'),
+			'dominioContrato_id' => $dominioID,
+		]);
+
+		$contratoID = Contrato::where('numero', '4600011710')->value('id');
+
+		DominioContrato::create([
+			'DominioContrato_id' => $contratoID,
+			'DominioContrato_type' => 'Ubicacion',
+		]);
+		Contrato::create([
+			'empresa_id' => $empresaID, 
+			'numero' => '4501682877',
+			'finicio' => Carbon::parse('07-03-2017')->format('Y/m/d'),
+			'ftermino' => Carbon::parse('28-08-2018')->format('Y/m/d'),
+			'dominioContrato_id' => $dominioID,
+		]);
+
+		$contratoID = Contrato::where('numero', '4501682877')->value('id');
+
+		DominioContrato::create([
+			'DominioContrato_id' => $contratoID,
+			'DominioContrato_type' => 'Ubicacion',
+		]);
+
+		$empresaID = Empresa::where('nombre', 'CESMEC S.A.')-> value('id');
 
 		Contrato::create([
 			'empresa_id' => $empresaID,
-			'numero' => '4600015823',
-			'finicio' => Carbon::parse('18-12-2017')->format('Y/m/d'),
-			'ftermino' => Carbon::parse('17-12-2019')->format('Y/m/d'),
-			'ubicacion_id' => $ubicacionID,
+			'numero' => '4600012154',
+			'finicio' => Carbon::parse('01-06-2013')->format('Y/m/d'),
+			'ftermino' => Carbon::parse('01-06-2018')->format('Y/m/d'),
+			'dominioContrato_id' => $dominioID,
 		]);
 
-		$empresaID = Empresa::where('nombre', 'GLOBAL SERVICE SPA')->value('id');
+		$contratoID = Contrato::where('numero', '4600012154')->value('id');
+
+		DominioContrato::create([
+			'DominioContrato_id' => $contratoID,
+			'DominioContrato_type' => 'Ubicacion',
+		]);
+		Contrato::create([
+			'empresa_id' => $empresaID, 
+			'numero' => '4501615773',
+			'finicio' => Carbon::parse('13-03-2016')->format('Y/m/d'),
+			'ftermino' => Carbon::parse('30-11-2016')->format('Y/m/d'),
+			'dominioContrato_id' => $dominioID,
+		]);
+
+		$contratoID = Contrato::where('numero', '4501615773')->value('id');
+
+		DominioContrato::create([
+			'DominioContrato_id' => $contratoID,
+			'DominioContrato_type' => 'Ubicacion',
+		]);
+
+		$empresaID = Empresa::where('nombre', 'CHESTA S.A.')-> value('id');
 
 		Contrato::create([
 			'empresa_id' => $empresaID,
-			'numero' => '4600016088',
-			'finicio' => Carbon::parse('21-12-2017')->format('Y/m/d'),
-			'ftermino' => Carbon::parse('20-12-2022')->format('Y/m/d'),
-			'ubicacion_id' => $ubicacionID,
+			'numero' => '4501501139',
+			'finicio' => Carbon::parse('10-12-2014')->format('Y/m/d'),
+			'ftermino' => Carbon::parse('24-06-2015')->format('Y/m/d'),
+			'dominioContrato_id' => $dominioID,
 		]);
 
-		$empresaID = Empresa::where('nombre', 'GROUNDPROBE SOUTH AMERICA S.A.')->value('id');
+		$contratoID = Contrato::where('numero', '4501501139')->value('id');
+
+		DominioContrato::create([
+			'DominioContrato_id' => $contratoID,
+			'DominioContrato_type' => 'Ubicacion',
+		]);
+		Contrato::create([
+			'empresa_id' => $empresaID, 
+			'numero' => '4501393107',
+			'finicio' => Carbon::parse('05-02-2015')->format('Y/m/d'),
+			'ftermino' => Carbon::parse('30-07-2015')->format('Y/m/d'),
+			'dominioContrato_id' => $dominioID,
+		]);
+
+		$contratoID = Contrato::where('numero', '4501393107')->value('id');
+
+		DominioContrato::create([
+			'DominioContrato_id' => $contratoID,
+			'DominioContrato_type' => 'Ubicacion',
+		]);
+		Contrato::create([
+			'empresa_id' => $empresaID, 
+			'numero' => '4501392548',
+			'finicio' => Carbon::parse('05-02-2015')->format('Y/m/d'),
+			'ftermino' => Carbon::parse('05-04-2017')->format('Y/m/d'),
+			'dominioContrato_id' => $dominioID,
+		]);
+
+		$contratoID = Contrato::where('numero', '4501392548')->value('id');
+
+		DominioContrato::create([
+			'DominioContrato_id' => $contratoID,
+			'DominioContrato_type' => 'Ubicacion',
+		]);
+		Contrato::create([
+			'empresa_id' => $empresaID, 
+			'numero' => '4100013956',
+			'finicio' => Carbon::parse('22-08-2013')->format('Y/m/d'),
+			'ftermino' => Carbon::parse('30-06-2015')->format('Y/m/d'),
+			'dominioContrato_id' => $dominioID,
+		]);
+
+		$contratoID = Contrato::where('numero', '4100013956')->value('id');
+
+		DominioContrato::create([
+			'DominioContrato_id' => $contratoID,
+			'DominioContrato_type' => 'Ubicacion',
+		]);
+
+		$empresaID = Empresa::where('nombre', 'COASIN CHILE S.A.')-> value('id');
 
 		Contrato::create([
 			'empresa_id' => $empresaID,
-			'numero' => '4501731701',
-			'finicio' => Carbon::parse('14-08-2017')->format('Y/m/d'),
-			'ftermino' => Carbon::parse('14-08-2019')->format('Y/m/d'),
-			'ubicacion_id' => $ubicacionID,
+			'numero' => '4600011563',
+			'finicio' => Carbon::parse('01-08-2012')->format('Y/m/d'),
+			'ftermino' => Carbon::parse('31-07-2017')->format('Y/m/d'),
+			'dominioContrato_id' => $dominioID,
 		]);
 
-		$empresaID = Empresa::where('nombre', 'GUIÑEZ')->value('id');
+		$contratoID = Contrato::where('numero', '4600011563')->value('id');
+
+		DominioContrato::create([
+			'DominioContrato_id' => $contratoID,
+			'DominioContrato_type' => 'Ubicacion',
+		]);
+
+		$empresaID = Empresa::where('nombre', 'CONSORCIO ACCIONA-OSSA')-> value('id');
 
 		Contrato::create([
 			'empresa_id' => $empresaID,
-			'numero' => '4501776029',
-			'finicio' => Carbon::parse('16-04-2018')->format('Y/m/d'),
-			'ftermino' => Carbon::parse('15-04-2021')->format('Y/m/d'),
-			'ubicacion_id' => $ubicacionID,
+			'numero' => '4501563466',
+			'finicio' => Carbon::parse('22-09-2015')->format('Y/m/d'),
+			'ftermino' => Carbon::parse('31-05-2017')->format('Y/m/d'),
+			'dominioContrato_id' => $dominioID,
 		]);
 
-		$empresaID = Empresa::where('nombre', 'INDUSTRIAL Y COMERCIAL MANTOS GROUP S.A.')->value('id');
+		$contratoID = Contrato::where('numero', '4501563466')->value('id');
+
+		DominioContrato::create([
+			'DominioContrato_id' => $contratoID,
+			'DominioContrato_type' => 'Ubicacion',
+		]);
+
+		$empresaID = Empresa::where('nombre', 'CONSORCIO CELLE S.A.')-> value('id');
 
 		Contrato::create([
 			'empresa_id' => $empresaID,
-			'numero' => '4501777554',
-			'finicio' => Carbon::parse('28-03-2018')->format('Y/m/d'),
-			'ftermino' => Carbon::parse('30-07-2019')->format('Y/m/d'),
-			'ubicacion_id' => $ubicacionID,
+			'numero' => '4500280202',
+			'finicio' => Carbon::parse('09-09-2002')->format('Y/m/d'),
+			'ftermino' => Carbon::parse('09-09-2017')->format('Y/m/d'),
+			'dominioContrato_id' => $dominioID,
 		]);
 
-		$empresaID = Empresa::where('nombre', 'KOMATSU CHILE S.A.')->value('id');
+		$contratoID = Contrato::where('numero', '4500280202')->value('id');
+
+		DominioContrato::create([
+			'DominioContrato_id' => $contratoID,
+			'DominioContrato_type' => 'Ubicacion',
+		]);
+
+		$empresaID = Empresa::where('nombre', 'CONSORCIO ZAÑARTU')-> value('id');
 
 		Contrato::create([
 			'empresa_id' => $empresaID,
-			'numero' => '4600015946',
-			'finicio' => Carbon::parse('01-04-2018')->format('Y/m/d'),
-			'ftermino' => Carbon::parse('01-04-2023')->format('Y/m/d'),
-			'ubicacion_id' => $ubicacionID,
+			'numero' => '4501517741',
+			'finicio' => Carbon::parse('02-02-2015')->format('Y/m/d'),
+			'ftermino' => Carbon::parse('01-01-2017')->format('Y/m/d'),
+			'dominioContrato_id' => $dominioID,
 		]);
 
-		$empresaID = Empresa::where('nombre', 'MECANICA DE ROCAS LTDA.')->value('id');
+		$contratoID = Contrato::where('numero', '4501517741')->value('id');
+
+		DominioContrato::create([
+			'DominioContrato_id' => $contratoID,
+			'DominioContrato_type' => 'Ubicacion',
+		]);
+
+		$empresaID = Empresa::where('nombre', 'CONSTRUCTORA CERRO NEVADO S.A.')-> value('id');
 
 		Contrato::create([
 			'empresa_id' => $empresaID,
-			'numero' => '4600015615',
-			'finicio' => Carbon::parse('19-07-2017')->format('Y/m/d'),
-			'ftermino' => Carbon::parse('19-07-2020')->format('Y/m/d'),
-			'ubicacion_id' => $ubicacionID,
+			'numero' => '4600013055',
+			'finicio' => Carbon::parse('02-06-2014')->format('Y/m/d'),
+			'ftermino' => Carbon::parse('31-05-2017')->format('Y/m/d'),
+			'dominioContrato_id' => $dominioID,
 		]);
 
-		$empresaID = Empresa::where('nombre', 'MINEPRO')->value('id');
+		$contratoID = Contrato::where('numero', '4600013055')->value('id');
+
+		DominioContrato::create([
+			'DominioContrato_id' => $contratoID,
+			'DominioContrato_type' => 'Ubicacion',
+		]);
+
+		$empresaID = Empresa::where('nombre', 'CONTITECH')-> value('id');
 
 		Contrato::create([
 			'empresa_id' => $empresaID,
-			'numero' => '4600015518',
-			'finicio' => Carbon::parse('02-05-2017')->format('Y/m/d'),
-			'ftermino' => Carbon::parse('30-06-2020')->format('Y/m/d'),
-			'ubicacion_id' => $ubicacionID,
+			'numero' => '4600012401',
+			'finicio' => Carbon::parse('01-11-2013')->format('Y/m/d'),
+			'ftermino' => Carbon::parse('01-11-2016')->format('Y/m/d'),
+			'dominioContrato_id' => $dominioID,
 		]);
 
-		$empresaID = Empresa::where('nombre', 'MINETEC')->value('id');
+		$contratoID = Contrato::where('numero', '4600012401')->value('id');
+
+		DominioContrato::create([
+			'DominioContrato_id' => $contratoID,
+			'DominioContrato_type' => 'Ubicacion',
+		]);
+
+		$empresaID = Empresa::where('nombre', 'CONVEYOR BELT TECNOLOGY')-> value('id');
 
 		Contrato::create([
 			'empresa_id' => $empresaID,
-			'numero' => '4600015934',
-			'finicio' => Carbon::parse('02-01-2018')->format('Y/m/d'),
-			'ftermino' => Carbon::parse('02-01-2021')->format('Y/m/d'),
-			'ubicacion_id' => $ubicacionID,
+			'numero' => '4600014751',
+			'finicio' => Carbon::parse('04-07-2016')->format('Y/m/d'),
+			'ftermino' => Carbon::parse('04-01-2018')->format('Y/m/d'),
+			'dominioContrato_id' => $dominioID,
 		]);
 
-		$empresaID = Empresa::where('nombre', 'MINING SERVICE GROUP')->value('id');
+		$contratoID = Contrato::where('numero', '4600014751')->value('id');
+
+		DominioContrato::create([
+			'DominioContrato_id' => $contratoID,
+			'DominioContrato_type' => 'Ubicacion',
+		]);
+
+		$empresaID = Empresa::where('nombre', 'COSANDO CONT. Y MONTAJE LTDA.')-> value('id');
 
 		Contrato::create([
 			'empresa_id' => $empresaID,
-			'numero' => '4600015785',
-			'finicio' => Carbon::parse('01-11-2017')->format('Y/m/d'),
-			'ftermino' => Carbon::parse('31-10-2019')->format('Y/m/d'),
-			'ubicacion_id' => $ubicacionID,
+			'numero' => '4600009740',
+			'finicio' => Carbon::parse('04-04-2011')->format('Y/m/d'),
+			'ftermino' => Carbon::parse('04-04-2015')->format('Y/m/d'),
+			'dominioContrato_id' => $dominioID,
 		]);
 
-		$empresaID = Empresa::where('nombre', 'MINNING SYSTEMS')->value('id');
+		$contratoID = Contrato::where('numero', '4600009740')->value('id');
+
+		DominioContrato::create([
+			'DominioContrato_id' => $contratoID,
+			'DominioContrato_type' => 'Ubicacion',
+		]);
+
+		$empresaID = Empresa::where('nombre', 'COSTELLA PROYECTOS S.A.')-> value('id');
 
 		Contrato::create([
 			'empresa_id' => $empresaID,
-			'numero' => '4501693421',
-			'finicio' => Carbon::parse('30-04-2017')->format('Y/m/d'),
-			'ftermino' => Carbon::parse('30-04-2019')->format('Y/m/d'),
-			'ubicacion_id' => $ubicacionID,
+			'numero' => '4501473142',
+			'finicio' => Carbon::parse('12-08-2014')->format('Y/m/d'),
+			'ftermino' => Carbon::parse('17-08-2017')->format('Y/m/d'),
+			'dominioContrato_id' => $dominioID,
 		]);
 
-		$empresaID = Empresa::where('nombre', 'MODULAR')->value('id');
+		$contratoID = Contrato::where('numero', '4501473142')->value('id');
+
+		DominioContrato::create([
+			'DominioContrato_id' => $contratoID,
+			'DominioContrato_type' => 'Ubicacion',
+		]);
+
+		$empresaID = Empresa::where('nombre', 'DERK INGENIERIA Y GEOLOGIA LTDA.')-> value('id');
 
 		Contrato::create([
 			'empresa_id' => $empresaID,
-			'numero' => '4600015366',
-			'finicio' => Carbon::parse('01-01-2018')->format('Y/m/d'),
-			'ftermino' => Carbon::parse('31-12-2024')->format('Y/m/d'),
-			'ubicacion_id' => $ubicacionID,
+			'numero' => '4501437837',
+			'finicio' => Carbon::parse('01-04-2014')->format('Y/m/d'),
+			'ftermino' => Carbon::parse('31-03-2016')->format('Y/m/d'),
+			'dominioContrato_id' => $dominioID,
 		]);
 
-		$empresaID = Empresa::where('nombre', 'MUTUAL DE SEGURIDAD C.CH.C.')->value('id');
+		$contratoID = Contrato::where('numero', '4501437837')->value('id');
+
+		DominioContrato::create([
+			'DominioContrato_id' => $contratoID,
+			'DominioContrato_type' => 'Ubicacion',
+		]);
+
+		$empresaID = Empresa::where('nombre', 'DICTUC S.A.')-> value('id');
 
 		Contrato::create([
 			'empresa_id' => $empresaID,
-			'numero' => '4501594106',
-			'finicio' => Carbon::parse('11-01-2016')->format('Y/m/d'),
-			'ftermino' => Carbon::parse('10-01-2020')->format('Y/m/d'),
-			'ubicacion_id' => $ubicacionID,
+			'numero' => '4501550021',
+			'finicio' => Carbon::parse('16-06-2015')->format('Y/m/d'),
+			'ftermino' => Carbon::parse('16-02-2016')->format('Y/m/d'),
+			'dominioContrato_id' => $dominioID,
 		]);
 
-		$empresaID = Empresa::where('nombre', 'NUEVA ANCOR TECMIN S.A.')->value('id');
+		$contratoID = Contrato::where('numero', '4501550021')->value('id');
+
+		DominioContrato::create([
+			'DominioContrato_id' => $contratoID,
+			'DominioContrato_type' => 'Ubicacion',
+		]);
+
+		$empresaID = Empresa::where('nombre', 'DISTINTEC SPA')-> value('id');
 
 		Contrato::create([
 			'empresa_id' => $empresaID,
-			'numero' => '4501788249',
-			'finicio' => Carbon::parse('03-05-2018')->format('Y/m/d'),
-			'ftermino' => Carbon::parse('02-05-2019')->format('Y/m/d'),
-			'ubicacion_id' => $ubicacionID,
+			'numero' => '4600009547',
+			'finicio' => Carbon::parse('24-01-2011')->format('Y/m/d'),
+			'ftermino' => Carbon::parse('24-01-2016')->format('Y/m/d'),
+			'dominioContrato_id' => $dominioID,
 		]);
 
-		$empresaID = Empresa::where('nombre', 'PARES Y ALVAREZ SERVICIOS PROFESIONALES LTDA.')->value('id');
+		$contratoID = Contrato::where('numero', '4600009547')->value('id');
+
+		DominioContrato::create([
+			'DominioContrato_id' => $contratoID,
+			'DominioContrato_type' => 'Ubicacion',
+		]);
+
+		$empresaID = Empresa::where('nombre', 'DISTRIBUIDORA CUMMINS CHILE S.A.')-> value('id');
 
 		Contrato::create([
 			'empresa_id' => $empresaID,
-			'numero' => '4600016221',
-			'finicio' => Carbon::parse('27-02-2018')->format('Y/m/d'),
-			'ftermino' => Carbon::parse('28-02-2021')->format('Y/m/d'),
-			'ubicacion_id' => $ubicacionID,
+			'numero' => '4600014045',
+			'finicio' => Carbon::parse('08-05-2015')->format('Y/m/d'),
+			'ftermino' => Carbon::parse('09-05-2018')->format('Y/m/d'),
+			'dominioContrato_id' => $dominioID,
 		]);
 
-		$empresaID = Empresa::where('nombre', 'RESITER')->value('id');
+		$contratoID = Contrato::where('numero', '4600014045')->value('id');
 
-		Contrato::create([
-			'empresa_id' => $empresaID,
-			'numero' => '4501760505',
-			'finicio' => Carbon::parse('01-02-2018')->format('Y/m/d'),
-			'ftermino' => Carbon::parse('31-01-2023')->format('Y/m/d'),
-			'ubicacion_id' => $ubicacionID,
+		DominioContrato::create([
+			'DominioContrato_id' => $contratoID,
+			'DominioContrato_type' => 'Ubicacion',
 		]);
 		Contrato::create([
 			'empresa_id' => $empresaID,
-			'numero' => '4501590838',
-			'finicio' => Carbon::parse('06-01-2016')->format('Y/m/d'),
-			'ftermino' => Carbon::parse('06-01-2019')->format('Y/m/d'),
-			'ubicacion_id' => $ubicacionID,
+			'numero' => '4600007649',
+			'finicio' => Carbon::parse('01-02-2009')->format('Y/m/d'),
+			'ftermino' => Carbon::parse('31-03-2015')->format('Y/m/d'),
+			'dominioContrato_id' => $dominioID,
 		]);
 
-		$empresaID = Empresa::where('nombre', 'SALFA MANTENCIONES S.A.')->value('id');
+		$contratoID = Contrato::where('numero', '4600007649')->value('id');
+
+		DominioContrato::create([
+			'DominioContrato_id' => $contratoID,
+			'DominioContrato_type' => 'Ubicacion',
+		]);
+
+		$empresaID = Empresa::where('nombre', 'DRILLCO TOOLS S.A.')-> value('id');
 
 		Contrato::create([
 			'empresa_id' => $empresaID,
-			'numero' => '4501792006',
-			'finicio' => Carbon::parse('01-06-2018')->format('Y/m/d'),
-			'ftermino' => Carbon::parse('30-06-2022')->format('Y/m/d'),
-			'ubicacion_id' => $ubicacionID,
+			'numero' => '4600010125',
+			'finicio' => Carbon::parse('27-04-2014')->format('Y/m/d'),
+			'ftermino' => Carbon::parse('31-05-2015')->format('Y/m/d'),
+			'dominioContrato_id' => $dominioID,
 		]);
 
-		$empresaID = Empresa::where('nombre', 'SGS MINERALS S.A.')->value('id');
+		$contratoID = Contrato::where('numero', '4600010125')->value('id');
 
-		Contrato::create([
-			'empresa_id' => $empresaID,
-			'numero' => '4501751932',
-			'finicio' => Carbon::parse('01-01-2018')->format('Y/m/d'),
-			'ftermino' => Carbon::parse('31-12-2021')->format('Y/m/d'),
-			'ubicacion_id' => $ubicacionID,
+		DominioContrato::create([
+			'DominioContrato_id' => $contratoID,
+			'DominioContrato_type' => 'Ubicacion',
 		]);
 		Contrato::create([
 			'empresa_id' => $empresaID,
-			'numero' => '4600016090',
-			'finicio' => Carbon::parse('01-01-2018')->format('Y/m/d'),
-			'ftermino' => Carbon::parse('31-12-2021')->format('Y/m/d'),
-			'ubicacion_id' => $ubicacionID,
-		]);
-
-		$empresaID = Empresa::where('nombre', 'SIEMENS S.A.')->value('id');
-
-		Contrato::create([
-			'empresa_id' => $empresaID,
-			'numero' => '4600016483',
-			'finicio' => Carbon::parse('01-07-2018')->format('Y/m/d'),
-			'ftermino' => Carbon::parse('30-06-2022')->format('Y/m/d'),
-			'ubicacion_id' => $ubicacionID,
-		]);
-
-		$empresaID = Empresa::where('nombre', 'SITRANS SERVICIOS INTEGRADOS')->value('id');
-
-		Contrato::create([
-			'empresa_id' => $empresaID,
-			'numero' => '4501589000',
-			'finicio' => Carbon::parse('01-02-2016')->format('Y/m/d'),
-			'ftermino' => Carbon::parse('31-01-2019')->format('Y/m/d'),
-			'ubicacion_id' => $ubicacionID,
-		]);
-
-		$empresaID = Empresa::where('nombre', 'SKF')->value('id');
-
-		Contrato::create([
-			'empresa_id' => $empresaID,
-			'numero' => '4600014980',
-			'finicio' => Carbon::parse('25-09-2017')->format('Y/m/d'),
-			'ftermino' => Carbon::parse('25-09-2018')->format('Y/m/d'),
-			'ubicacion_id' => $ubicacionID,
-		]);
-
-		$empresaID = Empresa::where('nombre', 'SOC. COMERCIAL ALVAREZ Y ALVAREZ LTDA.')->value('id');
-
-		Contrato::create([
-			'empresa_id' => $empresaID,
-			'numero' => '4501658010',
-			'finicio' => Carbon::parse('14-09-2016')->format('Y/m/d'),
-			'ftermino' => Carbon::parse('30-11-2019')->format('Y/m/d'),
-			'ubicacion_id' => $ubicacionID,
-		]);
-
-		$empresaID = Empresa::where('nombre', 'STEEL INGENIERIA S.A.')->value('id');
-
-		Contrato::create([
-			'empresa_id' => $empresaID,
-			'numero' => '4600012438',
-			'finicio' => Carbon::parse('01-12-2013')->format('Y/m/d'),
-			'ftermino' => Carbon::parse('30-11-2018')->format('Y/m/d'),
-			'ubicacion_id' => $ubicacionID,
-		]);
-
-		$empresaID = Empresa::where('nombre', 'TANDEM')->value('id');
-
-		Contrato::create([
-			'empresa_id' => $empresaID,
-			'numero' => '4600013415',
-			'finicio' => Carbon::parse('01-01-2015')->format('Y/m/d'),
-			'ftermino' => Carbon::parse('31-10-2018')->format('Y/m/d'),
-			'ubicacion_id' => $ubicacionID,
-		]);
-
-		$empresaID = Empresa::where('nombre', 'TESRA S.A.')->value('id');
-
-		Contrato::create([
-			'empresa_id' => $empresaID,
-			'numero' => '4501678504',
-			'finicio' => Carbon::parse('01-02-2017')->format('Y/m/d'),
-			'ftermino' => Carbon::parse('31-12-2018')->format('Y/m/d'),
-			'ubicacion_id' => $ubicacionID,
-		]);
-
-		$empresaID = Empresa::where('nombre', 'TORQUE INGENIERIA SPA')->value('id');
-
-		Contrato::create([
-			'empresa_id' => $empresaID,
-			'numero' => '4501713545',
-			'finicio' => Carbon::parse('05-06-2017')->format('Y/m/d'),
-			'ftermino' => Carbon::parse('31-12-2018')->format('Y/m/d'),
-			'ubicacion_id' => $ubicacionID,
-		]);
-
-		$empresaID = Empresa::where('nombre', 'TYCO')->value('id');
-
-		Contrato::create([
-			'empresa_id' => $empresaID,
-			'numero' => '4501594523',
-			'finicio' => Carbon::parse('11-01-2016')->format('Y/m/d'),
-			'ftermino' => Carbon::parse('10-01-2019')->format('Y/m/d'),
-			'ubicacion_id' => $ubicacionID,
-		]);
-		Contrato::create([
-			'empresa_id' => $empresaID,
-			'numero' => '4600015786',
-			'finicio' => Carbon::parse('01-11-2017')->format('Y/m/d'),
-			'ftermino' => Carbon::parse('31-10-2020')->format('Y/m/d'),
-			'ubicacion_id' => $ubicacionID,
-		]);
-
-		$empresaID = Empresa::where('nombre', 'VECCHIOLA S.A.')->value('id');
-
-		Contrato::create([
-			'empresa_id' => $empresaID,
-			'numero' => '4600015541',
-			'finicio' => Carbon::parse('01-06-2017')->format('Y/m/d'),
-			'ftermino' => Carbon::parse('31-05-2020')->format('Y/m/d'),
-			'ubicacion_id' => $ubicacionID,
-		]);
-
-		$ubicacionID = Ubicacion::where('nombre', 'División Ministro Hales')->value('id');
-		$empresaID = Empresa::where('nombre', 'AGUAS Y RILES S.A.')->value('id');
-
-		Contrato::create([
-			'empresa_id' => $empresaID,
-			'numero' => '4501611679',
-			'finicio' => Carbon::parse('31-03-2016')->format('Y/m/d'),
-			'ftermino' => Carbon::parse('31-03-2019')->format('Y/m/d'),
-			'ubicacion_id' => $ubicacionID,
-		]);
-		
-		$empresaID = Empresa::where('nombre', 'AGUASIN')->value('id');
-
-		Contrato::create([
-			'empresa_id' => $empresaID,
-			'numero' => '4516785999',
-			'finicio' => Carbon::parse('01-06-2017')->format('Y/m/d'),
-			'ftermino' => Carbon::parse('01-01-2019')->format('Y/m/d'),
-			'ubicacion_id' => $ubicacionID,
-		]);
-		
-		$empresaID = Empresa::where('nombre', 'ANMAR')->value('id');
-
-		Contrato::create([
-			'empresa_id' => $empresaID,
-			'numero' => '4501587537',
+			'numero' => '4600014244',
 			'finicio' => Carbon::parse('01-12-2015')->format('Y/m/d'),
-			'ftermino' => Carbon::parse('01-12-2018')->format('Y/m/d'),
-			'ubicacion_id' => $ubicacionID,
+			'ftermino' => Carbon::parse('30-09-2017')->format('Y/m/d'),
+			'dominioContrato_id' => $dominioID,
 		]);
-		
-		$empresaID = Empresa::where('nombre', 'ARAMARK')->value('id');
 
-		Contrato::create([
-			'empresa_id' => $empresaID,
-			'numero' => '4600011494',
-			'finicio' => Carbon::parse('01-05-2013')->format('Y/m/d'),
-			'ftermino' => Carbon::parse('30-04-2019')->format('Y/m/d'),
-			'ubicacion_id' => $ubicacionID,
-		]);
-		
-		$empresaID = Empresa::where('nombre', 'ATLAS COPCO')->value('id');
-
-		Contrato::create([
-			'empresa_id' => $empresaID,
-			'numero' => '4501731915',
-			'finicio' => Carbon::parse('23-03-2017')->format('Y/m/d'),
-			'ftermino' => Carbon::parse('23-03-2020')->format('Y/m/d'),
-			'ubicacion_id' => $ubicacionID,
-		]);
-		Contrato::create([
-			'empresa_id' => $empresaID, 
-			'numero' => '4610015659',
-			'finicio' => Carbon::parse('03-07-2017')->format('Y/m/d'),
-			'ftermino' => Carbon::parse('01-08-2020')->format('Y/m/d'),
-			'ubicacion_id' => $ubicacionID,
-		]);
-		Contrato::create([
-			'empresa_id' => $empresaID,
-			'numero' => '4610001565',
-			'finicio' => Carbon::parse('03-07-2017')->format('Y/m/d'),
-			'ftermino' => Carbon::parse('01-08-2020')->format('Y/m/d'),
-			'ubicacion_id' => $ubicacionID,
-		]);
-		
-		$empresaID = Empresa::where('nombre', 'AUSTIN INGENIEROS CHILE LTDA.')->value('id');
-
-		Contrato::create([
-			'empresa_id' => $empresaID,
-			'numero' => '4600015706',
-			'finicio' => Carbon::parse('17-07-2017')->format('Y/m/d'),
-			'ftermino' => Carbon::parse('17-02-2020')->format('Y/m/d'),
-			'ubicacion_id' => $ubicacionID,
-		]);
-		Contrato::create([
-			'empresa_id' => $empresaID, 
-			'numero' => '4600014574',
-			'finicio' => Carbon::parse('16-02-2016')->format('Y/m/d'),
-			'ftermino' => Carbon::parse('16-02-2019')->format('Y/m/d'),
-			'ubicacion_id' => $ubicacionID,
-		]);
-		
-		$empresaID = Empresa::where('nombre', 'BROAD SPECTRUM')->value('id');
-
-		Contrato::create([
-			'empresa_id' => $empresaID,
-			'numero' => '4501595991',
-			'finicio' => Carbon::parse('06-10-2017')->format('Y/m/d'),
-			'ftermino' => Carbon::parse('05-01-2019')->format('Y/m/d'),
-			'ubicacion_id' => $ubicacionID,
-		]);
-		
-		$empresaID = Empresa::where('nombre', 'C & G SERVICIOS INDUSTRIALES LTDA.')->value('id');
-
-		Contrato::create([
-			'empresa_id' => $empresaID,
-			'numero' => '4501587280',
-			'finicio' => Carbon::parse('01-01-2016')->format('Y/m/d'),
-			'ftermino' => Carbon::parse('31-12-2018')->format('Y/m/d'),
-			'ubicacion_id' => $ubicacionID,
-		]);
-		Contrato::create([
-			'empresa_id' => $empresaID, 
-			'numero' => '4501782149',
-			'finicio' => Carbon::parse('05-06-2018')->format('Y/m/d'),
-			'ftermino' => Carbon::parse('05-01-2019')->format('Y/m/d'),
-			'ubicacion_id' => $ubicacionID,
-		]);
-		
-		$empresaID = Empresa::where('nombre', 'CESMEC S.A.')->value('id');
-
-		Contrato::create([
-			'empresa_id' => $empresaID,
-			'numero' => '4500168954',
-			'finicio' => Carbon::parse('15-02-2017')->format('Y/m/d'),
-			'ftermino' => Carbon::parse('14-02-2020')->format('Y/m/d'),
-			'ubicacion_id' => $ubicacionID,
-		]);
-		Contrato::create([
-			'empresa_id' => $empresaID, 
-			'numero' => '4501689544',
-			'finicio' => Carbon::parse('15-02-2017')->format('Y/m/d'),
-			'ftermino' => Carbon::parse('14-02-2020')->format('Y/m/d'),
-			'ubicacion_id' => $ubicacionID,
-		]);
-		Contrato::create([
-			'empresa_id' => $empresaID, 
-			'numero' => '4501783765',
-			'finicio' => Carbon::parse('01-05-2018')->format('Y/m/d'),
-			'ftermino' => Carbon::parse('01-02-2019')->format('Y/m/d'),
-			'ubicacion_id' => $ubicacionID,
-		]);
-		
-		$empresaID = Empresa::where('nombre', 'COLINA VERDE')->value('id');
-
-		Contrato::create([
-			'empresa_id' => $empresaID,
-			'numero' => '4600015819',
-			'finicio' => Carbon::parse('15-12-2017')->format('Y/m/d'),
-			'ftermino' => Carbon::parse('15-12-2020')->format('Y/m/d'),
-			'ubicacion_id' => $ubicacionID,
-		]);
-		
-		$empresaID = Empresa::where('nombre', 'COPEC')->value('id');
-
-		Contrato::create([
-			'empresa_id' => $empresaID,
-			'numero' => '4501533896',
-			'finicio' => Carbon::parse('01-05-2015')->format('Y/m/d'),
-			'ftermino' => Carbon::parse('30-04-2020')->format('Y/m/d'),
-			'ubicacion_id' => $ubicacionID,
-		]);
-		
-		$empresaID = Empresa::where('nombre', 'COSTELLA PROYECTOS S.A.')->value('id');
-
-		Contrato::create([
-			'empresa_id' => $empresaID,
-			'numero' => '4501792245',
-			'finicio' => Carbon::parse('16-07-2018')->format('Y/m/d'),
-			'ftermino' => Carbon::parse('16-07-2021')->format('Y/m/d'),
-			'ubicacion_id' => $ubicacionID,
-		]);
-		
-		$empresaID = Empresa::where('nombre', 'CSI LTDA.')->value('id');
-
-		Contrato::create([
-			'empresa_id' => $empresaID,
-			'numero' => '4600016442',
-			'finicio' => Carbon::parse('01-06-2018')->format('Y/m/d'),
-			'ftermino' => Carbon::parse('30-05-2023')->format('Y/m/d'),
-			'ubicacion_id' => $ubicacionID,
-		]);
-		
-		$empresaID = Empresa::where('nombre', 'DERK INGENIERIA Y GEOLOGIA LTDA.')->value('id');
-
-		Contrato::create([
-			'empresa_id' => $empresaID,
-			'numero' => '4501781459',
-			'finicio' => Carbon::parse('15-05-2018')->format('Y/m/d'),
-			'ftermino' => Carbon::parse('15-07-2019')->format('Y/m/d'),
-			'ubicacion_id' => $ubicacionID,
-		]);
-		
-		$empresaID = Empresa::where('nombre', 'DT INDUSTRIAL')->value('id');
-
-		Contrato::create([
-			'empresa_id' => $empresaID,
-			'numero' => '4400193544',
-			'finicio' => Carbon::parse('16-07-2018')->format('Y/m/d'),
-			'ftermino' => Carbon::parse('14-10-2018')->format('Y/m/d'),
-			'ubicacion_id' => $ubicacionID,
-		]);
-		
-		$empresaID = Empresa::where('nombre', 'DYNO NOBEL')->value('id');
-
-		Contrato::create([
-			'empresa_id' => $empresaID,
-			'numero' => '4600016434',
-			'finicio' => Carbon::parse('01-06-2018')->format('Y/m/d'),
-			'ftermino' => Carbon::parse('31-10-2018')->format('Y/m/d'),
-			'ubicacion_id' => $ubicacionID,
-		]);
-		
-		$empresaID = Empresa::where('nombre', 'ECOTERMICA')->value('id');
-
-		Contrato::create([
-			'empresa_id' => $empresaID,
-			'numero' => '4501696132',
-			'finicio' => Carbon::parse('23-03-2017')->format('Y/m/d'),
-			'ftermino' => Carbon::parse('23-03-2020')->format('Y/m/d'),
-			'ubicacion_id' => $ubicacionID,
-		]);
-		
-		$empresaID = Empresa::where('nombre', 'ENAEX SERVICIOS S.A.')->value('id');
-
-		Contrato::create([
-			'empresa_id' => $empresaID,
-			'numero' => '4600009777',
-			'finicio' => Carbon::parse('01-06-2015')->format('Y/m/d'),
-			'ftermino' => Carbon::parse('31-10-2018')->format('Y/m/d'),
-			'ubicacion_id' => $ubicacionID,
-		]);
-		
-		$empresaID = Empresa::where('nombre', 'EXPLORACIONES MINERAS ANDINAS S.A.')->value('id');
-
-		Contrato::create([
-			'empresa_id' => $empresaID,
-			'numero' => '4600014480',
-			'finicio' => Carbon::parse('01-08-2017')->format('Y/m/d'),
-			'ftermino' => Carbon::parse('13-11-2018')->format('Y/m/d'),
-			'ubicacion_id' => $ubicacionID,
-		]);
-		
-		$empresaID = Empresa::where('nombre', 'EXSA CHILE SPA')->value('id');
-
-		Contrato::create([
-			'empresa_id' => $empresaID,
-			'numero' => '4600016347',
-			'finicio' => Carbon::parse('05-04-2018')->format('Y/m/d'),
-			'ftermino' => Carbon::parse('31-10-2023')->format('Y/m/d'),
-			'ubicacion_id' => $ubicacionID,
-		]);
-		
-		$empresaID = Empresa::where('nombre', 'FINNING CHILE S.A.')->value('id');
-
-		Contrato::create([
-			'empresa_id' => $empresaID,
-			'numero' => '4600009553',
-			'finicio' => Carbon::parse('09-02-2011')->format('Y/m/d'),
-			'ftermino' => Carbon::parse('09-02-2021')->format('Y/m/d'),
-			'ubicacion_id' => $ubicacionID,
-		]);
-		Contrato::create([
-			'empresa_id' => $empresaID, 
-			'numero' => '4600009584',
-			'finicio' => Carbon::parse('28-09-2011')->format('Y/m/d'),
-			'ftermino' => Carbon::parse('28-09-2021')->format('Y/m/d'),
-			'ubicacion_id' => $ubicacionID,
-		]);
-		
-		$empresaID = Empresa::where('nombre', 'FOURTHANE')->value('id');
-
-		Contrato::create([
-			'empresa_id' => $empresaID,
-			'numero' => '4600016276',
-			'finicio' => Carbon::parse('01-04-2018')->format('Y/m/d'),
-			'ftermino' => Carbon::parse('31-03-2021')->format('Y/m/d'),
-			'ubicacion_id' => $ubicacionID,
-		]);
-		
-		$empresaID = Empresa::where('nombre', 'GEO ATACAMA CONSULTORES LTDA.')->value('id');
-
-		Contrato::create([
-			'empresa_id' => $empresaID,
-			'numero' => '4400184162',
-			'finicio' => Carbon::parse('24-01-2018')->format('Y/m/d'),
-			'ftermino' => Carbon::parse('24-12-2018')->format('Y/m/d'),
-			'ubicacion_id' => $ubicacionID,
-		]);
-		Contrato::create([
-			'empresa_id' => $empresaID,
-			'numero' => '372017',
-			'finicio' => Carbon::parse('01-12-2017')->format('Y/m/d'),
-			'ftermino' => Carbon::parse('31-12-2018')->format('Y/m/d'),
-			'ubicacion_id' => $ubicacionID,
-		]);
-		
-		$empresaID = Empresa::where('nombre', 'GROUNDPROBE SOUTH AMERICA S.A.')->value('id');
-
-		Contrato::create([
-			'empresa_id' => $empresaID,
-			'numero' => '4501690352',
-			'finicio' => Carbon::parse('15-01-2017')->format('Y/m/d'),
-			'ftermino' => Carbon::parse('15-01-2019')->format('Y/m/d'),
-			'ubicacion_id' => $ubicacionID,
-		]);
-		
-		$empresaID = Empresa::where('nombre', 'HIDROMEC')->value('id');
-
-		Contrato::create([
-			'empresa_id' => $empresaID,
-			'numero' => '4501359397',
-			'finicio' => Carbon::parse('01-05-2013')->format('Y/m/d'),
-			'ftermino' => Carbon::parse('01-05-2022')->format('Y/m/d'),
-			'ubicacion_id' => $ubicacionID,
-		]);
-		
-		$empresaID = Empresa::where('nombre', 'HIGH SERVICE')->value('id');
-
-		Contrato::create([
-			'empresa_id' => $empresaID,
-			'numero' => '4501713189',
-			'finicio' => Carbon::parse('16-06-2017')->format('Y/m/d'),
-			'ftermino' => Carbon::parse('19-06-2020')->format('Y/m/d'),
-			'ubicacion_id' => $ubicacionID,
-		]);
-		Contrato::create([
-			'empresa_id' => $empresaID, 
-			'numero' => '4501494083',
-			'finicio' => Carbon::parse('17-11-2014')->format('Y/m/d'),
-			'ftermino' => Carbon::parse('21-05-2019')->format('Y/m/d'),
-			'ubicacion_id' => $ubicacionID,
-		]);
-		
-		$empresaID = Empresa::where('nombre', 'ICV S.A.')->value('id');
-
-		Contrato::create([
-			'empresa_id' => $empresaID,
-			'numero' => '4501770550',
-			'finicio' => Carbon::parse('01-04-2018')->format('Y/m/d'),
-			'ftermino' => Carbon::parse('01-07-2019')->format('Y/m/d'),
-			'ubicacion_id' => $ubicacionID,
-		]);
-		
-		$empresaID = Empresa::where('nombre', 'ISS SERVICIOS INTEGRALES LTDA.')->value('id');
-
-		Contrato::create([
-			'empresa_id' => $empresaID,
-			'numero' => '4501757801',
-			'finicio' => Carbon::parse('05-01-2018')->format('Y/m/d'),
-			'ftermino' => Carbon::parse('05-01-2021')->format('Y/m/d'),
-			'ubicacion_id' => $ubicacionID,
-		]);
-		
-		$empresaID = Empresa::where('nombre', 'JIGSAW TECHNOLOGIES LTDA.')->value('id');
-
-		Contrato::create([
-			'empresa_id' => $empresaID,
-			'numero' => '4600010017',
-			'finicio' => Carbon::parse('01-08-2016')->format('Y/m/d'),
-			'ftermino' => Carbon::parse('31-01-2019')->format('Y/m/d'),
-			'ubicacion_id' => $ubicacionID,
-		]);
-		
-		$empresaID = Empresa::where('nombre', 'JKL')->value('id');
-
-		Contrato::create([
-			'empresa_id' => $empresaID,
-			'numero' => '4501796595',
-			'finicio' => Carbon::parse('17-07-2018')->format('Y/m/d'),
-			'ftermino' => Carbon::parse('17-07-2022')->format('Y/m/d'),
-			'ubicacion_id' => $ubicacionID,
-		]);
-		
-		$empresaID = Empresa::where('nombre', 'JOINT VENTURE AAGG')->value('id');
-
-		Contrato::create([
-			'empresa_id' => $empresaID,
-			'numero' => '4600015685',
-			'finicio' => Carbon::parse('01-08-2017')->format('Y/m/d'),
-			'ftermino' => Carbon::parse('30-07-2022')->format('Y/m/d'),
-			'ubicacion_id' => $ubicacionID,
-		]);
-		
-		$empresaID = Empresa::where('nombre', 'JOY GLOBAL CHILE S.A.')->value('id');
-
-		Contrato::create([
-			'empresa_id' => $empresaID,
-			'numero' => '4600001023',
-			'finicio' => Carbon::parse('04-06-2011')->format('Y/m/d'),
-			'ftermino' => Carbon::parse('28-02-2022')->format('Y/m/d'),
-			'ubicacion_id' => $ubicacionID,
-		]);
-		
-		$empresaID = Empresa::where('nombre', 'KOMATSU CHILE S.A.')->value('id');
-
-		Contrato::create([
-			'empresa_id' => $empresaID,
-			'numero' => '4600010180',
-			'finicio' => Carbon::parse('05-05-2011')->format('Y/m/d'),
-			'ftermino' => Carbon::parse('05-05-2021')->format('Y/m/d'),
-			'ubicacion_id' => $ubicacionID,
-		]);
-		
-		$empresaID = Empresa::where('nombre', 'MECANICA DE ROCAS LTDA.')->value('id');
-
-		Contrato::create([
-			'empresa_id' => $empresaID,
-			'numero' => '4400177742',
-			'finicio' => Carbon::parse('21-03-2018')->format('Y/m/d'),
-			'ftermino' => Carbon::parse('16-05-2019')->format('Y/m/d'),
-			'ubicacion_id' => $ubicacionID,
-		]);
-		Contrato::create([
-			'empresa_id' => $empresaID, 
-			'numero' => '4400185661',
-			'finicio' => Carbon::parse('12-03-2018')->format('Y/m/d'),
-			'ftermino' => Carbon::parse('15-05-2019')->format('Y/m/d'),
-			'ubicacion_id' => $ubicacionID,
-		]);
-		
-		$empresaID = Empresa::where('nombre', 'METRIKA LTDA.')->value('id');
-
-		Contrato::create([
-			'empresa_id' => $empresaID,
-			'numero' => '4501745909',
-			'finicio' => Carbon::parse('21-11-2017')->format('Y/m/d'),
-			'ftermino' => Carbon::parse('20-11-2020')->format('Y/m/d'),
-			'ubicacion_id' => $ubicacionID,
-		]);
-		
-		$empresaID = Empresa::where('nombre', 'MONTAJES DEL PACIFICO S.A.')->value('id');
-
-		Contrato::create([
-			'empresa_id' => $empresaID,
-			'numero' => '4501632582',
-			'finicio' => Carbon::parse('20-07-2016')->format('Y/m/d'),
-			'ftermino' => Carbon::parse('31-05-2019')->format('Y/m/d'),
-			'ubicacion_id' => $ubicacionID,
-		]);
-		
-		$empresaID = Empresa::where('nombre', 'MSMIN LTDA.')->value('id');
-
-		Contrato::create([
-			'empresa_id' => $empresaID,
-			'numero' => '4600016036',
-			'finicio' => Carbon::parse('01-01-2018')->format('Y/m/d'),
-			'ftermino' => Carbon::parse('31-12-2019')->format('Y/m/d'),
-			'ubicacion_id' => $ubicacionID,
-		]);
-		
-		$empresaID = Empresa::where('nombre', 'OHL')->value('id');
-
-		Contrato::create([
-			'empresa_id' => $empresaID,
-			'numero' => '4501765588',
-			'finicio' => Carbon::parse('01-04-2018')->format('Y/m/d'),
-			'ftermino' => Carbon::parse('01-04-2021')->format('Y/m/d'),
-			'ubicacion_id' => $ubicacionID,
-		]);
-		
-		$empresaID = Empresa::where('nombre', 'OUTOTEC')->value('id');
-
-		Contrato::create([
-			'empresa_id' => $empresaID,
-			'numero' => '4501402493',
-			'finicio' => Carbon::parse('09-10-2013')->format('Y/m/d'),
-			'ftermino' => Carbon::parse('28-02-2020')->format('Y/m/d'),
-			'ubicacion_id' => $ubicacionID,
-		]);
-		
-		$empresaID = Empresa::where('nombre', 'PSINET CHILE S.A.')->value('id');
-
-		Contrato::create([
-			'empresa_id' => $empresaID,
-			'numero' => '4600016091',
-			'finicio' => Carbon::parse('01-01-2018')->format('Y/m/d'),
-			'ftermino' => Carbon::parse('31-12-2022')->format('Y/m/d'),
-			'ubicacion_id' => $ubicacionID,
-		]);
-		
-		$empresaID = Empresa::where('nombre', 'REVESOL')->value('id');
-
-		Contrato::create([
-			'empresa_id' => $empresaID,
-			'numero' => '4501771792',
-			'finicio' => Carbon::parse('09-04-2018')->format('Y/m/d'),
-			'ftermino' => Carbon::parse('15-02-2021')->format('Y/m/d'),
-			'ubicacion_id' => $ubicacionID,
-		]);
-		
-		$empresaID = Empresa::where('nombre', 'RFP LOGISTICA S.A.')->value('id');
-
-		Contrato::create([
-			'empresa_id' => $empresaID,
-			'numero' => '4501758283',
-			'finicio' => Carbon::parse('08-01-2018')->format('Y/m/d'),
-			'ftermino' => Carbon::parse('31-01-2021')->format('Y/m/d'),
-			'ubicacion_id' => $ubicacionID,
-		]);
-		
-		$empresaID = Empresa::where('nombre', 'SERVINA SPA')->value('id');
-
-		Contrato::create([
-			'empresa_id' => $empresaID,
-			'numero' => '4501769171',
-			'finicio' => Carbon::parse('12-02-2018')->format('Y/m/d'),
-			'ftermino' => Carbon::parse('12-02-2021')->format('Y/m/d'),
-			'ubicacion_id' => $ubicacionID,
-		]);
-		
-		$empresaID = Empresa::where('nombre', 'SGS MINERALS S.A.')->value('id');
-
-		Contrato::create([
-			'empresa_id' => $empresaID,
-			'numero' => '4501679609',
-			'finicio' => Carbon::parse('01-01-2017')->format('Y/m/d'),
-			'ftermino' => Carbon::parse('31-12-2019')->format('Y/m/d'),
-			'ubicacion_id' => $ubicacionID,
-		]);
-		
-		$empresaID = Empresa::where('nombre', 'SGS SIGA')->value('id');
-
-		Contrato::create([
-			'empresa_id' => $empresaID,
-			'numero' => '4400189373',
-			'finicio' => Carbon::parse('01-04-2018')->format('Y/m/d'),
-			'ftermino' => Carbon::parse('30-03-2021')->format('Y/m/d'),
-			'ubicacion_id' => $ubicacionID,
-		]);
-		
-		$empresaID = Empresa::where('nombre', 'SOCOAL LTDA.')->value('id');
-
-		Contrato::create([
-			'empresa_id' => $empresaID,
-			'numero' => '4501577935',
-			'finicio' => Carbon::parse('06-10-2015')->format('Y/m/d'),
-			'ftermino' => Carbon::parse('05-10-2018')->format('Y/m/d'),
-			'ubicacion_id' => $ubicacionID,
-		]);
-		Contrato::create([
-			'empresa_id' => $empresaID, 
-			'numero' => '4502577935',
-			'finicio' => Carbon::parse('01-10-2015')->format('Y/m/d'),
-			'ftermino' => Carbon::parse('30-09-2018')->format('Y/m/d'),
-			'ubicacion_id' => $ubicacionID,
-		]);
-		
-		$empresaID = Empresa::where('nombre', 'SOLETANCHE BACHY')->value('id');
-
-		Contrato::create([
-			'empresa_id' => $empresaID,
-			'numero' => '4600015776',
-			'finicio' => Carbon::parse('23-10-2017')->format('Y/m/d'),
-			'ftermino' => Carbon::parse('30-11-2018')->format('Y/m/d'),
-			'ubicacion_id' => $ubicacionID,
-		]);
-		
-		$empresaID = Empresa::where('nombre', 'SOTRASER')->value('id');
-
-		Contrato::create([
-			'empresa_id' => $empresaID,
-			'numero' => '4600016437',
-			'finicio' => Carbon::parse('03-07-2018')->format('Y/m/d'),
-			'ftermino' => Carbon::parse('03-07-2019')->format('Y/m/d'),
-			'ubicacion_id' => $ubicacionID,
-		]);
-		
-		$empresaID = Empresa::where('nombre', 'STEEL INGENIERIA S.A.')->value('id');
-
-		Contrato::create([
-			'empresa_id' => $empresaID,
-			'numero' => '4600013185',
-			'finicio' => Carbon::parse('01-07-2014')->format('Y/m/d'),
-			'ftermino' => Carbon::parse('30-06-2019')->format('Y/m/d'),
-			'ubicacion_id' => $ubicacionID,
-		]);
-		
-		$empresaID = Empresa::where('nombre', 'SUATRANS')->value('id');
-
-		Contrato::create([
-			'empresa_id' => $empresaID,
-			'numero' => '4501404054',
-			'finicio' => Carbon::parse('28-10-2013')->format('Y/m/d'),
-			'ftermino' => Carbon::parse('27-10-2021')->format('Y/m/d'),
-			'ubicacion_id' => $ubicacionID,
-		]);
-		
-		$empresaID = Empresa::where('nombre', 'SUEZ CHILE')->value('id');
-
-		Contrato::create([
-			'empresa_id' => $empresaID,
-			'numero' => '4600015175',
-			'finicio' => Carbon::parse('31-12-2016')->format('Y/m/d'),
-			'ftermino' => Carbon::parse('31-12-2019')->format('Y/m/d'),
-			'ubicacion_id' => $ubicacionID,
-		]);
-		
-		$empresaID = Empresa::where('nombre', 'VAI')->value('id');
-
-		Contrato::create([
-			'empresa_id' => $empresaID,
-			'numero' => '4501768343',
-			'finicio' => Carbon::parse('24-01-2018')->format('Y/m/d'),
-			'ftermino' => Carbon::parse('31-12-2018')->format('Y/m/d'),
-			'ubicacion_id' => $ubicacionID,
-		]);
-		
-		$empresaID = Empresa::where('nombre', 'VALIDAR TRAIN')->value('id');
-
-		Contrato::create([
-			'empresa_id' => $empresaID,
-			'numero' => '6873366',
-			'finicio' => Carbon::parse('17-05-2017')->format('Y/m/d'),
-			'ftermino' => Carbon::parse('30-11-2018')->format('Y/m/d'),
-			'ubicacion_id' => $ubicacionID,
-		]);
-		
-		$empresaID = Empresa::where('nombre', 'VECCHIOLA S.A.')->value('id');
-
-		Contrato::create([
-			'empresa_id' => $empresaID,
-			'numero' => '4501526528',
-			'finicio' => Carbon::parse('01-03-2015')->format('Y/m/d'),
-			'ftermino' => Carbon::parse('02-03-2020')->format('Y/m/d'),
-			'ubicacion_id' => $ubicacionID,
-		]);
-		
-		$empresaID = Empresa::where('nombre', 'VOLCAN NEVADO LTDA.')->value('id');
-
-		Contrato::create([
-			'empresa_id' => $empresaID,
-			'numero' => '4600015167',
-			'finicio' => Carbon::parse('10-01-2017')->format('Y/m/d'),
-			'ftermino' => Carbon::parse('10-01-2021')->format('Y/m/d'),
-			'ubicacion_id' => $ubicacionID,
-		]);
-
-		$ubicacionID = Ubicacion::where('nombre', 'División Radomiro Tomic')->value('id');
-		$empresaID = Empresa::where('nombre', 'AGROAMANCAY S.A.')->value('id');
-
-		Contrato::create([
-			'empresa_id' => $empresaID,
-			'numero' => '4501752911',
-			'finicio' => Carbon::parse('13-12-2017')->format('Y/m/d'),
-			'ftermino' => Carbon::parse('13-12-2020')->format('Y/m/d'),
-			'ubicacion_id' => $ubicacionID,
-		]);
-
-		$empresaID = Empresa::where('nombre', 'APPLUS NORCONTROL')->value('id');
-
-		Contrato::create([
-			'empresa_id' => $empresaID,
-			'numero' => '4501743400',
-			'finicio' => Carbon::parse('01-11-2017')->format('Y/m/d'),
-			'ftermino' => Carbon::parse('01-11-2019')->format('Y/m/d'),
-			'ubicacion_id' => $ubicacionID,
-		]);
-
-		$empresaID = Empresa::where('nombre', 'ATLAS COPCO')->value('id');
-
-		Contrato::create([
-			'empresa_id' => $empresaID,
-			'numero' => '4600016079',
-			'finicio' => Carbon::parse('03-07-2017')->format('Y/m/d'),
-			'ftermino' => Carbon::parse('03-07-2020')->format('Y/m/d'),
-			'ubicacion_id' => $ubicacionID,
-		]);
-
-		$empresaID = Empresa::where('nombre', 'BROAD SPECTRUM')->value('id');
-
-		Contrato::create([
-			'empresa_id' => $empresaID,
-			'numero' => '4600014190',
-			'finicio' => Carbon::parse('05-08-2015')->format('Y/m/d'),
-			'ftermino' => Carbon::parse('03-08-2019')->format('Y/m/d'),
-			'ubicacion_id' => $ubicacionID,
-		]);
-		Contrato::create([
-			'empresa_id' => $empresaID,
-			'numero' => '4501669175',
-			'finicio' => Carbon::parse('03-08-2015')->format('Y/m/d'),
-			'ftermino' => Carbon::parse('03-08-2019')->format('Y/m/d'),
-			'ubicacion_id' => $ubicacionID,
-		]);
-
-		$empresaID = Empresa::where('nombre', 'BUILDTEK S.A.')->value('id');
-
-		Contrato::create([
-			'empresa_id' => $empresaID,
-			'numero' => '4600016439',
-			'finicio' => Carbon::parse('01-06-2018')->format('Y/m/d'),
-			'ftermino' => Carbon::parse('01-06-2022')->format('Y/m/d'),
-			'ubicacion_id' => $ubicacionID,
-		]);
-
-		$empresaID = Empresa::where('nombre', 'BUREAU VERITAS CHILE S.A.')->value('id');
-
-		Contrato::create([
-			'empresa_id' => $empresaID,
-			'numero' => '4600014979',
-			'finicio' => Carbon::parse('01-09-2016')->format('Y/m/d'),
-			'ftermino' => Carbon::parse('31-08-2021')->format('Y/m/d'),
-			'ubicacion_id' => $ubicacionID,
-		]);
-
-		$empresaID = Empresa::where('nombre', 'CSI LTDA.')->value('id');
-
-		Contrato::create([
-			'empresa_id' => $empresaID,
-			'numero' => '4501533894',
-			'finicio' => Carbon::parse('01-05-2015')->format('Y/m/d'),
-			'ftermino' => Carbon::parse('30-04-2020')->format('Y/m/d'),
-			'ubicacion_id' => $ubicacionID,
-		]);
-		Contrato::create([
-			'empresa_id' => $empresaID, 
-			'numero' => '4600016451',
-			'finicio' => Carbon::parse('01-07-2018')->format('Y/m/d'),
-			'ftermino' => Carbon::parse('30-06-2023')->format('Y/m/d'),
-			'ubicacion_id' => $ubicacionID,
-		]);
-
-		$empresaID = Empresa::where('nombre', 'DETROIT CHILE S.A.')->value('id');
-
-		Contrato::create([
-			'empresa_id' => $empresaID,
-			'numero' => '4600011554',
-			'finicio' => Carbon::parse('01-11-2012')->format('Y/m/d'),
-			'ftermino' => Carbon::parse('01-11-2022')->format('Y/m/d'),
-			'ubicacion_id' => $ubicacionID,
-		]);
-
-		$empresaID = Empresa::where('nombre', 'DISTRIBUIDORA CUMMINS CHILE S.A.')->value('id');
-
-		Contrato::create([
-			'empresa_id' => $empresaID,
-			'numero' => '4600006518',
-			'finicio' => Carbon::parse('21-08-2008')->format('Y/m/d'),
-			'ftermino' => Carbon::parse('21-08-2022')->format('Y/m/d'),
-			'ubicacion_id' => $ubicacionID,
-		]);
-
-		$empresaID = Empresa::where('nombre', 'EMIN')->value('id');
-
-		Contrato::create([
-			'empresa_id' => $empresaID,
-			'numero' => '4501783252',
-			'finicio' => Carbon::parse('01-05-2018')->format('Y/m/d'),
-			'ftermino' => Carbon::parse('08-10-2018')->format('Y/m/d'),
-			'ubicacion_id' => $ubicacionID,
-		]);
-
-		$empresaID = Empresa::where('nombre', 'ENAEX SERVICIOS S.A.')->value('id');
-
-		Contrato::create([
-			'empresa_id' => $empresaID,
-			'numero' => '4600009667',
-			'finicio' => Carbon::parse('01-06-2010')->format('Y/m/d'),
-			'ftermino' => Carbon::parse('31-10-2018')->format('Y/m/d'),
-			'ubicacion_id' => $ubicacionID,
-		]);
-
-		$empresaID = Empresa::where('nombre', 'EPIROC CHILE S.A.')->value('id');
-
-		Contrato::create([
-			'empresa_id' => $empresaID,
-			'numero' => '4600010484',
-			'finicio' => Carbon::parse('01-01-2010')->format('Y/m/d'),
-			'ftermino' => Carbon::parse('01-01-2022')->format('Y/m/d'),
-			'ubicacion_id' => $ubicacionID,
-		]);
-
-		$empresaID = Empresa::where('nombre', 'F.C.A. TRANSPORTES')->value('id');
-
-		Contrato::create([
-			'empresa_id' => $empresaID,
-			'numero' => '4501758749',
-			'finicio' => Carbon::parse('21-12-2017')->format('Y/m/d'),
-			'ftermino' => Carbon::parse('31-12-2018')->format('Y/m/d'),
-			'ubicacion_id' => $ubicacionID,
-		]);
-
-		$empresaID = Empresa::where('nombre', 'FAM')->value('id');
-
-		Contrato::create([
-			'empresa_id' => $empresaID,
-			'numero' => '4501532818',
-			'finicio' => Carbon::parse('01-08-2018')->format('Y/m/d'),
-			'ftermino' => Carbon::parse('28-02-2019')->format('Y/m/d'),
-			'ubicacion_id' => $ubicacionID,
-		]);
-
-		$empresaID = Empresa::where('nombre', 'GEOPERACIONES')->value('id');
-
-		Contrato::create([
-			'empresa_id' => $empresaID,
-			'numero' => '4501746623',
-			'finicio' => Carbon::parse('06-03-2018')->format('Y/m/d'),
-			'ftermino' => Carbon::parse('06-03-2020')->format('Y/m/d'),
-			'ubicacion_id' => $ubicacionID,
-		]);
-
-		$empresaID = Empresa::where('nombre', 'ICL CATODOS LTDA.')->value('id');
-
-		Contrato::create([
-			'empresa_id' => $empresaID,
-			'numero' => '4501771158',
-			'finicio' => Carbon::parse('14-03-2018')->format('Y/m/d'),
-			'ftermino' => Carbon::parse('13-03-2019')->format('Y/m/d'),
-			'ubicacion_id' => $ubicacionID,
-		]);
-
-		$empresaID = Empresa::where('nombre', 'ICS VALLE DE LA LUNA')->value('id');
-
-		Contrato::create([
-			'empresa_id' => $empresaID,
-			'numero' => '4501505780',
-			'finicio' => Carbon::parse('01-01-2015')->format('Y/m/d'),
-			'ftermino' => Carbon::parse('31-12-2019')->format('Y/m/d'),
-			'ubicacion_id' => $ubicacionID,
-		]);
-
-		$empresaID = Empresa::where('nombre', 'INDUSTRIAL SUPPORT COMPANY LTDA.')->value('id');
-
-		Contrato::create([
-			'empresa_id' => $empresaID,
-			'numero' => '4600014492',
-			'finicio' => Carbon::parse('01-02-2017')->format('Y/m/d'),
-			'ftermino' => Carbon::parse('01-02-2021')->format('Y/m/d'),
-			'ubicacion_id' => $ubicacionID,
-		]);
-
-		$empresaID = Empresa::where('nombre', 'JM')->value('id');
-
-		Contrato::create([
-			'empresa_id' => $empresaID,
-			'numero' => '4600014575',
-			'finicio' => Carbon::parse('01-06-2016')->format('Y/m/d'),
-			'ftermino' => Carbon::parse('31-05-2022')->format('Y/m/d'),
-			'ubicacion_id' => $ubicacionID,
-		]);
-
-		$empresaID = Empresa::where('nombre', 'JOY GLOBAL CHILE S.A.')->value('id');
-
-		Contrato::create([
-			'empresa_id' => $empresaID,
-			'numero' => '4600009065',
-			'finicio' => Carbon::parse('09-08-2010')->format('Y/m/d'),
-			'ftermino' => Carbon::parse('09-08-2021')->format('Y/m/d'),
-			'ubicacion_id' => $ubicacionID,
-		]);
-		Contrato::create([
-			'empresa_id' => $empresaID, 
-			'numero' => '4600010233',
-			'finicio' => Carbon::parse('01-06-2011')->format('Y/m/d'),
-			'ftermino' => Carbon::parse('01-02-2022')->format('Y/m/d'),
-			'ubicacion_id' => $ubicacionID,
-		]);
-
-		$empresaID = Empresa::where('nombre', 'KOMATSU CHILE S.A.')->value('id');
-
-		Contrato::create([
-			'empresa_id' => $empresaID,
-			'numero' => '4500629318',
-			'finicio' => Carbon::parse('31-10-2007')->format('Y/m/d'),
-			'ftermino' => Carbon::parse('31-10-2022')->format('Y/m/d'),
-			'ubicacion_id' => $ubicacionID,
-		]);
-
-		$empresaID = Empresa::where('nombre', 'NEW TECH COPPER')->value('id');
-
-		Contrato::create([
-			'empresa_id' => $empresaID,
-			'numero' => '4501561404',
-			'finicio' => Carbon::parse('30-11-2015')->format('Y/m/d'),
-			'ftermino' => Carbon::parse('30-09-2021')->format('Y/m/d'),
-			'ubicacion_id' => $ubicacionID,
-		]);
-
-		$empresaID = Empresa::where('nombre', 'POWER TRAIN TECHNOLOGIES CHILE S.A.')->value('id');
-
-		Contrato::create([
-			'empresa_id' => $empresaID,
-			'numero' => '4600016490',
-			'finicio' => Carbon::parse('01-08-2018')->format('Y/m/d'),
-			'ftermino' => Carbon::parse('31-07-2023')->format('Y/m/d'),
-			'ubicacion_id' => $ubicacionID,
-		]);
-
-		$empresaID = Empresa::where('nombre', 'PSINET CHILE S.A.')->value('id');
-
-		Contrato::create([
-			'empresa_id' => $empresaID,
-			'numero' => '4501750095',
-			'finicio' => Carbon::parse('08-01-2018')->format('Y/m/d'),
-			'ftermino' => Carbon::parse('08-04-2019')->format('Y/m/d'),
-			'ubicacion_id' => $ubicacionID,
-		]);
-
-		$empresaID = Empresa::where('nombre', 'PUCARA')->value('id');
-
-		Contrato::create([
-			'empresa_id' => $empresaID,
-			'numero' => '4501649724',
-			'finicio' => Carbon::parse('12-08-2016')->format('Y/m/d'),
-			'ftermino' => Carbon::parse('12-08-2020')->format('Y/m/d'),
-			'ubicacion_id' => $ubicacionID,
-		]);
-		Contrato::create([
-			'empresa_id' => $empresaID, 
-			'numero' => '4501781659',
-			'finicio' => Carbon::parse('01-06-2018')->format('Y/m/d'),
-			'ftermino' => Carbon::parse('31-05-2021')->format('Y/m/d'),
-			'ubicacion_id' => $ubicacionID,
-		]);
-
-		$empresaID = Empresa::where('nombre', 'R&O LTDA.')->value('id');
-
-		Contrato::create([
-			'empresa_id' => $empresaID,
-			'numero' => '4501707785',
-			'finicio' => Carbon::parse('01-06-2017')->format('Y/m/d'),
-			'ftermino' => Carbon::parse('31-05-2021')->format('Y/m/d'),
-			'ubicacion_id' => $ubicacionID,
-		]);
-
-		$empresaID = Empresa::where('nombre', 'SALMAG')->value('id');
-
-		Contrato::create([
-			'empresa_id' => $empresaID,
-			'numero' => '4600015884',
-			'finicio' => Carbon::parse('01-10-2017')->format('Y/m/d'),
-			'ftermino' => Carbon::parse('01-05-2019')->format('Y/m/d'),
-			'ubicacion_id' => $ubicacionID,
-		]);
-
-		$empresaID = Empresa::where('nombre', 'SANDVIK CHILE S.A.')->value('id');
-
-		Contrato::create([
-			'empresa_id' => $empresaID,
-			'numero' => '4600014784',
-			'finicio' => Carbon::parse('01-06-2016')->format('Y/m/d'),
-			'ftermino' => Carbon::parse('01-07-2019')->format('Y/m/d'),
-			'ubicacion_id' => $ubicacionID,
-		]);
-
-		$empresaID = Empresa::where('nombre', 'SCHWAGER SERVICES S.A.')->value('id');
+		$contratoID = Contrato::where('numero', '4600014244')->value('id');
 
-		Contrato::create([
-			'empresa_id' => $empresaID,
-			'numero' => '4600014164',
-			'finicio' => Carbon::parse('31-07-2015')->format('Y/m/d'),
-			'ftermino' => Carbon::parse('31-07-2020')->format('Y/m/d'),
-			'ubicacion_id' => $ubicacionID,
-		]);
-		Contrato::create([
-			'empresa_id' => $empresaID, 
-			'numero' => '4600014981',
-			'finicio' => Carbon::parse('16-09-2016')->format('Y/m/d'),
-			'ftermino' => Carbon::parse('15-09-2021')->format('Y/m/d'),
-			'ubicacion_id' => $ubicacionID,
+		DominioContrato::create([
+			'DominioContrato_id' => $contratoID,
+			'DominioContrato_type' => 'Ubicacion',
 		]);
 
-		$empresaID = Empresa::where('nombre', 'SGS CHILE LTDA.')->value('id');
+		$empresaID = Empresa::where('nombre', 'DURATRAY SPA')-> value('id');
 
 		Contrato::create([
 			'empresa_id' => $empresaID,
-			'numero' => '4600014573',
+			'numero' => '4600014585',
 			'finicio' => Carbon::parse('01-04-2016')->format('Y/m/d'),
-			'ftermino' => Carbon::parse('01-04-2020')->format('Y/m/d'),
-			'ubicacion_id' => $ubicacionID,
+			'ftermino' => Carbon::parse('31-03-2018')->format('Y/m/d'),
+			'dominioContrato_id' => $dominioID,
 		]);
 
-		$empresaID = Empresa::where('nombre', 'SOCOAL LTDA.')->value('id');
+		$contratoID = Contrato::where('numero', '4600014585')->value('id');
+
+		DominioContrato::create([
+			'DominioContrato_id' => $contratoID,
+			'DominioContrato_type' => 'Ubicacion',
+		]);
+
+		$empresaID = Empresa::where('nombre', 'ELECNOR CHILE S.A.')-> value('id');
 
 		Contrato::create([
 			'empresa_id' => $empresaID,
-			'numero' => '4501715388',
+			'numero' => '4501537156',
+			'finicio' => Carbon::parse('13-07-2015')->format('Y/m/d'),
+			'ftermino' => Carbon::parse('22-02-2017')->format('Y/m/d'),
+			'dominioContrato_id' => $dominioID,
+		]);
+
+		$contratoID = Contrato::where('numero', '4501537156')->value('id');
+
+		DominioContrato::create([
+			'DominioContrato_id' => $contratoID,
+			'DominioContrato_type' => 'Ubicacion',
+		]);
+
+		$empresaID = Empresa::where('nombre', 'EMIN')-> value('id');
+
+		Contrato::create([
+			'empresa_id' => $empresaID,
+			'numero' => '4501756369',
+			'finicio' => Carbon::parse('15-01-2018')->format('Y/m/d'),
+			'ftermino' => Carbon::parse('23-06-2018')->format('Y/m/d'),
+			'dominioContrato_id' => $dominioID,
+		]);
+
+		$contratoID = Contrato::where('numero', '4501756369')->value('id');
+
+		DominioContrato::create([
+			'DominioContrato_id' => $contratoID,
+			'DominioContrato_type' => 'Ubicacion',
+		]);
+
+		$empresaID = Empresa::where('nombre', 'EQUIPOS TREX S.P.A.')-> value('id');
+
+		Contrato::create([
+			'empresa_id' => $empresaID,
+			'numero' => '4600008507',
+			'finicio' => Carbon::parse('30-01-2010')->format('Y/m/d'),
+			'ftermino' => Carbon::parse('30-05-2015')->format('Y/m/d'),
+			'dominioContrato_id' => $dominioID,
+		]);
+
+		$contratoID = Contrato::where('numero', '4600008507')->value('id');
+
+		DominioContrato::create([
+			'DominioContrato_id' => $contratoID,
+			'DominioContrato_type' => 'Ubicacion',
+		]);
+
+		$empresaID = Empresa::where('nombre', 'ESM SPA')-> value('id');
+
+		Contrato::create([
+			'empresa_id' => $empresaID,
+			'numero' => '4600014399',
+			'finicio' => Carbon::parse('01-11-2015')->format('Y/m/d'),
+			'ftermino' => Carbon::parse('31-10-2017')->format('Y/m/d'),
+			'dominioContrato_id' => $dominioID,
+		]);
+
+		$contratoID = Contrato::where('numero', '4600014399')->value('id');
+
+		DominioContrato::create([
+			'DominioContrato_id' => $contratoID,
+			'DominioContrato_type' => 'Ubicacion',
+		]);
+
+		$empresaID = Empresa::where('nombre', 'FERROSTAAL CHILE S.A.C.')-> value('id');
+
+		Contrato::create([
+			'empresa_id' => $empresaID,
+			'numero' => '4501522702',
+			'finicio' => Carbon::parse('23-03-2015')->format('Y/m/d'),
+			'ftermino' => Carbon::parse('08-09-2015')->format('Y/m/d'),
+			'dominioContrato_id' => $dominioID,
+		]);
+
+		$contratoID = Contrato::where('numero', '4501522702')->value('id');
+
+		DominioContrato::create([
+			'DominioContrato_id' => $contratoID,
+			'DominioContrato_type' => 'Ubicacion',
+		]);
+
+		$empresaID = Empresa::where('nombre', 'GEONOR LTDA.')-> value('id');
+
+		Contrato::create([
+			'empresa_id' => $empresaID,
+			'numero' => '4501480235',
+			'finicio' => Carbon::parse('02-09-2014')->format('Y/m/d'),
+			'ftermino' => Carbon::parse('30-09-2017')->format('Y/m/d'),
+			'dominioContrato_id' => $dominioID,
+		]);
+
+		$contratoID = Contrato::where('numero', '4501480235')->value('id');
+
+		DominioContrato::create([
+			'DominioContrato_id' => $contratoID,
+			'DominioContrato_type' => 'Ubicacion',
+		]);
+
+		$empresaID = Empresa::where('nombre', 'GROUNDPROBE SOUTH AMERICA S.A.')-> value('id');
+
+		Contrato::create([
+			'empresa_id' => $empresaID,
+			'numero' => '4501646389',
+			'finicio' => Carbon::parse('03-08-2016')->format('Y/m/d'),
+			'ftermino' => Carbon::parse('02-02-2018')->format('Y/m/d'),
+			'dominioContrato_id' => $dominioID,
+		]);
+
+		$contratoID = Contrato::where('numero', '4501646389')->value('id');
+
+		DominioContrato::create([
+			'DominioContrato_id' => $contratoID,
+			'DominioContrato_type' => 'Ubicacion',
+		]);
+
+		$empresaID = Empresa::where('nombre', 'HEWLETT PACKARD S.A.')-> value('id');
+
+		Contrato::create([
+			'empresa_id' => $empresaID,
+			'numero' => '4501282127',
+			'finicio' => Carbon::parse('04-06-2012')->format('Y/m/d'),
+			'ftermino' => Carbon::parse('04-06-2016')->format('Y/m/d'),
+			'dominioContrato_id' => $dominioID,
+		]);
+
+		$contratoID = Contrato::where('numero', '4501282127')->value('id');
+
+		DominioContrato::create([
+			'DominioContrato_id' => $contratoID,
+			'DominioContrato_type' => 'Ubicacion',
+		]);
+
+		$empresaID = Empresa::where('nombre', 'HRI S.A.')-> value('id');
+
+		Contrato::create([
+			'empresa_id' => $empresaID,
+			'numero' => '4600011618',
+			'finicio' => Carbon::parse('20-07-2012')->format('Y/m/d'),
+			'ftermino' => Carbon::parse('20-07-2016')->format('Y/m/d'),
+			'dominioContrato_id' => $dominioID,
+		]);
+
+		$contratoID = Contrato::where('numero', '4600011618')->value('id');
+
+		DominioContrato::create([
+			'DominioContrato_id' => $contratoID,
+			'DominioContrato_type' => 'Ubicacion',
+		]);
+
+		$empresaID = Empresa::where('nombre', 'ICV S.A.')-> value('id');
+
+		Contrato::create([
+			'empresa_id' => $empresaID,
+			'numero' => '4600015652',
+			'finicio' => Carbon::parse('13-07-2017')->format('Y/m/d'),
+			'ftermino' => Carbon::parse('12-01-2018')->format('Y/m/d'),
+			'dominioContrato_id' => $dominioID,
+		]);
+
+		$contratoID = Contrato::where('numero', '4600015652')->value('id');
+
+		DominioContrato::create([
+			'DominioContrato_id' => $contratoID,
+			'DominioContrato_type' => 'Ubicacion',
+		]);
+
+		$empresaID = Empresa::where('nombre', 'IMA INDUSTRIAL LTDA.')-> value('id');
+
+		Contrato::create([
+			'empresa_id' => $empresaID,
+			'numero' => '4600011562',
+			'finicio' => Carbon::parse('17-03-2014')->format('Y/m/d'),
+			'ftermino' => Carbon::parse('16-06-2016')->format('Y/m/d'),
+			'dominioContrato_id' => $dominioID,
+		]);
+
+		$contratoID = Contrato::where('numero', '4600011562')->value('id');
+
+		DominioContrato::create([
+			'DominioContrato_id' => $contratoID,
+			'DominioContrato_type' => 'Ubicacion',
+		]);
+
+		$empresaID = Empresa::where('nombre', 'IMS PATAGONIA')-> value('id');
+
+		Contrato::create([
+			'empresa_id' => $empresaID,
+			'numero' => '4600007601',
+			'finicio' => Carbon::parse('15-05-2009')->format('Y/m/d'),
+			'ftermino' => Carbon::parse('15-09-2015')->format('Y/m/d'),
+			'dominioContrato_id' => $dominioID,
+		]);
+
+		$contratoID = Contrato::where('numero', '4600007601')->value('id');
+
+		DominioContrato::create([
+			'DominioContrato_id' => $contratoID,
+			'DominioContrato_type' => 'Ubicacion',
+		]);
+
+		$empresaID = Empresa::where('nombre', 'ING. Y SERV. COLLANTS LTDA.')-> value('id');
+
+		Contrato::create([
+			'empresa_id' => $empresaID,
+			'numero' => '4501681345',
+			'finicio' => Carbon::parse('16-01-2017')->format('Y/m/d'),
+			'ftermino' => Carbon::parse('17-04-2017')->format('Y/m/d'),
+			'dominioContrato_id' => $dominioID,
+		]);
+
+		$contratoID = Contrato::where('numero', '4501681345')->value('id');
+
+		DominioContrato::create([
+			'DominioContrato_id' => $contratoID,
+			'DominioContrato_type' => 'Ubicacion',
+		]);
+
+		$empresaID = Empresa::where('nombre', 'INGETROL S.A.')-> value('id');
+
+		Contrato::create([
+			'empresa_id' => $empresaID,
+			'numero' => '4501483457',
+			'finicio' => Carbon::parse('23-09-2016')->format('Y/m/d'),
+			'ftermino' => Carbon::parse('31-03-2017')->format('Y/m/d'),
+			'dominioContrato_id' => $dominioID,
+		]);
+
+		$contratoID = Contrato::where('numero', '4501483457')->value('id');
+
+		DominioContrato::create([
+			'DominioContrato_id' => $contratoID,
+			'DominioContrato_type' => 'Ubicacion',
+		]);
+		Contrato::create([
+			'empresa_id' => $empresaID,
+			'numero' => '4501464357',
+			'finicio' => Carbon::parse('14-10-2014')->format('Y/m/d'),
+			'ftermino' => Carbon::parse('12-05-2015')->format('Y/m/d'),
+			'dominioContrato_id' => $dominioID,
+		]);
+
+		$contratoID = Contrato::where('numero', '4501464357')->value('id');
+
+		DominioContrato::create([
+			'DominioContrato_id' => $contratoID,
+			'DominioContrato_type' => 'Ubicacion',
+		]);
+
+		$empresaID = Empresa::where('nombre', 'INSSO S.A.')-> value('id');
+
+		Contrato::create([
+			'empresa_id' => $empresaID,
+			'numero' => '4501506702',
+			'finicio' => Carbon::parse('01-04-2015')->format('Y/m/d'),
+			'ftermino' => Carbon::parse('30-09-2015')->format('Y/m/d'),
+			'dominioContrato_id' => $dominioID,
+		]);
+
+		$contratoID = Contrato::where('numero', '4501506702')->value('id');
+
+		DominioContrato::create([
+			'DominioContrato_id' => $contratoID,
+			'DominioContrato_type' => 'Ubicacion',
+		]);
+
+		$empresaID = Empresa::where('nombre', 'INSTALFRIO S.P.A.')-> value('id');
+
+		Contrato::create([
+			'empresa_id' => $empresaID,
+			'numero' => '4600014913',
+			'finicio' => Carbon::parse('26-07-2016')->format('Y/m/d'),
+			'ftermino' => Carbon::parse('22-07-2018')->format('Y/m/d'),
+			'dominioContrato_id' => $dominioID,
+		]);
+
+		$contratoID = Contrato::where('numero', '4600014913')->value('id');
+
+		DominioContrato::create([
+			'DominioContrato_id' => $contratoID,
+			'DominioContrato_type' => 'Ubicacion',
+		]);
+
+		$empresaID = Empresa::where('nombre', 'INVERSIONES IMPACTO S.A.')-> value('id');
+
+		Contrato::create([
+			'empresa_id' => $empresaID,
+			'numero' => '4600013574',
+			'finicio' => Carbon::parse('01-03-2016')->format('Y/m/d'),
+			'ftermino' => Carbon::parse('28-02-2017')->format('Y/m/d'),
+			'dominioContrato_id' => $dominioID,
+		]);
+
+		$contratoID = Contrato::where('numero', '4600013574')->value('id');
+
+		DominioContrato::create([
+			'DominioContrato_id' => $contratoID,
+			'DominioContrato_type' => 'Ubicacion',
+		]);
+
+		$empresaID = Empresa::where('nombre', 'ITM LTDA.')-> value('id');
+
+		Contrato::create([
+			'empresa_id' => $empresaID,
+			'numero' => '4501630097',
+			'finicio' => Carbon::parse('30-05-2016')->format('Y/m/d'),
+			'ftermino' => Carbon::parse('30-05-2018')->format('Y/m/d'),
+			'dominioContrato_id' => $dominioID,
+		]);
+
+		$contratoID = Contrato::where('numero', '4501630097')->value('id');
+
+		DominioContrato::create([
+			'DominioContrato_id' => $contratoID,
+			'DominioContrato_type' => 'Ubicacion',
+		]);
+
+		$empresaID = Empresa::where('nombre', 'JANSSEN S.A.')-> value('id');
+
+		Contrato::create([
+			'empresa_id' => $empresaID,
+			'numero' => '4600006716',
+			'finicio' => Carbon::parse('04-02-2008')->format('Y/m/d'),
+			'ftermino' => Carbon::parse('03-09-2017')->format('Y/m/d'),
+			'dominioContrato_id' => $dominioID,
+		]);
+
+		$contratoID = Contrato::where('numero', '4600006716')->value('id');
+
+		DominioContrato::create([
+			'DominioContrato_id' => $contratoID,
+			'DominioContrato_type' => 'Ubicacion',
+		]);
+
+		$empresaID = Empresa::where('nombre', 'JOY GLOBAL CHILE S.A.')-> value('id');
+
+		Contrato::create([
+			'empresa_id' => $empresaID,
+			'numero' => '4501433413',
+			'finicio' => Carbon::parse('26-01-2014')->format('Y/m/d'),
+			'ftermino' => Carbon::parse('25-01-2016')->format('Y/m/d'),
+			'dominioContrato_id' => $dominioID,
+		]);
+
+		$contratoID = Contrato::where('numero', '4501433413')->value('id');
+
+		DominioContrato::create([
+			'DominioContrato_id' => $contratoID,
+			'DominioContrato_type' => 'Ubicacion',
+		]);
+
+		$empresaID = Empresa::where('nombre', 'KATECS Y CIA')-> value('id');
+
+		Contrato::create([
+			'empresa_id' => $empresaID,
+			'numero' => '4600015539',
+			'finicio' => Carbon::parse('11-05-2017')->format('Y/m/d'),
+			'ftermino' => Carbon::parse('10-11-2017')->format('Y/m/d'),
+			'dominioContrato_id' => $dominioID,
+		]);
+
+		$contratoID = Contrato::where('numero', '4600015539')->value('id');
+
+		DominioContrato::create([
+			'DominioContrato_id' => $contratoID,
+			'DominioContrato_type' => 'Ubicacion',
+		]);
+
+		$empresaID = Empresa::where('nombre', 'KB INGENIERIA SANITARIOS')-> value('id');
+
+		Contrato::create([
+			'empresa_id' => $empresaID,
+			'numero' => '4501593730',
+			'finicio' => Carbon::parse('10-02-2016')->format('Y/m/d'),
+			'ftermino' => Carbon::parse('07-10-2016')->format('Y/m/d'),
+			'dominioContrato_id' => $dominioID,
+		]);
+
+		$contratoID = Contrato::where('numero', '4501593730')->value('id');
+
+		DominioContrato::create([
+			'DominioContrato_id' => $contratoID,
+			'DominioContrato_type' => 'Ubicacion',
+		]);
+
+		$empresaID = Empresa::where('nombre', 'KOMATSU CHILE S.A.')-> value('id');
+
+		Contrato::create([
+			'empresa_id' => $empresaID,
+			'numero' => '4600004456',
+			'finicio' => Carbon::parse('01-09-2005')->format('Y/m/d'),
+			'ftermino' => Carbon::parse('31-12-2017')->format('Y/m/d'),
+			'dominioContrato_id' => $dominioID,
+		]);
+
+		$contratoID = Contrato::where('numero', '4600004456')->value('id');
+
+		DominioContrato::create([
+			'DominioContrato_id' => $contratoID,
+			'DominioContrato_type' => 'Ubicacion',
+		]);
+
+		$empresaID = Empresa::where('nombre', 'KONECRANES')-> value('id');
+
+		Contrato::create([
+			'empresa_id' => $empresaID,
+			'numero' => '4600010970',
+			'finicio' => Carbon::parse('01-01-2012')->format('Y/m/d'),
+			'ftermino' => Carbon::parse('30-11-2015')->format('Y/m/d'),
+			'dominioContrato_id' => $dominioID,
+		]);
+
+		$contratoID = Contrato::where('numero', '4600010970')->value('id');
+
+		DominioContrato::create([
+			'DominioContrato_id' => $contratoID,
+			'DominioContrato_type' => 'Ubicacion',
+		]);
+
+		$empresaID = Empresa::where('nombre', 'KUPFER HERMANOS S.A.')-> value('id');
+
+		Contrato::create([
+			'empresa_id' => $empresaID,
+			'numero' => '4600010113',
+			'finicio' => Carbon::parse('01-06-2013')->format('Y/m/d'),
+			'ftermino' => Carbon::parse('30-04-2016')->format('Y/m/d'),
+			'dominioContrato_id' => $dominioID,
+		]);
+
+		$contratoID = Contrato::where('numero', '4600010113')->value('id');
+
+		DominioContrato::create([
+			'DominioContrato_id' => $contratoID,
+			'DominioContrato_type' => 'Ubicacion',
+		]);
+		Contrato::create([
+			'empresa_id' => $empresaID, 
+			'numero' => '4600013772',
+			'finicio' => Carbon::parse('01-04-2015')->format('Y/m/d'),
+			'ftermino' => Carbon::parse('31-12-2016')->format('Y/m/d'),
+			'dominioContrato_id' => $dominioID,
+		]);
+
+		$contratoID = Contrato::where('numero', '4600013772')->value('id');
+
+		DominioContrato::create([
+			'DominioContrato_id' => $contratoID,
+			'DominioContrato_type' => 'Ubicacion',
+		]);
+
+		$empresaID = Empresa::where('nombre', 'LAVANDERIA ALBIA')-> value('id');
+
+		Contrato::create([
+			'empresa_id' => $empresaID,
+			'numero' => '4600008463',
+			'finicio' => Carbon::parse('01-03-2015')->format('Y/m/d'),
+			'ftermino' => Carbon::parse('30-08-2016')->format('Y/m/d'),
+			'dominioContrato_id' => $dominioID,
+		]);
+
+		$contratoID = Contrato::where('numero', '4600008463')->value('id');
+
+		DominioContrato::create([
+			'DominioContrato_id' => $contratoID,
+			'DominioContrato_type' => 'Ubicacion',
+		]);
+		Contrato::create([
+			'empresa_id' => $empresaID, 
+			'numero' => '4600014994',
+			'finicio' => Carbon::parse('01-09-2016')->format('Y/m/d'),
+			'ftermino' => Carbon::parse('01-12-2017')->format('Y/m/d'),
+			'dominioContrato_id' => $dominioID,
+		]);
+
+		$contratoID = Contrato::where('numero', '4600014994')->value('id');
+
+		DominioContrato::create([
+			'DominioContrato_id' => $contratoID,
+			'DominioContrato_type' => 'Ubicacion',
+		]);
+
+		$empresaID = Empresa::where('nombre', 'LIEBHERR CHILE SPA')-> value('id');
+
+		Contrato::create([
+			'empresa_id' => $empresaID,
+			'numero' => '4600014209',
+			'finicio' => Carbon::parse('24-08-2015')->format('Y/m/d'),
+			'ftermino' => Carbon::parse('23-08-2018')->format('Y/m/d'),
+			'dominioContrato_id' => $dominioID,
+		]);
+
+		$contratoID = Contrato::where('numero', '4600014209')->value('id');
+
+		DominioContrato::create([
+			'DominioContrato_id' => $contratoID,
+			'DominioContrato_type' => 'Ubicacion',
+		]);
+
+		$empresaID = Empresa::where('nombre', 'LIMPIANDO EL SUR')-> value('id');
+
+		Contrato::create([
+			'empresa_id' => $empresaID,
+			'numero' => '4501270902',
+			'finicio' => Carbon::parse('03-06-2012')->format('Y/m/d'),
+			'ftermino' => Carbon::parse('31-12-2016')->format('Y/m/d'),
+			'dominioContrato_id' => $dominioID,
+		]);
+
+		$contratoID = Contrato::where('numero', '4501270902')->value('id');
+
+		DominioContrato::create([
+			'DominioContrato_id' => $contratoID,
+			'DominioContrato_type' => 'Ubicacion',
+		]);
+
+		$empresaID = Empresa::where('nombre', 'MANANTIAL')-> value('id');
+
+		Contrato::create([
+			'empresa_id' => $empresaID,
+			'numero' => '4501561073',
+			'finicio' => Carbon::parse('03-08-2015')->format('Y/m/d'),
+			'ftermino' => Carbon::parse('03-08-2018')->format('Y/m/d'),
+			'dominioContrato_id' => $dominioID,
+		]);
+
+		$contratoID = Contrato::where('numero', '4501561073')->value('id');
+
+		DominioContrato::create([
+			'DominioContrato_id' => $contratoID,
+			'DominioContrato_type' => 'Ubicacion',
+		]);
+
+		$empresaID = Empresa::where('nombre', 'MECANICA DE ROCAS LTDA.')-> value('id');
+
+		Contrato::create([
+			'empresa_id' => $empresaID,
+			'numero' => '4501647618',
+			'finicio' => Carbon::parse('22-08-2017')->format('Y/m/d'),
+			'ftermino' => Carbon::parse('21-01-2018')->format('Y/m/d'),
+			'dominioContrato_id' => $dominioID,
+		]);
+
+		$contratoID = Contrato::where('numero', '4501647618')->value('id');
+
+		DominioContrato::create([
+			'DominioContrato_id' => $contratoID,
+			'DominioContrato_type' => 'Ubicacion',
+		]);
+
+		$empresaID = Empresa::where('nombre', 'MECANICA INDUSTRIAL S.A.')-> value('id');
+
+		Contrato::create([
+			'empresa_id' => $empresaID,
+			'numero' => '4600011972',
+			'finicio' => Carbon::parse('01-03-2013')->format('Y/m/d'),
+			'ftermino' => Carbon::parse('25-02-2016')->format('Y/m/d'),
+			'dominioContrato_id' => $dominioID,
+		]);
+
+		$contratoID = Contrato::where('numero', '4600011972')->value('id');
+
+		DominioContrato::create([
+			'DominioContrato_id' => $contratoID,
+			'DominioContrato_type' => 'Ubicacion',
+		]);
+
+		$empresaID = Empresa::where('nombre', 'MOL AMBIENTE S.A.')-> value('id');
+
+		Contrato::create([
+			'empresa_id' => $empresaID,
+			'numero' => '4501095465',
+			'finicio' => Carbon::parse('01-11-2010')->format('Y/m/d'),
+			'ftermino' => Carbon::parse('01-11-2015')->format('Y/m/d'),
+			'dominioContrato_id' => $dominioID,
+		]);
+
+		$contratoID = Contrato::where('numero', '4501095465')->value('id');
+
+		DominioContrato::create([
+			'DominioContrato_id' => $contratoID,
+			'DominioContrato_type' => 'Ubicacion',
+		]);
+
+		$empresaID = Empresa::where('nombre', 'NEXXO S.A.')-> value('id');
+
+		Contrato::create([
+			'empresa_id' => $empresaID,
+			'numero' => '4600013796',
+			'finicio' => Carbon::parse('16-04-2015')->format('Y/m/d'),
+			'ftermino' => Carbon::parse('16-04-2018')->format('Y/m/d'),
+			'dominioContrato_id' => $dominioID,
+		]);
+
+		$contratoID = Contrato::where('numero', '4600013796')->value('id');
+
+		DominioContrato::create([
+			'DominioContrato_id' => $contratoID,
+			'DominioContrato_type' => 'Ubicacion',
+		]);
+
+		$empresaID = Empresa::where('nombre', 'ORICA CHILE S.A.')-> value('id');
+
+		Contrato::create([
+			'empresa_id' => $empresaID,
+			'numero' => '4501366356',
+			'finicio' => Carbon::parse('16-05-2013')->format('Y/m/d'),
+			'ftermino' => Carbon::parse('15-05-2016')->format('Y/m/d'),
+			'dominioContrato_id' => $dominioID,
+		]);
+
+		$contratoID = Contrato::where('numero', '4501366356')->value('id');
+
+		DominioContrato::create([
+			'DominioContrato_id' => $contratoID,
+			'DominioContrato_type' => 'Ubicacion',
+		]);
+
+		$empresaID = Empresa::where('nombre', 'ORPAK LATINA SPA')-> value('id');
+
+		Contrato::create([
+			'empresa_id' => $empresaID,
+			'numero' => '4501046812',
+			'finicio' => Carbon::parse('11-12-2013')->format('Y/m/d'),
+			'ftermino' => Carbon::parse('30-04-2015')->format('Y/m/d'),
+			'dominioContrato_id' => $dominioID,
+		]);
+
+		$contratoID = Contrato::where('numero', '4501046812')->value('id');
+
+		DominioContrato::create([
+			'DominioContrato_id' => $contratoID,
+			'DominioContrato_type' => 'Ubicacion',
+		]);
+
+		$empresaID = Empresa::where('nombre', 'POCH CONSULTORES & ASOCIADOS')-> value('id');
+
+		Contrato::create([
+			'empresa_id' => $empresaID,
+			'numero' => '4501762356',
+			'finicio' => Carbon::parse('02-01-2018')->format('Y/m/d'),
+			'ftermino' => Carbon::parse('01-05-2018')->format('Y/m/d'),
+			'dominioContrato_id' => $dominioID,
+		]);
+
+		$contratoID = Contrato::where('numero', '4501762356')->value('id');
+
+		DominioContrato::create([
+			'DominioContrato_id' => $contratoID,
+			'DominioContrato_type' => 'Ubicacion',
+		]);
+
+		$empresaID = Empresa::where('nombre', 'PRECISION S.A.')-> value('id');
+
+		Contrato::create([
+			'empresa_id' => $empresaID,
+			'numero' => '4601046812',
+			'finicio' => Carbon::parse('01-09-2013')->format('Y/m/d'),
+			'ftermino' => Carbon::parse('30-04-2015')->format('Y/m/d'),
+			'dominioContrato_id' => $dominioID,
+		]);
+
+		$contratoID = Contrato::where('numero', '4601046812')->value('id');
+
+		DominioContrato::create([
+			'DominioContrato_id' => $contratoID,
+			'DominioContrato_type' => 'Ubicacion',
+		]);
+
+		$empresaID = Empresa::where('nombre', 'R&Q')-> value('id');
+
+		Contrato::create([
+			'empresa_id' => $empresaID,
+			'numero' => '4501493517',
+			'finicio' => Carbon::parse('01-11-2014')->format('Y/m/d'),
+			'ftermino' => Carbon::parse('31-07-2018')->format('Y/m/d'),
+			'dominioContrato_id' => $dominioID,
+		]);
+
+		$contratoID = Contrato::where('numero', '4501493517')->value('id');
+
+		DominioContrato::create([
+			'DominioContrato_id' => $contratoID,
+			'DominioContrato_type' => 'Ubicacion',
+		]);
+
+		$empresaID = Empresa::where('nombre', 'RELSA')-> value('id');
+
+		Contrato::create([
+			'empresa_id' => $empresaID,
+			'numero' => '4600013881',
+			'finicio' => Carbon::parse('14-04-2015')->format('Y/m/d'),
+			'ftermino' => Carbon::parse('14-04-2017')->format('Y/m/d'),
+			'dominioContrato_id' => $dominioID,
+		]);
+
+		$contratoID = Contrato::where('numero', '4600013881')->value('id');
+
+		DominioContrato::create([
+			'DominioContrato_id' => $contratoID,
+			'DominioContrato_type' => 'Ubicacion',
+		]);
+
+		$empresaID = Empresa::where('nombre', 'SANAM LTDA.')-> value('id');
+
+		Contrato::create([
+			'empresa_id' => $empresaID,
+			'numero' => '4600013421',
+			'finicio' => Carbon::parse('02-01-2015')->format('Y/m/d'),
+			'ftermino' => Carbon::parse('02-01-2017')->format('Y/m/d'),
+			'dominioContrato_id' => $dominioID,
+		]);
+
+		$contratoID = Contrato::where('numero', '4600013421')->value('id');
+
+		DominioContrato::create([
+			'DominioContrato_id' => $contratoID,
+			'DominioContrato_type' => 'Ubicacion',
+		]);
+
+		$empresaID = Empresa::where('nombre', 'SANDVIK CHILE S.A.')-> value('id');
+
+		Contrato::create([
+			'empresa_id' => $empresaID,
+			'numero' => '4600013353',
+			'finicio' => Carbon::parse('01-01-2015')->format('Y/m/d'),
+			'ftermino' => Carbon::parse('01-01-2016')->format('Y/m/d'),
+			'dominioContrato_id' => $dominioID,
+		]);
+
+		$contratoID = Contrato::where('numero', '4600013353')->value('id');
+
+		DominioContrato::create([
+			'DominioContrato_id' => $contratoID,
+			'DominioContrato_type' => 'Ubicacion',
+		]);
+
+		$empresaID = Empresa::where('nombre', 'SERVASOL LTDA.')-> value('id');
+
+		Contrato::create([
+			'empresa_id' => $empresaID,
+			'numero' => '4501549042',
+			'finicio' => Carbon::parse('15-06-2015')->format('Y/m/d'),
+			'ftermino' => Carbon::parse('15-06-2017')->format('Y/m/d'),
+			'dominioContrato_id' => $dominioID,
+		]);
+
+		$contratoID = Contrato::where('numero', '4501549042')->value('id');
+
+		DominioContrato::create([
+			'DominioContrato_id' => $contratoID,
+			'DominioContrato_type' => 'Ubicacion',
+		]);
+
+		$empresaID = Empresa::where('nombre', 'SERVING CONSULTORES LTDA.')-> value('id');
+
+		Contrato::create([
+			'empresa_id' => $empresaID,
+			'numero' => '4501527053',
+			'finicio' => Carbon::parse('24-03-2015')->format('Y/m/d'),
+			'ftermino' => Carbon::parse('15-10-2015')->format('Y/m/d'),
+			'dominioContrato_id' => $dominioID,
+		]);
+
+		$contratoID = Contrato::where('numero', '4501527053')->value('id');
+
+		DominioContrato::create([
+			'DominioContrato_id' => $contratoID,
+			'DominioContrato_type' => 'Ubicacion',
+		]);
+
+		$empresaID = Empresa::where('nombre', 'SGS CHILE LTDA.')-> value('id');
+
+		Contrato::create([
+			'empresa_id' => $empresaID,
+			'numero' => '4501490050',
+			'finicio' => Carbon::parse('01-10-2014')->format('Y/m/d'),
+			'ftermino' => Carbon::parse('14-10-2016')->format('Y/m/d'),
+			'dominioContrato_id' => $dominioID,
+		]);
+
+		$contratoID = Contrato::where('numero', '4501490050')->value('id');
+
+		DominioContrato::create([
+			'DominioContrato_id' => $contratoID,
+			'DominioContrato_type' => 'Ubicacion',
+		]);
+
+		$empresaID = Empresa::where('nombre', 'SGS MINERALS S.A.')-> value('id');
+
+		Contrato::create([
+			'empresa_id' => $empresaID,
+			'numero' => '4501402492',
+			'finicio' => Carbon::parse('12-10-2013')->format('Y/m/d'),
+			'ftermino' => Carbon::parse('28-02-2017')->format('Y/m/d'),
+			'dominioContrato_id' => $dominioID,
+		]);
+
+		$contratoID = Contrato::where('numero', '4501402492')->value('id');
+
+		DominioContrato::create([
+			'DominioContrato_id' => $contratoID,
+			'DominioContrato_type' => 'Ubicacion',
+		]);
+		Contrato::create([
+			'empresa_id' => $empresaID, 
+			'numero' => '4600015296',
+			'finicio' => Carbon::parse('14-02-2017')->format('Y/m/d'),
+			'ftermino' => Carbon::parse('14-02-2018')->format('Y/m/d'),
+			'dominioContrato_id' => $dominioID,
+		]);
+
+		$contratoID = Contrato::where('numero', '4600015296')->value('id');
+
+		DominioContrato::create([
+			'DominioContrato_id' => $contratoID,
+			'DominioContrato_type' => 'Ubicacion',
+		]);
+
+		$empresaID = Empresa::where('nombre', 'SIERRA Y PLAZA')-> value('id');
+
+		Contrato::create([
+			'empresa_id' => $empresaID,
+			'numero' => '4501567335',
+			'finicio' => Carbon::parse('01-09-2015')->format('Y/m/d'),
+			'ftermino' => Carbon::parse('31-08-2017')->format('Y/m/d'),
+			'dominioContrato_id' => $dominioID,
+		]);
+
+		$contratoID = Contrato::where('numero', '4501567335')->value('id');
+
+		DominioContrato::create([
+			'DominioContrato_id' => $contratoID,
+			'DominioContrato_type' => 'Ubicacion',
+		]);
+		Contrato::create([
+			'empresa_id' => $empresaID, 
+			'numero' => '4501523215',
+			'finicio' => Carbon::parse('09-03-2015')->format('Y/m/d'),
+			'ftermino' => Carbon::parse('08-03-2018')->format('Y/m/d'),
+			'dominioContrato_id' => $dominioID,
+		]);
+
+		$contratoID = Contrato::where('numero', '4501523215')->value('id');
+
+		DominioContrato::create([
+			'DominioContrato_id' => $contratoID,
+			'DominioContrato_type' => 'Ubicacion',
+		]);
+		Contrato::create([
+			'empresa_id' => $empresaID, 
+			'numero' => '4501245147',
+			'finicio' => Carbon::parse('14-02-2012')->format('Y/m/d'),
+			'ftermino' => Carbon::parse('31-08-2015')->format('Y/m/d'),
+			'dominioContrato_id' => $dominioID,
+		]);
+
+		$contratoID = Contrato::where('numero', '4501245147')->value('id');
+
+		DominioContrato::create([
+			'DominioContrato_id' => $contratoID,
+			'DominioContrato_type' => 'Ubicacion',
+		]);
+
+		$empresaID = Empresa::where('nombre', 'SIGA')-> value('id');
+
+		Contrato::create([
+			'empresa_id' => $empresaID,
+			'numero' => '4501333787',
+			'finicio' => Carbon::parse('23-01-2013')->format('Y/m/d'),
+			'ftermino' => Carbon::parse('26-06-2015')->format('Y/m/d'),
+			'dominioContrato_id' => $dominioID,
+		]);
+
+		$contratoID = Contrato::where('numero', '4501333787')->value('id');
+
+		DominioContrato::create([
+			'DominioContrato_id' => $contratoID,
+			'DominioContrato_type' => 'Ubicacion',
+		]);
+		Contrato::create([
+			'empresa_id' => $empresaID, 
+			'numero' => '4600013373',
+			'finicio' => Carbon::parse('01-11-2014')->format('Y/m/d'),
+			'ftermino' => Carbon::parse('19-04-2016')->format('Y/m/d'),
+			'dominioContrato_id' => $dominioID,
+		]);
+
+		$contratoID = Contrato::where('numero', '4600013373')->value('id');
+
+		DominioContrato::create([
+			'DominioContrato_id' => $contratoID,
+			'DominioContrato_type' => 'Ubicacion',
+		]);
+
+		$empresaID = Empresa::where('nombre', 'SIGMA S.A.')-> value('id');
+
+		Contrato::create([
+			'empresa_id' => $empresaID,
+			'numero' => '4600015054',
+			'finicio' => Carbon::parse('01-11-2016')->format('Y/m/d'),
+			'ftermino' => Carbon::parse('07-01-2017')->format('Y/m/d'),
+			'dominioContrato_id' => $dominioID,
+		]);
+
+		$contratoID = Contrato::where('numero', '4600015054')->value('id');
+
+		DominioContrato::create([
+			'DominioContrato_id' => $contratoID,
+			'DominioContrato_type' => 'Ubicacion',
+		]);
+
+		$empresaID = Empresa::where('nombre', 'SK GODELIUS S.A.')-> value('id');
+
+		Contrato::create([
+			'empresa_id' => $empresaID,
+			'numero' => '4501533935',
+			'finicio' => Carbon::parse('22-04-2015')->format('Y/m/d'),
+			'ftermino' => Carbon::parse('22-04-2016')->format('Y/m/d'),
+			'dominioContrato_id' => $dominioID,
+		]);
+
+		$contratoID = Contrato::where('numero', '4501533935')->value('id');
+
+		DominioContrato::create([
+			'DominioContrato_id' => $contratoID,
+			'DominioContrato_type' => 'Ubicacion',
+		]);
+
+		$empresaID = Empresa::where('nombre', 'SK INDUSTRIAL S.A.')-> value('id');
+
+		Contrato::create([
+			'empresa_id' => $empresaID,
+			'numero' => '4600010353',
+			'finicio' => Carbon::parse('01-07-2011')->format('Y/m/d'),
+			'ftermino' => Carbon::parse('31-03-2015')->format('Y/m/d'),
+			'dominioContrato_id' => $dominioID,
+		]);
+
+		$contratoID = Contrato::where('numero', '4600010353')->value('id');
+
+		DominioContrato::create([
+			'DominioContrato_id' => $contratoID,
+			'DominioContrato_type' => 'Ubicacion',
+		]);
+
+		$empresaID = Empresa::where('nombre', 'SNC LAVALIN CHILE S.A.')-> value('id');
+
+		Contrato::create([
+			'empresa_id' => $empresaID,
+			'numero' => '4501661404',
+			'finicio' => Carbon::parse('16-10-2016')->format('Y/m/d'),
+			'ftermino' => Carbon::parse('29-03-2017')->format('Y/m/d'),
+			'dominioContrato_id' => $dominioID,
+		]);
+
+		$contratoID = Contrato::where('numero', '4501661404')->value('id');
+
+		DominioContrato::create([
+			'DominioContrato_id' => $contratoID,
+			'DominioContrato_type' => 'Ubicacion',
+		]);
+
+		$empresaID = Empresa::where('nombre', 'SOCOAL LTDA.')-> value('id');
+
+		Contrato::create([
+			'empresa_id' => $empresaID,
+			'numero' => '4501681168',
+			'finicio' => Carbon::parse('09-01-2017')->format('Y/m/d'),
+			'ftermino' => Carbon::parse('09-01-2017')->format('Y/m/d'),
+			'dominioContrato_id' => $dominioID,
+		]);
+
+		$contratoID = Contrato::where('numero', '4501681168')->value('id');
+
+		DominioContrato::create([
+			'DominioContrato_id' => $contratoID,
+			'DominioContrato_type' => 'Ubicacion',
+		]);
+
+		$empresaID = Empresa::where('nombre', 'SOLETANCHE BACHY')-> value('id');
+
+		Contrato::create([
+			'empresa_id' => $empresaID,
+			'numero' => '4600008975',
+			'finicio' => Carbon::parse('02-08-2010')->format('Y/m/d'),
+			'ftermino' => Carbon::parse('02-08-2016')->format('Y/m/d'),
+			'dominioContrato_id' => $dominioID,
+		]);
+
+		$contratoID = Contrato::where('numero', '4600008975')->value('id');
+
+		DominioContrato::create([
+			'DominioContrato_id' => $contratoID,
+			'DominioContrato_type' => 'Ubicacion',
+		]);
+
+		$empresaID = Empresa::where('nombre', 'SPM INGENIEROS')-> value('id');
+
+		Contrato::create([
+			'empresa_id' => $empresaID,
+			'numero' => '4501517595',
+			'finicio' => Carbon::parse('10-03-2015')->format('Y/m/d'),
+			'ftermino' => Carbon::parse('09-03-2017')->format('Y/m/d'),
+			'dominioContrato_id' => $dominioID,
+		]);
+
+		$contratoID = Contrato::where('numero', '4501517595')->value('id');
+
+		DominioContrato::create([
+			'DominioContrato_id' => $contratoID,
+			'DominioContrato_type' => 'Ubicacion',
+		]);
+
+		$empresaID = Empresa::where('nombre', 'STEEL INGENIERIA S.A.')-> value('id');
+
+		Contrato::create([
+			'empresa_id' => $empresaID,
+			'numero' => '4600009230',
+			'finicio' => Carbon::parse('03-02-2014')->format('Y/m/d'),
+			'ftermino' => Carbon::parse('02-02-2016')->format('Y/m/d'),
+			'dominioContrato_id' => $dominioID,
+		]);
+
+		$contratoID = Contrato::where('numero', '4600009230')->value('id');
+
+		DominioContrato::create([
+			'DominioContrato_id' => $contratoID,
+			'DominioContrato_type' => 'Ubicacion',
+		]);
+		Contrato::create([
+			'empresa_id' => $empresaID, 
+			'numero' => '4600010179',
+			'finicio' => Carbon::parse('15-06-2011')->format('Y/m/d'),
+			'ftermino' => Carbon::parse('15-06-2015')->format('Y/m/d'),
+			'dominioContrato_id' => $dominioID,
+		]);
+
+		$contratoID = Contrato::where('numero', '4600010179')->value('id');
+
+		DominioContrato::create([
+			'DominioContrato_id' => $contratoID,
+			'DominioContrato_type' => 'Ubicacion',
+		]);
+		Contrato::create([
+			'empresa_id' => $empresaID,
+			'numero' => '4600013202',
+			'finicio' => Carbon::parse('13-08-2014')->format('Y/m/d'),
+			'ftermino' => Carbon::parse('13-08-2018')->format('Y/m/d'),
+			'dominioContrato_id' => $dominioID,
+		]);
+
+		$contratoID = Contrato::where('numero', '4600013202')->value('id');
+
+		DominioContrato::create([
+			'DominioContrato_id' => $contratoID,
+			'DominioContrato_type' => 'Ubicacion',
+		]);
+		Contrato::create([
+			'empresa_id' => $empresaID, 
+			'numero' => '4600013999',
+			'finicio' => Carbon::parse('28-04-2015')->format('Y/m/d'),
+			'ftermino' => Carbon::parse('27-04-2016')->format('Y/m/d'),
+			'dominioContrato_id' => $dominioID,
+		]);
+
+		$contratoID = Contrato::where('numero', '4600013999')->value('id');
+
+		DominioContrato::create([
+			'DominioContrato_id' => $contratoID,
+			'DominioContrato_type' => 'Ubicacion',
+		]);
+
+		$empresaID = Empresa::where('nombre', 'SUPEREX S.A.')-> value('id');
+
+		Contrato::create([
+			'empresa_id' => $empresaID,
+			'numero' => '4501548803',
+			'finicio' => Carbon::parse('31-07-2015')->format('Y/m/d'),
+			'ftermino' => Carbon::parse('31-12-2015')->format('Y/m/d'),
+			'dominioContrato_id' => $dominioID,
+		]);
+
+		$contratoID = Contrato::where('numero', '4501548803')->value('id');
+
+		DominioContrato::create([
+			'DominioContrato_id' => $contratoID,
+			'DominioContrato_type' => 'Ubicacion',
+		]);
+		Contrato::create([
+			'empresa_id' => $empresaID, 
+			'numero' => '4501507229',
+			'finicio' => Carbon::parse('12-01-2015')->format('Y/m/d'),
+			'ftermino' => Carbon::parse('11-04-2015')->format('Y/m/d'),
+			'dominioContrato_id' => $dominioID,
+		]);
+
+		$contratoID = Contrato::where('numero', '4501507229')->value('id');
+
+		DominioContrato::create([
+			'DominioContrato_id' => $contratoID,
+			'DominioContrato_type' => 'Ubicacion',
+		]);
+
+		$empresaID = Empresa::where('nombre', 'TERRA SERVICES S.A.')-> value('id');
+
+		Contrato::create([
+			'empresa_id' => $empresaID,
+			'numero' => '4501691300',
+			'finicio' => Carbon::parse('15-06-2017')->format('Y/m/d'),
+			'ftermino' => Carbon::parse('28-02-2018')->format('Y/m/d'),
+			'dominioContrato_id' => $dominioID,
+		]);
+
+		$contratoID = Contrato::where('numero', '4501691300')->value('id');
+
+		DominioContrato::create([
+			'DominioContrato_id' => $contratoID,
+			'DominioContrato_type' => 'Ubicacion',
+		]);
+
+		$empresaID = Empresa::where('nombre', 'TREPSA S.A.')-> value('id');
+
+		Contrato::create([
+			'empresa_id' => $empresaID,
+			'numero' => '4600014053',
+			'finicio' => Carbon::parse('15-06-2015')->format('Y/m/d'),
+			'ftermino' => Carbon::parse('05-12-2015')->format('Y/m/d'),
+			'dominioContrato_id' => $dominioID,
+		]);
+
+		$contratoID = Contrato::where('numero', '4600014053')->value('id');
+
+		DominioContrato::create([
+			'DominioContrato_id' => $contratoID,
+			'DominioContrato_type' => 'Ubicacion',
+		]);
+		Contrato::create([
+			'empresa_id' => $empresaID, 
+			'numero' => '4500610325',
+			'finicio' => Carbon::parse('17-02-2006')->format('Y/m/d'),
+			'ftermino' => Carbon::parse('31-12-2015')->format('Y/m/d'),
+			'dominioContrato_id' => $dominioID,
+		]);
+
+		$contratoID = Contrato::where('numero', '4500610325')->value('id');
+
+		DominioContrato::create([
+			'DominioContrato_id' => $contratoID,
+			'DominioContrato_type' => 'Ubicacion',
+		]);
+
+		$empresaID = Empresa::where('nombre', 'TROMAX S.A.')-> value('id');
+
+		Contrato::create([
+			'empresa_id' => $empresaID,
+			'numero' => '4501737269',
+			'finicio' => Carbon::parse('01-02-2018')->format('Y/m/d'),
+			'ftermino' => Carbon::parse('15-05-2018')->format('Y/m/d'),
+			'dominioContrato_id' => $dominioID,
+		]);
+
+		$contratoID = Contrato::where('numero', '4501737269')->value('id');
+
+		DominioContrato::create([
+			'DominioContrato_id' => $contratoID,
+			'DominioContrato_type' => 'Ubicacion',
+		]);
+
+		$empresaID = Empresa::where('nombre', 'TTM CHILE S.A.')-> value('id');
+
+		Contrato::create([
+			'empresa_id' => $empresaID,
+			'numero' => '4600012400',
+			'finicio' => Carbon::parse('01-11-2013')->format('Y/m/d'),
+			'ftermino' => Carbon::parse('30-11-2016')->format('Y/m/d'),
+			'dominioContrato_id' => $dominioID,
+		]);
+
+		$contratoID = Contrato::where('numero', '4600012400')->value('id');
+
+		DominioContrato::create([
+			'DominioContrato_id' => $contratoID,
+			'DominioContrato_type' => 'Ubicacion',
+		]);
+
+		$empresaID = Empresa::where('nombre', 'WELLFIELD')-> value('id');
+
+		Contrato::create([
+			'empresa_id' => $empresaID,
+			'numero' => '4600014808',
+			'finicio' => Carbon::parse('28-07-2016')->format('Y/m/d'),
+			'ftermino' => Carbon::parse('27-07-2018')->format('Y/m/d'),
+			'dominioContrato_id' => $dominioID,
+		]);
+
+		$contratoID = Contrato::where('numero', '4600014808')->value('id');
+
+		DominioContrato::create([
+			'DominioContrato_id' => $contratoID,
+			'DominioContrato_type' => 'Ubicacion',
+		]);
+
+		$empresaID = Empresa::where('nombre', 'WLS')-> value('id');
+
+		Contrato::create([
+			'empresa_id' => $empresaID,
+			'numero' => '4600008666',
+			'finicio' => Carbon::parse('01-09-2011')->format('Y/m/d'),
+			'ftermino' => Carbon::parse('31-05-2015')->format('Y/m/d'),
+			'dominioContrato_id' => $dominioID,
+		]);
+
+		$contratoID = Contrato::where('numero', '4600008666')->value('id');
+
+		DominioContrato::create([
+			'DominioContrato_id' => $contratoID,
+			'DominioContrato_type' => 'Ubicacion',
+		]);
+
+		$empresaID = Empresa::where('nombre', 'WORKMATE SERVICIOS TRANSITORIOS LTDA.')-> value('id');
+
+		Contrato::create([
+			'empresa_id' => $empresaID,
+			'numero' => '4501442927',
+			'finicio' => Carbon::parse('01-04-2014')->format('Y/m/d'),
+			'ftermino' => Carbon::parse('31-03-2016')->format('Y/m/d'),
+			'dominioContrato_id' => $dominioID,
+		]);
+
+		$contratoID = Contrato::where('numero', '4501442927')->value('id');
+
+		DominioContrato::create([
+			'DominioContrato_id' => $contratoID,
+			'DominioContrato_type' => 'Ubicacion',
+		]);
+
+		$empresaID = Empresa::where('nombre', 'WORLD CLASS')-> value('id');
+
+		Contrato::create([
+			'empresa_id' => $empresaID,
+			'numero' => '4501448789',
+			'finicio' => Carbon::parse('21-04-2014')->format('Y/m/d'),
+			'ftermino' => Carbon::parse('21-04-2015')->format('Y/m/d'),
+			'dominioContrato_id' => $dominioID,
+		]);
+
+		$contratoID = Contrato::where('numero', '4501448789')->value('id');
+
+		DominioContrato::create([
+			'DominioContrato_id' => $contratoID,
+			'DominioContrato_type' => 'Ubicacion',
+		]);
+
+		$empresaID = Empresa::where('nombre', 'WUTHCO LTDA.')-> value('id');
+
+		Contrato::create([
+			'empresa_id' => $empresaID,
+			'numero' => '4501656260',
+			'finicio' => Carbon::parse('19-10-2016')->format('Y/m/d'),
+			'ftermino' => Carbon::parse('09-08-2017')->format('Y/m/d'),
+			'dominioContrato_id' => $dominioID,
+		]);
+
+		$contratoID = Contrato::where('numero', '4501656260')->value('id');
+
+		DominioContrato::create([
+			'DominioContrato_id' => $contratoID,
+			'DominioContrato_type' => 'Ubicacion',
+		]);
+
+		$dominioID = Ubicacion::where('nombre', 'División Gabriela Mistral')->value('id');
+		$empresaID = Empresa::where('nombre', 'ANDINOR')-> value('id');
+
+		Contrato::create([
+			'empresa_id' => $empresaID,
+			'numero' => '4501762508',
+			'finicio' => Carbon::parse('19-03-2018')->format('Y/m/d'),
+			'ftermino' => Carbon::parse('02-05-2018')->format('Y/m/d'),
+			'dominioContrato_id' => $dominioID,
+		]);
+
+		$contratoID = Contrato::where('numero', '4501762508')->value('id');
+
+		DominioContrato::create([
+			'DominioContrato_id' => $contratoID,
+			'DominioContrato_type' => 'Ubicacion',
+		]);
+
+		$empresaID = Empresa::where('nombre', 'ATLAS COPCO')-> value('id');
+
+		Contrato::create([
+			'empresa_id' => $empresaID,
+			'numero' => '4501356575',
+			'finicio' => Carbon::parse('18-03-2013')->format('Y/m/d'),
+			'ftermino' => Carbon::parse('18-03-2018')->format('Y/m/d'),
+			'dominioContrato_id' => $dominioID,
+		]);
+
+		$contratoID = Contrato::where('numero', '4501356575')->value('id');
+
+		DominioContrato::create([
+			'DominioContrato_id' => $contratoID,
+			'DominioContrato_type' => 'Ubicacion',
+		]);
+
+		$empresaID = Empresa::where('nombre', 'AUSTIN INGENIEROS CHILE LTDA.')-> value('id');
+
+		Contrato::create([
+			'empresa_id' => $empresaID,
+			'numero' => '4501413276',
+			'finicio' => Carbon::parse('29-01-2014')->format('Y/m/d'),
+			'ftermino' => Carbon::parse('29-01-2017')->format('Y/m/d'),
+			'dominioContrato_id' => $dominioID,
+		]);
+
+		$contratoID = Contrato::where('numero', '4501413276')->value('id');
+
+		DominioContrato::create([
+			'DominioContrato_id' => $contratoID,
+			'DominioContrato_type' => 'Ubicacion',
+		]);
+
+		$empresaID = Empresa::where('nombre', 'BAILAC')-> value('id');
+
+		Contrato::create([
+			'empresa_id' => $empresaID,
+			'numero' => '4600014279',
+			'finicio' => Carbon::parse('01-09-2015')->format('Y/m/d'),
+			'ftermino' => Carbon::parse('31-08-2018')->format('Y/m/d'),
+			'dominioContrato_id' => $dominioID,
+		]);
+
+		$contratoID = Contrato::where('numero', '4600014279')->value('id');
+
+		DominioContrato::create([
+			'DominioContrato_id' => $contratoID,
+			'DominioContrato_type' => 'Ubicacion',
+		]);
+
+		$empresaID = Empresa::where('nombre', 'BESALCO MAQUINARIAS S.A.')-> value('id');
+
+		Contrato::create([
+			'empresa_id' => $empresaID,
+			'numero' => '4501602548',
+			'finicio' => Carbon::parse('01-02-2016')->format('Y/m/d'),
+			'ftermino' => Carbon::parse('01-02-2018')->format('Y/m/d'),
+			'dominioContrato_id' => $dominioID,
+		]);
+
+		$contratoID = Contrato::where('numero', '4501602548')->value('id');
+
+		DominioContrato::create([
+			'DominioContrato_id' => $contratoID,
+			'DominioContrato_type' => 'Ubicacion',
+		]);
+
+		$empresaID = Empresa::where('nombre', 'BUSANC')-> value('id');
+
+		Contrato::create([
+			'empresa_id' => $empresaID,
+			'numero' => '4400164203',
 			'finicio' => Carbon::parse('01-08-2017')->format('Y/m/d'),
-			'ftermino' => Carbon::parse('31-07-2022')->format('Y/m/d'),
-			'ubicacion_id' => $ubicacionID,
+			'ftermino' => Carbon::parse('20-02-2018')->format('Y/m/d'),
+			'dominioContrato_id' => $dominioID,
 		]);
 
-		$empresaID = Empresa::where('nombre', 'SOMACOR')->value('id');
+		$contratoID = Contrato::where('numero', '4400164203')->value('id');
+
+		DominioContrato::create([
+			'DominioContrato_id' => $contratoID,
+			'DominioContrato_type' => 'Ubicacion',
+		]);
+
+		$empresaID = Empresa::where('nombre', 'COMERCIAL FADE LTDA.')-> value('id');
 
 		Contrato::create([
 			'empresa_id' => $empresaID,
-			'numero' => '4501632583',
-			'finicio' => Carbon::parse('16-06-2016')->format('Y/m/d'),
-			'ftermino' => Carbon::parse('15-06-2021')->format('Y/m/d'),
-			'ubicacion_id' => $ubicacionID,
+			'numero' => '4501747180',
+			'finicio' => Carbon::parse('27-11-2017')->format('Y/m/d'),
+			'ftermino' => Carbon::parse('31-05-2018')->format('Y/m/d'),
+			'dominioContrato_id' => $dominioID,
 		]);
 
-		$empresaID = Empresa::where('nombre', 'TECNOLOGIAS COBRA LTDA.')->value('id');
+		$contratoID = Contrato::where('numero', '4501747180')->value('id');
+
+		DominioContrato::create([
+			'DominioContrato_id' => $contratoID,
+			'DominioContrato_type' => 'Ubicacion',
+		]);
+
+		$empresaID = Empresa::where('nombre', 'CONSORCIO HIGH SERVICE METSO LTDA.')-> value('id');
 
 		Contrato::create([
 			'empresa_id' => $empresaID,
-			'numero' => '1400007032',
+			'numero' => '4501551547',
+			'finicio' => Carbon::parse('09-06-2013')->format('Y/m/d'),
+			'ftermino' => Carbon::parse('09-06-2018')->format('Y/m/d'),
+			'dominioContrato_id' => $dominioID,
+		]);
+
+		$contratoID = Contrato::where('numero', '4501551547')->value('id');
+
+		DominioContrato::create([
+			'DominioContrato_id' => $contratoID,
+			'DominioContrato_type' => 'Ubicacion',
+		]);
+
+		$empresaID = Empresa::where('nombre', 'CRUZ & DAVILA')-> value('id');
+
+		Contrato::create([
+			'empresa_id' => $empresaID,
+			'numero' => '4600012277',
+			'finicio' => Carbon::parse('06-08-2013')->format('Y/m/d'),
+			'ftermino' => Carbon::parse('31-12-2015')->format('Y/m/d'),
+			'dominioContrato_id' => $dominioID,
+		]);
+
+		$contratoID = Contrato::where('numero', '4600012277')->value('id');
+
+		DominioContrato::create([
+			'DominioContrato_id' => $contratoID,
+			'DominioContrato_type' => 'Ubicacion',
+		]);
+		Contrato::create([
+			'empresa_id' => $empresaID, 
+			'numero' => '4600015439',
+			'finicio' => Carbon::parse('05-04-2017')->format('Y/m/d'),
+			'ftermino' => Carbon::parse('04-04-2018')->format('Y/m/d'),
+			'dominioContrato_id' => $dominioID,
+		]);
+
+		$contratoID = Contrato::where('numero', '4600015439')->value('id');
+
+		DominioContrato::create([
+			'DominioContrato_id' => $contratoID,
+			'DominioContrato_type' => 'Ubicacion',
+		]);
+
+		$empresaID = Empresa::where('nombre', 'DVA')-> value('id');
+
+		Contrato::create([
+			'empresa_id' => $empresaID,
+			'numero' => '4501736408',
+			'finicio' => Carbon::parse('25-08-2017')->format('Y/m/d'),
+			'ftermino' => Carbon::parse('30-03-2018')->format('Y/m/d'),
+			'dominioContrato_id' => $dominioID,
+		]);
+
+		$contratoID = Contrato::where('numero', '4501736408')->value('id');
+
+		DominioContrato::create([
+			'DominioContrato_id' => $contratoID,
+			'DominioContrato_type' => 'Ubicacion',
+		]);
+
+		$empresaID = Empresa::where('nombre', 'DYNO NOBEL')-> value('id');
+
+		Contrato::create([
+			'empresa_id' => $empresaID,
+			'numero' => '4501734888',
+			'finicio' => Carbon::parse('01-03-2018')->format('Y/m/d'),
+			'ftermino' => Carbon::parse('31-05-2018')->format('Y/m/d'),
+			'dominioContrato_id' => $dominioID,
+		]);
+
+		$contratoID = Contrato::where('numero', '4501734888')->value('id');
+
+		DominioContrato::create([
+			'DominioContrato_id' => $contratoID,
+			'DominioContrato_type' => 'Ubicacion',
+		]);
+
+		$empresaID = Empresa::where('nombre', 'EMIN')-> value('id');
+
+		Contrato::create([
+			'empresa_id' => $empresaID,
+			'numero' => '4600016230',
+			'finicio' => Carbon::parse('02-05-2018')->format('Y/m/d'),
+			'ftermino' => Carbon::parse('12-07-2018')->format('Y/m/d'),
+			'dominioContrato_id' => $dominioID,
+		]);
+
+		$contratoID = Contrato::where('numero', '4600016230')->value('id');
+
+		DominioContrato::create([
+			'DominioContrato_id' => $contratoID,
+			'DominioContrato_type' => 'Ubicacion',
+		]);
+
+		$empresaID = Empresa::where('nombre', 'GREEN CORE')-> value('id');
+
+		Contrato::create([
+			'empresa_id' => $empresaID,
+			'numero' => '4501501471',
+			'finicio' => Carbon::parse('12-02-2015')->format('Y/m/d'),
+			'ftermino' => Carbon::parse('11-01-2016')->format('Y/m/d'),
+			'dominioContrato_id' => $dominioID,
+		]);
+
+		$contratoID = Contrato::where('numero', '4501501471')->value('id');
+
+		DominioContrato::create([
+			'DominioContrato_id' => $contratoID,
+			'DominioContrato_type' => 'Ubicacion',
+		]);
+
+		$empresaID = Empresa::where('nombre', 'JOY GLOBAL CHILE S.A.')-> value('id');
+
+		Contrato::create([
+			'empresa_id' => $empresaID,
+			'numero' => '4600006648',
+			'finicio' => Carbon::parse('01-01-2008')->format('Y/m/d'),
+			'ftermino' => Carbon::parse('31-12-2017')->format('Y/m/d'),
+			'dominioContrato_id' => $dominioID,
+		]);
+
+		$contratoID = Contrato::where('numero', '4600006648')->value('id');
+
+		DominioContrato::create([
+			'DominioContrato_id' => $contratoID,
+			'DominioContrato_type' => 'Ubicacion',
+		]);
+
+		$empresaID = Empresa::where('nombre', 'KOMATSU CHILE S.A.')-> value('id');
+
+		Contrato::create([
+			'empresa_id' => $empresaID,
+			'numero' => '4600005809',
+			'finicio' => Carbon::parse('01-08-2007')->format('Y/m/d'),
+			'ftermino' => Carbon::parse('31-12-2017')->format('Y/m/d'),
+			'dominioContrato_id' => $dominioID,
+		]);
+
+		$contratoID = Contrato::where('numero', '4600005809')->value('id');
+
+		DominioContrato::create([
+			'DominioContrato_id' => $contratoID,
+			'DominioContrato_type' => 'Ubicacion',
+		]);
+
+		$empresaID = Empresa::where('nombre', 'KONECRANES')-> value('id');
+
+		Contrato::create([
+			'empresa_id' => $empresaID,
+			'numero' => '4501344680',
+			'finicio' => Carbon::parse('01-06-2012')->format('Y/m/d'),
+			'ftermino' => Carbon::parse('30-11-2017')->format('Y/m/d'),
+			'dominioContrato_id' => $dominioID,
+		]);
+
+		$contratoID = Contrato::where('numero', '4501344680')->value('id');
+
+		DominioContrato::create([
+			'DominioContrato_id' => $contratoID,
+			'DominioContrato_type' => 'Ubicacion',
+		]);
+
+		$empresaID = Empresa::where('nombre', 'MODULAR')-> value('id');
+
+		Contrato::create([
+			'empresa_id' => $empresaID,
+			'numero' => '4501679728',
+			'finicio' => Carbon::parse('28-12-2016')->format('Y/m/d'),
+			'ftermino' => Carbon::parse('28-06-2018')->format('Y/m/d'),
+			'dominioContrato_id' => $dominioID,
+		]);
+
+		$contratoID = Contrato::where('numero', '4501679728')->value('id');
+
+		DominioContrato::create([
+			'DominioContrato_id' => $contratoID,
+			'DominioContrato_type' => 'Ubicacion',
+		]);
+
+		$empresaID = Empresa::where('nombre', 'SALFA MANTENCIONES S.A.')-> value('id');
+
+		Contrato::create([
+			'empresa_id' => $empresaID,
+			'numero' => '4501529759',
+			'finicio' => Carbon::parse('04-05-2015')->format('Y/m/d'),
+			'ftermino' => Carbon::parse('01-08-2018')->format('Y/m/d'),
+			'dominioContrato_id' => $dominioID,
+		]);
+
+		$contratoID = Contrato::where('numero', '4501529759')->value('id');
+
+		DominioContrato::create([
+			'DominioContrato_id' => $contratoID,
+			'DominioContrato_type' => 'Ubicacion',
+		]);
+		Contrato::create([
+			'empresa_id' => $empresaID, 
+			'numero' => '4501556773',
+			'finicio' => Carbon::parse('21-08-2015')->format('Y/m/d'),
+			'ftermino' => Carbon::parse('21-08-2018')->format('Y/m/d'),
+			'dominioContrato_id' => $dominioID,
+		]);
+
+		$contratoID = Contrato::where('numero', '4501556773')->value('id');
+
+		DominioContrato::create([
+			'DominioContrato_id' => $contratoID,
+			'DominioContrato_type' => 'Ubicacion',
+		]);
+
+		$empresaID = Empresa::where('nombre', 'SANTA ELVIRA')-> value('id');
+
+		Contrato::create([
+			'empresa_id' => $empresaID,
+			'numero' => '4600012592',
+			'finicio' => Carbon::parse('01-01-2014')->format('Y/m/d'),
+			'ftermino' => Carbon::parse('01-01-2016')->format('Y/m/d'),
+			'dominioContrato_id' => $dominioID,
+		]);
+
+		$contratoID = Contrato::where('numero', '4600012592')->value('id');
+
+		DominioContrato::create([
+			'DominioContrato_id' => $contratoID,
+			'DominioContrato_type' => 'Ubicacion',
+		]);
+
+		$empresaID = Empresa::where('nombre', 'SGS MINERALS S.A.')-> value('id');
+
+		Contrato::create([
+			'empresa_id' => $empresaID,
+			'numero' => '4501553686',
+			'finicio' => Carbon::parse('07-06-2016')->format('Y/m/d'),
+			'ftermino' => Carbon::parse('04-06-2018')->format('Y/m/d'),
+			'dominioContrato_id' => $dominioID,
+		]);
+
+		$contratoID = Contrato::where('numero', '4501553686')->value('id');
+
+		DominioContrato::create([
+			'DominioContrato_id' => $contratoID,
+			'DominioContrato_type' => 'Ubicacion',
+		]);
+		Contrato::create([
+			'empresa_id' => $empresaID, 
+			'numero' => '4501344830',
+			'finicio' => Carbon::parse('01-01-2013')->format('Y/m/d'),
+			'ftermino' => Carbon::parse('31-12-2017')->format('Y/m/d'),
+			'dominioContrato_id' => $dominioID,
+		]);
+
+		$contratoID = Contrato::where('numero', '4501344830')->value('id');
+
+		DominioContrato::create([
+			'DominioContrato_id' => $contratoID,
+			'DominioContrato_type' => 'Ubicacion',
+		]);
+
+		$empresaID = Empresa::where('nombre', 'STEEL INGENIERIA S.A.')-> value('id');
+
+		Contrato::create([
+			'empresa_id' => $empresaID,
+			'numero' => '4501561072',
+			'finicio' => Carbon::parse('04-01-2016')->format('Y/m/d'),
+			'ftermino' => Carbon::parse('04-02-2016')->format('Y/m/d'),
+			'dominioContrato_id' => $dominioID,
+		]);
+
+		$contratoID = Contrato::where('numero', '4501561072')->value('id');
+
+		DominioContrato::create([
+			'DominioContrato_id' => $contratoID,
+			'DominioContrato_type' => 'Ubicacion',
+		]);
+		Contrato::create([
+			'empresa_id' => $empresaID, 
+			'numero' => '4501760261',
+			'finicio' => Carbon::parse('01-04-2018')->format('Y/m/d'),
+			'ftermino' => Carbon::parse('30-04-2018')->format('Y/m/d'),
+			'dominioContrato_id' => $dominioID,
+		]);
+
+		$contratoID = Contrato::where('numero', '4501760261')->value('id');
+
+		DominioContrato::create([
+			'DominioContrato_id' => $contratoID,
+			'DominioContrato_type' => 'Ubicacion',
+		]);
+
+		$empresaID = Empresa::where('nombre', 'TERRA SERVICES S.A.')-> value('id');
+
+		Contrato::create([
+			'empresa_id' => $empresaID,
+			'numero' => '4501672508',
+			'finicio' => Carbon::parse('01-01-2017')->format('Y/m/d'),
+			'ftermino' => Carbon::parse('10-06-2018')->format('Y/m/d'),
+			'dominioContrato_id' => $dominioID,
+		]);
+
+		$contratoID = Contrato::where('numero', '4501672508')->value('id');
+
+		DominioContrato::create([
+			'DominioContrato_id' => $contratoID,
+			'DominioContrato_type' => 'Ubicacion',
+		]);
+
+		$empresaID = Empresa::where('nombre', 'WSP CONSULTING CHILE  LTDA.')-> value('id');
+
+		Contrato::create([
+			'empresa_id' => $empresaID,
+			'numero' => '4501765582',
+			'finicio' => Carbon::parse('05-03-2018')->format('Y/m/d'),
+			'ftermino' => Carbon::parse('21-04-2018')->format('Y/m/d'),
+			'dominioContrato_id' => $dominioID,
+		]);
+
+		$contratoID = Contrato::where('numero', '4501765582')->value('id');
+
+		DominioContrato::create([
+			'DominioContrato_id' => $contratoID,
+			'DominioContrato_type' => 'Ubicacion',
+		]);
+
+
+
+		$dominioID = Ubicacion::where('nombre', 'División Ministro Hales')->value('id');
+
+		$empresaID = Empresa::where('nombre', 'AGUASIN')-> value('id');
+
+		Contrato::create([
+			'empresa_id' => $empresaID,
+			'numero' => '4501400189',
+			'finicio' => Carbon::parse('01-11-2013')->format('Y/m/d'),
+			'ftermino' => Carbon::parse('31-12-2016')->format('Y/m/d'),
+			'dominioContrato_id' => $dominioID,
+		]);
+
+		$contratoID = Contrato::where('numero', '4501400189')->value('id');
+
+		DominioContrato::create([
+			'DominioContrato_id' => $contratoID,
+			'DominioContrato_type' => 'Ubicacion',
+		]);
+
+		$empresaID = Empresa::where('nombre', 'ALPHA')-> value('id');
+
+		Contrato::create([
+			'empresa_id' => $empresaID,
+			'numero' => '4501704108',
+			'finicio' => Carbon::parse('10-05-2017')->format('Y/m/d'),
+			'ftermino' => Carbon::parse('10-06-2017')->format('Y/m/d'),
+			'dominioContrato_id' => $dominioID,
+		]);
+
+		$contratoID = Contrato::where('numero', '4501704108')->value('id');
+
+		DominioContrato::create([
+			'DominioContrato_id' => $contratoID,
+			'DominioContrato_type' => 'Ubicacion',
+		]);
+
+		$empresaID = Empresa::where('nombre', 'AQUALOGY')-> value('id');
+
+		Contrato::create([
+			'empresa_id' => $empresaID,
+			'numero' => '4600012200',
+			'finicio' => Carbon::parse('01-07-2013')->format('Y/m/d'),
+			'ftermino' => Carbon::parse('30-06-2016')->format('Y/m/d'),
+			'dominioContrato_id' => $dominioID,
+		]);
+
+		$contratoID = Contrato::where('numero', '4600012200')->value('id');
+
+		DominioContrato::create([
+			'DominioContrato_id' => $contratoID,
+			'DominioContrato_type' => 'Ubicacion',
+		]);
+
+		$empresaID = Empresa::where('nombre', 'ARAUCANIA')-> value('id');
+
+		Contrato::create([
+			'empresa_id' => $empresaID,
+			'numero' => '4501541910',
+			'finicio' => Carbon::parse('01-07-2015')->format('Y/m/d'),
+			'ftermino' => Carbon::parse('01-07-2018')->format('Y/m/d'),
+			'dominioContrato_id' => $dominioID,
+		]);
+
+		$contratoID = Contrato::where('numero', '4501541910')->value('id');
+
+		DominioContrato::create([
+			'DominioContrato_id' => $contratoID,
+			'DominioContrato_type' => 'Ubicacion',
+		]);
+
+		$empresaID = Empresa::where('nombre', 'ATCO SABINCO')-> value('id');
+
+		Contrato::create([
+			'empresa_id' => $empresaID,
+			'numero' => '40',
+			'finicio' => Carbon::parse('27-07-2017')->format('Y/m/d'),
+			'ftermino' => Carbon::parse('24-01-2018')->format('Y/m/d'),
+			'dominioContrato_id' => $dominioID,
+		]);
+
+		$contratoID = Contrato::where('numero', '40')->value('id');
+
+		DominioContrato::create([
+			'DominioContrato_id' => $contratoID,
+			'DominioContrato_type' => 'Ubicacion',
+		]);
+
+		$empresaID = Empresa::where('nombre', 'AUSTIN ARRENDAMIENTOS LTDA.')-> value('id');
+
+		Contrato::create([
+			'empresa_id' => $empresaID,
+			'numero' => '4501458070',
+			'finicio' => Carbon::parse('01-06-2014')->format('Y/m/d'),
+			'ftermino' => Carbon::parse('01-06-2018')->format('Y/m/d'),
+			'dominioContrato_id' => $dominioID,
+		]);
+
+		$contratoID = Contrato::where('numero', '4501458070')->value('id');
+
+		DominioContrato::create([
+			'DominioContrato_id' => $contratoID,
+			'DominioContrato_type' => 'Ubicacion',
+		]);
+		Contrato::create([
+			'empresa_id' => $empresaID, 
+			'numero' => '4600015203',
+			'finicio' => Carbon::parse('24-02-2017')->format('Y/m/d'),
+			'ftermino' => Carbon::parse('31-08-2018')->format('Y/m/d'),
+			'dominioContrato_id' => $dominioID,
+		]);
+
+		$contratoID = Contrato::where('numero', '4600015203')->value('id');
+
+		DominioContrato::create([
+			'DominioContrato_id' => $contratoID,
+			'DominioContrato_type' => 'Ubicacion',
+		]);
+
+		$empresaID = Empresa::where('nombre', 'AUSTIN INGENIEROS CHILE LTDA.')-> value('id');
+
+		Contrato::create([
+			'empresa_id' => $empresaID,
+			'numero' => '4600013096',
+			'finicio' => Carbon::parse('01-06-2016')->format('Y/m/d'),
+			'ftermino' => Carbon::parse('30-06-2018')->format('Y/m/d'),
+			'dominioContrato_id' => $dominioID,
+		]);
+
+		$contratoID = Contrato::where('numero', '4600013096')->value('id');
+
+		DominioContrato::create([
+			'DominioContrato_id' => $contratoID,
+			'DominioContrato_type' => 'Ubicacion',
+		]);
+		Contrato::create([
+			'empresa_id' => $empresaID, 
+			'numero' => '4501389471',
+			'finicio' => Carbon::parse('13-08-2013')->format('Y/m/d'),
+			'ftermino' => Carbon::parse('14-08-2017')->format('Y/m/d'),
+			'dominioContrato_id' => $dominioID,
+		]);
+
+		$contratoID = Contrato::where('numero', '4501389471')->value('id');
+
+		DominioContrato::create([
+			'DominioContrato_id' => $contratoID,
+			'DominioContrato_type' => 'Ubicacion',
+		]);
+
+		$empresaID = Empresa::where('nombre', 'AVANT SERV. INTEGRALES')-> value('id');
+
+		Contrato::create([
+			'empresa_id' => $empresaID,
+			'numero' => '4600012606',
+			'finicio' => Carbon::parse('01-01-2014')->format('Y/m/d'),
+			'ftermino' => Carbon::parse('01-01-2018')->format('Y/m/d'),
+			'dominioContrato_id' => $dominioID,
+		]);
+
+		$contratoID = Contrato::where('numero', '4600012606')->value('id');
+
+		DominioContrato::create([
+			'DominioContrato_id' => $contratoID,
+			'DominioContrato_type' => 'Ubicacion',
+		]);
+
+		$empresaID = Empresa::where('nombre', 'BROAD SPECTRUM')-> value('id');
+
+		Contrato::create([
+			'empresa_id' => $empresaID,
+			'numero' => '4400168750',
+			'finicio' => Carbon::parse('15-09-2017')->format('Y/m/d'),
+			'ftermino' => Carbon::parse('30-11-2017')->format('Y/m/d'),
+			'dominioContrato_id' => $dominioID,
+		]);
+
+		$contratoID = Contrato::where('numero', '4400168750')->value('id');
+
+		DominioContrato::create([
+			'DominioContrato_id' => $contratoID,
+			'DominioContrato_type' => 'Ubicacion',
+		]);
+		Contrato::create([
+			'empresa_id' => $empresaID, 
+			'numero' => '4501395753',
+			'finicio' => Carbon::parse('01-09-2013')->format('Y/m/d'),
+			'ftermino' => Carbon::parse('31-08-2018')->format('Y/m/d'),
+			'dominioContrato_id' => $dominioID,
+		]);
+
+		$contratoID = Contrato::where('numero', '4501395753')->value('id');
+
+		DominioContrato::create([
+			'DominioContrato_id' => $contratoID,
+			'DominioContrato_type' => 'Ubicacion',
+		]);
+
+		$empresaID = Empresa::where('nombre', 'BUREAU VERITAS CHILE S.A.')-> value('id');
+
+		Contrato::create([
+			'empresa_id' => $empresaID,
+			'numero' => '4501283534',
+			'finicio' => Carbon::parse('13-06-2012')->format('Y/m/d'),
+			'ftermino' => Carbon::parse('31-03-2015')->format('Y/m/d'),
+			'dominioContrato_id' => $dominioID,
+		]);
+
+		$contratoID = Contrato::where('numero', '4501283534')->value('id');
+
+		DominioContrato::create([
+			'DominioContrato_id' => $contratoID,
+			'DominioContrato_type' => 'Ubicacion',
+		]);
+		Contrato::create([
+			'empresa_id' => $empresaID, 
+			'numero' => '4501600236',
+			'finicio' => Carbon::parse('01-01-2016')->format('Y/m/d'),
+			'ftermino' => Carbon::parse('31-12-2016')->format('Y/m/d'),
+			'dominioContrato_id' => $dominioID,
+		]);
+
+		$contratoID = Contrato::where('numero', '4501600236')->value('id');
+
+		DominioContrato::create([
+			'DominioContrato_id' => $contratoID,
+			'DominioContrato_type' => 'Ubicacion',
+		]);
+		Contrato::create([
+			'empresa_id' => $empresaID, 
+			'numero' => '4501744843',
+			'finicio' => Carbon::parse('19-10-2017')->format('Y/m/d'),
+			'ftermino' => Carbon::parse('31-07-2018')->format('Y/m/d'),
+			'dominioContrato_id' => $dominioID,
+		]);
+
+		$contratoID = Contrato::where('numero', '4501744843')->value('id');
+
+		DominioContrato::create([
+			'DominioContrato_id' => $contratoID,
+			'DominioContrato_type' => 'Ubicacion',
+		]);
+
+		$empresaID = Empresa::where('nombre', 'CESMEC S.A.')-> value('id');
+
+		Contrato::create([
+			'empresa_id' => $empresaID,
+			'numero' => '4501331846',
+			'finicio' => Carbon::parse('12-12-2012')->format('Y/m/d'),
+			'ftermino' => Carbon::parse('12-12-2015')->format('Y/m/d'),
+			'dominioContrato_id' => $dominioID,
+		]);
+
+		$contratoID = Contrato::where('numero', '4501331846')->value('id');
+
+		DominioContrato::create([
+			'DominioContrato_id' => $contratoID,
+			'DominioContrato_type' => 'Ubicacion',
+		]);
+		Contrato::create([
+			'empresa_id' => $empresaID, 
+			'numero' => '4501481362',
+			'finicio' => Carbon::parse('01-09-2014')->format('Y/m/d'),
+			'ftermino' => Carbon::parse('01-09-2017')->format('Y/m/d'),
+			'dominioContrato_id' => $dominioID,
+		]);
+
+		$contratoID = Contrato::where('numero', '4501481362')->value('id');
+
+		DominioContrato::create([
+			'DominioContrato_id' => $contratoID,
+			'DominioContrato_type' => 'Ubicacion',
+		]);
+
+		$empresaID = Empresa::where('nombre', 'COASIN CHILE S.A.')-> value('id');
+
+		Contrato::create([
+			'empresa_id' => $empresaID,
+			'numero' => '4501505468',
+			'finicio' => Carbon::parse('01-01-2015')->format('Y/m/d'),
+			'ftermino' => Carbon::parse('31-12-2017')->format('Y/m/d'),
+			'dominioContrato_id' => $dominioID,
+		]);
+
+		$contratoID = Contrato::where('numero', '4501505468')->value('id');
+
+		DominioContrato::create([
+			'DominioContrato_id' => $contratoID,
+			'DominioContrato_type' => 'Ubicacion',
+		]);
+
+		$empresaID = Empresa::where('nombre', 'BUREAU VERITAS CHILE S.A.')-> value('id');
+
+		Contrato::create([
+			'empresa_id' => $empresaID,
+			'numero' => '4501770601',
+			'finicio' => Carbon::parse('19-02-2018')->format('Y/m/d'),
+			'ftermino' => Carbon::parse('30-06-2018')->format('Y/m/d'),
+			'dominioContrato_id' => $dominioID,
+		]);
+
+		$contratoID = Contrato::where('numero', '4501770601')->value('id');
+
+		DominioContrato::create([
+			'DominioContrato_id' => $contratoID,
+			'DominioContrato_type' => 'Ubicacion',
+		]);
+
+		$empresaID = Empresa::where('nombre', 'COLINA VERDE')-> value('id');
+
+		Contrato::create([
+			'empresa_id' => $empresaID,
+			'numero' => '4501526713',
+			'finicio' => Carbon::parse('05-04-2015')->format('Y/m/d'),
+			'ftermino' => Carbon::parse('05-04-2017')->format('Y/m/d'),
+			'dominioContrato_id' => $dominioID,
+		]);
+
+		$contratoID = Contrato::where('numero', '4501526713')->value('id');
+
+		DominioContrato::create([
+			'DominioContrato_id' => $contratoID,
+			'DominioContrato_type' => 'Ubicacion',
+		]);
+
+		$empresaID = Empresa::where('nombre', 'DERK INGENIERIA Y GEOLOGIA LTDA.')-> value('id');
+
+		Contrato::create([
+			'empresa_id' => $empresaID,
+			'numero' => '4501526551',
+			'finicio' => Carbon::parse('26-05-2015')->format('Y/m/d'),
+			'ftermino' => Carbon::parse('25-03-2018')->format('Y/m/d'),
+			'dominioContrato_id' => $dominioID,
+		]);
+
+		$contratoID = Contrato::where('numero', '4501526551')->value('id');
+
+		DominioContrato::create([
+			'DominioContrato_id' => $contratoID,
+			'DominioContrato_type' => 'Ubicacion',
+		]);
+
+		$empresaID = Empresa::where('nombre', 'DISAL CHILE LTDA.')-> value('id');
+
+		Contrato::create([
+			'empresa_id' => $empresaID,
+			'numero' => '4501548567',
+			'finicio' => Carbon::parse('01-07-2015')->format('Y/m/d'),
+			'ftermino' => Carbon::parse('31-08-2018')->format('Y/m/d'),
+			'dominioContrato_id' => $dominioID,
+		]);
+
+		$contratoID = Contrato::where('numero', '4501548567')->value('id');
+
+		DominioContrato::create([
+			'DominioContrato_id' => $contratoID,
+			'DominioContrato_type' => 'Ubicacion',
+		]);
+		Contrato::create([
+			'empresa_id' => $empresaID, 
+			'numero' => '4600013123',
+			'finicio' => Carbon::parse('01-07-2014')->format('Y/m/d'),
+			'ftermino' => Carbon::parse('30-06-2017')->format('Y/m/d'),
+			'dominioContrato_id' => $dominioID,
+		]);
+
+		$contratoID = Contrato::where('numero', '4600013123')->value('id');
+
+		DominioContrato::create([
+			'DominioContrato_id' => $contratoID,
+			'DominioContrato_type' => 'Ubicacion',
+		]);
+		Contrato::create([
+			'empresa_id' => $empresaID, 
+			'numero' => '4600014934',
+			'finicio' => Carbon::parse('01-08-2016')->format('Y/m/d'),
+			'ftermino' => Carbon::parse('01-01-2018')->format('Y/m/d'),
+			'dominioContrato_id' => $dominioID,
+		]);
+
+		$contratoID = Contrato::where('numero', '4600014934')->value('id');
+
+		DominioContrato::create([
+			'DominioContrato_id' => $contratoID,
+			'DominioContrato_type' => 'Ubicacion',
+		]);
+
+		$empresaID = Empresa::where('nombre', 'DITT CHILE S.A.')-> value('id');
+
+		Contrato::create([
+			'empresa_id' => $empresaID,
+			'numero' => '4501744192',
+			'finicio' => Carbon::parse('10-10-2017')->format('Y/m/d'),
+			'ftermino' => Carbon::parse('08-01-2018')->format('Y/m/d'),
+			'dominioContrato_id' => $dominioID,
+		]);
+
+		$contratoID = Contrato::where('numero', '4501744192')->value('id');
+
+		DominioContrato::create([
+			'DominioContrato_id' => $contratoID,
+			'DominioContrato_type' => 'Ubicacion',
+		]);
+
+		$empresaID = Empresa::where('nombre', 'DT INDUSTRIAL')-> value('id');
+
+		Contrato::create([
+			'empresa_id' => $empresaID,
+			'numero' => '4501698492',
+			'finicio' => Carbon::parse('05-04-2017')->format('Y/m/d'),
+			'ftermino' => Carbon::parse('05-01-2018')->format('Y/m/d'),
+			'dominioContrato_id' => $dominioID,
+		]);
+
+		$contratoID = Contrato::where('numero', '4501698492')->value('id');
+
+		DominioContrato::create([
+			'DominioContrato_id' => $contratoID,
+			'DominioContrato_type' => 'Ubicacion',
+		]);
+		Contrato::create([
+			'empresa_id' => $empresaID, 
+			'numero' => '4501662293',
+			'finicio' => Carbon::parse('01-02-2017')->format('Y/m/d'),
+			'ftermino' => Carbon::parse('31-03-2017')->format('Y/m/d'),
+			'dominioContrato_id' => $dominioID,
+		]);
+
+		$contratoID = Contrato::where('numero', '4501662293')->value('id');
+
+		DominioContrato::create([
+			'DominioContrato_id' => $contratoID,
+			'DominioContrato_type' => 'Ubicacion',
+		]);
+
+		$empresaID = Empresa::where('nombre', 'DUSTCONTROL S.A.')-> value('id');
+
+		Contrato::create([
+			'empresa_id' => $empresaID,
+			'numero' => '4501692939',
+			'finicio' => Carbon::parse('24-04-2017')->format('Y/m/d'),
+			'ftermino' => Carbon::parse('25-05-2017')->format('Y/m/d'),
+			'dominioContrato_id' => $dominioID,
+		]);
+
+		$contratoID = Contrato::where('numero', '4501692939')->value('id');
+
+		DominioContrato::create([
+			'DominioContrato_id' => $contratoID,
+			'DominioContrato_type' => 'Ubicacion',
+		]);
+
+		$empresaID = Empresa::where('nombre', 'EULEN')-> value('id');
+
+		Contrato::create([
+			'empresa_id' => $empresaID,
+			'numero' => '4501510179',
+			'finicio' => Carbon::parse('04-01-2015')->format('Y/m/d'),
+			'ftermino' => Carbon::parse('05-01-2018')->format('Y/m/d'),
+			'dominioContrato_id' => $dominioID,
+		]);
+
+		$contratoID = Contrato::where('numero', '4501510179')->value('id');
+
+		DominioContrato::create([
+			'DominioContrato_id' => $contratoID,
+			'DominioContrato_type' => 'Ubicacion',
+		]);
+
+		$empresaID = Empresa::where('nombre', 'GAC')-> value('id');
+
+		Contrato::create([
+			'empresa_id' => $empresaID,
+			'numero' => '4501560155',
+			'finicio' => Carbon::parse('01-06-2015')->format('Y/m/d'),
+			'ftermino' => Carbon::parse('01-07-2018')->format('Y/m/d'),
+			'dominioContrato_id' => $dominioID,
+		]);
+
+		$contratoID = Contrato::where('numero', '4501560155')->value('id');
+
+		DominioContrato::create([
+			'DominioContrato_id' => $contratoID,
+			'DominioContrato_type' => 'Ubicacion',
+		]);
+
+		$empresaID = Empresa::where('nombre', 'GEODATOS')-> value('id');
+
+		Contrato::create([
+			'empresa_id' => $empresaID,
+			'numero' => '4501515540',
+			'finicio' => Carbon::parse('24-02-2015')->format('Y/m/d'),
+			'ftermino' => Carbon::parse('24-02-2018')->format('Y/m/d'),
+			'dominioContrato_id' => $dominioID,
+		]);
+
+		$contratoID = Contrato::where('numero', '4501515540')->value('id');
+
+		DominioContrato::create([
+			'DominioContrato_id' => $contratoID,
+			'DominioContrato_type' => 'Ubicacion',
+		]);
+
+		$empresaID = Empresa::where('nombre', 'GEOTEC BOYLES BROSS')-> value('id');
+
+		Contrato::create([
+			'empresa_id' => $empresaID,
+			'numero' => '332017',
+			'finicio' => Carbon::parse('01-12-2017')->format('Y/m/d'),
+			'ftermino' => Carbon::parse('30-06-2018')->format('Y/m/d'),
+			'dominioContrato_id' => $dominioID,
+		]);
+
+		$contratoID = Contrato::where('numero', '332017')->value('id');
+
+		DominioContrato::create([
+			'DominioContrato_id' => $contratoID,
+			'DominioContrato_type' => 'Ubicacion',
+		]);
+		Contrato::create([
+			'empresa_id' => $empresaID,
+			'numero' => '4501578192',
+			'finicio' => Carbon::parse('02-11-2015')->format('Y/m/d'),
+			'ftermino' => Carbon::parse('30-05-2016')->format('Y/m/d'),
+			'dominioContrato_id' => $dominioID,
+		]);
+
+		$contratoID = Contrato::where('numero', '4501578192')->value('id');
+
+		DominioContrato::create([
+			'DominioContrato_id' => $contratoID,
+			'DominioContrato_type' => 'Ubicacion',
+		]);
+
+		$empresaID = Empresa::where('nombre', 'GLOBAL SERVICE MINE')-> value('id');
+
+		Contrato::create([
+			'empresa_id' => $empresaID,
+			'numero' => '4501500850',
+			'finicio' => Carbon::parse('29-12-2014')->format('Y/m/d'),
+			'ftermino' => Carbon::parse('29-12-2017')->format('Y/m/d'),
+			'dominioContrato_id' => $dominioID,
+		]);
+
+		$contratoID = Contrato::where('numero', '4501500850')->value('id');
+
+		DominioContrato::create([
+			'DominioContrato_id' => $contratoID,
+			'DominioContrato_type' => 'Ubicacion',
+		]);
+
+		$empresaID = Empresa::where('nombre', 'IMS PATAGONIA')-> value('id');
+
+		Contrato::create([
+			'empresa_id' => $empresaID,
+			'numero' => '4501675667',
+			'finicio' => Carbon::parse('15-12-2016')->format('Y/m/d'),
+			'ftermino' => Carbon::parse('15-08-2018')->format('Y/m/d'),
+			'dominioContrato_id' => $dominioID,
+		]);
+
+		$contratoID = Contrato::where('numero', '4501675667')->value('id');
+
+		DominioContrato::create([
+			'DominioContrato_id' => $contratoID,
+			'DominioContrato_type' => 'Ubicacion',
+		]);
+		Contrato::create([
+			'empresa_id' => $empresaID,
+			'numero' => '392017',
+			'finicio' => Carbon::parse('15-11-2017')->format('Y/m/d'),
+			'ftermino' => Carbon::parse('30-06-2018')->format('Y/m/d'),
+			'dominioContrato_id' => $dominioID,
+		]);
+
+		$contratoID = Contrato::where('numero', '392017')->value('id');
+
+		DominioContrato::create([
+			'DominioContrato_id' => $contratoID,
+			'DominioContrato_type' => 'Ubicacion',
+		]);
+		Contrato::create([
+			'empresa_id' => $empresaID, 
+			'numero' => '4501595969',
+			'finicio' => Carbon::parse('01-01-2016')->format('Y/m/d'),
+			'ftermino' => Carbon::parse('31-12-2016')->format('Y/m/d'),
+			'dominioContrato_id' => $dominioID,
+		]);
+
+		$contratoID = Contrato::where('numero', '4501595969')->value('id');
+
+		DominioContrato::create([
+			'DominioContrato_id' => $contratoID,
+			'DominioContrato_type' => 'Ubicacion',
+		]);
+
+		$empresaID = Empresa::where('nombre', 'INGENALSE S.A.')-> value('id');
+
+		Contrato::create([
+			'empresa_id' => $empresaID,
+			'numero' => '4501711293',
+			'finicio' => Carbon::parse('12-06-2017')->format('Y/m/d'),
+			'ftermino' => Carbon::parse('30-06-2018')->format('Y/m/d'),
+			'dominioContrato_id' => $dominioID,
+		]);
+
+		$contratoID = Contrato::where('numero', '4501711293')->value('id');
+
+		DominioContrato::create([
+			'DominioContrato_id' => $contratoID,
+			'DominioContrato_type' => 'Ubicacion',
+		]);
+
+		$empresaID = Empresa::where('nombre', 'INSITU CORE')-> value('id');
+
+		Contrato::create([
+			'empresa_id' => $empresaID,
+			'numero' => '4501567646',
+			'finicio' => Carbon::parse('21-09-2015')->format('Y/m/d'),
+			'ftermino' => Carbon::parse('18-01-2016')->format('Y/m/d'),
+			'dominioContrato_id' => $dominioID,
+		]);
+
+		$contratoID = Contrato::where('numero', '4501567646')->value('id');
+
+		DominioContrato::create([
+			'DominioContrato_id' => $contratoID,
+			'DominioContrato_type' => 'Ubicacion',
+		]);
+
+		$empresaID = Empresa::where('nombre', 'JIGSAW TECHNOLOGIES LTDA.')-> value('id');
+
+		Contrato::create([
+			'empresa_id' => $empresaID,
+			'numero' => '4501599643',
+			'finicio' => Carbon::parse('01-08-2016')->format('Y/m/d'),
+			'ftermino' => Carbon::parse('31-07-2017')->format('Y/m/d'),
+			'dominioContrato_id' => $dominioID,
+		]);
+
+		$contratoID = Contrato::where('numero', '4501599643')->value('id');
+
+		DominioContrato::create([
+			'DominioContrato_id' => $contratoID,
+			'DominioContrato_type' => 'Ubicacion',
+		]);
+
+		$empresaID = Empresa::where('nombre', 'KOMATSU CHILE S.A.')-> value('id');
+
+		Contrato::create([
+			'empresa_id' => $empresaID,
+			'numero' => '4600004457',
+			'finicio' => Carbon::parse('31-03-2005')->format('Y/m/d'),
+			'ftermino' => Carbon::parse('31-12-2016')->format('Y/m/d'),
+			'dominioContrato_id' => $dominioID,
+		]);
+
+		$contratoID = Contrato::where('numero', '4600004457')->value('id');
+
+		DominioContrato::create([
+			'DominioContrato_id' => $contratoID,
+			'DominioContrato_type' => 'Ubicacion',
+		]);
+
+		$empresaID = Empresa::where('nombre', 'KONECRANES')-> value('id');
+
+		Contrato::create([
+			'empresa_id' => $empresaID,
+			'numero' => '4600014269',
+			'finicio' => Carbon::parse('01-10-2015')->format('Y/m/d'),
+			'ftermino' => Carbon::parse('01-07-2017')->format('Y/m/d'),
+			'dominioContrato_id' => $dominioID,
+		]);
+
+		$contratoID = Contrato::where('numero', '4600014269')->value('id');
+
+		DominioContrato::create([
+			'DominioContrato_id' => $contratoID,
+			'DominioContrato_type' => 'Ubicacion',
+		]);
+
+		$empresaID = Empresa::where('nombre', 'LET GRAF')-> value('id');
+
+		Contrato::create([
+			'empresa_id' => $empresaID,
+			'numero' => '4501604278',
+			'finicio' => Carbon::parse('04-02-2016')->format('Y/m/d'),
+			'ftermino' => Carbon::parse('04-02-2018')->format('Y/m/d'),
+			'dominioContrato_id' => $dominioID,
+		]);
+
+		$contratoID = Contrato::where('numero', '4501604278')->value('id');
+
+		DominioContrato::create([
+			'DominioContrato_id' => $contratoID,
+			'DominioContrato_type' => 'Ubicacion',
+		]);
+
+		$empresaID = Empresa::where('nombre', 'MECANICA DE ROCAS LTDA.')-> value('id');
+
+		Contrato::create([
+			'empresa_id' => $empresaID,
+			'numero' => '4501739678',
+			'finicio' => Carbon::parse('02-11-2017')->format('Y/m/d'),
+			'ftermino' => Carbon::parse('31-12-2017')->format('Y/m/d'),
+			'dominioContrato_id' => $dominioID,
+		]);
+
+		$contratoID = Contrato::where('numero', '4501739678')->value('id');
+
+		DominioContrato::create([
+			'DominioContrato_id' => $contratoID,
+			'DominioContrato_type' => 'Ubicacion',
+		]);
+
+		$empresaID = Empresa::where('nombre', 'METAPROJECT')-> value('id');
+
+		Contrato::create([
+			'empresa_id' => $empresaID,
+			'numero' => '4501522901',
+			'finicio' => Carbon::parse('17-02-2015')->format('Y/m/d'),
+			'ftermino' => Carbon::parse('16-03-2017')->format('Y/m/d'),
+			'dominioContrato_id' => $dominioID,
+		]);
+
+		$contratoID = Contrato::where('numero', '4501522901')->value('id');
+
+		DominioContrato::create([
+			'DominioContrato_id' => $contratoID,
+			'DominioContrato_type' => 'Ubicacion',
+		]);
+
+		$empresaID = Empresa::where('nombre', 'MINETEC')-> value('id');
+
+		Contrato::create([
+			'empresa_id' => $empresaID,
+			'numero' => '4501722351',
+			'finicio' => Carbon::parse('01-08-2017')->format('Y/m/d'),
+			'ftermino' => Carbon::parse('31-03-2018')->format('Y/m/d'),
+			'dominioContrato_id' => $dominioID,
+		]);
+
+		$contratoID = Contrato::where('numero', '4501722351')->value('id');
+
+		DominioContrato::create([
+			'DominioContrato_id' => $contratoID,
+			'DominioContrato_type' => 'Ubicacion',
+		]);
+
+		$empresaID = Empresa::where('nombre', 'MPM LTDA.')-> value('id');
+
+		Contrato::create([
+			'empresa_id' => $empresaID,
+			'numero' => '4501734301',
+			'finicio' => Carbon::parse('25-10-2017')->format('Y/m/d'),
+			'ftermino' => Carbon::parse('27-12-2017')->format('Y/m/d'),
+			'dominioContrato_id' => $dominioID,
+		]);
+
+		$contratoID = Contrato::where('numero', '4501734301')->value('id');
+
+		DominioContrato::create([
+			'DominioContrato_id' => $contratoID,
+			'DominioContrato_type' => 'Ubicacion',
+		]);
+
+		$empresaID = Empresa::where('nombre', 'OCYRE LTDA.')-> value('id');
+
+		Contrato::create([
+			'empresa_id' => $empresaID,
+			'numero' => '4501667426',
+			'finicio' => Carbon::parse('25-11-2016')->format('Y/m/d'),
+			'ftermino' => Carbon::parse('25-04-2017')->format('Y/m/d'),
+			'dominioContrato_id' => $dominioID,
+		]);
+
+		$contratoID = Contrato::where('numero', '4501667426')->value('id');
+
+		DominioContrato::create([
+			'DominioContrato_id' => $contratoID,
+			'DominioContrato_type' => 'Ubicacion',
+		]);
+
+		$empresaID = Empresa::where('nombre', 'ORBIT')-> value('id');
+
+		Contrato::create([
+			'empresa_id' => $empresaID,
+			'numero' => '4501662988',
+			'finicio' => Carbon::parse('02-12-2016')->format('Y/m/d'),
+			'ftermino' => Carbon::parse('31-07-2017')->format('Y/m/d'),
+			'dominioContrato_id' => $dominioID,
+		]);
+
+		$contratoID = Contrato::where('numero', '4501662988')->value('id');
+
+		DominioContrato::create([
+			'DominioContrato_id' => $contratoID,
+			'DominioContrato_type' => 'Ubicacion',
+		]);
+
+		$empresaID = Empresa::where('nombre', 'ORICA CHILE S.A.')-> value('id');
+
+		Contrato::create([
+			'empresa_id' => $empresaID,
+			'numero' => '4501366362',
+			'finicio' => Carbon::parse('16-05-2013')->format('Y/m/d'),
+			'ftermino' => Carbon::parse('30-04-2018')->format('Y/m/d'),
+			'dominioContrato_id' => $dominioID,
+		]);
+
+		$contratoID = Contrato::where('numero', '4501366362')->value('id');
+
+		DominioContrato::create([
+			'DominioContrato_id' => $contratoID,
+			'DominioContrato_type' => 'Ubicacion',
+		]);
+
+		$empresaID = Empresa::where('nombre', 'OTRACO CHILE')-> value('id');
+
+		Contrato::create([
+			'empresa_id' => $empresaID,
+			'numero' => '4600012230',
 			'finicio' => Carbon::parse('01-06-2018')->format('Y/m/d'),
-			'ftermino' => Carbon::parse('31-05-2022')->format('Y/m/d'),
-			'ubicacion_id' => $ubicacionID,
+			'ftermino' => Carbon::parse('30-07-2018')->format('Y/m/d'),
+			'dominioContrato_id' => $dominioID,
 		]);
 
-		$empresaID = Empresa::where('nombre', 'TORQUE INGENIERIA SPA')->value('id');
+		$contratoID = Contrato::where('numero', '4600012230')->value('id');
+
+		DominioContrato::create([
+			'DominioContrato_id' => $contratoID,
+			'DominioContrato_type' => 'Ubicacion',
+		]);
+
+		$empresaID = Empresa::where('nombre', 'SALFA MANTENCIONES S.A.')-> value('id');
 
 		Contrato::create([
 			'empresa_id' => $empresaID,
-			'numero' => '4600015802',
-			'finicio' => Carbon::parse('01-11-2018')->format('Y/m/d'),
-			'ftermino' => Carbon::parse('01-11-2020')->format('Y/m/d'),
-			'ubicacion_id' => $ubicacionID,
+			'numero' => '4501481970',
+			'finicio' => Carbon::parse('01-12-2014')->format('Y/m/d'),
+			'ftermino' => Carbon::parse('17-06-2015')->format('Y/m/d'),
+			'dominioContrato_id' => $dominioID,
 		]);
 
-		$empresaID = Empresa::where('nombre', 'TRANYMEC')->value('id');
+		$contratoID = Contrato::where('numero', '4501481970')->value('id');
+
+		DominioContrato::create([
+			'DominioContrato_id' => $contratoID,
+			'DominioContrato_type' => 'Ubicacion',
+		]);
+
+		$empresaID = Empresa::where('nombre', 'SALFA MONTAJES')-> value('id');
 
 		Contrato::create([
 			'empresa_id' => $empresaID,
-			'numero' => '4600015148',
-			'finicio' => Carbon::parse('15-02-2017')->format('Y/m/d'),
-			'ftermino' => Carbon::parse('14-02-2022')->format('Y/m/d'),
-			'ubicacion_id' => $ubicacionID,
+			'numero' => '8401481970',
+			'finicio' => Carbon::parse('01-12-2014')->format('Y/m/d'),
+			'ftermino' => Carbon::parse('07-06-2015')->format('Y/m/d'),
+			'dominioContrato_id' => $dominioID,
 		]);
 
-		$empresaID = Empresa::where('nombre', 'VECCHIOLA S.A.')->value('id');
+		$contratoID = Contrato::where('numero', '8401481970')->value('id');
+
+		DominioContrato::create([
+			'DominioContrato_id' => $contratoID,
+			'DominioContrato_type' => 'Ubicacion',
+		]);
+
+		$empresaID = Empresa::where('nombre', 'SANDVIK CHILE S.A.')-> value('id');
 
 		Contrato::create([
 			'empresa_id' => $empresaID,
-			'numero' => '4600016195',
-			'finicio' => Carbon::parse('15-02-2018')->format('Y/m/d'),
-			'ftermino' => Carbon::parse('14-02-2019')->format('Y/m/d'),
-			'ubicacion_id' => $ubicacionID,
+			'numero' => '4600014249',
+			'finicio' => Carbon::parse('01-01-2016')->format('Y/m/d'),
+			'ftermino' => Carbon::parse('31-12-2017')->format('Y/m/d'),
+			'dominioContrato_id' => $dominioID,
 		]);
-    }
+
+		$contratoID = Contrato::where('numero', '4600014249')->value('id');
+
+		DominioContrato::create([
+			'DominioContrato_id' => $contratoID,
+			'DominioContrato_type' => 'Ubicacion',
+		]);
+
+		$empresaID = Empresa::where('nombre', 'SERVICIOS GEOFISICOS COMPROBE SPA')-> value('id');
+
+		Contrato::create([
+			'empresa_id' => $empresaID,
+			'numero' => '402017',
+			'finicio' => Carbon::parse('05-12-2017')->format('Y/m/d'),
+			'ftermino' => Carbon::parse('04-07-2018')->format('Y/m/d'),
+			'dominioContrato_id' => $dominioID,
+		]);
+
+		$contratoID = Contrato::where('numero', '402017')->value('id');
+
+		DominioContrato::create([
+			'DominioContrato_id' => $contratoID,
+			'DominioContrato_type' => 'Ubicacion',
+		]);
+
+		$empresaID = Empresa::where('nombre', 'SKF')-> value('id');
+
+		Contrato::create([
+			'empresa_id' => $empresaID,
+			'numero' => '4600014418',
+			'finicio' => Carbon::parse('06-06-2016')->format('Y/m/d'),
+			'ftermino' => Carbon::parse('31-12-2017')->format('Y/m/d'),
+			'dominioContrato_id' => $dominioID,
+		]);
+
+		$contratoID = Contrato::where('numero', '4600014418')->value('id');
+
+		DominioContrato::create([
+			'DominioContrato_id' => $contratoID,
+			'DominioContrato_type' => 'Ubicacion',
+		]);
+
+		$empresaID = Empresa::where('nombre', 'SODEXO')-> value('id');
+
+		Contrato::create([
+			'empresa_id' => $empresaID,
+			'numero' => '4501526737',
+			'finicio' => Carbon::parse('01-04-2015')->format('Y/m/d'),
+			'ftermino' => Carbon::parse('31-03-2018')->format('Y/m/d'),
+			'dominioContrato_id' => $dominioID,
+		]);
+
+		$contratoID = Contrato::where('numero', '4501526737')->value('id');
+
+		DominioContrato::create([
+			'DominioContrato_id' => $contratoID,
+			'DominioContrato_type' => 'Ubicacion',
+		]);
+
+		$empresaID = Empresa::where('nombre', 'SOTRASER')-> value('id');
+
+		Contrato::create([
+			'empresa_id' => $empresaID,
+			'numero' => '4501392534',
+			'finicio' => Carbon::parse('28-08-2013')->format('Y/m/d'),
+			'ftermino' => Carbon::parse('31-12-2017')->format('Y/m/d'),
+			'dominioContrato_id' => $dominioID,
+		]);
+
+		$contratoID = Contrato::where('numero', '4501392534')->value('id');
+
+		DominioContrato::create([
+			'DominioContrato_id' => $contratoID,
+			'DominioContrato_type' => 'Ubicacion',
+		]);
+		Contrato::create([
+			'empresa_id' => $empresaID, 
+			'numero' => '4501392532',
+			'finicio' => Carbon::parse('28-08-2013')->format('Y/m/d'),
+			'ftermino' => Carbon::parse('31-12-2017')->format('Y/m/d'),
+			'dominioContrato_id' => $dominioID,
+		]);
+
+		$contratoID = Contrato::where('numero', '4501392532')->value('id');
+
+		DominioContrato::create([
+			'DominioContrato_id' => $contratoID,
+			'DominioContrato_type' => 'Ubicacion',
+		]);
+
+		$empresaID = Empresa::where('nombre', 'TGI CONSULTORES')-> value('id');
+
+		Contrato::create([
+			'empresa_id' => $empresaID,
+			'numero' => '4501529825',
+			'finicio' => Carbon::parse('01-04-2015')->format('Y/m/d'),
+			'ftermino' => Carbon::parse('31-03-2018')->format('Y/m/d'),
+			'dominioContrato_id' => $dominioID,
+		]);
+
+		$contratoID = Contrato::where('numero', '4501529825')->value('id');
+
+		DominioContrato::create([
+			'DominioContrato_id' => $contratoID,
+			'DominioContrato_type' => 'Ubicacion',
+		]);
+
+		$empresaID = Empresa::where('nombre', 'VAI')-> value('id');
+
+		Contrato::create([
+			'empresa_id' => $empresaID,
+			'numero' => '4501672038',
+			'finicio' => Carbon::parse('15-12-2016')->format('Y/m/d'),
+			'ftermino' => Carbon::parse('31-12-2017')->format('Y/m/d'),
+			'dominioContrato_id' => $dominioID,
+		]);
+
+		$contratoID = Contrato::where('numero', '4501672038')->value('id');
+
+		DominioContrato::create([
+			'DominioContrato_id' => $contratoID,
+			'DominioContrato_type' => 'Ubicacion',
+		]);
+
+		$dominioID = Ubicacion::where('nombre', 'División Radomiro Tomic')->value('id');
+		$empresaID = Empresa::where('nombre', 'AVA MONTAJES')-> value('id');
+
+		Contrato::create([
+			'empresa_id' => $empresaID,
+			'numero' => '4501743397',
+			'finicio' => Carbon::parse('30-10-2017')->format('Y/m/d'),
+			'ftermino' => Carbon::parse('28-01-2018')->format('Y/m/d'),
+			'dominioContrato_id' => $dominioID,
+		]);
+
+		$contratoID = Contrato::where('numero', '4501743397')->value('id');
+
+		DominioContrato::create([
+			'DominioContrato_id' => $contratoID,
+			'DominioContrato_type' => 'Ubicacion',
+		]);
+
+		$empresaID = Empresa::where('nombre', 'BAILAC')-> value('id');
+
+		Contrato::create([
+			'empresa_id' => $empresaID,
+			'numero' => '4600012173',
+			'finicio' => Carbon::parse('04-06-2013')->format('Y/m/d'),
+			'ftermino' => Carbon::parse('04-06-2018')->format('Y/m/d'),
+			'dominioContrato_id' => $dominioID,
+		]);
+
+		$contratoID = Contrato::where('numero', '4600012173')->value('id');
+
+		DominioContrato::create([
+			'DominioContrato_id' => $contratoID,
+			'DominioContrato_type' => 'Ubicacion',
+		]);
+
+		$empresaID = Empresa::where('nombre', 'BROAD SPECTRUM')-> value('id');
+
+		Contrato::create([
+			'empresa_id' => $empresaID,
+			'numero' => '4600012227',
+			'finicio' => Carbon::parse('01-08-2013')->format('Y/m/d'),
+			'ftermino' => Carbon::parse('31-08-2018')->format('Y/m/d'),
+			'dominioContrato_id' => $dominioID,
+		]);
+
+		$contratoID = Contrato::where('numero', '4600012227')->value('id');
+
+		DominioContrato::create([
+			'DominioContrato_id' => $contratoID,
+			'DominioContrato_type' => 'Ubicacion',
+		]);
+
+		$empresaID = Empresa::where('nombre', 'BUILDTEK S.A.')-> value('id');
+
+		Contrato::create([
+			'empresa_id' => $empresaID,
+			'numero' => '4600012607',
+			'finicio' => Carbon::parse('05-02-2014')->format('Y/m/d'),
+			'ftermino' => Carbon::parse('31-05-2018')->format('Y/m/d'),
+			'dominioContrato_id' => $dominioID,
+		]);
+
+		$contratoID = Contrato::where('numero', '4600012607')->value('id');
+
+		DominioContrato::create([
+			'DominioContrato_id' => $contratoID,
+			'DominioContrato_type' => 'Ubicacion',
+		]);
+		Contrato::create([
+			'empresa_id' => $empresaID,
+			'numero' => '4501710017',
+			'finicio' => Carbon::parse('15-06-2017')->format('Y/m/d'),
+			'ftermino' => Carbon::parse('13-10-2017')->format('Y/m/d'),
+			'dominioContrato_id' => $dominioID,
+		]);
+
+		$contratoID = Contrato::where('numero', '4501710017')->value('id');
+
+		DominioContrato::create([
+			'DominioContrato_id' => $contratoID,
+			'DominioContrato_type' => 'Ubicacion',
+		]);
+
+		$empresaID = Empresa::where('nombre', 'CESMEC S.A.')-> value('id');
+
+		Contrato::create([
+			'empresa_id' => $empresaID,
+			'numero' => '4501469402',
+			'finicio' => Carbon::parse('01-08-2014')->format('Y/m/d'),
+			'ftermino' => Carbon::parse('31-07-2018')->format('Y/m/d'),
+			'dominioContrato_id' => $dominioID,
+		]);
+
+		$contratoID = Contrato::where('numero', '4501469402')->value('id');
+
+		DominioContrato::create([
+			'DominioContrato_id' => $contratoID,
+			'DominioContrato_type' => 'Ubicacion',
+		]);
+
+		$empresaID = Empresa::where('nombre', 'CONSORCIO ABENGOA MPM S.A.')-> value('id');
+
+		Contrato::create([
+			'empresa_id' => $empresaID,
+			'numero' => '4501754357',
+			'finicio' => Carbon::parse('18-12-2017')->format('Y/m/d'),
+			'ftermino' => Carbon::parse('30-07-2018')->format('Y/m/d'),
+			'dominioContrato_id' => $dominioID,
+		]);
+
+		$contratoID = Contrato::where('numero', '4501754357')->value('id');
+
+		DominioContrato::create([
+			'DominioContrato_id' => $contratoID,
+			'DominioContrato_type' => 'Ubicacion',
+		]);
+
+		$empresaID = Empresa::where('nombre', 'DERK INGENIERIA Y GEOLOGIA LTDA.')-> value('id');
+
+		Contrato::create([
+			'empresa_id' => $empresaID,
+			'numero' => '4501345598',
+			'finicio' => Carbon::parse('07-02-2013')->format('Y/m/d'),
+			'ftermino' => Carbon::parse('30-08-2017')->format('Y/m/d'),
+			'dominioContrato_id' => $dominioID,
+		]);
+
+		$contratoID = Contrato::where('numero', '4501345598')->value('id');
+
+		DominioContrato::create([
+			'DominioContrato_id' => $contratoID,
+			'DominioContrato_type' => 'Ubicacion',
+		]);
+		Contrato::create([
+			'empresa_id' => $empresaID,
+			'numero' => '4501409897',
+			'finicio' => Carbon::parse('01-11-2013')->format('Y/m/d'),
+			'ftermino' => Carbon::parse('30-10-2016')->format('Y/m/d'),
+			'dominioContrato_id' => $dominioID,
+		]);
+
+		$contratoID = Contrato::where('numero', '4501409897')->value('id');
+
+		DominioContrato::create([
+			'DominioContrato_id' => $contratoID,
+			'DominioContrato_type' => 'Ubicacion',
+		]);
+
+		$empresaID = Empresa::where('nombre', 'DISAL CHILE LTDA.')-> value('id');
+
+		Contrato::create([
+			'empresa_id' => $empresaID,
+			'numero' => '4501308878',
+			'finicio' => Carbon::parse('19-11-2012')->format('Y/m/d'),
+			'ftermino' => Carbon::parse('19-09-2017')->format('Y/m/d'),
+			'dominioContrato_id' => $dominioID,
+		]);
+
+		$contratoID = Contrato::where('numero', '4501308878')->value('id');
+
+		DominioContrato::create([
+			'DominioContrato_id' => $contratoID,
+			'DominioContrato_type' => 'Ubicacion',
+		]);
+
+		$empresaID = Empresa::where('nombre', 'DRILLCO TOOLS S.A.')-> value('id');
+
+		Contrato::create([
+			'empresa_id' => $empresaID,
+			'numero' => '4600014172',
+			'finicio' => Carbon::parse('01-08-2015')->format('Y/m/d'),
+			'ftermino' => Carbon::parse('31-07-2017')->format('Y/m/d'),
+			'dominioContrato_id' => $dominioID,
+		]);
+
+		$contratoID = Contrato::where('numero', '4600014172')->value('id');
+
+		DominioContrato::create([
+			'DominioContrato_id' => $contratoID,
+			'DominioContrato_type' => 'Ubicacion',
+		]);
+
+		$empresaID = Empresa::where('nombre', 'ELIQSA S.A.')-> value('id');
+
+		Contrato::create([
+			'empresa_id' => $empresaID,
+			'numero' => '4501733195',
+			'finicio' => Carbon::parse('02-10-2017')->format('Y/m/d'),
+			'ftermino' => Carbon::parse('28-02-2018')->format('Y/m/d'),
+			'dominioContrato_id' => $dominioID,
+		]);
+
+		$contratoID = Contrato::where('numero', '4501733195')->value('id');
+
+		DominioContrato::create([
+			'DominioContrato_id' => $contratoID,
+			'DominioContrato_type' => 'Ubicacion',
+		]);
+
+		$empresaID = Empresa::where('nombre', 'ENAEX SERVICIOS S.A.')-> value('id');
+
+		Contrato::create([
+			'empresa_id' => $empresaID,
+			'numero' => '4501494088',
+			'finicio' => Carbon::parse('01-12-2014')->format('Y/m/d'),
+			'ftermino' => Carbon::parse('30-04-2016')->format('Y/m/d'),
+			'dominioContrato_id' => $dominioID,
+		]);
+
+		$contratoID = Contrato::where('numero', '4501494088')->value('id');
+
+		DominioContrato::create([
+			'DominioContrato_id' => $contratoID,
+			'DominioContrato_type' => 'Ubicacion',
+		]);
+
+		$empresaID = Empresa::where('nombre', 'ICEM S.A.')-> value('id');
+
+		Contrato::create([
+			'empresa_id' => $empresaID,
+			'numero' => '4501545891',
+			'finicio' => Carbon::parse('09-07-2015')->format('Y/m/d'),
+			'ftermino' => Carbon::parse('30-07-2018')->format('Y/m/d'),
+			'dominioContrato_id' => $dominioID,
+		]);
+
+		$contratoID = Contrato::where('numero', '4501545891')->value('id');
+
+		DominioContrato::create([
+			'DominioContrato_id' => $contratoID,
+			'DominioContrato_type' => 'Ubicacion',
+		]);
+
+		$empresaID = Empresa::where('nombre', 'ICV S.A.')-> value('id');
+
+		Contrato::create([
+			'empresa_id' => $empresaID,
+			'numero' => '4501450059',
+			'finicio' => Carbon::parse('10-12-2015')->format('Y/m/d'),
+			'ftermino' => Carbon::parse('30-06-2018')->format('Y/m/d'),
+			'dominioContrato_id' => $dominioID,
+		]);
+
+		$contratoID = Contrato::where('numero', '4501450059')->value('id');
+
+		DominioContrato::create([
+			'DominioContrato_id' => $contratoID,
+			'DominioContrato_type' => 'Ubicacion',
+		]);
+		Contrato::create([
+			'empresa_id' => $empresaID,
+			'numero' => '4501578214',
+			'finicio' => Carbon::parse('10-12-2015')->format('Y/m/d'),
+			'ftermino' => Carbon::parse('30-06-2018')->format('Y/m/d'),
+			'dominioContrato_id' => $dominioID,
+		]);
+
+		$contratoID = Contrato::where('numero', '4501578214')->value('id');
+
+		DominioContrato::create([
+			'DominioContrato_id' => $contratoID,
+			'DominioContrato_type' => 'Ubicacion',
+		]);
+
+		$empresaID = Empresa::where('nombre', 'INNOVATOR CONVEYOR BELT')-> value('id');
+
+		Contrato::create([
+			'empresa_id' => $empresaID,
+			'numero' => '4600014166',
+			'finicio' => Carbon::parse('05-07-2015')->format('Y/m/d'),
+			'ftermino' => Carbon::parse('05-07-2018')->format('Y/m/d'),
+			'dominioContrato_id' => $dominioID,
+		]);
+
+		$contratoID = Contrato::where('numero', '4600014166')->value('id');
+
+		DominioContrato::create([
+			'DominioContrato_id' => $contratoID,
+			'DominioContrato_type' => 'Ubicacion',
+		]);
+
+		$empresaID = Empresa::where('nombre', 'JIGSAW TECHNOLOGIES LTDA.')-> value('id');
+
+		Contrato::create([
+			'empresa_id' => $empresaID,
+			'numero' => '4500926099',
+			'finicio' => Carbon::parse('01-08-2015')->format('Y/m/d'),
+			'ftermino' => Carbon::parse('01-08-2016')->format('Y/m/d'),
+			'dominioContrato_id' => $dominioID,
+		]);
+
+		$contratoID = Contrato::where('numero', '4500926099')->value('id');
+
+		DominioContrato::create([
+			'DominioContrato_id' => $contratoID,
+			'DominioContrato_type' => 'Ubicacion',
+		]);
+
+		$empresaID = Empresa::where('nombre', 'KATECS Y CIA')-> value('id');
+
+		Contrato::create([
+			'empresa_id' => $empresaID,
+			'numero' => '4501508693',
+			'finicio' => Carbon::parse('01-01-2015')->format('Y/m/d'),
+			'ftermino' => Carbon::parse('31-12-2017')->format('Y/m/d'),
+			'dominioContrato_id' => $dominioID,
+		]);
+
+		$contratoID = Contrato::where('numero', '4501508693')->value('id');
+
+		DominioContrato::create([
+			'DominioContrato_id' => $contratoID,
+			'DominioContrato_type' => 'Ubicacion',
+		]);
+
+		$empresaID = Empresa::where('nombre', 'KONECRANES')-> value('id');
+
+		Contrato::create([
+			'empresa_id' => $empresaID,
+			'numero' => '4600010907',
+			'finicio' => Carbon::parse('05-01-2016')->format('Y/m/d'),
+			'ftermino' => Carbon::parse('05-01-2017')->format('Y/m/d'),
+			'dominioContrato_id' => $dominioID,
+		]);
+
+		$contratoID = Contrato::where('numero', '4600010907')->value('id');
+
+		DominioContrato::create([
+			'DominioContrato_id' => $contratoID,
+			'DominioContrato_type' => 'Ubicacion',
+		]);
+
+		$empresaID = Empresa::where('nombre', 'METALCAE')-> value('id');
+
+		Contrato::create([
+			'empresa_id' => $empresaID,
+			'numero' => '4501725868',
+			'finicio' => Carbon::parse('12-10-2017')->format('Y/m/d'),
+			'ftermino' => Carbon::parse('17-03-2018')->format('Y/m/d'),
+			'dominioContrato_id' => $dominioID,
+		]);
+
+		$contratoID = Contrato::where('numero', '4501725868')->value('id');
+
+		DominioContrato::create([
+			'DominioContrato_id' => $contratoID,
+			'DominioContrato_type' => 'Ubicacion',
+		]);
+
+		$empresaID = Empresa::where('nombre', 'METRIKA LTDA.')-> value('id');
+
+		Contrato::create([
+			'empresa_id' => $empresaID,
+			'numero' => '4501775735',
+			'finicio' => Carbon::parse('09-04-2018')->format('Y/m/d'),
+			'ftermino' => Carbon::parse('05-08-2018')->format('Y/m/d'),
+			'dominioContrato_id' => $dominioID,
+		]);
+
+		$contratoID = Contrato::where('numero', '4501775735')->value('id');
+
+		DominioContrato::create([
+			'DominioContrato_id' => $contratoID,
+			'DominioContrato_type' => 'Ubicacion',
+		]);
+		Contrato::create([
+			'empresa_id' => $empresaID,
+			'numero' => '4050177573',
+			'finicio' => Carbon::parse('09-04-2018')->format('Y/m/d'),
+			'ftermino' => Carbon::parse('05-08-2018')->format('Y/m/d'),
+			'dominioContrato_id' => $dominioID,
+		]);
+
+		$contratoID = Contrato::where('numero', '4050177573')->value('id');
+
+		DominioContrato::create([
+			'DominioContrato_id' => $contratoID,
+			'DominioContrato_type' => 'Ubicacion',
+		]);
+
+		$empresaID = Empresa::where('nombre', 'OTRACO CHILE')-> value('id');
+
+		Contrato::create([
+			'empresa_id' => $empresaID,
+			'numero' => '4600012229',
+			'finicio' => Carbon::parse('01-08-2013')->format('Y/m/d'),
+			'ftermino' => Carbon::parse('31-07-2018')->format('Y/m/d'),
+			'dominioContrato_id' => $dominioID,
+		]);
+
+		$contratoID = Contrato::where('numero', '4600012229')->value('id');
+
+		DominioContrato::create([
+			'DominioContrato_id' => $contratoID,
+			'DominioContrato_type' => 'Ubicacion',
+		]);
+
+		$empresaID = Empresa::where('nombre', 'PAISAJISMO SERVICIOS OASIS')-> value('id');
+
+		Contrato::create([
+			'empresa_id' => $empresaID,
+			'numero' => '4501558802',
+			'finicio' => Carbon::parse('10-08-2015')->format('Y/m/d'),
+			'ftermino' => Carbon::parse('10-08-2018')->format('Y/m/d'),
+			'dominioContrato_id' => $dominioID,
+		]);
+
+		$contratoID = Contrato::where('numero', '4501558802')->value('id');
+
+		DominioContrato::create([
+			'DominioContrato_id' => $contratoID,
+			'DominioContrato_type' => 'Ubicacion',
+		]);
+
+		$empresaID = Empresa::where('nombre', 'PUCARA')-> value('id');
+
+		Contrato::create([
+			'empresa_id' => $empresaID,
+			'numero' => '4501436984',
+			'finicio' => Carbon::parse('01-04-2014')->format('Y/m/d'),
+			'ftermino' => Carbon::parse('30-05-2018')->format('Y/m/d'),
+			'dominioContrato_id' => $dominioID,
+		]);
+
+		$contratoID = Contrato::where('numero', '4501436984')->value('id');
+
+		DominioContrato::create([
+			'DominioContrato_id' => $contratoID,
+			'DominioContrato_type' => 'Ubicacion',
+		]);
+
+		$empresaID = Empresa::where('nombre', 'SCHWAGER SERVICES S.A.')-> value('id');
+
+		Contrato::create([
+			'empresa_id' => $empresaID,
+			'numero' => '4501761140',
+			'finicio' => Carbon::parse('24-01-2018')->format('Y/m/d'),
+			'ftermino' => Carbon::parse('24-08-2018')->format('Y/m/d'),
+			'dominioContrato_id' => $dominioID,
+		]);
+
+		$contratoID = Contrato::where('numero', '4501761140')->value('id');
+
+		DominioContrato::create([
+			'DominioContrato_id' => $contratoID,
+			'DominioContrato_type' => 'Ubicacion',
+		]);
+
+		$empresaID = Empresa::where('nombre', 'SK GODELIUS S.A.')-> value('id');
+
+		Contrato::create([
+			'empresa_id' => $empresaID,
+			'numero' => '4501730815',
+			'finicio' => Carbon::parse('02-10-2017')->format('Y/m/d'),
+			'ftermino' => Carbon::parse('02-09-2018')->format('Y/m/d'),
+			'dominioContrato_id' => $dominioID,
+		]);
+
+		$contratoID = Contrato::where('numero', '4501730815')->value('id');
+
+		DominioContrato::create([
+			'DominioContrato_id' => $contratoID,
+			'DominioContrato_type' => 'Ubicacion',
+		]);
+
+		$empresaID = Empresa::where('nombre', 'SMG INGENIERIA S.A.')-> value('id');
+
+		Contrato::create([
+			'empresa_id' => $empresaID,
+			'numero' => '4501765976',
+			'finicio' => Carbon::parse('15-03-2018')->format('Y/m/d'),
+			'ftermino' => Carbon::parse('31-07-2018')->format('Y/m/d'),
+			'dominioContrato_id' => $dominioID,
+		]);
+
+		$contratoID = Contrato::where('numero', '4501765976')->value('id');
+
+		DominioContrato::create([
+			'DominioContrato_id' => $contratoID,
+			'DominioContrato_type' => 'Ubicacion',
+		]);
+
+		$empresaID = Empresa::where('nombre', 'TECHMEC LTDA.')-> value('id');
+
+		Contrato::create([
+			'empresa_id' => $empresaID,
+			'numero' => '4501548500',
+			'finicio' => Carbon::parse('18-08-2015')->format('Y/m/d'),
+			'ftermino' => Carbon::parse('26-02-2018')->format('Y/m/d'),
+			'dominioContrato_id' => $dominioID,
+		]);
+
+		$contratoID = Contrato::where('numero', '4501548500')->value('id');
+
+		DominioContrato::create([
+			'DominioContrato_id' => $contratoID,
+			'DominioContrato_type' => 'Ubicacion',
+		]);
+
+		$empresaID = Empresa::where('nombre', 'TECNOLOGIAS COBRA LTDA.')-> value('id');
+
+		Contrato::create([
+			'empresa_id' => $empresaID,
+			'numero' => '4600015879',
+			'finicio' => Carbon::parse('26-12-2017')->format('Y/m/d'),
+			'ftermino' => Carbon::parse('26-05-2018')->format('Y/m/d'),
+			'dominioContrato_id' => $dominioID,
+		]);
+
+		$contratoID = Contrato::where('numero', '4600015879')->value('id');
+
+		DominioContrato::create([
+			'DominioContrato_id' => $contratoID,
+			'DominioContrato_type' => 'Ubicacion',
+		]);
+
+		$empresaID = Empresa::where('nombre', 'TECNOLOGIA EN TRANSPORTE DE MINERALES S.A.')-> value('id');
+
+		Contrato::create([
+			'empresa_id' => $empresaID,
+			'numero' => '4501640214',
+			'finicio' => Carbon::parse('27-09-2016')->format('Y/m/d'),
+			'ftermino' => Carbon::parse('30-09-2017')->format('Y/m/d'),
+			'dominioContrato_id' => $dominioID,
+		]);
+
+		$contratoID = Contrato::where('numero', '4501640214')->value('id');
+
+		DominioContrato::create([
+			'DominioContrato_id' => $contratoID,
+			'DominioContrato_type' => 'Ubicacion',
+		]);
+
+		$empresaID = Empresa::where('nombre', 'VALIDAR TRAIN')-> value('id');
+
+		Contrato::create([
+			'empresa_id' => $empresaID,
+			'numero' => '4501518170',
+			'finicio' => Carbon::parse('16-11-2015')->format('Y/m/d'),
+			'ftermino' => Carbon::parse('30-05-2016')->format('Y/m/d'),
+			'dominioContrato_id' => $dominioID,
+		]);
+
+		$contratoID = Contrato::where('numero', '4501518170')->value('id');
+
+		DominioContrato::create([
+			'DominioContrato_id' => $contratoID,
+			'DominioContrato_type' => 'Ubicacion',
+		]);
+	}
 }

@@ -136,8 +136,8 @@ class Activo extends Model
 		return $this->belongsToMany(
 			PlanMantenimiento::class,
 			'Activo_PlanMantenimiento',
-			'Activo_id'
-			'PlanMantenimiento_id',
+			'Activo_id',
+			'PlanMantenimiento_id'
 		)->withPivot('fUltima', 'periodo');
 	}
 
