@@ -204,14 +204,23 @@ class FakerSeeder extends Seeder
 		factory(Rol::class, 100)->create();
 		factory(TipoUsuario::class, 10)->create();
 		factory(Usuario::class, 20)->create();
+<<<<<<< HEAD
+
+=======
+>>>>>>> master
 		/* Creacion de Factories para Procedimientos */
 		factory(TipoServicio::class, 20)->create();
-		factory(Procedimiento::class, 20)->create();	
+		factory(Procedimiento::class, 20)->create();
 
 		/* Creacion de Factories para Bases de Activos */
 		factory(Modelo::class, 20)->create();
+<<<<<<< HEAD
+		factory(DocComodato::class, 20)->create();
+		factory(DominioContrato::class, 20)->create();	
+=======
 		
 		factory(DominioContrato::class, 20)->create();
+>>>>>>> master
 
 		/* Creacion de Factories para Activos */
 		// factory(CCTV::class, 20)->create();
@@ -232,6 +241,15 @@ class FakerSeeder extends Seeder
 		factory(Activo_EstadoActivo::class, 20)->create();
 		factory(Activo_Empresa::class, 100)->create();
 
+<<<<<<< HEAD
+		/* Creacion de Factories para Consumibles */
+		factory(TipoConsumible::class, 30)->create();
+		factory(ModeloConsumible::class, 40)->create();
+		factory(Consumible::class, 100)->create();
+		factory(Consumible_Activo::class, 100)->create();
+
+=======
+>>>>>>> master
 		/* Creacion de Factories para Componentes */
 		factory(CategoriaComponente::class, 20)->create();
 		factory(TipoComponente::class, 30)->create();
@@ -257,11 +275,15 @@ class FakerSeeder extends Seeder
 		factory(SubActividad::class, 20)->create();
 		factory(ActivoLog::class, 20)->create();
 
+<<<<<<< HEAD
+	
+=======
 		/* Creacion de Factories para Consumibles */
 		factory(TipoConsumible::class, 30)->create();
 		factory(ModeloConsumible::class, 40)->create();
 		factory(Consumible::class, 100)->create();
 		factory(Consumible_Activo::class, 100)->create();
+>>>>>>> master
 
 		/* Creacion de Factories para Tickets */	
 		factory(EstadoTicket::class, 100)->create();
@@ -308,8 +330,12 @@ class FakerSeeder extends Seeder
 		factory(Canal::class, 20)->create();			
 		factory(Perfil_Zona_Canal::class, 20)->create();			
 		factory(Programacion_Activo::class, 20)->create();			
+<<<<<<< HEAD
+		factory(Programacion_Activo_Canal::class, 20)->create();			
+=======
 		factory(Programacion_Activo_Canal::class, 20)->create();
 
 		factory(DocComodato::class, 20)->create();			
+>>>>>>> master
 	}
 }

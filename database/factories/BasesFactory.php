@@ -66,7 +66,11 @@ $factory->define(URadio::class, function (Faker $faker) {
 
 $factory->define(DominioContrato::class, function (Faker $faker) {
 
+<<<<<<< HEAD
+	$opcion = $faker->numberBetween($min=0,$max=1);
+=======
 	$flag = $faker->boolean(50);
+>>>>>>> master
 
 	if ($flag) {
 		return [
