@@ -15,9 +15,9 @@ class CreateURadiosTable extends Migration
 	{
 		Schema::create('URadio', function (Blueprint $table) {
 			$table->increments('id');
-			$table->unsignedInteger('Ubicacion_id');
-			$table->integer('URadio_id');
-			$table->string('URadio_type');
+			$table->unsignedInteger('Ubicacion_id')->nullable();
+			$table->integer('ubicable_id');
+			$table->string('ubicable_type');
 		});
 	}
 

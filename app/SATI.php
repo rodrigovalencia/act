@@ -53,6 +53,11 @@ class SATI extends Model
 	 * unsignedInteger('Estado_id')
 	 */
 
+	function getNombreCompleto()
+	{
+		return $this->nombre . ' ' . $this->apPaterno . ' ' . $this->apPaterno;
+	}
+	
 	function tipoContrato()
 	{
 		return $this->belongsTo(
