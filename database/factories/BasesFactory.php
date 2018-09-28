@@ -66,7 +66,7 @@ $factory->define(URadio::class, function (Faker $faker) {
 
 $factory->define(DominioContrato::class, function (Faker $faker) {
 
-	$opcion = $faker->numberBetween($min=0,$max=2);
+	$opcion = $faker->numberBetween($min=0,$max=1);
 
 	switch ($opcion) {
 		case '0':
