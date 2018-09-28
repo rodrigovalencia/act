@@ -49,16 +49,16 @@ $factory->define(URadio::class, function (Faker $faker) {
 			$aux = Equipo::all()->pluck('id')->toArray();
 			return [
 				'Ubicacion_id' => $faker->randomElement($ubicacionID),
-				'Uradio_id' => $faker->randomElement($aux),
-				'Uradio_type' => 'Equipo',
+				'ubicable_id' => $faker->randomElement($aux),
+				'ubicable_type' => 'Equipo',
 			];
 			break;
 		case '1':
 			$aux = Base::all()->pluck('id')->toArray();
 			return [
 				'Ubicacion_id' => $faker->randomElement($ubicacionID),
-				'URadio_id' => $faker->randomElement($aux),
-				'Uradio_type' => 'Base',
+				'ubicable_id' => $faker->randomElement($aux),
+				'ubicable_type' => 'Base',
 			];
 			break;
 	}

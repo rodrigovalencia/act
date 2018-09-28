@@ -1,7 +1,7 @@
 <div class="col-md-3 left_col">
 	<div class="left_col scroll-view">
 		<div class="navbar nav_title" style="border: 0;">
-			<a href="{{ route('index') }}" class="site_title">
+			<a href="{{ route('dashboard.index') }}" class="site_title">
 				<i class="fa fa-paw"></i>
 				<span>ACT - Sis Ticket</span>
 			</a>
@@ -30,13 +30,13 @@
 				<h3>Inicio</h3>
 				<ul class="nav side-menu">
 					<li>
-						<a href="{{ route('index') }}">
+						<a href="{{ route('dashboard.index') }}">
 							<i class="fa fa-home"></i>
 							DashBoard
 						</a>
 					</li>
 					<li>
-						<a href="{{ route('index') }}">
+						<a href="{{ route('dashboard.inventario') }}">
 							<i class="fa fa-home"></i>
 							Inventario
 						</a>
@@ -437,7 +437,7 @@
 							</li>
 						</ul>
 					</li>
-					<li>
+					{{-- <li>
 						<a>
 							<i class="fa fa-dashboard"></i>
 							Perfil de Programación
@@ -509,6 +509,18 @@
 							</li>
 							<li>
 								<a href="{{ route('cargarSati') }}">Tipos</a>
+							</li>
+						</ul>
+					</li> --}}
+					<li>
+						<a>
+							<i class="fa fa-dashboard"></i>
+							Cargas Masivas
+							<span class="fa fa-chevron-down"></span>
+						</a>
+						<ul class="nav child_menu">
+							<li>
+								<a href="{{ route('csv.sati.cargarSati') }}">SATI</a>
 							</li>
 						</ul>
 					</li>

@@ -13,7 +13,7 @@
 		<div class="panel panel-default">
 			<div class="panel-heading">Importar archivo CSV SATI's</div>
 			<div class="panel-body">
-				<form class="form-horizontal" method="POST" action="{{ route('guardarSati') }}" enctype="multipart/form-data">
+				<form class="form-horizontal" method="POST" action="{{ route('csv.sati.guardarSati') }}" enctype="multipart/form-data">
 					{{ csrf_field() }}
 					<div class="form-group{{ $errors->has('archivoCSV') ? ' has-error' : '' }}">
 						<label for="archivoCSV" class="col-md-4 control-label">Archivo CSV</label>
