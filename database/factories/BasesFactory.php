@@ -66,22 +66,40 @@ $factory->define(URadio::class, function (Faker $faker) {
 
 $factory->define(DominioContrato::class, function (Faker $faker) {
 
+<<<<<<< HEAD
 	$opcion = $faker->numberBetween($min=0,$max=1);
+=======
+	$flag = $faker->boolean(50);
+>>>>>>> master
 
-	switch ($opcion) {
-		case '0':
-			$aux = Contrato::all()->pluck('id')->toArray();
-			return [
-				'DominioContrato_id' => $faker->randomElement($aux),
-				'DominioContrato_type' => 'Ubicacion',
-			];
-			break;
-		case '1':
-			$aux = Base::all()->pluck('id')->toArray();
-			return [
-				'DominioContrato_id' => $faker->randomElement($aux),
-				'DominioContrato_type' => 'Faena',
-			];
-			break;
+	if ($flag) {
+		return [
+			'DominioContrato_id' => Contrato::all()->random()->id,
+			'DominioContrato_type' => 'Ubicacion',
+		];
+	} else {
+		return [
+			'DominioContrato_id' => Base::all()->random()->id,
+			'DominioContrato_type' => 'Faena',
+		];
 	}
+	
+
+	// $opcion = $faker->numberBetween($min=0,$max=2);
+	// switch ($opcion) {
+	// 	case '0':
+	// 		$aux = Contrato::all()->pluck('id')->toArray();
+	// 		return [
+	// 			'DominioContrato_id' => $faker->randomElement($aux),
+	// 			'DominioContrato_type' => 'Ubicacion',
+	// 		];
+	// 		break;
+	// 	case '1':
+	// 		$aux = Base::all()->pluck('id')->toArray();
+	// 		return [
+	// 			'DominioContrato_id' => $faker->randomElement($aux),
+	// 			'DominioContrato_type' => 'Faena',
+	// 		];
+	// 		break;
+	// }
 });
