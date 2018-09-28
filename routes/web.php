@@ -17,6 +17,11 @@ Route::get('/', [
 ]);
 
 Route::prefix('administracion')->group(function(){
+	Route::prefix('activos')->group(function(){
+		Route::resource('radioTrabajo', 'RadioTrabajoController', [
+			'only' => ['create', 'store']
+		]);
+	});
 	Route::prefix('cargaCSV')->group(function(){
 		Route::prefix('SATI')->group(function(){
 			Route::GET('/', [

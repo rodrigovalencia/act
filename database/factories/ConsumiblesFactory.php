@@ -1,8 +1,11 @@
 <?php
 
+use App\Activo;
 use App\Consumible;
+use App\Consumible_Activo;
 use App\Fabricante;
 use App\ModeloConsumible;
+use App\Ticket;
 use App\TipoConsumible;
 use Faker\Generator as Faker;
 
