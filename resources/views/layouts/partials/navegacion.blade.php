@@ -43,7 +43,7 @@
 					</li>
 				</ul>
 			</div>
-			<div class="menu_section">
+			{{-- <div class="menu_section">
 				<h3>Sistema de Tickets</h3>
 				<ul class="nav side-menu">
 					<li>
@@ -421,10 +421,22 @@
 						</ul>
 					</li>
 				</ul>
-			</div>
+			</div> --}}
 			<div class="menu_section">
 				<h3>Administración</h3>
 				<ul class="nav side-menu">
+					<li>
+						<a>
+							<i class="fa fa-dashboard"></i>
+							Activos
+							<span class="fa fa-chevron-down"></span>
+						</a>
+						<ul class="nav child_menu">
+							<li>
+								<a href="{{ route('radioTrabajo.create') }}">Radios de Trabajo</a>
+							</li>
+						</ul>
+					</li>
 					<li>
 						<a>
 							<i class="fa fa-dashboard"></i>
