@@ -9,23 +9,23 @@ use Illuminate\Database\Seeder;
 
 class AdmN4_Seeder extends Seeder
 {
-    /**
-     * Run the database seeds.
-     *
-     * @return void
-     */
-    public function run()
-    {
+	/**
+	 * Run the database seeds.
+	 *
+	 * @return void
+	 */
+	public function run()
+	{
 		AdmN4::truncate();
 
 		$catID = AdmN3::
-			join('AdmN2', 'AdmN2.id', '=', 'AdmN3.AdmN2_id')
-			->join('AdmN1', 'AdmN1.id', '=', 'AdmN2.AdmN1_id')
-			->select('AdmN3.id', 'AdmN3.nombre', 'AdmN2.nombre', 'AdmN1.nombre')
-			->where('AdmN1.nombre', 'GESTION ADMINISTRATIVA')
-			->where('AdmN2.nombre', 'ESP')
-			->where('AdmN3.nombre', 'Seguridad')
-			->first()->id;
+		join('AdmN2', 'AdmN2.id', '=', 'AdmN3.AdmN2_id')
+		->join('AdmN1', 'AdmN1.id', '=', 'AdmN2.AdmN1_id')
+		->select('AdmN3.id', 'AdmN3.nombre', 'AdmN2.nombre', 'AdmN1.nombre')
+		->where('AdmN1.nombre', 'GESTION ADMINISTRATIVA')
+		->where('AdmN2.nombre', 'ESP')
+		->where('AdmN3.nombre', 'Seguridad')
+		->first()->id;
 
 		AdmN4::create([
 			'nombre' => 'Reunión de Seguridad',
@@ -57,13 +57,13 @@ class AdmN4_Seeder extends Seeder
 		]);
 
 		$catID = AdmN3::
-			join('AdmN2', 'AdmN2.id', '=', 'AdmN3.AdmN2_id')
-			->join('AdmN1', 'AdmN1.id', '=', 'AdmN2.AdmN1_id')
-			->select('AdmN3.id', 'AdmN3.nombre', 'AdmN2.nombre', 'AdmN1.nombre')
-			->where('AdmN1.nombre', 'GESTION ADMINISTRATIVA')
-			->where('AdmN2.nombre', 'ESP')
-			->where('AdmN3.nombre', 'Operación')
-			->first()->id;
+		join('AdmN2', 'AdmN2.id', '=', 'AdmN3.AdmN2_id')
+		->join('AdmN1', 'AdmN1.id', '=', 'AdmN2.AdmN1_id')
+		->select('AdmN3.id', 'AdmN3.nombre', 'AdmN2.nombre', 'AdmN1.nombre')
+		->where('AdmN1.nombre', 'GESTION ADMINISTRATIVA')
+		->where('AdmN2.nombre', 'ESP')
+		->where('AdmN3.nombre', 'Operación')
+		->first()->id;
 
 		AdmN4::create([
 			'nombre' => 'Reunión de Operaciones',
@@ -79,13 +79,13 @@ class AdmN4_Seeder extends Seeder
 		]);
 
 		$catID = AdmN3::
-			join('AdmN2', 'AdmN2.id', '=', 'AdmN3.AdmN2_id')
-			->join('AdmN1', 'AdmN1.id', '=', 'AdmN2.AdmN1_id')
-			->select('AdmN3.id', 'AdmN3.nombre', 'AdmN2.nombre', 'AdmN1.nombre')
-			->where('AdmN1.nombre', 'GESTION ADMINISTRATIVA')
-			->where('AdmN2.nombre', 'MET')
-			->where('AdmN3.nombre', 'Seguridad')
-			->first()->id;
+		join('AdmN2', 'AdmN2.id', '=', 'AdmN3.AdmN2_id')
+		->join('AdmN1', 'AdmN1.id', '=', 'AdmN2.AdmN1_id')
+		->select('AdmN3.id', 'AdmN3.nombre', 'AdmN2.nombre', 'AdmN1.nombre')
+		->where('AdmN1.nombre', 'GESTION ADMINISTRATIVA')
+		->where('AdmN2.nombre', 'MET')
+		->where('AdmN3.nombre', 'Seguridad')
+		->first()->id;
 
 		AdmN4::create([
 			'nombre' => 'Reunión de Seguridad',
@@ -115,5 +115,5 @@ class AdmN4_Seeder extends Seeder
 			'nombre' => 'Checklist de Vehiculos',
 			'AdmN3_id' => $catID,
 		]);
-    }
+	}
 }

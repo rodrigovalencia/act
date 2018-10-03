@@ -21,26 +21,16 @@ class CatN2 extends Model
 	* unsignedInteger('CatN1_id')
 	*/
 
-	function catN3()
-	{
-		return $this->hasMany(
-			CatN3::class,
-			'CatN2_id',
-			'id'
-		);		
+	function getNombre(){
+		return $this->nombre . ' - ' . $this->hijo->nombre;
 	}
 
-	function catN1()
+	function hijo()
 	{
 		return $this->belongsTo(
 			CatN1::class,
 			'CatN1_id',
 			'id'
 		);
-	}
-
-	function catN1_Name()
-	{
-		return $this->catN1->nombre;
 	}
 }

@@ -30,6 +30,11 @@ class Ubicacion extends Model
 	 * unsignedInteger('Faena_id')
 	 */
 
+	function getNombre()
+	{
+		return $this->faena->nombre . ' - ' . $this->nombre;
+	}
+
 	function faena()
 	{
 		return $this->belongsTo(
@@ -93,9 +98,9 @@ class Ubicacion extends Model
 
 	public function dominio()
 	{
-		return $this->morphMany(
+		return $this->morphOne(
 			DominioContrato::class,
-			'DominioContrato'
+			'dominio'
 		);
 	}
 }

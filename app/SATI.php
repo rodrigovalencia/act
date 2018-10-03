@@ -55,7 +55,7 @@ class SATI extends Model
 
 	function getNombreCompleto()
 	{
-		return $this->nombre . ' ' . $this->apPaterno . ' ' . $this->apPaterno;
+		return $this->nombre . ' ' . $this->apPaterno . ' ' . $this->apPaterno . ' {' . $this->rut . '}';
 	}
 	
 	function tipoContrato()

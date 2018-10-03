@@ -27,7 +27,7 @@
 		<div class="row mid_center" style="width: 100%">
 			<h3>Inventario de Activos</h3>
 		</div>
-		<div class="col-md-12 col-sm-12 col-xs-12">
+		<div class="col-xs-12">
 			<div class="" role="tabpanel" data-example-id="togglable-tabs"> 
 				<ul id="myTab" class="nav nav-tabs bar_tabs" role="tablist">
 					@foreach ($tipos as $tipo)

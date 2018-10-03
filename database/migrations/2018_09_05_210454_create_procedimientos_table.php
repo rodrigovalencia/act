@@ -19,6 +19,7 @@ class CreateProcedimientosTable extends Migration
 			$table->string('descripcion');
 			$table->string('documento');
 			$table->unsignedInteger('TipoServicio_id');
+			$table->unsignedInteger('Modelo_id');
 		});
 	}
 

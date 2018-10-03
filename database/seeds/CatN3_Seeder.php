@@ -17,10 +17,17 @@ class CatN3_Seeder extends Seeder
 	{
 		CatN3::truncate();
 
-		$catID = CatN2::where('nombre','ESP')->get()
-						->filter(function($item){
-							return $item->catN1->nombre == 'INCIDENTES';
-						})->first()->id;
+		$catID = CatN2::
+		join('CatN1', 'CatN1.id', '=', 'CatN2.CatN1_id')
+		->select('CatN2.id')
+		->where('CatN1.nombre', 'INCIDENTES')
+		->where('CatN2.nombre', 'ESP')
+		->first()->id;
+
+		// $catID = CatN2::where('nombre','ESP')->get()
+		// ->filter(function($item){
+		// 	return $item->catN1->nombre == 'INCIDENTES';
+		// })->first()->id;
 
 		CatN3::create([
 			'nombre' => 'RadioComunicaciones',
@@ -47,10 +54,17 @@ class CatN3_Seeder extends Seeder
 			'CatN2_id' => $catID
 		]);
 
-		$catID = CatN2::where('nombre','MET')->with('catN1')->get()
-						->filter(function($item){
-							return $item->catN1->nombre == 'INCIDENTES';
-						})->first()->id;
+		$catID = CatN2::
+		join('CatN1', 'CatN1.id', '=', 'CatN2.CatN1_id')
+		->select('CatN2.id')
+		->where('CatN1.nombre', 'INCIDENTES')
+		->where('CatN2.nombre', 'MET')
+		->first()->id;
+
+		// $catID = CatN2::where('nombre','MET')->with('catN1')->get()
+		// ->filter(function($item){
+		// 	return $item->catN1->nombre == 'INCIDENTES';
+		// })->first()->id;
 
 		CatN3::create([
 			'nombre' => 'RadioComunicaciones',
@@ -82,10 +96,17 @@ class CatN3_Seeder extends Seeder
 			'CatN2_id' => $catID
 		]);
 
-		$catID = CatN2::where('nombre','OXE')->with('catN1')->get()
-						->filter(function($item){
-							return $item->catN1->nombre == 'INCIDENTES';
-						})->first()->id;
+		$catID = CatN2::
+		join('CatN1', 'CatN1.id', '=', 'CatN2.CatN1_id')
+		->select('CatN2.id')
+		->where('CatN1.nombre', 'INCIDENTES')
+		->where('CatN2.nombre', 'OXE')
+		->first()->id;
+
+		// $catID = CatN2::where('nombre','OXE')->with('catN1')->get()
+		// ->filter(function($item){
+		// 	return $item->catN1->nombre == 'INCIDENTES';
+		// })->first()->id;
 
 		CatN3::create([
 			'nombre' => 'RadioComunicaciones',
@@ -102,30 +123,17 @@ class CatN3_Seeder extends Seeder
 			'CatN2_id' => $catID
 		]);
 
-		$catID = CatN2::where('nombre','MUELLE / SIAM')->with('catN1')->get()
-						->filter(function($item){
-							return $item->catN1->nombre == 'INCIDENTES';
-						})->first()->id;
-						
-		CatN3::create([
-			'nombre' => 'RadioComunicaciones',
-			'CatN2_id' => $catID
-		]);
+		$catID = CatN2::
+		join('CatN1', 'CatN1.id', '=', 'CatN2.CatN1_id')
+		->select('CatN2.id')
+		->where('CatN1.nombre', 'INCIDENTES')
+		->where('CatN2.nombre', 'MUELLE / SIAM')
+		->first()->id;
 
-		CatN3::create([
-			'nombre' => 'CCTV',
-			'CatN2_id' => $catID
-		]);
-
-		CatN3::create([
-			'nombre' => 'Infraestructura',
-			'CatN2_id' => $catID
-		]);
-
-		$catID = CatN2::where('nombre','ESP')->with('catN1')->get()
-						->filter(function($item){
-							return $item->catN1->nombre == 'REQUERIMIENTOS';
-						})->first()->id;
+		// $catID = CatN2::where('nombre','MUELLE / SIAM')->with('catN1')->get()
+		// ->filter(function($item){
+		// 	return $item->catN1->nombre == 'INCIDENTES';
+		// })->first()->id;
 
 		CatN3::create([
 			'nombre' => 'RadioComunicaciones',
@@ -142,40 +150,17 @@ class CatN3_Seeder extends Seeder
 			'CatN2_id' => $catID
 		]);
 
-		CatN3::create([
-			'nombre' => 'Red Mina',
-			'CatN2_id' => $catID
-		]);
+		$catID = CatN2::
+		join('CatN1', 'CatN1.id', '=', 'CatN2.CatN1_id')
+		->select('CatN2.id')
+		->where('CatN1.nombre', 'REQUERIMIENTOS')
+		->where('CatN2.nombre', 'ESP')
+		->first()->id;
 
-		$catID = CatN2::where('nombre','MET')->with('catN1')->get()
-						->filter(function($item){
-							return $item->catN1->nombre == 'REQUERIMIENTOS';
-						})->first()->id;
-
-		CatN3::create([
-			'nombre' => 'RadioComunicaciones',
-			'CatN2_id' => $catID
-		]);
-
-		CatN3::create([
-			'nombre' => 'CCTV',
-			'CatN2_id' => $catID
-		]);
-
-		CatN3::create([
-			'nombre' => 'Infraestructura',
-			'CatN2_id' => $catID
-		]);
-
-		CatN3::create([
-			'nombre' => 'Red Mina',
-			'CatN2_id' => $catID
-		]);
-
-		$catID = CatN2::where('nombre','OXE')->with('catN1')->get()
-						->filter(function($item){
-							return $item->catN1->nombre == 'REQUERIMIENTOS';
-						})->first()->id;
+		// $catID = CatN2::where('nombre','ESP')->with('catN1')->get()
+		// ->filter(function($item){
+		// 	return $item->catN1->nombre == 'REQUERIMIENTOS';
+		// })->first()->id;
 
 		CatN3::create([
 			'nombre' => 'RadioComunicaciones',
@@ -197,10 +182,81 @@ class CatN3_Seeder extends Seeder
 			'CatN2_id' => $catID
 		]);
 
-		$catID = CatN2::where('nombre','MUELLE / SIAM')->with('catN1')->get()
-						->filter(function($item){
-							return $item->catN1->nombre == 'REQUERIMIENTOS';
-						})->first()->id;
+		$catID = CatN2::
+		join('CatN1', 'CatN1.id', '=', 'CatN2.CatN1_id')
+		->select('CatN2.id')
+		->where('CatN1.nombre', 'REQUERIMIENTOS')
+		->where('CatN2.nombre', 'MET')
+		->first()->id;
+
+		// $catID = CatN2::where('nombre','MET')->with('catN1')->get()
+		// ->filter(function($item){
+		// 	return $item->catN1->nombre == 'REQUERIMIENTOS';
+		// })->first()->id;
+
+		CatN3::create([
+			'nombre' => 'RadioComunicaciones',
+			'CatN2_id' => $catID
+		]);
+
+		CatN3::create([
+			'nombre' => 'CCTV',
+			'CatN2_id' => $catID
+		]);
+
+		CatN3::create([
+			'nombre' => 'Infraestructura',
+			'CatN2_id' => $catID
+		]);
+
+		CatN3::create([
+			'nombre' => 'Red Mina',
+			'CatN2_id' => $catID
+		]);
+
+		$catID = CatN2::
+		join('CatN1', 'CatN1.id', '=', 'CatN2.CatN1_id')
+		->select('CatN2.id')
+		->where('CatN1.nombre', 'REQUERIMIENTOS')
+		->where('CatN2.nombre', 'OXE')
+		->first()->id;
+
+		// $catID = CatN2::where('nombre','OXE')->with('catN1')->get()
+		// ->filter(function($item){
+		// 	return $item->catN1->nombre == 'REQUERIMIENTOS';
+		// })->first()->id;
+
+		CatN3::create([
+			'nombre' => 'RadioComunicaciones',
+			'CatN2_id' => $catID
+		]);
+
+		CatN3::create([
+			'nombre' => 'CCTV',
+			'CatN2_id' => $catID
+		]);
+
+		CatN3::create([
+			'nombre' => 'Infraestructura',
+			'CatN2_id' => $catID
+		]);
+
+		CatN3::create([
+			'nombre' => 'Red Mina',
+			'CatN2_id' => $catID
+		]);
+
+		$catID = CatN2::
+		join('CatN1', 'CatN1.id', '=', 'CatN2.CatN1_id')
+		->select('CatN2.id')
+		->where('CatN1.nombre', 'REQUERIMIENTOS')
+		->where('CatN2.nombre', 'MUELLE / SIAM')
+		->first()->id;
+
+		// $catID = CatN2::where('nombre','MUELLE / SIAM')->with('catN1')->get()
+		// ->filter(function($item){
+		// 	return $item->catN1->nombre == 'REQUERIMIENTOS';
+		// })->first()->id;
 
 		CatN3::create([
 			'nombre' => 'RadioComunicaciones',

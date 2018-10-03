@@ -29,11 +29,11 @@ class Equipo extends Model
 		return $this->tipoEquipo->categoria->nombre . ' - ' . $this->tipoEquipo->nombre . ' - ' . $this->nombre;
 	}
 
-	public function URadio()
+	public function ubicacionRadio()
 	{
-		return $this->morphMany(
+		return $this->morphOne(
 			URadio::class,
-			'URadio'
+			'ubicable'
 		);
 	}
 

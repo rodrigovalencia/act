@@ -2,9 +2,6 @@
 
 namespace App;
 
-use App\InstSW;
-use App\Licencia;
-use App\ModeloSW;
 use Illuminate\Database\Eloquent\Model;
 
 class Administrativo extends Model
@@ -24,16 +21,11 @@ class Administrativo extends Model
 	* unsignedInteger('AdmN4_id')
 	*/
 
-	function categoriaTicket()
-	{
-		return $this->hasMany(
-			CategoriaTicket::class,
-			'Categoria_id',
-			'id'
-		);		
+	function getNombre(){
+		return $this->nombre . ' - ' . $this->hijo->getNombre();
 	}
 
-	function admN4()
+	function hijo()
 	{
 		return $this->belongsTo(
 			AdmN4::class,
@@ -44,6 +36,6 @@ class Administrativo extends Model
 
 	function catTicket()
 	{
-		return $this->morphMany('CategoriaTicket','Categoria');
+		return $this->morphMany(CategoriaTicket::class,'categoria');
 	}
 }

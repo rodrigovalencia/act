@@ -33,9 +33,9 @@ class Faena extends Model
 
 	public function dominio()
 	{
-		return $this->morphMany(
+		return $this->morphOne(
 			DominioContrato::class,
-			'DominioContrato'
+			'dominio'
 		);
 	}
 }

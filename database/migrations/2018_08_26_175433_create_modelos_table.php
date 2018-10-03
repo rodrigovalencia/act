@@ -18,7 +18,6 @@ class CreateModelosTable extends Migration
 			$table->string('nombre');
 			$table->string('documento')->nullable();
 			$table->unsignedInteger('Fabricante_id');
-			$table->unsignedInteger('Procedimiento_id');
 		});
 	}
 

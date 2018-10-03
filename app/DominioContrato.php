@@ -11,19 +11,19 @@ class DominioContrato extends Model
 	public $timestamps = false;
 
 	protected $fillable = [
-		// 'DominioContrato_id',
-		// 'DominioContrato_type',
+		// 'dominio_id',
+		// 'dominio_type',
 	];
 
 	/*
 	 * Atributos 
 	 *
 	 * increments('id')
-	 * integer('DominioContrato_id')
-	 * string('DominioContrato_type')
+	 * integer('dominio_id')
+	 * string('dominio_type')
 	 */
 
-	public function DominioContrato()
+	public function dominio()
 	{
 		return $this->morphTo();
 	}

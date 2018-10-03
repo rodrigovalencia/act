@@ -10,19 +10,22 @@ class CategoriaTicket extends Model
 	public $timestamps = false;
 
 	protected $fillable = [
-		// 'Categoria_type',
-		// 'Categoria_id',
-		// 'EstadoActivo_id',
+		// 'categoria_type',
+		// 'categoria_id',
 	];
 
 	/*
 	 * Atributos 
 	 *
 	 * increments('id')
-	 * integer('Categoria_id')
-	 * string('Categoria_type')
-	 * unsignedInteger('EstadoActivo_id')
+	 * integer('categoria_id')
+	 * string('categoria_type')
 	 */
+
+
+	function getNombre(){
+		return $this->categoria->getNombre;
+	}
 
 	public function categoria()
 	{

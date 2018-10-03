@@ -17,7 +17,12 @@ class ContratoInactivo_Seeder extends Seeder
 	public function run()
 	{
 
-		$dominioID = Ubicacion::where('nombre', 'División Chuquicamata')->value('id');
+		$dominioID = DominioContrato::
+					join('Ubicacion', 'Ubicacion.id', '=', 'DominioContrato.dominio_id')
+					->select('DominioContrato.id')
+					->where('DominioContrato.dominio_type', 'Ubicacion')
+					->where('Ubicacion.nombre', 'División Chuquicamata')
+					->first()->id;
 		$empresaID = Empresa::where('nombre', 'ACHIARDI')->value('id');
 
 		Contrato::create([
@@ -26,13 +31,6 @@ class ContratoInactivo_Seeder extends Seeder
 			'finicio' => Carbon::parse('17-12-2013')->format('Y/m/d'),
 			'ftermino' => Carbon::parse('13-01-2018')->format('Y/m/d'),
 			'dominioContrato_id' => $dominioID,
-		]);
-
-		$contratoID = Contrato::where('numero', '4600012456')->value('id');
-
-		DominioContrato::create([
-			'DominioContrato_id' => $contratoID,
-			'DominioContrato_type' => 'Ubicacion',
 		]);
 
 		$empresaID = Empresa::where('nombre', 'ACT S.A.')->value('id');
@@ -45,13 +43,6 @@ class ContratoInactivo_Seeder extends Seeder
 			'dominioContrato_id' => $dominioID,
 		]);
 
-		$contratoID = Contrato::where('numero', '4600012162')->value('id');
-
-		DominioContrato::create([
-			'DominioContrato_id' => $contratoID,
-			'DominioContrato_type' => 'Ubicacion',
-		]);
-
 		$empresaID = Empresa::where('nombre', 'AGROAMANCAY S.A.')-> value('id');
 
 		Contrato::create([
@@ -60,13 +51,6 @@ class ContratoInactivo_Seeder extends Seeder
 			'finicio' => Carbon::parse('19-02-2013')->format('Y/m/d'),
 			'ftermino' => Carbon::parse('07-01-2017')->format('Y/m/d'),
 			'dominioContrato_id' => $dominioID,
-		]);
-
-		$contratoID = Contrato::where('numero', '4501336690')->value('id');
-
-		DominioContrato::create([
-			'DominioContrato_id' => $contratoID,
-			'DominioContrato_type' => 'Ubicacion',
 		]);
 
 		$empresaID = Empresa::where('nombre', 'ANMAR')-> value('id');
@@ -79,13 +63,6 @@ class ContratoInactivo_Seeder extends Seeder
 			'dominioContrato_id' => $dominioID,
 		]);
 
-		$contratoID = Contrato::where('numero', '4600013300')->value('id');
-
-		DominioContrato::create([
-			'DominioContrato_id' => $contratoID,
-			'DominioContrato_type' => 'Ubicacion',
-		]);
-
 		$empresaID = Empresa::where('nombre', 'APPLUS NORCONTROL')-> value('id');
 
 		Contrato::create([
@@ -94,13 +71,6 @@ class ContratoInactivo_Seeder extends Seeder
 			'finicio' => Carbon::parse('17-07-2013')->format('Y/m/d'),
 			'ftermino' => Carbon::parse('01-09-2015')->format('Y/m/d'),
 			'dominioContrato_id' => $dominioID,
-		]);
-
-		$contratoID = Contrato::where('numero', '4501380796')->value('id');
-
-		DominioContrato::create([
-			'DominioContrato_id' => $contratoID,
-			'DominioContrato_type' => 'Ubicacion',
 		]);
 
 		$empresaID = Empresa::where('nombre', 'ARAMARK')-> value('id');
@@ -112,26 +82,12 @@ class ContratoInactivo_Seeder extends Seeder
 			'ftermino' => Carbon::parse('01-06-2016')->format('Y/m/d'),
 			'dominioContrato_id' => $dominioID,
 		]);
-
-		$contratoID = Contrato::where('numero', '4600012212')->value('id');
-
-		DominioContrato::create([
-			'DominioContrato_id' => $contratoID,
-			'DominioContrato_type' => 'Ubicacion',
-		]);
 		Contrato::create([
 			'empresa_id' => $empresaID, 
 			'numero' => '4501509776',
 			'finicio' => Carbon::parse('01-02-2015')->format('Y/m/d'),
 			'ftermino' => Carbon::parse('01-02-2017')->format('Y/m/d'),
 			'dominioContrato_id' => $dominioID,
-		]);
-
-		$contratoID = Contrato::where('numero', '4501509776')->value('id');
-
-		DominioContrato::create([
-			'DominioContrato_id' => $contratoID,
-			'DominioContrato_type' => 'Ubicacion',
 		]);
 
 		$empresaID = Empresa::where('nombre', 'ARCADIS')-> value('id');
@@ -144,13 +100,6 @@ class ContratoInactivo_Seeder extends Seeder
 			'dominioContrato_id' => $dominioID,
 		]);
 
-		$contratoID = Contrato::where('numero', '4501672787')->value('id');
-
-		DominioContrato::create([
-			'DominioContrato_id' => $contratoID,
-			'DominioContrato_type' => 'Ubicacion',
-		]);
-
 		$empresaID = Empresa::where('nombre', 'ASTALDI')-> value('id');
 
 		Contrato::create([
@@ -159,13 +108,6 @@ class ContratoInactivo_Seeder extends Seeder
 			'finicio' => Carbon::parse('01-04-2013')->format('Y/m/d'),
 			'ftermino' => Carbon::parse('31-12-2015')->format('Y/m/d'),
 			'dominioContrato_id' => $dominioID,
-		]);
-
-		$contratoID = Contrato::where('numero', '4501364590')->value('id');
-
-		DominioContrato::create([
-			'DominioContrato_id' => $contratoID,
-			'DominioContrato_type' => 'Ubicacion',
 		]);
 
 		$empresaID = Empresa::where('nombre', 'ATLAS COPCO')-> value('id');
@@ -178,13 +120,6 @@ class ContratoInactivo_Seeder extends Seeder
 			'dominioContrato_id' => $dominioID,
 		]);
 
-		$contratoID = Contrato::where('numero', '4600003512')->value('id');
-
-		DominioContrato::create([
-			'DominioContrato_id' => $contratoID,
-			'DominioContrato_type' => 'Ubicacion',
-		]);
-
 		$empresaID = Empresa::where('nombre', 'AVA MONTAJES')-> value('id');
 
 		Contrato::create([
@@ -193,13 +128,6 @@ class ContratoInactivo_Seeder extends Seeder
 			'finicio' => Carbon::parse('13-06-2017')->format('Y/m/d'),
 			'ftermino' => Carbon::parse('05-05-2018')->format('Y/m/d'),
 			'dominioContrato_id' => $dominioID,
-		]);
-
-		$contratoID = Contrato::where('numero', '4501701063')->value('id');
-
-		DominioContrato::create([
-			'DominioContrato_id' => $contratoID,
-			'DominioContrato_type' => 'Ubicacion',
 		]);
 
 		$empresaID = Empresa::where('nombre', 'AVANT SERV. INTEGRALES')-> value('id');
@@ -212,13 +140,6 @@ class ContratoInactivo_Seeder extends Seeder
 			'dominioContrato_id' => $dominioID,
 		]);
 
-		$contratoID = Contrato::where('numero', '4600009769')->value('id');
-
-		DominioContrato::create([
-			'DominioContrato_id' => $contratoID,
-			'DominioContrato_type' => 'Ubicacion',
-		]);
-
 		$empresaID = Empresa::where('nombre', 'B.BOSCH S.A.')-> value('id');
 
 		Contrato::create([
@@ -227,13 +148,6 @@ class ContratoInactivo_Seeder extends Seeder
 			'finicio' => Carbon::parse('01-03-2016')->format('Y/m/d'),
 			'ftermino' => Carbon::parse('31-03-2018')->format('Y/m/d'),
 			'dominioContrato_id' => $dominioID,
-		]);
-
-		$contratoID = Contrato::where('numero', '4501614395')->value('id');
-
-		DominioContrato::create([
-			'DominioContrato_id' => $contratoID,
-			'DominioContrato_type' => 'Ubicacion',
 		]);
 
 		$empresaID = Empresa::where('nombre', 'BUILDTEK S.A.')-> value('id');
@@ -246,13 +160,6 @@ class ContratoInactivo_Seeder extends Seeder
 			'dominioContrato_id' => $dominioID,
 		]);
 
-		$contratoID = Contrato::where('numero', '4501744479')->value('id');
-
-		DominioContrato::create([
-			'DominioContrato_id' => $contratoID,
-			'DominioContrato_type' => 'Ubicacion',
-		]);
-
 		$empresaID = Empresa::where('nombre', 'BUREAU VERITAS CHILE S.A.')-> value('id');
 
 		Contrato::create([
@@ -262,13 +169,6 @@ class ContratoInactivo_Seeder extends Seeder
 			'ftermino' => Carbon::parse('14-01-2016')->format('Y/m/d'),
 			'dominioContrato_id' => $dominioID,
 		]);
-
-		$contratoID = Contrato::where('numero', '4600011902')->value('id');
-
-		DominioContrato::create([
-			'DominioContrato_id' => $contratoID,
-			'DominioContrato_type' => 'Ubicacion',
-		]);
 		Contrato::create([
 			'empresa_id' => $empresaID, 
 			'numero' => '4600012203',
@@ -276,26 +176,12 @@ class ContratoInactivo_Seeder extends Seeder
 			'ftermino' => Carbon::parse('14-01-2016')->format('Y/m/d'),
 			'dominioContrato_id' => $dominioID,
 		]);
-
-		$contratoID = Contrato::where('numero', '4600012203')->value('id');
-
-		DominioContrato::create([
-			'DominioContrato_id' => $contratoID,
-			'DominioContrato_type' => 'Ubicacion',
-		]);
 		Contrato::create([
 			'empresa_id' => $empresaID, 
 			'numero' => '4600014593',
 			'finicio' => Carbon::parse('12-04-2016')->format('Y/m/d'),
 			'ftermino' => Carbon::parse('11-04-2018')->format('Y/m/d'),
 			'dominioContrato_id' => $dominioID,
-		]);
-
-		$contratoID = Contrato::where('numero', '4600014593')->value('id');
-
-		DominioContrato::create([
-			'DominioContrato_id' => $contratoID,
-			'DominioContrato_type' => 'Ubicacion',
 		]);
 
 		$empresaID = Empresa::where('nombre', 'BUSES JM PULLMAN S.A.')-> value('id');
@@ -308,13 +194,6 @@ class ContratoInactivo_Seeder extends Seeder
 			'dominioContrato_id' => $dominioID,
 		]);
 
-		$contratoID = Contrato::where('numero', '4600001221')->value('id');
-
-		DominioContrato::create([
-			'DominioContrato_id' => $contratoID,
-			'DominioContrato_type' => 'Ubicacion',
-		]);
-
 		$empresaID = Empresa::where('nombre', 'C & G SERVICIOS INDUSTRIALES LTDA.')-> value('id');
 
 		Contrato::create([
@@ -323,13 +202,6 @@ class ContratoInactivo_Seeder extends Seeder
 			'finicio' => Carbon::parse('15-01-2018')->format('Y/m/d'),
 			'ftermino' => Carbon::parse('31-03-2018')->format('Y/m/d'),
 			'dominioContrato_id' => $dominioID,
-		]);
-
-		$contratoID = Contrato::where('numero', '4600015890')->value('id');
-
-		DominioContrato::create([
-			'DominioContrato_id' => $contratoID,
-			'DominioContrato_type' => 'Ubicacion',
 		]);
 
 		$empresaID = Empresa::where('nombre', 'CARLOS ESCARATE Y CIA. LTDA.')-> value('id');
@@ -341,13 +213,6 @@ class ContratoInactivo_Seeder extends Seeder
 			'ftermino' => Carbon::parse('01-04-2015')->format('Y/m/d'),
 			'dominioContrato_id' => $dominioID,
 		]);
-
-		$contratoID = Contrato::where('numero', '4600011997')->value('id');
-
-		DominioContrato::create([
-			'DominioContrato_id' => $contratoID,
-			'DominioContrato_type' => 'Ubicacion',
-		]);
 		Contrato::create([
 			'empresa_id' => $empresaID, 
 			'numero' => '4600011710',
@@ -355,26 +220,12 @@ class ContratoInactivo_Seeder extends Seeder
 			'ftermino' => Carbon::parse('16-08-2015')->format('Y/m/d'),
 			'dominioContrato_id' => $dominioID,
 		]);
-
-		$contratoID = Contrato::where('numero', '4600011710')->value('id');
-
-		DominioContrato::create([
-			'DominioContrato_id' => $contratoID,
-			'DominioContrato_type' => 'Ubicacion',
-		]);
 		Contrato::create([
 			'empresa_id' => $empresaID, 
 			'numero' => '4501682877',
 			'finicio' => Carbon::parse('07-03-2017')->format('Y/m/d'),
 			'ftermino' => Carbon::parse('28-08-2018')->format('Y/m/d'),
 			'dominioContrato_id' => $dominioID,
-		]);
-
-		$contratoID = Contrato::where('numero', '4501682877')->value('id');
-
-		DominioContrato::create([
-			'DominioContrato_id' => $contratoID,
-			'DominioContrato_type' => 'Ubicacion',
 		]);
 
 		$empresaID = Empresa::where('nombre', 'CESMEC S.A.')-> value('id');
@@ -386,26 +237,12 @@ class ContratoInactivo_Seeder extends Seeder
 			'ftermino' => Carbon::parse('01-06-2018')->format('Y/m/d'),
 			'dominioContrato_id' => $dominioID,
 		]);
-
-		$contratoID = Contrato::where('numero', '4600012154')->value('id');
-
-		DominioContrato::create([
-			'DominioContrato_id' => $contratoID,
-			'DominioContrato_type' => 'Ubicacion',
-		]);
 		Contrato::create([
 			'empresa_id' => $empresaID, 
 			'numero' => '4501615773',
 			'finicio' => Carbon::parse('13-03-2016')->format('Y/m/d'),
 			'ftermino' => Carbon::parse('30-11-2016')->format('Y/m/d'),
 			'dominioContrato_id' => $dominioID,
-		]);
-
-		$contratoID = Contrato::where('numero', '4501615773')->value('id');
-
-		DominioContrato::create([
-			'DominioContrato_id' => $contratoID,
-			'DominioContrato_type' => 'Ubicacion',
 		]);
 
 		$empresaID = Empresa::where('nombre', 'CHESTA S.A.')-> value('id');
@@ -417,26 +254,12 @@ class ContratoInactivo_Seeder extends Seeder
 			'ftermino' => Carbon::parse('24-06-2015')->format('Y/m/d'),
 			'dominioContrato_id' => $dominioID,
 		]);
-
-		$contratoID = Contrato::where('numero', '4501501139')->value('id');
-
-		DominioContrato::create([
-			'DominioContrato_id' => $contratoID,
-			'DominioContrato_type' => 'Ubicacion',
-		]);
 		Contrato::create([
 			'empresa_id' => $empresaID, 
 			'numero' => '4501393107',
 			'finicio' => Carbon::parse('05-02-2015')->format('Y/m/d'),
 			'ftermino' => Carbon::parse('30-07-2015')->format('Y/m/d'),
 			'dominioContrato_id' => $dominioID,
-		]);
-
-		$contratoID = Contrato::where('numero', '4501393107')->value('id');
-
-		DominioContrato::create([
-			'DominioContrato_id' => $contratoID,
-			'DominioContrato_type' => 'Ubicacion',
 		]);
 		Contrato::create([
 			'empresa_id' => $empresaID, 
@@ -445,26 +268,12 @@ class ContratoInactivo_Seeder extends Seeder
 			'ftermino' => Carbon::parse('05-04-2017')->format('Y/m/d'),
 			'dominioContrato_id' => $dominioID,
 		]);
-
-		$contratoID = Contrato::where('numero', '4501392548')->value('id');
-
-		DominioContrato::create([
-			'DominioContrato_id' => $contratoID,
-			'DominioContrato_type' => 'Ubicacion',
-		]);
 		Contrato::create([
 			'empresa_id' => $empresaID, 
 			'numero' => '4100013956',
 			'finicio' => Carbon::parse('22-08-2013')->format('Y/m/d'),
 			'ftermino' => Carbon::parse('30-06-2015')->format('Y/m/d'),
 			'dominioContrato_id' => $dominioID,
-		]);
-
-		$contratoID = Contrato::where('numero', '4100013956')->value('id');
-
-		DominioContrato::create([
-			'DominioContrato_id' => $contratoID,
-			'DominioContrato_type' => 'Ubicacion',
 		]);
 
 		$empresaID = Empresa::where('nombre', 'COASIN CHILE S.A.')-> value('id');
@@ -477,13 +286,6 @@ class ContratoInactivo_Seeder extends Seeder
 			'dominioContrato_id' => $dominioID,
 		]);
 
-		$contratoID = Contrato::where('numero', '4600011563')->value('id');
-
-		DominioContrato::create([
-			'DominioContrato_id' => $contratoID,
-			'DominioContrato_type' => 'Ubicacion',
-		]);
-
 		$empresaID = Empresa::where('nombre', 'CONSORCIO ACCIONA-OSSA')-> value('id');
 
 		Contrato::create([
@@ -492,13 +294,6 @@ class ContratoInactivo_Seeder extends Seeder
 			'finicio' => Carbon::parse('22-09-2015')->format('Y/m/d'),
 			'ftermino' => Carbon::parse('31-05-2017')->format('Y/m/d'),
 			'dominioContrato_id' => $dominioID,
-		]);
-
-		$contratoID = Contrato::where('numero', '4501563466')->value('id');
-
-		DominioContrato::create([
-			'DominioContrato_id' => $contratoID,
-			'DominioContrato_type' => 'Ubicacion',
 		]);
 
 		$empresaID = Empresa::where('nombre', 'CONSORCIO CELLE S.A.')-> value('id');
@@ -511,13 +306,6 @@ class ContratoInactivo_Seeder extends Seeder
 			'dominioContrato_id' => $dominioID,
 		]);
 
-		$contratoID = Contrato::where('numero', '4500280202')->value('id');
-
-		DominioContrato::create([
-			'DominioContrato_id' => $contratoID,
-			'DominioContrato_type' => 'Ubicacion',
-		]);
-
 		$empresaID = Empresa::where('nombre', 'CONSORCIO ZAÑARTU')-> value('id');
 
 		Contrato::create([
@@ -526,13 +314,6 @@ class ContratoInactivo_Seeder extends Seeder
 			'finicio' => Carbon::parse('02-02-2015')->format('Y/m/d'),
 			'ftermino' => Carbon::parse('01-01-2017')->format('Y/m/d'),
 			'dominioContrato_id' => $dominioID,
-		]);
-
-		$contratoID = Contrato::where('numero', '4501517741')->value('id');
-
-		DominioContrato::create([
-			'DominioContrato_id' => $contratoID,
-			'DominioContrato_type' => 'Ubicacion',
 		]);
 
 		$empresaID = Empresa::where('nombre', 'CONSTRUCTORA CERRO NEVADO S.A.')-> value('id');
@@ -545,13 +326,6 @@ class ContratoInactivo_Seeder extends Seeder
 			'dominioContrato_id' => $dominioID,
 		]);
 
-		$contratoID = Contrato::where('numero', '4600013055')->value('id');
-
-		DominioContrato::create([
-			'DominioContrato_id' => $contratoID,
-			'DominioContrato_type' => 'Ubicacion',
-		]);
-
 		$empresaID = Empresa::where('nombre', 'CONTITECH')-> value('id');
 
 		Contrato::create([
@@ -560,13 +334,6 @@ class ContratoInactivo_Seeder extends Seeder
 			'finicio' => Carbon::parse('01-11-2013')->format('Y/m/d'),
 			'ftermino' => Carbon::parse('01-11-2016')->format('Y/m/d'),
 			'dominioContrato_id' => $dominioID,
-		]);
-
-		$contratoID = Contrato::where('numero', '4600012401')->value('id');
-
-		DominioContrato::create([
-			'DominioContrato_id' => $contratoID,
-			'DominioContrato_type' => 'Ubicacion',
 		]);
 
 		$empresaID = Empresa::where('nombre', 'CONVEYOR BELT TECNOLOGY')-> value('id');
@@ -579,13 +346,6 @@ class ContratoInactivo_Seeder extends Seeder
 			'dominioContrato_id' => $dominioID,
 		]);
 
-		$contratoID = Contrato::where('numero', '4600014751')->value('id');
-
-		DominioContrato::create([
-			'DominioContrato_id' => $contratoID,
-			'DominioContrato_type' => 'Ubicacion',
-		]);
-
 		$empresaID = Empresa::where('nombre', 'COSANDO CONT. Y MONTAJE LTDA.')-> value('id');
 
 		Contrato::create([
@@ -594,13 +354,6 @@ class ContratoInactivo_Seeder extends Seeder
 			'finicio' => Carbon::parse('04-04-2011')->format('Y/m/d'),
 			'ftermino' => Carbon::parse('04-04-2015')->format('Y/m/d'),
 			'dominioContrato_id' => $dominioID,
-		]);
-
-		$contratoID = Contrato::where('numero', '4600009740')->value('id');
-
-		DominioContrato::create([
-			'DominioContrato_id' => $contratoID,
-			'DominioContrato_type' => 'Ubicacion',
 		]);
 
 		$empresaID = Empresa::where('nombre', 'COSTELLA PROYECTOS S.A.')-> value('id');
@@ -613,13 +366,6 @@ class ContratoInactivo_Seeder extends Seeder
 			'dominioContrato_id' => $dominioID,
 		]);
 
-		$contratoID = Contrato::where('numero', '4501473142')->value('id');
-
-		DominioContrato::create([
-			'DominioContrato_id' => $contratoID,
-			'DominioContrato_type' => 'Ubicacion',
-		]);
-
 		$empresaID = Empresa::where('nombre', 'DERK INGENIERIA Y GEOLOGIA LTDA.')-> value('id');
 
 		Contrato::create([
@@ -628,13 +374,6 @@ class ContratoInactivo_Seeder extends Seeder
 			'finicio' => Carbon::parse('01-04-2014')->format('Y/m/d'),
 			'ftermino' => Carbon::parse('31-03-2016')->format('Y/m/d'),
 			'dominioContrato_id' => $dominioID,
-		]);
-
-		$contratoID = Contrato::where('numero', '4501437837')->value('id');
-
-		DominioContrato::create([
-			'DominioContrato_id' => $contratoID,
-			'DominioContrato_type' => 'Ubicacion',
 		]);
 
 		$empresaID = Empresa::where('nombre', 'DICTUC S.A.')-> value('id');
@@ -647,13 +386,6 @@ class ContratoInactivo_Seeder extends Seeder
 			'dominioContrato_id' => $dominioID,
 		]);
 
-		$contratoID = Contrato::where('numero', '4501550021')->value('id');
-
-		DominioContrato::create([
-			'DominioContrato_id' => $contratoID,
-			'DominioContrato_type' => 'Ubicacion',
-		]);
-
 		$empresaID = Empresa::where('nombre', 'DISTINTEC SPA')-> value('id');
 
 		Contrato::create([
@@ -662,13 +394,6 @@ class ContratoInactivo_Seeder extends Seeder
 			'finicio' => Carbon::parse('24-01-2011')->format('Y/m/d'),
 			'ftermino' => Carbon::parse('24-01-2016')->format('Y/m/d'),
 			'dominioContrato_id' => $dominioID,
-		]);
-
-		$contratoID = Contrato::where('numero', '4600009547')->value('id');
-
-		DominioContrato::create([
-			'DominioContrato_id' => $contratoID,
-			'DominioContrato_type' => 'Ubicacion',
 		]);
 
 		$empresaID = Empresa::where('nombre', 'DISTRIBUIDORA CUMMINS CHILE S.A.')-> value('id');
@@ -680,26 +405,12 @@ class ContratoInactivo_Seeder extends Seeder
 			'ftermino' => Carbon::parse('09-05-2018')->format('Y/m/d'),
 			'dominioContrato_id' => $dominioID,
 		]);
-
-		$contratoID = Contrato::where('numero', '4600014045')->value('id');
-
-		DominioContrato::create([
-			'DominioContrato_id' => $contratoID,
-			'DominioContrato_type' => 'Ubicacion',
-		]);
 		Contrato::create([
 			'empresa_id' => $empresaID,
 			'numero' => '4600007649',
 			'finicio' => Carbon::parse('01-02-2009')->format('Y/m/d'),
 			'ftermino' => Carbon::parse('31-03-2015')->format('Y/m/d'),
 			'dominioContrato_id' => $dominioID,
-		]);
-
-		$contratoID = Contrato::where('numero', '4600007649')->value('id');
-
-		DominioContrato::create([
-			'DominioContrato_id' => $contratoID,
-			'DominioContrato_type' => 'Ubicacion',
 		]);
 
 		$empresaID = Empresa::where('nombre', 'DRILLCO TOOLS S.A.')-> value('id');
@@ -711,26 +422,12 @@ class ContratoInactivo_Seeder extends Seeder
 			'ftermino' => Carbon::parse('31-05-2015')->format('Y/m/d'),
 			'dominioContrato_id' => $dominioID,
 		]);
-
-		$contratoID = Contrato::where('numero', '4600010125')->value('id');
-
-		DominioContrato::create([
-			'DominioContrato_id' => $contratoID,
-			'DominioContrato_type' => 'Ubicacion',
-		]);
 		Contrato::create([
 			'empresa_id' => $empresaID,
 			'numero' => '4600014244',
 			'finicio' => Carbon::parse('01-12-2015')->format('Y/m/d'),
 			'ftermino' => Carbon::parse('30-09-2017')->format('Y/m/d'),
 			'dominioContrato_id' => $dominioID,
-		]);
-
-		$contratoID = Contrato::where('numero', '4600014244')->value('id');
-
-		DominioContrato::create([
-			'DominioContrato_id' => $contratoID,
-			'DominioContrato_type' => 'Ubicacion',
 		]);
 
 		$empresaID = Empresa::where('nombre', 'DURATRAY SPA')-> value('id');
@@ -743,13 +440,6 @@ class ContratoInactivo_Seeder extends Seeder
 			'dominioContrato_id' => $dominioID,
 		]);
 
-		$contratoID = Contrato::where('numero', '4600014585')->value('id');
-
-		DominioContrato::create([
-			'DominioContrato_id' => $contratoID,
-			'DominioContrato_type' => 'Ubicacion',
-		]);
-
 		$empresaID = Empresa::where('nombre', 'ELECNOR CHILE S.A.')-> value('id');
 
 		Contrato::create([
@@ -758,13 +448,6 @@ class ContratoInactivo_Seeder extends Seeder
 			'finicio' => Carbon::parse('13-07-2015')->format('Y/m/d'),
 			'ftermino' => Carbon::parse('22-02-2017')->format('Y/m/d'),
 			'dominioContrato_id' => $dominioID,
-		]);
-
-		$contratoID = Contrato::where('numero', '4501537156')->value('id');
-
-		DominioContrato::create([
-			'DominioContrato_id' => $contratoID,
-			'DominioContrato_type' => 'Ubicacion',
 		]);
 
 		$empresaID = Empresa::where('nombre', 'EMIN')-> value('id');
@@ -777,13 +460,6 @@ class ContratoInactivo_Seeder extends Seeder
 			'dominioContrato_id' => $dominioID,
 		]);
 
-		$contratoID = Contrato::where('numero', '4501756369')->value('id');
-
-		DominioContrato::create([
-			'DominioContrato_id' => $contratoID,
-			'DominioContrato_type' => 'Ubicacion',
-		]);
-
 		$empresaID = Empresa::where('nombre', 'EQUIPOS TREX S.P.A.')-> value('id');
 
 		Contrato::create([
@@ -792,13 +468,6 @@ class ContratoInactivo_Seeder extends Seeder
 			'finicio' => Carbon::parse('30-01-2010')->format('Y/m/d'),
 			'ftermino' => Carbon::parse('30-05-2015')->format('Y/m/d'),
 			'dominioContrato_id' => $dominioID,
-		]);
-
-		$contratoID = Contrato::where('numero', '4600008507')->value('id');
-
-		DominioContrato::create([
-			'DominioContrato_id' => $contratoID,
-			'DominioContrato_type' => 'Ubicacion',
 		]);
 
 		$empresaID = Empresa::where('nombre', 'ESM SPA')-> value('id');
@@ -811,13 +480,6 @@ class ContratoInactivo_Seeder extends Seeder
 			'dominioContrato_id' => $dominioID,
 		]);
 
-		$contratoID = Contrato::where('numero', '4600014399')->value('id');
-
-		DominioContrato::create([
-			'DominioContrato_id' => $contratoID,
-			'DominioContrato_type' => 'Ubicacion',
-		]);
-
 		$empresaID = Empresa::where('nombre', 'FERROSTAAL CHILE S.A.C.')-> value('id');
 
 		Contrato::create([
@@ -826,13 +488,6 @@ class ContratoInactivo_Seeder extends Seeder
 			'finicio' => Carbon::parse('23-03-2015')->format('Y/m/d'),
 			'ftermino' => Carbon::parse('08-09-2015')->format('Y/m/d'),
 			'dominioContrato_id' => $dominioID,
-		]);
-
-		$contratoID = Contrato::where('numero', '4501522702')->value('id');
-
-		DominioContrato::create([
-			'DominioContrato_id' => $contratoID,
-			'DominioContrato_type' => 'Ubicacion',
 		]);
 
 		$empresaID = Empresa::where('nombre', 'GEONOR LTDA.')-> value('id');
@@ -845,13 +500,6 @@ class ContratoInactivo_Seeder extends Seeder
 			'dominioContrato_id' => $dominioID,
 		]);
 
-		$contratoID = Contrato::where('numero', '4501480235')->value('id');
-
-		DominioContrato::create([
-			'DominioContrato_id' => $contratoID,
-			'DominioContrato_type' => 'Ubicacion',
-		]);
-
 		$empresaID = Empresa::where('nombre', 'GROUNDPROBE SOUTH AMERICA S.A.')-> value('id');
 
 		Contrato::create([
@@ -860,13 +508,6 @@ class ContratoInactivo_Seeder extends Seeder
 			'finicio' => Carbon::parse('03-08-2016')->format('Y/m/d'),
 			'ftermino' => Carbon::parse('02-02-2018')->format('Y/m/d'),
 			'dominioContrato_id' => $dominioID,
-		]);
-
-		$contratoID = Contrato::where('numero', '4501646389')->value('id');
-
-		DominioContrato::create([
-			'DominioContrato_id' => $contratoID,
-			'DominioContrato_type' => 'Ubicacion',
 		]);
 
 		$empresaID = Empresa::where('nombre', 'HEWLETT PACKARD S.A.')-> value('id');
@@ -879,13 +520,6 @@ class ContratoInactivo_Seeder extends Seeder
 			'dominioContrato_id' => $dominioID,
 		]);
 
-		$contratoID = Contrato::where('numero', '4501282127')->value('id');
-
-		DominioContrato::create([
-			'DominioContrato_id' => $contratoID,
-			'DominioContrato_type' => 'Ubicacion',
-		]);
-
 		$empresaID = Empresa::where('nombre', 'HRI S.A.')-> value('id');
 
 		Contrato::create([
@@ -894,13 +528,6 @@ class ContratoInactivo_Seeder extends Seeder
 			'finicio' => Carbon::parse('20-07-2012')->format('Y/m/d'),
 			'ftermino' => Carbon::parse('20-07-2016')->format('Y/m/d'),
 			'dominioContrato_id' => $dominioID,
-		]);
-
-		$contratoID = Contrato::where('numero', '4600011618')->value('id');
-
-		DominioContrato::create([
-			'DominioContrato_id' => $contratoID,
-			'DominioContrato_type' => 'Ubicacion',
 		]);
 
 		$empresaID = Empresa::where('nombre', 'ICV S.A.')-> value('id');
@@ -913,13 +540,6 @@ class ContratoInactivo_Seeder extends Seeder
 			'dominioContrato_id' => $dominioID,
 		]);
 
-		$contratoID = Contrato::where('numero', '4600015652')->value('id');
-
-		DominioContrato::create([
-			'DominioContrato_id' => $contratoID,
-			'DominioContrato_type' => 'Ubicacion',
-		]);
-
 		$empresaID = Empresa::where('nombre', 'IMA INDUSTRIAL LTDA.')-> value('id');
 
 		Contrato::create([
@@ -928,13 +548,6 @@ class ContratoInactivo_Seeder extends Seeder
 			'finicio' => Carbon::parse('17-03-2014')->format('Y/m/d'),
 			'ftermino' => Carbon::parse('16-06-2016')->format('Y/m/d'),
 			'dominioContrato_id' => $dominioID,
-		]);
-
-		$contratoID = Contrato::where('numero', '4600011562')->value('id');
-
-		DominioContrato::create([
-			'DominioContrato_id' => $contratoID,
-			'DominioContrato_type' => 'Ubicacion',
 		]);
 
 		$empresaID = Empresa::where('nombre', 'IMS PATAGONIA')-> value('id');
@@ -947,13 +560,6 @@ class ContratoInactivo_Seeder extends Seeder
 			'dominioContrato_id' => $dominioID,
 		]);
 
-		$contratoID = Contrato::where('numero', '4600007601')->value('id');
-
-		DominioContrato::create([
-			'DominioContrato_id' => $contratoID,
-			'DominioContrato_type' => 'Ubicacion',
-		]);
-
 		$empresaID = Empresa::where('nombre', 'ING. Y SERV. COLLANTS LTDA.')-> value('id');
 
 		Contrato::create([
@@ -962,13 +568,6 @@ class ContratoInactivo_Seeder extends Seeder
 			'finicio' => Carbon::parse('16-01-2017')->format('Y/m/d'),
 			'ftermino' => Carbon::parse('17-04-2017')->format('Y/m/d'),
 			'dominioContrato_id' => $dominioID,
-		]);
-
-		$contratoID = Contrato::where('numero', '4501681345')->value('id');
-
-		DominioContrato::create([
-			'DominioContrato_id' => $contratoID,
-			'DominioContrato_type' => 'Ubicacion',
 		]);
 
 		$empresaID = Empresa::where('nombre', 'INGETROL S.A.')-> value('id');
@@ -980,26 +579,12 @@ class ContratoInactivo_Seeder extends Seeder
 			'ftermino' => Carbon::parse('31-03-2017')->format('Y/m/d'),
 			'dominioContrato_id' => $dominioID,
 		]);
-
-		$contratoID = Contrato::where('numero', '4501483457')->value('id');
-
-		DominioContrato::create([
-			'DominioContrato_id' => $contratoID,
-			'DominioContrato_type' => 'Ubicacion',
-		]);
 		Contrato::create([
 			'empresa_id' => $empresaID,
 			'numero' => '4501464357',
 			'finicio' => Carbon::parse('14-10-2014')->format('Y/m/d'),
 			'ftermino' => Carbon::parse('12-05-2015')->format('Y/m/d'),
 			'dominioContrato_id' => $dominioID,
-		]);
-
-		$contratoID = Contrato::where('numero', '4501464357')->value('id');
-
-		DominioContrato::create([
-			'DominioContrato_id' => $contratoID,
-			'DominioContrato_type' => 'Ubicacion',
 		]);
 
 		$empresaID = Empresa::where('nombre', 'INSSO S.A.')-> value('id');
@@ -1012,13 +597,6 @@ class ContratoInactivo_Seeder extends Seeder
 			'dominioContrato_id' => $dominioID,
 		]);
 
-		$contratoID = Contrato::where('numero', '4501506702')->value('id');
-
-		DominioContrato::create([
-			'DominioContrato_id' => $contratoID,
-			'DominioContrato_type' => 'Ubicacion',
-		]);
-
 		$empresaID = Empresa::where('nombre', 'INSTALFRIO S.P.A.')-> value('id');
 
 		Contrato::create([
@@ -1027,13 +605,6 @@ class ContratoInactivo_Seeder extends Seeder
 			'finicio' => Carbon::parse('26-07-2016')->format('Y/m/d'),
 			'ftermino' => Carbon::parse('22-07-2018')->format('Y/m/d'),
 			'dominioContrato_id' => $dominioID,
-		]);
-
-		$contratoID = Contrato::where('numero', '4600014913')->value('id');
-
-		DominioContrato::create([
-			'DominioContrato_id' => $contratoID,
-			'DominioContrato_type' => 'Ubicacion',
 		]);
 
 		$empresaID = Empresa::where('nombre', 'INVERSIONES IMPACTO S.A.')-> value('id');
@@ -1046,13 +617,6 @@ class ContratoInactivo_Seeder extends Seeder
 			'dominioContrato_id' => $dominioID,
 		]);
 
-		$contratoID = Contrato::where('numero', '4600013574')->value('id');
-
-		DominioContrato::create([
-			'DominioContrato_id' => $contratoID,
-			'DominioContrato_type' => 'Ubicacion',
-		]);
-
 		$empresaID = Empresa::where('nombre', 'ITM LTDA.')-> value('id');
 
 		Contrato::create([
@@ -1061,13 +625,6 @@ class ContratoInactivo_Seeder extends Seeder
 			'finicio' => Carbon::parse('30-05-2016')->format('Y/m/d'),
 			'ftermino' => Carbon::parse('30-05-2018')->format('Y/m/d'),
 			'dominioContrato_id' => $dominioID,
-		]);
-
-		$contratoID = Contrato::where('numero', '4501630097')->value('id');
-
-		DominioContrato::create([
-			'DominioContrato_id' => $contratoID,
-			'DominioContrato_type' => 'Ubicacion',
 		]);
 
 		$empresaID = Empresa::where('nombre', 'JANSSEN S.A.')-> value('id');
@@ -1080,13 +637,6 @@ class ContratoInactivo_Seeder extends Seeder
 			'dominioContrato_id' => $dominioID,
 		]);
 
-		$contratoID = Contrato::where('numero', '4600006716')->value('id');
-
-		DominioContrato::create([
-			'DominioContrato_id' => $contratoID,
-			'DominioContrato_type' => 'Ubicacion',
-		]);
-
 		$empresaID = Empresa::where('nombre', 'JOY GLOBAL CHILE S.A.')-> value('id');
 
 		Contrato::create([
@@ -1095,13 +645,6 @@ class ContratoInactivo_Seeder extends Seeder
 			'finicio' => Carbon::parse('26-01-2014')->format('Y/m/d'),
 			'ftermino' => Carbon::parse('25-01-2016')->format('Y/m/d'),
 			'dominioContrato_id' => $dominioID,
-		]);
-
-		$contratoID = Contrato::where('numero', '4501433413')->value('id');
-
-		DominioContrato::create([
-			'DominioContrato_id' => $contratoID,
-			'DominioContrato_type' => 'Ubicacion',
 		]);
 
 		$empresaID = Empresa::where('nombre', 'KATECS Y CIA')-> value('id');
@@ -1114,13 +657,6 @@ class ContratoInactivo_Seeder extends Seeder
 			'dominioContrato_id' => $dominioID,
 		]);
 
-		$contratoID = Contrato::where('numero', '4600015539')->value('id');
-
-		DominioContrato::create([
-			'DominioContrato_id' => $contratoID,
-			'DominioContrato_type' => 'Ubicacion',
-		]);
-
 		$empresaID = Empresa::where('nombre', 'KB INGENIERIA SANITARIOS')-> value('id');
 
 		Contrato::create([
@@ -1129,13 +665,6 @@ class ContratoInactivo_Seeder extends Seeder
 			'finicio' => Carbon::parse('10-02-2016')->format('Y/m/d'),
 			'ftermino' => Carbon::parse('07-10-2016')->format('Y/m/d'),
 			'dominioContrato_id' => $dominioID,
-		]);
-
-		$contratoID = Contrato::where('numero', '4501593730')->value('id');
-
-		DominioContrato::create([
-			'DominioContrato_id' => $contratoID,
-			'DominioContrato_type' => 'Ubicacion',
 		]);
 
 		$empresaID = Empresa::where('nombre', 'KOMATSU CHILE S.A.')-> value('id');
@@ -1148,13 +677,6 @@ class ContratoInactivo_Seeder extends Seeder
 			'dominioContrato_id' => $dominioID,
 		]);
 
-		$contratoID = Contrato::where('numero', '4600004456')->value('id');
-
-		DominioContrato::create([
-			'DominioContrato_id' => $contratoID,
-			'DominioContrato_type' => 'Ubicacion',
-		]);
-
 		$empresaID = Empresa::where('nombre', 'KONECRANES')-> value('id');
 
 		Contrato::create([
@@ -1163,13 +685,6 @@ class ContratoInactivo_Seeder extends Seeder
 			'finicio' => Carbon::parse('01-01-2012')->format('Y/m/d'),
 			'ftermino' => Carbon::parse('30-11-2015')->format('Y/m/d'),
 			'dominioContrato_id' => $dominioID,
-		]);
-
-		$contratoID = Contrato::where('numero', '4600010970')->value('id');
-
-		DominioContrato::create([
-			'DominioContrato_id' => $contratoID,
-			'DominioContrato_type' => 'Ubicacion',
 		]);
 
 		$empresaID = Empresa::where('nombre', 'KUPFER HERMANOS S.A.')-> value('id');
@@ -1181,26 +696,12 @@ class ContratoInactivo_Seeder extends Seeder
 			'ftermino' => Carbon::parse('30-04-2016')->format('Y/m/d'),
 			'dominioContrato_id' => $dominioID,
 		]);
-
-		$contratoID = Contrato::where('numero', '4600010113')->value('id');
-
-		DominioContrato::create([
-			'DominioContrato_id' => $contratoID,
-			'DominioContrato_type' => 'Ubicacion',
-		]);
 		Contrato::create([
 			'empresa_id' => $empresaID, 
 			'numero' => '4600013772',
 			'finicio' => Carbon::parse('01-04-2015')->format('Y/m/d'),
 			'ftermino' => Carbon::parse('31-12-2016')->format('Y/m/d'),
 			'dominioContrato_id' => $dominioID,
-		]);
-
-		$contratoID = Contrato::where('numero', '4600013772')->value('id');
-
-		DominioContrato::create([
-			'DominioContrato_id' => $contratoID,
-			'DominioContrato_type' => 'Ubicacion',
 		]);
 
 		$empresaID = Empresa::where('nombre', 'LAVANDERIA ALBIA')-> value('id');
@@ -1212,26 +713,12 @@ class ContratoInactivo_Seeder extends Seeder
 			'ftermino' => Carbon::parse('30-08-2016')->format('Y/m/d'),
 			'dominioContrato_id' => $dominioID,
 		]);
-
-		$contratoID = Contrato::where('numero', '4600008463')->value('id');
-
-		DominioContrato::create([
-			'DominioContrato_id' => $contratoID,
-			'DominioContrato_type' => 'Ubicacion',
-		]);
 		Contrato::create([
 			'empresa_id' => $empresaID, 
 			'numero' => '4600014994',
 			'finicio' => Carbon::parse('01-09-2016')->format('Y/m/d'),
 			'ftermino' => Carbon::parse('01-12-2017')->format('Y/m/d'),
 			'dominioContrato_id' => $dominioID,
-		]);
-
-		$contratoID = Contrato::where('numero', '4600014994')->value('id');
-
-		DominioContrato::create([
-			'DominioContrato_id' => $contratoID,
-			'DominioContrato_type' => 'Ubicacion',
 		]);
 
 		$empresaID = Empresa::where('nombre', 'LIEBHERR CHILE SPA')-> value('id');
@@ -1244,13 +731,6 @@ class ContratoInactivo_Seeder extends Seeder
 			'dominioContrato_id' => $dominioID,
 		]);
 
-		$contratoID = Contrato::where('numero', '4600014209')->value('id');
-
-		DominioContrato::create([
-			'DominioContrato_id' => $contratoID,
-			'DominioContrato_type' => 'Ubicacion',
-		]);
-
 		$empresaID = Empresa::where('nombre', 'LIMPIANDO EL SUR')-> value('id');
 
 		Contrato::create([
@@ -1259,13 +739,6 @@ class ContratoInactivo_Seeder extends Seeder
 			'finicio' => Carbon::parse('03-06-2012')->format('Y/m/d'),
 			'ftermino' => Carbon::parse('31-12-2016')->format('Y/m/d'),
 			'dominioContrato_id' => $dominioID,
-		]);
-
-		$contratoID = Contrato::where('numero', '4501270902')->value('id');
-
-		DominioContrato::create([
-			'DominioContrato_id' => $contratoID,
-			'DominioContrato_type' => 'Ubicacion',
 		]);
 
 		$empresaID = Empresa::where('nombre', 'MANANTIAL')-> value('id');
@@ -1278,13 +751,6 @@ class ContratoInactivo_Seeder extends Seeder
 			'dominioContrato_id' => $dominioID,
 		]);
 
-		$contratoID = Contrato::where('numero', '4501561073')->value('id');
-
-		DominioContrato::create([
-			'DominioContrato_id' => $contratoID,
-			'DominioContrato_type' => 'Ubicacion',
-		]);
-
 		$empresaID = Empresa::where('nombre', 'MECANICA DE ROCAS LTDA.')-> value('id');
 
 		Contrato::create([
@@ -1293,13 +759,6 @@ class ContratoInactivo_Seeder extends Seeder
 			'finicio' => Carbon::parse('22-08-2017')->format('Y/m/d'),
 			'ftermino' => Carbon::parse('21-01-2018')->format('Y/m/d'),
 			'dominioContrato_id' => $dominioID,
-		]);
-
-		$contratoID = Contrato::where('numero', '4501647618')->value('id');
-
-		DominioContrato::create([
-			'DominioContrato_id' => $contratoID,
-			'DominioContrato_type' => 'Ubicacion',
 		]);
 
 		$empresaID = Empresa::where('nombre', 'MECANICA INDUSTRIAL S.A.')-> value('id');
@@ -1312,13 +771,6 @@ class ContratoInactivo_Seeder extends Seeder
 			'dominioContrato_id' => $dominioID,
 		]);
 
-		$contratoID = Contrato::where('numero', '4600011972')->value('id');
-
-		DominioContrato::create([
-			'DominioContrato_id' => $contratoID,
-			'DominioContrato_type' => 'Ubicacion',
-		]);
-
 		$empresaID = Empresa::where('nombre', 'MOL AMBIENTE S.A.')-> value('id');
 
 		Contrato::create([
@@ -1327,13 +779,6 @@ class ContratoInactivo_Seeder extends Seeder
 			'finicio' => Carbon::parse('01-11-2010')->format('Y/m/d'),
 			'ftermino' => Carbon::parse('01-11-2015')->format('Y/m/d'),
 			'dominioContrato_id' => $dominioID,
-		]);
-
-		$contratoID = Contrato::where('numero', '4501095465')->value('id');
-
-		DominioContrato::create([
-			'DominioContrato_id' => $contratoID,
-			'DominioContrato_type' => 'Ubicacion',
 		]);
 
 		$empresaID = Empresa::where('nombre', 'NEXXO S.A.')-> value('id');
@@ -1346,13 +791,6 @@ class ContratoInactivo_Seeder extends Seeder
 			'dominioContrato_id' => $dominioID,
 		]);
 
-		$contratoID = Contrato::where('numero', '4600013796')->value('id');
-
-		DominioContrato::create([
-			'DominioContrato_id' => $contratoID,
-			'DominioContrato_type' => 'Ubicacion',
-		]);
-
 		$empresaID = Empresa::where('nombre', 'ORICA CHILE S.A.')-> value('id');
 
 		Contrato::create([
@@ -1361,13 +799,6 @@ class ContratoInactivo_Seeder extends Seeder
 			'finicio' => Carbon::parse('16-05-2013')->format('Y/m/d'),
 			'ftermino' => Carbon::parse('15-05-2016')->format('Y/m/d'),
 			'dominioContrato_id' => $dominioID,
-		]);
-
-		$contratoID = Contrato::where('numero', '4501366356')->value('id');
-
-		DominioContrato::create([
-			'DominioContrato_id' => $contratoID,
-			'DominioContrato_type' => 'Ubicacion',
 		]);
 
 		$empresaID = Empresa::where('nombre', 'ORPAK LATINA SPA')-> value('id');
@@ -1380,13 +811,6 @@ class ContratoInactivo_Seeder extends Seeder
 			'dominioContrato_id' => $dominioID,
 		]);
 
-		$contratoID = Contrato::where('numero', '4501046812')->value('id');
-
-		DominioContrato::create([
-			'DominioContrato_id' => $contratoID,
-			'DominioContrato_type' => 'Ubicacion',
-		]);
-
 		$empresaID = Empresa::where('nombre', 'POCH CONSULTORES & ASOCIADOS')-> value('id');
 
 		Contrato::create([
@@ -1395,13 +819,6 @@ class ContratoInactivo_Seeder extends Seeder
 			'finicio' => Carbon::parse('02-01-2018')->format('Y/m/d'),
 			'ftermino' => Carbon::parse('01-05-2018')->format('Y/m/d'),
 			'dominioContrato_id' => $dominioID,
-		]);
-
-		$contratoID = Contrato::where('numero', '4501762356')->value('id');
-
-		DominioContrato::create([
-			'DominioContrato_id' => $contratoID,
-			'DominioContrato_type' => 'Ubicacion',
 		]);
 
 		$empresaID = Empresa::where('nombre', 'PRECISION S.A.')-> value('id');
@@ -1414,13 +831,6 @@ class ContratoInactivo_Seeder extends Seeder
 			'dominioContrato_id' => $dominioID,
 		]);
 
-		$contratoID = Contrato::where('numero', '4601046812')->value('id');
-
-		DominioContrato::create([
-			'DominioContrato_id' => $contratoID,
-			'DominioContrato_type' => 'Ubicacion',
-		]);
-
 		$empresaID = Empresa::where('nombre', 'R&Q')-> value('id');
 
 		Contrato::create([
@@ -1429,13 +839,6 @@ class ContratoInactivo_Seeder extends Seeder
 			'finicio' => Carbon::parse('01-11-2014')->format('Y/m/d'),
 			'ftermino' => Carbon::parse('31-07-2018')->format('Y/m/d'),
 			'dominioContrato_id' => $dominioID,
-		]);
-
-		$contratoID = Contrato::where('numero', '4501493517')->value('id');
-
-		DominioContrato::create([
-			'DominioContrato_id' => $contratoID,
-			'DominioContrato_type' => 'Ubicacion',
 		]);
 
 		$empresaID = Empresa::where('nombre', 'RELSA')-> value('id');
@@ -1448,13 +851,6 @@ class ContratoInactivo_Seeder extends Seeder
 			'dominioContrato_id' => $dominioID,
 		]);
 
-		$contratoID = Contrato::where('numero', '4600013881')->value('id');
-
-		DominioContrato::create([
-			'DominioContrato_id' => $contratoID,
-			'DominioContrato_type' => 'Ubicacion',
-		]);
-
 		$empresaID = Empresa::where('nombre', 'SANAM LTDA.')-> value('id');
 
 		Contrato::create([
@@ -1463,13 +859,6 @@ class ContratoInactivo_Seeder extends Seeder
 			'finicio' => Carbon::parse('02-01-2015')->format('Y/m/d'),
 			'ftermino' => Carbon::parse('02-01-2017')->format('Y/m/d'),
 			'dominioContrato_id' => $dominioID,
-		]);
-
-		$contratoID = Contrato::where('numero', '4600013421')->value('id');
-
-		DominioContrato::create([
-			'DominioContrato_id' => $contratoID,
-			'DominioContrato_type' => 'Ubicacion',
 		]);
 
 		$empresaID = Empresa::where('nombre', 'SANDVIK CHILE S.A.')-> value('id');
@@ -1482,13 +871,6 @@ class ContratoInactivo_Seeder extends Seeder
 			'dominioContrato_id' => $dominioID,
 		]);
 
-		$contratoID = Contrato::where('numero', '4600013353')->value('id');
-
-		DominioContrato::create([
-			'DominioContrato_id' => $contratoID,
-			'DominioContrato_type' => 'Ubicacion',
-		]);
-
 		$empresaID = Empresa::where('nombre', 'SERVASOL LTDA.')-> value('id');
 
 		Contrato::create([
@@ -1497,13 +879,6 @@ class ContratoInactivo_Seeder extends Seeder
 			'finicio' => Carbon::parse('15-06-2015')->format('Y/m/d'),
 			'ftermino' => Carbon::parse('15-06-2017')->format('Y/m/d'),
 			'dominioContrato_id' => $dominioID,
-		]);
-
-		$contratoID = Contrato::where('numero', '4501549042')->value('id');
-
-		DominioContrato::create([
-			'DominioContrato_id' => $contratoID,
-			'DominioContrato_type' => 'Ubicacion',
 		]);
 
 		$empresaID = Empresa::where('nombre', 'SERVING CONSULTORES LTDA.')-> value('id');
@@ -1516,13 +891,6 @@ class ContratoInactivo_Seeder extends Seeder
 			'dominioContrato_id' => $dominioID,
 		]);
 
-		$contratoID = Contrato::where('numero', '4501527053')->value('id');
-
-		DominioContrato::create([
-			'DominioContrato_id' => $contratoID,
-			'DominioContrato_type' => 'Ubicacion',
-		]);
-
 		$empresaID = Empresa::where('nombre', 'SGS CHILE LTDA.')-> value('id');
 
 		Contrato::create([
@@ -1531,13 +899,6 @@ class ContratoInactivo_Seeder extends Seeder
 			'finicio' => Carbon::parse('01-10-2014')->format('Y/m/d'),
 			'ftermino' => Carbon::parse('14-10-2016')->format('Y/m/d'),
 			'dominioContrato_id' => $dominioID,
-		]);
-
-		$contratoID = Contrato::where('numero', '4501490050')->value('id');
-
-		DominioContrato::create([
-			'DominioContrato_id' => $contratoID,
-			'DominioContrato_type' => 'Ubicacion',
 		]);
 
 		$empresaID = Empresa::where('nombre', 'SGS MINERALS S.A.')-> value('id');
@@ -1549,26 +910,12 @@ class ContratoInactivo_Seeder extends Seeder
 			'ftermino' => Carbon::parse('28-02-2017')->format('Y/m/d'),
 			'dominioContrato_id' => $dominioID,
 		]);
-
-		$contratoID = Contrato::where('numero', '4501402492')->value('id');
-
-		DominioContrato::create([
-			'DominioContrato_id' => $contratoID,
-			'DominioContrato_type' => 'Ubicacion',
-		]);
 		Contrato::create([
 			'empresa_id' => $empresaID, 
 			'numero' => '4600015296',
 			'finicio' => Carbon::parse('14-02-2017')->format('Y/m/d'),
 			'ftermino' => Carbon::parse('14-02-2018')->format('Y/m/d'),
 			'dominioContrato_id' => $dominioID,
-		]);
-
-		$contratoID = Contrato::where('numero', '4600015296')->value('id');
-
-		DominioContrato::create([
-			'DominioContrato_id' => $contratoID,
-			'DominioContrato_type' => 'Ubicacion',
 		]);
 
 		$empresaID = Empresa::where('nombre', 'SIERRA Y PLAZA')-> value('id');
@@ -1580,13 +927,6 @@ class ContratoInactivo_Seeder extends Seeder
 			'ftermino' => Carbon::parse('31-08-2017')->format('Y/m/d'),
 			'dominioContrato_id' => $dominioID,
 		]);
-
-		$contratoID = Contrato::where('numero', '4501567335')->value('id');
-
-		DominioContrato::create([
-			'DominioContrato_id' => $contratoID,
-			'DominioContrato_type' => 'Ubicacion',
-		]);
 		Contrato::create([
 			'empresa_id' => $empresaID, 
 			'numero' => '4501523215',
@@ -1594,26 +934,12 @@ class ContratoInactivo_Seeder extends Seeder
 			'ftermino' => Carbon::parse('08-03-2018')->format('Y/m/d'),
 			'dominioContrato_id' => $dominioID,
 		]);
-
-		$contratoID = Contrato::where('numero', '4501523215')->value('id');
-
-		DominioContrato::create([
-			'DominioContrato_id' => $contratoID,
-			'DominioContrato_type' => 'Ubicacion',
-		]);
 		Contrato::create([
 			'empresa_id' => $empresaID, 
 			'numero' => '4501245147',
 			'finicio' => Carbon::parse('14-02-2012')->format('Y/m/d'),
 			'ftermino' => Carbon::parse('31-08-2015')->format('Y/m/d'),
 			'dominioContrato_id' => $dominioID,
-		]);
-
-		$contratoID = Contrato::where('numero', '4501245147')->value('id');
-
-		DominioContrato::create([
-			'DominioContrato_id' => $contratoID,
-			'DominioContrato_type' => 'Ubicacion',
 		]);
 
 		$empresaID = Empresa::where('nombre', 'SIGA')-> value('id');
@@ -1625,26 +951,12 @@ class ContratoInactivo_Seeder extends Seeder
 			'ftermino' => Carbon::parse('26-06-2015')->format('Y/m/d'),
 			'dominioContrato_id' => $dominioID,
 		]);
-
-		$contratoID = Contrato::where('numero', '4501333787')->value('id');
-
-		DominioContrato::create([
-			'DominioContrato_id' => $contratoID,
-			'DominioContrato_type' => 'Ubicacion',
-		]);
 		Contrato::create([
 			'empresa_id' => $empresaID, 
 			'numero' => '4600013373',
 			'finicio' => Carbon::parse('01-11-2014')->format('Y/m/d'),
 			'ftermino' => Carbon::parse('19-04-2016')->format('Y/m/d'),
 			'dominioContrato_id' => $dominioID,
-		]);
-
-		$contratoID = Contrato::where('numero', '4600013373')->value('id');
-
-		DominioContrato::create([
-			'DominioContrato_id' => $contratoID,
-			'DominioContrato_type' => 'Ubicacion',
 		]);
 
 		$empresaID = Empresa::where('nombre', 'SIGMA S.A.')-> value('id');
@@ -1657,13 +969,6 @@ class ContratoInactivo_Seeder extends Seeder
 			'dominioContrato_id' => $dominioID,
 		]);
 
-		$contratoID = Contrato::where('numero', '4600015054')->value('id');
-
-		DominioContrato::create([
-			'DominioContrato_id' => $contratoID,
-			'DominioContrato_type' => 'Ubicacion',
-		]);
-
 		$empresaID = Empresa::where('nombre', 'SK GODELIUS S.A.')-> value('id');
 
 		Contrato::create([
@@ -1672,13 +977,6 @@ class ContratoInactivo_Seeder extends Seeder
 			'finicio' => Carbon::parse('22-04-2015')->format('Y/m/d'),
 			'ftermino' => Carbon::parse('22-04-2016')->format('Y/m/d'),
 			'dominioContrato_id' => $dominioID,
-		]);
-
-		$contratoID = Contrato::where('numero', '4501533935')->value('id');
-
-		DominioContrato::create([
-			'DominioContrato_id' => $contratoID,
-			'DominioContrato_type' => 'Ubicacion',
 		]);
 
 		$empresaID = Empresa::where('nombre', 'SK INDUSTRIAL S.A.')-> value('id');
@@ -1691,13 +989,6 @@ class ContratoInactivo_Seeder extends Seeder
 			'dominioContrato_id' => $dominioID,
 		]);
 
-		$contratoID = Contrato::where('numero', '4600010353')->value('id');
-
-		DominioContrato::create([
-			'DominioContrato_id' => $contratoID,
-			'DominioContrato_type' => 'Ubicacion',
-		]);
-
 		$empresaID = Empresa::where('nombre', 'SNC LAVALIN CHILE S.A.')-> value('id');
 
 		Contrato::create([
@@ -1706,13 +997,6 @@ class ContratoInactivo_Seeder extends Seeder
 			'finicio' => Carbon::parse('16-10-2016')->format('Y/m/d'),
 			'ftermino' => Carbon::parse('29-03-2017')->format('Y/m/d'),
 			'dominioContrato_id' => $dominioID,
-		]);
-
-		$contratoID = Contrato::where('numero', '4501661404')->value('id');
-
-		DominioContrato::create([
-			'DominioContrato_id' => $contratoID,
-			'DominioContrato_type' => 'Ubicacion',
 		]);
 
 		$empresaID = Empresa::where('nombre', 'SOCOAL LTDA.')-> value('id');
@@ -1725,13 +1009,6 @@ class ContratoInactivo_Seeder extends Seeder
 			'dominioContrato_id' => $dominioID,
 		]);
 
-		$contratoID = Contrato::where('numero', '4501681168')->value('id');
-
-		DominioContrato::create([
-			'DominioContrato_id' => $contratoID,
-			'DominioContrato_type' => 'Ubicacion',
-		]);
-
 		$empresaID = Empresa::where('nombre', 'SOLETANCHE BACHY')-> value('id');
 
 		Contrato::create([
@@ -1740,13 +1017,6 @@ class ContratoInactivo_Seeder extends Seeder
 			'finicio' => Carbon::parse('02-08-2010')->format('Y/m/d'),
 			'ftermino' => Carbon::parse('02-08-2016')->format('Y/m/d'),
 			'dominioContrato_id' => $dominioID,
-		]);
-
-		$contratoID = Contrato::where('numero', '4600008975')->value('id');
-
-		DominioContrato::create([
-			'DominioContrato_id' => $contratoID,
-			'DominioContrato_type' => 'Ubicacion',
 		]);
 
 		$empresaID = Empresa::where('nombre', 'SPM INGENIEROS')-> value('id');
@@ -1759,13 +1029,6 @@ class ContratoInactivo_Seeder extends Seeder
 			'dominioContrato_id' => $dominioID,
 		]);
 
-		$contratoID = Contrato::where('numero', '4501517595')->value('id');
-
-		DominioContrato::create([
-			'DominioContrato_id' => $contratoID,
-			'DominioContrato_type' => 'Ubicacion',
-		]);
-
 		$empresaID = Empresa::where('nombre', 'STEEL INGENIERIA S.A.')-> value('id');
 
 		Contrato::create([
@@ -1775,26 +1038,12 @@ class ContratoInactivo_Seeder extends Seeder
 			'ftermino' => Carbon::parse('02-02-2016')->format('Y/m/d'),
 			'dominioContrato_id' => $dominioID,
 		]);
-
-		$contratoID = Contrato::where('numero', '4600009230')->value('id');
-
-		DominioContrato::create([
-			'DominioContrato_id' => $contratoID,
-			'DominioContrato_type' => 'Ubicacion',
-		]);
 		Contrato::create([
 			'empresa_id' => $empresaID, 
 			'numero' => '4600010179',
 			'finicio' => Carbon::parse('15-06-2011')->format('Y/m/d'),
 			'ftermino' => Carbon::parse('15-06-2015')->format('Y/m/d'),
 			'dominioContrato_id' => $dominioID,
-		]);
-
-		$contratoID = Contrato::where('numero', '4600010179')->value('id');
-
-		DominioContrato::create([
-			'DominioContrato_id' => $contratoID,
-			'DominioContrato_type' => 'Ubicacion',
 		]);
 		Contrato::create([
 			'empresa_id' => $empresaID,
@@ -1803,26 +1052,12 @@ class ContratoInactivo_Seeder extends Seeder
 			'ftermino' => Carbon::parse('13-08-2018')->format('Y/m/d'),
 			'dominioContrato_id' => $dominioID,
 		]);
-
-		$contratoID = Contrato::where('numero', '4600013202')->value('id');
-
-		DominioContrato::create([
-			'DominioContrato_id' => $contratoID,
-			'DominioContrato_type' => 'Ubicacion',
-		]);
 		Contrato::create([
 			'empresa_id' => $empresaID, 
 			'numero' => '4600013999',
 			'finicio' => Carbon::parse('28-04-2015')->format('Y/m/d'),
 			'ftermino' => Carbon::parse('27-04-2016')->format('Y/m/d'),
 			'dominioContrato_id' => $dominioID,
-		]);
-
-		$contratoID = Contrato::where('numero', '4600013999')->value('id');
-
-		DominioContrato::create([
-			'DominioContrato_id' => $contratoID,
-			'DominioContrato_type' => 'Ubicacion',
 		]);
 
 		$empresaID = Empresa::where('nombre', 'SUPEREX S.A.')-> value('id');
@@ -1834,26 +1069,12 @@ class ContratoInactivo_Seeder extends Seeder
 			'ftermino' => Carbon::parse('31-12-2015')->format('Y/m/d'),
 			'dominioContrato_id' => $dominioID,
 		]);
-
-		$contratoID = Contrato::where('numero', '4501548803')->value('id');
-
-		DominioContrato::create([
-			'DominioContrato_id' => $contratoID,
-			'DominioContrato_type' => 'Ubicacion',
-		]);
 		Contrato::create([
 			'empresa_id' => $empresaID, 
 			'numero' => '4501507229',
 			'finicio' => Carbon::parse('12-01-2015')->format('Y/m/d'),
 			'ftermino' => Carbon::parse('11-04-2015')->format('Y/m/d'),
 			'dominioContrato_id' => $dominioID,
-		]);
-
-		$contratoID = Contrato::where('numero', '4501507229')->value('id');
-
-		DominioContrato::create([
-			'DominioContrato_id' => $contratoID,
-			'DominioContrato_type' => 'Ubicacion',
 		]);
 
 		$empresaID = Empresa::where('nombre', 'TERRA SERVICES S.A.')-> value('id');
@@ -1866,13 +1087,6 @@ class ContratoInactivo_Seeder extends Seeder
 			'dominioContrato_id' => $dominioID,
 		]);
 
-		$contratoID = Contrato::where('numero', '4501691300')->value('id');
-
-		DominioContrato::create([
-			'DominioContrato_id' => $contratoID,
-			'DominioContrato_type' => 'Ubicacion',
-		]);
-
 		$empresaID = Empresa::where('nombre', 'TREPSA S.A.')-> value('id');
 
 		Contrato::create([
@@ -1882,26 +1096,12 @@ class ContratoInactivo_Seeder extends Seeder
 			'ftermino' => Carbon::parse('05-12-2015')->format('Y/m/d'),
 			'dominioContrato_id' => $dominioID,
 		]);
-
-		$contratoID = Contrato::where('numero', '4600014053')->value('id');
-
-		DominioContrato::create([
-			'DominioContrato_id' => $contratoID,
-			'DominioContrato_type' => 'Ubicacion',
-		]);
 		Contrato::create([
 			'empresa_id' => $empresaID, 
 			'numero' => '4500610325',
 			'finicio' => Carbon::parse('17-02-2006')->format('Y/m/d'),
 			'ftermino' => Carbon::parse('31-12-2015')->format('Y/m/d'),
 			'dominioContrato_id' => $dominioID,
-		]);
-
-		$contratoID = Contrato::where('numero', '4500610325')->value('id');
-
-		DominioContrato::create([
-			'DominioContrato_id' => $contratoID,
-			'DominioContrato_type' => 'Ubicacion',
 		]);
 
 		$empresaID = Empresa::where('nombre', 'TROMAX S.A.')-> value('id');
@@ -1914,13 +1114,6 @@ class ContratoInactivo_Seeder extends Seeder
 			'dominioContrato_id' => $dominioID,
 		]);
 
-		$contratoID = Contrato::where('numero', '4501737269')->value('id');
-
-		DominioContrato::create([
-			'DominioContrato_id' => $contratoID,
-			'DominioContrato_type' => 'Ubicacion',
-		]);
-
 		$empresaID = Empresa::where('nombre', 'TTM CHILE S.A.')-> value('id');
 
 		Contrato::create([
@@ -1929,13 +1122,6 @@ class ContratoInactivo_Seeder extends Seeder
 			'finicio' => Carbon::parse('01-11-2013')->format('Y/m/d'),
 			'ftermino' => Carbon::parse('30-11-2016')->format('Y/m/d'),
 			'dominioContrato_id' => $dominioID,
-		]);
-
-		$contratoID = Contrato::where('numero', '4600012400')->value('id');
-
-		DominioContrato::create([
-			'DominioContrato_id' => $contratoID,
-			'DominioContrato_type' => 'Ubicacion',
 		]);
 
 		$empresaID = Empresa::where('nombre', 'WELLFIELD')-> value('id');
@@ -1948,13 +1134,6 @@ class ContratoInactivo_Seeder extends Seeder
 			'dominioContrato_id' => $dominioID,
 		]);
 
-		$contratoID = Contrato::where('numero', '4600014808')->value('id');
-
-		DominioContrato::create([
-			'DominioContrato_id' => $contratoID,
-			'DominioContrato_type' => 'Ubicacion',
-		]);
-
 		$empresaID = Empresa::where('nombre', 'WLS')-> value('id');
 
 		Contrato::create([
@@ -1963,13 +1142,6 @@ class ContratoInactivo_Seeder extends Seeder
 			'finicio' => Carbon::parse('01-09-2011')->format('Y/m/d'),
 			'ftermino' => Carbon::parse('31-05-2015')->format('Y/m/d'),
 			'dominioContrato_id' => $dominioID,
-		]);
-
-		$contratoID = Contrato::where('numero', '4600008666')->value('id');
-
-		DominioContrato::create([
-			'DominioContrato_id' => $contratoID,
-			'DominioContrato_type' => 'Ubicacion',
 		]);
 
 		$empresaID = Empresa::where('nombre', 'WORKMATE SERVICIOS TRANSITORIOS LTDA.')-> value('id');
@@ -1982,13 +1154,6 @@ class ContratoInactivo_Seeder extends Seeder
 			'dominioContrato_id' => $dominioID,
 		]);
 
-		$contratoID = Contrato::where('numero', '4501442927')->value('id');
-
-		DominioContrato::create([
-			'DominioContrato_id' => $contratoID,
-			'DominioContrato_type' => 'Ubicacion',
-		]);
-
 		$empresaID = Empresa::where('nombre', 'WORLD CLASS')-> value('id');
 
 		Contrato::create([
@@ -1997,13 +1162,6 @@ class ContratoInactivo_Seeder extends Seeder
 			'finicio' => Carbon::parse('21-04-2014')->format('Y/m/d'),
 			'ftermino' => Carbon::parse('21-04-2015')->format('Y/m/d'),
 			'dominioContrato_id' => $dominioID,
-		]);
-
-		$contratoID = Contrato::where('numero', '4501448789')->value('id');
-
-		DominioContrato::create([
-			'DominioContrato_id' => $contratoID,
-			'DominioContrato_type' => 'Ubicacion',
 		]);
 
 		$empresaID = Empresa::where('nombre', 'WUTHCO LTDA.')-> value('id');
@@ -2016,14 +1174,12 @@ class ContratoInactivo_Seeder extends Seeder
 			'dominioContrato_id' => $dominioID,
 		]);
 
-		$contratoID = Contrato::where('numero', '4501656260')->value('id');
-
-		DominioContrato::create([
-			'DominioContrato_id' => $contratoID,
-			'DominioContrato_type' => 'Ubicacion',
-		]);
-
-		$dominioID = Ubicacion::where('nombre', 'División Gabriela Mistral')->value('id');
+		$dominioID = DominioContrato::
+					join('Ubicacion', 'Ubicacion.id', '=', 'DominioContrato.dominio_id')
+					->select('DominioContrato.id')
+					->where('DominioContrato.dominio_type', 'Ubicacion')
+					->where('Ubicacion.nombre', 'División Gabriela Mistral')
+					->first()->id;
 		$empresaID = Empresa::where('nombre', 'ANDINOR')-> value('id');
 
 		Contrato::create([
@@ -2032,13 +1188,6 @@ class ContratoInactivo_Seeder extends Seeder
 			'finicio' => Carbon::parse('19-03-2018')->format('Y/m/d'),
 			'ftermino' => Carbon::parse('02-05-2018')->format('Y/m/d'),
 			'dominioContrato_id' => $dominioID,
-		]);
-
-		$contratoID = Contrato::where('numero', '4501762508')->value('id');
-
-		DominioContrato::create([
-			'DominioContrato_id' => $contratoID,
-			'DominioContrato_type' => 'Ubicacion',
 		]);
 
 		$empresaID = Empresa::where('nombre', 'ATLAS COPCO')-> value('id');
@@ -2051,13 +1200,6 @@ class ContratoInactivo_Seeder extends Seeder
 			'dominioContrato_id' => $dominioID,
 		]);
 
-		$contratoID = Contrato::where('numero', '4501356575')->value('id');
-
-		DominioContrato::create([
-			'DominioContrato_id' => $contratoID,
-			'DominioContrato_type' => 'Ubicacion',
-		]);
-
 		$empresaID = Empresa::where('nombre', 'AUSTIN INGENIEROS CHILE LTDA.')-> value('id');
 
 		Contrato::create([
@@ -2066,13 +1208,6 @@ class ContratoInactivo_Seeder extends Seeder
 			'finicio' => Carbon::parse('29-01-2014')->format('Y/m/d'),
 			'ftermino' => Carbon::parse('29-01-2017')->format('Y/m/d'),
 			'dominioContrato_id' => $dominioID,
-		]);
-
-		$contratoID = Contrato::where('numero', '4501413276')->value('id');
-
-		DominioContrato::create([
-			'DominioContrato_id' => $contratoID,
-			'DominioContrato_type' => 'Ubicacion',
 		]);
 
 		$empresaID = Empresa::where('nombre', 'BAILAC')-> value('id');
@@ -2085,13 +1220,6 @@ class ContratoInactivo_Seeder extends Seeder
 			'dominioContrato_id' => $dominioID,
 		]);
 
-		$contratoID = Contrato::where('numero', '4600014279')->value('id');
-
-		DominioContrato::create([
-			'DominioContrato_id' => $contratoID,
-			'DominioContrato_type' => 'Ubicacion',
-		]);
-
 		$empresaID = Empresa::where('nombre', 'BESALCO MAQUINARIAS S.A.')-> value('id');
 
 		Contrato::create([
@@ -2100,13 +1228,6 @@ class ContratoInactivo_Seeder extends Seeder
 			'finicio' => Carbon::parse('01-02-2016')->format('Y/m/d'),
 			'ftermino' => Carbon::parse('01-02-2018')->format('Y/m/d'),
 			'dominioContrato_id' => $dominioID,
-		]);
-
-		$contratoID = Contrato::where('numero', '4501602548')->value('id');
-
-		DominioContrato::create([
-			'DominioContrato_id' => $contratoID,
-			'DominioContrato_type' => 'Ubicacion',
 		]);
 
 		$empresaID = Empresa::where('nombre', 'BUSANC')-> value('id');
@@ -2119,13 +1240,6 @@ class ContratoInactivo_Seeder extends Seeder
 			'dominioContrato_id' => $dominioID,
 		]);
 
-		$contratoID = Contrato::where('numero', '4400164203')->value('id');
-
-		DominioContrato::create([
-			'DominioContrato_id' => $contratoID,
-			'DominioContrato_type' => 'Ubicacion',
-		]);
-
 		$empresaID = Empresa::where('nombre', 'COMERCIAL FADE LTDA.')-> value('id');
 
 		Contrato::create([
@@ -2134,13 +1248,6 @@ class ContratoInactivo_Seeder extends Seeder
 			'finicio' => Carbon::parse('27-11-2017')->format('Y/m/d'),
 			'ftermino' => Carbon::parse('31-05-2018')->format('Y/m/d'),
 			'dominioContrato_id' => $dominioID,
-		]);
-
-		$contratoID = Contrato::where('numero', '4501747180')->value('id');
-
-		DominioContrato::create([
-			'DominioContrato_id' => $contratoID,
-			'DominioContrato_type' => 'Ubicacion',
 		]);
 
 		$empresaID = Empresa::where('nombre', 'CONSORCIO HIGH SERVICE METSO LTDA.')-> value('id');
@@ -2153,13 +1260,6 @@ class ContratoInactivo_Seeder extends Seeder
 			'dominioContrato_id' => $dominioID,
 		]);
 
-		$contratoID = Contrato::where('numero', '4501551547')->value('id');
-
-		DominioContrato::create([
-			'DominioContrato_id' => $contratoID,
-			'DominioContrato_type' => 'Ubicacion',
-		]);
-
 		$empresaID = Empresa::where('nombre', 'CRUZ & DAVILA')-> value('id');
 
 		Contrato::create([
@@ -2169,26 +1269,12 @@ class ContratoInactivo_Seeder extends Seeder
 			'ftermino' => Carbon::parse('31-12-2015')->format('Y/m/d'),
 			'dominioContrato_id' => $dominioID,
 		]);
-
-		$contratoID = Contrato::where('numero', '4600012277')->value('id');
-
-		DominioContrato::create([
-			'DominioContrato_id' => $contratoID,
-			'DominioContrato_type' => 'Ubicacion',
-		]);
 		Contrato::create([
 			'empresa_id' => $empresaID, 
 			'numero' => '4600015439',
 			'finicio' => Carbon::parse('05-04-2017')->format('Y/m/d'),
 			'ftermino' => Carbon::parse('04-04-2018')->format('Y/m/d'),
 			'dominioContrato_id' => $dominioID,
-		]);
-
-		$contratoID = Contrato::where('numero', '4600015439')->value('id');
-
-		DominioContrato::create([
-			'DominioContrato_id' => $contratoID,
-			'DominioContrato_type' => 'Ubicacion',
 		]);
 
 		$empresaID = Empresa::where('nombre', 'DVA')-> value('id');
@@ -2201,13 +1287,6 @@ class ContratoInactivo_Seeder extends Seeder
 			'dominioContrato_id' => $dominioID,
 		]);
 
-		$contratoID = Contrato::where('numero', '4501736408')->value('id');
-
-		DominioContrato::create([
-			'DominioContrato_id' => $contratoID,
-			'DominioContrato_type' => 'Ubicacion',
-		]);
-
 		$empresaID = Empresa::where('nombre', 'DYNO NOBEL')-> value('id');
 
 		Contrato::create([
@@ -2216,13 +1295,6 @@ class ContratoInactivo_Seeder extends Seeder
 			'finicio' => Carbon::parse('01-03-2018')->format('Y/m/d'),
 			'ftermino' => Carbon::parse('31-05-2018')->format('Y/m/d'),
 			'dominioContrato_id' => $dominioID,
-		]);
-
-		$contratoID = Contrato::where('numero', '4501734888')->value('id');
-
-		DominioContrato::create([
-			'DominioContrato_id' => $contratoID,
-			'DominioContrato_type' => 'Ubicacion',
 		]);
 
 		$empresaID = Empresa::where('nombre', 'EMIN')-> value('id');
@@ -2235,13 +1307,6 @@ class ContratoInactivo_Seeder extends Seeder
 			'dominioContrato_id' => $dominioID,
 		]);
 
-		$contratoID = Contrato::where('numero', '4600016230')->value('id');
-
-		DominioContrato::create([
-			'DominioContrato_id' => $contratoID,
-			'DominioContrato_type' => 'Ubicacion',
-		]);
-
 		$empresaID = Empresa::where('nombre', 'GREEN CORE')-> value('id');
 
 		Contrato::create([
@@ -2250,13 +1315,6 @@ class ContratoInactivo_Seeder extends Seeder
 			'finicio' => Carbon::parse('12-02-2015')->format('Y/m/d'),
 			'ftermino' => Carbon::parse('11-01-2016')->format('Y/m/d'),
 			'dominioContrato_id' => $dominioID,
-		]);
-
-		$contratoID = Contrato::where('numero', '4501501471')->value('id');
-
-		DominioContrato::create([
-			'DominioContrato_id' => $contratoID,
-			'DominioContrato_type' => 'Ubicacion',
 		]);
 
 		$empresaID = Empresa::where('nombre', 'JOY GLOBAL CHILE S.A.')-> value('id');
@@ -2269,13 +1327,6 @@ class ContratoInactivo_Seeder extends Seeder
 			'dominioContrato_id' => $dominioID,
 		]);
 
-		$contratoID = Contrato::where('numero', '4600006648')->value('id');
-
-		DominioContrato::create([
-			'DominioContrato_id' => $contratoID,
-			'DominioContrato_type' => 'Ubicacion',
-		]);
-
 		$empresaID = Empresa::where('nombre', 'KOMATSU CHILE S.A.')-> value('id');
 
 		Contrato::create([
@@ -2284,13 +1335,6 @@ class ContratoInactivo_Seeder extends Seeder
 			'finicio' => Carbon::parse('01-08-2007')->format('Y/m/d'),
 			'ftermino' => Carbon::parse('31-12-2017')->format('Y/m/d'),
 			'dominioContrato_id' => $dominioID,
-		]);
-
-		$contratoID = Contrato::where('numero', '4600005809')->value('id');
-
-		DominioContrato::create([
-			'DominioContrato_id' => $contratoID,
-			'DominioContrato_type' => 'Ubicacion',
 		]);
 
 		$empresaID = Empresa::where('nombre', 'KONECRANES')-> value('id');
@@ -2303,13 +1347,6 @@ class ContratoInactivo_Seeder extends Seeder
 			'dominioContrato_id' => $dominioID,
 		]);
 
-		$contratoID = Contrato::where('numero', '4501344680')->value('id');
-
-		DominioContrato::create([
-			'DominioContrato_id' => $contratoID,
-			'DominioContrato_type' => 'Ubicacion',
-		]);
-
 		$empresaID = Empresa::where('nombre', 'MODULAR')-> value('id');
 
 		Contrato::create([
@@ -2318,13 +1355,6 @@ class ContratoInactivo_Seeder extends Seeder
 			'finicio' => Carbon::parse('28-12-2016')->format('Y/m/d'),
 			'ftermino' => Carbon::parse('28-06-2018')->format('Y/m/d'),
 			'dominioContrato_id' => $dominioID,
-		]);
-
-		$contratoID = Contrato::where('numero', '4501679728')->value('id');
-
-		DominioContrato::create([
-			'DominioContrato_id' => $contratoID,
-			'DominioContrato_type' => 'Ubicacion',
 		]);
 
 		$empresaID = Empresa::where('nombre', 'SALFA MANTENCIONES S.A.')-> value('id');
@@ -2336,26 +1366,12 @@ class ContratoInactivo_Seeder extends Seeder
 			'ftermino' => Carbon::parse('01-08-2018')->format('Y/m/d'),
 			'dominioContrato_id' => $dominioID,
 		]);
-
-		$contratoID = Contrato::where('numero', '4501529759')->value('id');
-
-		DominioContrato::create([
-			'DominioContrato_id' => $contratoID,
-			'DominioContrato_type' => 'Ubicacion',
-		]);
 		Contrato::create([
 			'empresa_id' => $empresaID, 
 			'numero' => '4501556773',
 			'finicio' => Carbon::parse('21-08-2015')->format('Y/m/d'),
 			'ftermino' => Carbon::parse('21-08-2018')->format('Y/m/d'),
 			'dominioContrato_id' => $dominioID,
-		]);
-
-		$contratoID = Contrato::where('numero', '4501556773')->value('id');
-
-		DominioContrato::create([
-			'DominioContrato_id' => $contratoID,
-			'DominioContrato_type' => 'Ubicacion',
 		]);
 
 		$empresaID = Empresa::where('nombre', 'SANTA ELVIRA')-> value('id');
@@ -2368,13 +1384,6 @@ class ContratoInactivo_Seeder extends Seeder
 			'dominioContrato_id' => $dominioID,
 		]);
 
-		$contratoID = Contrato::where('numero', '4600012592')->value('id');
-
-		DominioContrato::create([
-			'DominioContrato_id' => $contratoID,
-			'DominioContrato_type' => 'Ubicacion',
-		]);
-
 		$empresaID = Empresa::where('nombre', 'SGS MINERALS S.A.')-> value('id');
 
 		Contrato::create([
@@ -2384,26 +1393,12 @@ class ContratoInactivo_Seeder extends Seeder
 			'ftermino' => Carbon::parse('04-06-2018')->format('Y/m/d'),
 			'dominioContrato_id' => $dominioID,
 		]);
-
-		$contratoID = Contrato::where('numero', '4501553686')->value('id');
-
-		DominioContrato::create([
-			'DominioContrato_id' => $contratoID,
-			'DominioContrato_type' => 'Ubicacion',
-		]);
 		Contrato::create([
 			'empresa_id' => $empresaID, 
 			'numero' => '4501344830',
 			'finicio' => Carbon::parse('01-01-2013')->format('Y/m/d'),
 			'ftermino' => Carbon::parse('31-12-2017')->format('Y/m/d'),
 			'dominioContrato_id' => $dominioID,
-		]);
-
-		$contratoID = Contrato::where('numero', '4501344830')->value('id');
-
-		DominioContrato::create([
-			'DominioContrato_id' => $contratoID,
-			'DominioContrato_type' => 'Ubicacion',
 		]);
 
 		$empresaID = Empresa::where('nombre', 'STEEL INGENIERIA S.A.')-> value('id');
@@ -2415,26 +1410,12 @@ class ContratoInactivo_Seeder extends Seeder
 			'ftermino' => Carbon::parse('04-02-2016')->format('Y/m/d'),
 			'dominioContrato_id' => $dominioID,
 		]);
-
-		$contratoID = Contrato::where('numero', '4501561072')->value('id');
-
-		DominioContrato::create([
-			'DominioContrato_id' => $contratoID,
-			'DominioContrato_type' => 'Ubicacion',
-		]);
 		Contrato::create([
 			'empresa_id' => $empresaID, 
 			'numero' => '4501760261',
 			'finicio' => Carbon::parse('01-04-2018')->format('Y/m/d'),
 			'ftermino' => Carbon::parse('30-04-2018')->format('Y/m/d'),
 			'dominioContrato_id' => $dominioID,
-		]);
-
-		$contratoID = Contrato::where('numero', '4501760261')->value('id');
-
-		DominioContrato::create([
-			'DominioContrato_id' => $contratoID,
-			'DominioContrato_type' => 'Ubicacion',
 		]);
 
 		$empresaID = Empresa::where('nombre', 'TERRA SERVICES S.A.')-> value('id');
@@ -2447,13 +1428,6 @@ class ContratoInactivo_Seeder extends Seeder
 			'dominioContrato_id' => $dominioID,
 		]);
 
-		$contratoID = Contrato::where('numero', '4501672508')->value('id');
-
-		DominioContrato::create([
-			'DominioContrato_id' => $contratoID,
-			'DominioContrato_type' => 'Ubicacion',
-		]);
-
 		$empresaID = Empresa::where('nombre', 'WSP CONSULTING CHILE  LTDA.')-> value('id');
 
 		Contrato::create([
@@ -2464,17 +1438,14 @@ class ContratoInactivo_Seeder extends Seeder
 			'dominioContrato_id' => $dominioID,
 		]);
 
-		$contratoID = Contrato::where('numero', '4501765582')->value('id');
-
-		DominioContrato::create([
-			'DominioContrato_id' => $contratoID,
-			'DominioContrato_type' => 'Ubicacion',
-		]);
 
 
-
-		$dominioID = Ubicacion::where('nombre', 'División Ministro Hales')->value('id');
-
+		$dominioID = DominioContrato::
+					join('Ubicacion', 'Ubicacion.id', '=', 'DominioContrato.dominio_id')
+					->select('DominioContrato.id')
+					->where('DominioContrato.dominio_type', 'Ubicacion')
+					->where('Ubicacion.nombre', 'División Ministro Hales')
+					->first()->id;
 		$empresaID = Empresa::where('nombre', 'AGUASIN')-> value('id');
 
 		Contrato::create([
@@ -2483,13 +1454,6 @@ class ContratoInactivo_Seeder extends Seeder
 			'finicio' => Carbon::parse('01-11-2013')->format('Y/m/d'),
 			'ftermino' => Carbon::parse('31-12-2016')->format('Y/m/d'),
 			'dominioContrato_id' => $dominioID,
-		]);
-
-		$contratoID = Contrato::where('numero', '4501400189')->value('id');
-
-		DominioContrato::create([
-			'DominioContrato_id' => $contratoID,
-			'DominioContrato_type' => 'Ubicacion',
 		]);
 
 		$empresaID = Empresa::where('nombre', 'ALPHA')-> value('id');
@@ -2502,13 +1466,6 @@ class ContratoInactivo_Seeder extends Seeder
 			'dominioContrato_id' => $dominioID,
 		]);
 
-		$contratoID = Contrato::where('numero', '4501704108')->value('id');
-
-		DominioContrato::create([
-			'DominioContrato_id' => $contratoID,
-			'DominioContrato_type' => 'Ubicacion',
-		]);
-
 		$empresaID = Empresa::where('nombre', 'AQUALOGY')-> value('id');
 
 		Contrato::create([
@@ -2517,13 +1474,6 @@ class ContratoInactivo_Seeder extends Seeder
 			'finicio' => Carbon::parse('01-07-2013')->format('Y/m/d'),
 			'ftermino' => Carbon::parse('30-06-2016')->format('Y/m/d'),
 			'dominioContrato_id' => $dominioID,
-		]);
-
-		$contratoID = Contrato::where('numero', '4600012200')->value('id');
-
-		DominioContrato::create([
-			'DominioContrato_id' => $contratoID,
-			'DominioContrato_type' => 'Ubicacion',
 		]);
 
 		$empresaID = Empresa::where('nombre', 'ARAUCANIA')-> value('id');
@@ -2536,13 +1486,6 @@ class ContratoInactivo_Seeder extends Seeder
 			'dominioContrato_id' => $dominioID,
 		]);
 
-		$contratoID = Contrato::where('numero', '4501541910')->value('id');
-
-		DominioContrato::create([
-			'DominioContrato_id' => $contratoID,
-			'DominioContrato_type' => 'Ubicacion',
-		]);
-
 		$empresaID = Empresa::where('nombre', 'ATCO SABINCO')-> value('id');
 
 		Contrato::create([
@@ -2551,13 +1494,6 @@ class ContratoInactivo_Seeder extends Seeder
 			'finicio' => Carbon::parse('27-07-2017')->format('Y/m/d'),
 			'ftermino' => Carbon::parse('24-01-2018')->format('Y/m/d'),
 			'dominioContrato_id' => $dominioID,
-		]);
-
-		$contratoID = Contrato::where('numero', '40')->value('id');
-
-		DominioContrato::create([
-			'DominioContrato_id' => $contratoID,
-			'DominioContrato_type' => 'Ubicacion',
 		]);
 
 		$empresaID = Empresa::where('nombre', 'AUSTIN ARRENDAMIENTOS LTDA.')-> value('id');
@@ -2569,26 +1505,12 @@ class ContratoInactivo_Seeder extends Seeder
 			'ftermino' => Carbon::parse('01-06-2018')->format('Y/m/d'),
 			'dominioContrato_id' => $dominioID,
 		]);
-
-		$contratoID = Contrato::where('numero', '4501458070')->value('id');
-
-		DominioContrato::create([
-			'DominioContrato_id' => $contratoID,
-			'DominioContrato_type' => 'Ubicacion',
-		]);
 		Contrato::create([
 			'empresa_id' => $empresaID, 
 			'numero' => '4600015203',
 			'finicio' => Carbon::parse('24-02-2017')->format('Y/m/d'),
 			'ftermino' => Carbon::parse('31-08-2018')->format('Y/m/d'),
 			'dominioContrato_id' => $dominioID,
-		]);
-
-		$contratoID = Contrato::where('numero', '4600015203')->value('id');
-
-		DominioContrato::create([
-			'DominioContrato_id' => $contratoID,
-			'DominioContrato_type' => 'Ubicacion',
 		]);
 
 		$empresaID = Empresa::where('nombre', 'AUSTIN INGENIEROS CHILE LTDA.')-> value('id');
@@ -2600,26 +1522,12 @@ class ContratoInactivo_Seeder extends Seeder
 			'ftermino' => Carbon::parse('30-06-2018')->format('Y/m/d'),
 			'dominioContrato_id' => $dominioID,
 		]);
-
-		$contratoID = Contrato::where('numero', '4600013096')->value('id');
-
-		DominioContrato::create([
-			'DominioContrato_id' => $contratoID,
-			'DominioContrato_type' => 'Ubicacion',
-		]);
 		Contrato::create([
 			'empresa_id' => $empresaID, 
 			'numero' => '4501389471',
 			'finicio' => Carbon::parse('13-08-2013')->format('Y/m/d'),
 			'ftermino' => Carbon::parse('14-08-2017')->format('Y/m/d'),
 			'dominioContrato_id' => $dominioID,
-		]);
-
-		$contratoID = Contrato::where('numero', '4501389471')->value('id');
-
-		DominioContrato::create([
-			'DominioContrato_id' => $contratoID,
-			'DominioContrato_type' => 'Ubicacion',
 		]);
 
 		$empresaID = Empresa::where('nombre', 'AVANT SERV. INTEGRALES')-> value('id');
@@ -2632,13 +1540,6 @@ class ContratoInactivo_Seeder extends Seeder
 			'dominioContrato_id' => $dominioID,
 		]);
 
-		$contratoID = Contrato::where('numero', '4600012606')->value('id');
-
-		DominioContrato::create([
-			'DominioContrato_id' => $contratoID,
-			'DominioContrato_type' => 'Ubicacion',
-		]);
-
 		$empresaID = Empresa::where('nombre', 'BROAD SPECTRUM')-> value('id');
 
 		Contrato::create([
@@ -2648,26 +1549,12 @@ class ContratoInactivo_Seeder extends Seeder
 			'ftermino' => Carbon::parse('30-11-2017')->format('Y/m/d'),
 			'dominioContrato_id' => $dominioID,
 		]);
-
-		$contratoID = Contrato::where('numero', '4400168750')->value('id');
-
-		DominioContrato::create([
-			'DominioContrato_id' => $contratoID,
-			'DominioContrato_type' => 'Ubicacion',
-		]);
 		Contrato::create([
 			'empresa_id' => $empresaID, 
 			'numero' => '4501395753',
 			'finicio' => Carbon::parse('01-09-2013')->format('Y/m/d'),
 			'ftermino' => Carbon::parse('31-08-2018')->format('Y/m/d'),
 			'dominioContrato_id' => $dominioID,
-		]);
-
-		$contratoID = Contrato::where('numero', '4501395753')->value('id');
-
-		DominioContrato::create([
-			'DominioContrato_id' => $contratoID,
-			'DominioContrato_type' => 'Ubicacion',
 		]);
 
 		$empresaID = Empresa::where('nombre', 'BUREAU VERITAS CHILE S.A.')-> value('id');
@@ -2679,13 +1566,6 @@ class ContratoInactivo_Seeder extends Seeder
 			'ftermino' => Carbon::parse('31-03-2015')->format('Y/m/d'),
 			'dominioContrato_id' => $dominioID,
 		]);
-
-		$contratoID = Contrato::where('numero', '4501283534')->value('id');
-
-		DominioContrato::create([
-			'DominioContrato_id' => $contratoID,
-			'DominioContrato_type' => 'Ubicacion',
-		]);
 		Contrato::create([
 			'empresa_id' => $empresaID, 
 			'numero' => '4501600236',
@@ -2693,26 +1573,12 @@ class ContratoInactivo_Seeder extends Seeder
 			'ftermino' => Carbon::parse('31-12-2016')->format('Y/m/d'),
 			'dominioContrato_id' => $dominioID,
 		]);
-
-		$contratoID = Contrato::where('numero', '4501600236')->value('id');
-
-		DominioContrato::create([
-			'DominioContrato_id' => $contratoID,
-			'DominioContrato_type' => 'Ubicacion',
-		]);
 		Contrato::create([
 			'empresa_id' => $empresaID, 
 			'numero' => '4501744843',
 			'finicio' => Carbon::parse('19-10-2017')->format('Y/m/d'),
 			'ftermino' => Carbon::parse('31-07-2018')->format('Y/m/d'),
 			'dominioContrato_id' => $dominioID,
-		]);
-
-		$contratoID = Contrato::where('numero', '4501744843')->value('id');
-
-		DominioContrato::create([
-			'DominioContrato_id' => $contratoID,
-			'DominioContrato_type' => 'Ubicacion',
 		]);
 
 		$empresaID = Empresa::where('nombre', 'CESMEC S.A.')-> value('id');
@@ -2724,26 +1590,12 @@ class ContratoInactivo_Seeder extends Seeder
 			'ftermino' => Carbon::parse('12-12-2015')->format('Y/m/d'),
 			'dominioContrato_id' => $dominioID,
 		]);
-
-		$contratoID = Contrato::where('numero', '4501331846')->value('id');
-
-		DominioContrato::create([
-			'DominioContrato_id' => $contratoID,
-			'DominioContrato_type' => 'Ubicacion',
-		]);
 		Contrato::create([
 			'empresa_id' => $empresaID, 
 			'numero' => '4501481362',
 			'finicio' => Carbon::parse('01-09-2014')->format('Y/m/d'),
 			'ftermino' => Carbon::parse('01-09-2017')->format('Y/m/d'),
 			'dominioContrato_id' => $dominioID,
-		]);
-
-		$contratoID = Contrato::where('numero', '4501481362')->value('id');
-
-		DominioContrato::create([
-			'DominioContrato_id' => $contratoID,
-			'DominioContrato_type' => 'Ubicacion',
 		]);
 
 		$empresaID = Empresa::where('nombre', 'COASIN CHILE S.A.')-> value('id');
@@ -2756,13 +1608,6 @@ class ContratoInactivo_Seeder extends Seeder
 			'dominioContrato_id' => $dominioID,
 		]);
 
-		$contratoID = Contrato::where('numero', '4501505468')->value('id');
-
-		DominioContrato::create([
-			'DominioContrato_id' => $contratoID,
-			'DominioContrato_type' => 'Ubicacion',
-		]);
-
 		$empresaID = Empresa::where('nombre', 'BUREAU VERITAS CHILE S.A.')-> value('id');
 
 		Contrato::create([
@@ -2771,13 +1616,6 @@ class ContratoInactivo_Seeder extends Seeder
 			'finicio' => Carbon::parse('19-02-2018')->format('Y/m/d'),
 			'ftermino' => Carbon::parse('30-06-2018')->format('Y/m/d'),
 			'dominioContrato_id' => $dominioID,
-		]);
-
-		$contratoID = Contrato::where('numero', '4501770601')->value('id');
-
-		DominioContrato::create([
-			'DominioContrato_id' => $contratoID,
-			'DominioContrato_type' => 'Ubicacion',
 		]);
 
 		$empresaID = Empresa::where('nombre', 'COLINA VERDE')-> value('id');
@@ -2790,13 +1628,6 @@ class ContratoInactivo_Seeder extends Seeder
 			'dominioContrato_id' => $dominioID,
 		]);
 
-		$contratoID = Contrato::where('numero', '4501526713')->value('id');
-
-		DominioContrato::create([
-			'DominioContrato_id' => $contratoID,
-			'DominioContrato_type' => 'Ubicacion',
-		]);
-
 		$empresaID = Empresa::where('nombre', 'DERK INGENIERIA Y GEOLOGIA LTDA.')-> value('id');
 
 		Contrato::create([
@@ -2805,13 +1636,6 @@ class ContratoInactivo_Seeder extends Seeder
 			'finicio' => Carbon::parse('26-05-2015')->format('Y/m/d'),
 			'ftermino' => Carbon::parse('25-03-2018')->format('Y/m/d'),
 			'dominioContrato_id' => $dominioID,
-		]);
-
-		$contratoID = Contrato::where('numero', '4501526551')->value('id');
-
-		DominioContrato::create([
-			'DominioContrato_id' => $contratoID,
-			'DominioContrato_type' => 'Ubicacion',
 		]);
 
 		$empresaID = Empresa::where('nombre', 'DISAL CHILE LTDA.')-> value('id');
@@ -2823,13 +1647,6 @@ class ContratoInactivo_Seeder extends Seeder
 			'ftermino' => Carbon::parse('31-08-2018')->format('Y/m/d'),
 			'dominioContrato_id' => $dominioID,
 		]);
-
-		$contratoID = Contrato::where('numero', '4501548567')->value('id');
-
-		DominioContrato::create([
-			'DominioContrato_id' => $contratoID,
-			'DominioContrato_type' => 'Ubicacion',
-		]);
 		Contrato::create([
 			'empresa_id' => $empresaID, 
 			'numero' => '4600013123',
@@ -2837,26 +1654,12 @@ class ContratoInactivo_Seeder extends Seeder
 			'ftermino' => Carbon::parse('30-06-2017')->format('Y/m/d'),
 			'dominioContrato_id' => $dominioID,
 		]);
-
-		$contratoID = Contrato::where('numero', '4600013123')->value('id');
-
-		DominioContrato::create([
-			'DominioContrato_id' => $contratoID,
-			'DominioContrato_type' => 'Ubicacion',
-		]);
 		Contrato::create([
 			'empresa_id' => $empresaID, 
 			'numero' => '4600014934',
 			'finicio' => Carbon::parse('01-08-2016')->format('Y/m/d'),
 			'ftermino' => Carbon::parse('01-01-2018')->format('Y/m/d'),
 			'dominioContrato_id' => $dominioID,
-		]);
-
-		$contratoID = Contrato::where('numero', '4600014934')->value('id');
-
-		DominioContrato::create([
-			'DominioContrato_id' => $contratoID,
-			'DominioContrato_type' => 'Ubicacion',
 		]);
 
 		$empresaID = Empresa::where('nombre', 'DITT CHILE S.A.')-> value('id');
@@ -2869,13 +1672,6 @@ class ContratoInactivo_Seeder extends Seeder
 			'dominioContrato_id' => $dominioID,
 		]);
 
-		$contratoID = Contrato::where('numero', '4501744192')->value('id');
-
-		DominioContrato::create([
-			'DominioContrato_id' => $contratoID,
-			'DominioContrato_type' => 'Ubicacion',
-		]);
-
 		$empresaID = Empresa::where('nombre', 'DT INDUSTRIAL')-> value('id');
 
 		Contrato::create([
@@ -2885,26 +1681,12 @@ class ContratoInactivo_Seeder extends Seeder
 			'ftermino' => Carbon::parse('05-01-2018')->format('Y/m/d'),
 			'dominioContrato_id' => $dominioID,
 		]);
-
-		$contratoID = Contrato::where('numero', '4501698492')->value('id');
-
-		DominioContrato::create([
-			'DominioContrato_id' => $contratoID,
-			'DominioContrato_type' => 'Ubicacion',
-		]);
 		Contrato::create([
 			'empresa_id' => $empresaID, 
 			'numero' => '4501662293',
 			'finicio' => Carbon::parse('01-02-2017')->format('Y/m/d'),
 			'ftermino' => Carbon::parse('31-03-2017')->format('Y/m/d'),
 			'dominioContrato_id' => $dominioID,
-		]);
-
-		$contratoID = Contrato::where('numero', '4501662293')->value('id');
-
-		DominioContrato::create([
-			'DominioContrato_id' => $contratoID,
-			'DominioContrato_type' => 'Ubicacion',
 		]);
 
 		$empresaID = Empresa::where('nombre', 'DUSTCONTROL S.A.')-> value('id');
@@ -2917,13 +1699,6 @@ class ContratoInactivo_Seeder extends Seeder
 			'dominioContrato_id' => $dominioID,
 		]);
 
-		$contratoID = Contrato::where('numero', '4501692939')->value('id');
-
-		DominioContrato::create([
-			'DominioContrato_id' => $contratoID,
-			'DominioContrato_type' => 'Ubicacion',
-		]);
-
 		$empresaID = Empresa::where('nombre', 'EULEN')-> value('id');
 
 		Contrato::create([
@@ -2932,13 +1707,6 @@ class ContratoInactivo_Seeder extends Seeder
 			'finicio' => Carbon::parse('04-01-2015')->format('Y/m/d'),
 			'ftermino' => Carbon::parse('05-01-2018')->format('Y/m/d'),
 			'dominioContrato_id' => $dominioID,
-		]);
-
-		$contratoID = Contrato::where('numero', '4501510179')->value('id');
-
-		DominioContrato::create([
-			'DominioContrato_id' => $contratoID,
-			'DominioContrato_type' => 'Ubicacion',
 		]);
 
 		$empresaID = Empresa::where('nombre', 'GAC')-> value('id');
@@ -2951,13 +1719,6 @@ class ContratoInactivo_Seeder extends Seeder
 			'dominioContrato_id' => $dominioID,
 		]);
 
-		$contratoID = Contrato::where('numero', '4501560155')->value('id');
-
-		DominioContrato::create([
-			'DominioContrato_id' => $contratoID,
-			'DominioContrato_type' => 'Ubicacion',
-		]);
-
 		$empresaID = Empresa::where('nombre', 'GEODATOS')-> value('id');
 
 		Contrato::create([
@@ -2966,13 +1727,6 @@ class ContratoInactivo_Seeder extends Seeder
 			'finicio' => Carbon::parse('24-02-2015')->format('Y/m/d'),
 			'ftermino' => Carbon::parse('24-02-2018')->format('Y/m/d'),
 			'dominioContrato_id' => $dominioID,
-		]);
-
-		$contratoID = Contrato::where('numero', '4501515540')->value('id');
-
-		DominioContrato::create([
-			'DominioContrato_id' => $contratoID,
-			'DominioContrato_type' => 'Ubicacion',
 		]);
 
 		$empresaID = Empresa::where('nombre', 'GEOTEC BOYLES BROSS')-> value('id');
@@ -2984,26 +1738,12 @@ class ContratoInactivo_Seeder extends Seeder
 			'ftermino' => Carbon::parse('30-06-2018')->format('Y/m/d'),
 			'dominioContrato_id' => $dominioID,
 		]);
-
-		$contratoID = Contrato::where('numero', '332017')->value('id');
-
-		DominioContrato::create([
-			'DominioContrato_id' => $contratoID,
-			'DominioContrato_type' => 'Ubicacion',
-		]);
 		Contrato::create([
 			'empresa_id' => $empresaID,
 			'numero' => '4501578192',
 			'finicio' => Carbon::parse('02-11-2015')->format('Y/m/d'),
 			'ftermino' => Carbon::parse('30-05-2016')->format('Y/m/d'),
 			'dominioContrato_id' => $dominioID,
-		]);
-
-		$contratoID = Contrato::where('numero', '4501578192')->value('id');
-
-		DominioContrato::create([
-			'DominioContrato_id' => $contratoID,
-			'DominioContrato_type' => 'Ubicacion',
 		]);
 
 		$empresaID = Empresa::where('nombre', 'GLOBAL SERVICE MINE')-> value('id');
@@ -3016,13 +1756,6 @@ class ContratoInactivo_Seeder extends Seeder
 			'dominioContrato_id' => $dominioID,
 		]);
 
-		$contratoID = Contrato::where('numero', '4501500850')->value('id');
-
-		DominioContrato::create([
-			'DominioContrato_id' => $contratoID,
-			'DominioContrato_type' => 'Ubicacion',
-		]);
-
 		$empresaID = Empresa::where('nombre', 'IMS PATAGONIA')-> value('id');
 
 		Contrato::create([
@@ -3032,13 +1765,6 @@ class ContratoInactivo_Seeder extends Seeder
 			'ftermino' => Carbon::parse('15-08-2018')->format('Y/m/d'),
 			'dominioContrato_id' => $dominioID,
 		]);
-
-		$contratoID = Contrato::where('numero', '4501675667')->value('id');
-
-		DominioContrato::create([
-			'DominioContrato_id' => $contratoID,
-			'DominioContrato_type' => 'Ubicacion',
-		]);
 		Contrato::create([
 			'empresa_id' => $empresaID,
 			'numero' => '392017',
@@ -3046,26 +1772,12 @@ class ContratoInactivo_Seeder extends Seeder
 			'ftermino' => Carbon::parse('30-06-2018')->format('Y/m/d'),
 			'dominioContrato_id' => $dominioID,
 		]);
-
-		$contratoID = Contrato::where('numero', '392017')->value('id');
-
-		DominioContrato::create([
-			'DominioContrato_id' => $contratoID,
-			'DominioContrato_type' => 'Ubicacion',
-		]);
 		Contrato::create([
 			'empresa_id' => $empresaID, 
 			'numero' => '4501595969',
 			'finicio' => Carbon::parse('01-01-2016')->format('Y/m/d'),
 			'ftermino' => Carbon::parse('31-12-2016')->format('Y/m/d'),
 			'dominioContrato_id' => $dominioID,
-		]);
-
-		$contratoID = Contrato::where('numero', '4501595969')->value('id');
-
-		DominioContrato::create([
-			'DominioContrato_id' => $contratoID,
-			'DominioContrato_type' => 'Ubicacion',
 		]);
 
 		$empresaID = Empresa::where('nombre', 'INGENALSE S.A.')-> value('id');
@@ -3078,13 +1790,6 @@ class ContratoInactivo_Seeder extends Seeder
 			'dominioContrato_id' => $dominioID,
 		]);
 
-		$contratoID = Contrato::where('numero', '4501711293')->value('id');
-
-		DominioContrato::create([
-			'DominioContrato_id' => $contratoID,
-			'DominioContrato_type' => 'Ubicacion',
-		]);
-
 		$empresaID = Empresa::where('nombre', 'INSITU CORE')-> value('id');
 
 		Contrato::create([
@@ -3093,13 +1798,6 @@ class ContratoInactivo_Seeder extends Seeder
 			'finicio' => Carbon::parse('21-09-2015')->format('Y/m/d'),
 			'ftermino' => Carbon::parse('18-01-2016')->format('Y/m/d'),
 			'dominioContrato_id' => $dominioID,
-		]);
-
-		$contratoID = Contrato::where('numero', '4501567646')->value('id');
-
-		DominioContrato::create([
-			'DominioContrato_id' => $contratoID,
-			'DominioContrato_type' => 'Ubicacion',
 		]);
 
 		$empresaID = Empresa::where('nombre', 'JIGSAW TECHNOLOGIES LTDA.')-> value('id');
@@ -3112,13 +1810,6 @@ class ContratoInactivo_Seeder extends Seeder
 			'dominioContrato_id' => $dominioID,
 		]);
 
-		$contratoID = Contrato::where('numero', '4501599643')->value('id');
-
-		DominioContrato::create([
-			'DominioContrato_id' => $contratoID,
-			'DominioContrato_type' => 'Ubicacion',
-		]);
-
 		$empresaID = Empresa::where('nombre', 'KOMATSU CHILE S.A.')-> value('id');
 
 		Contrato::create([
@@ -3127,13 +1818,6 @@ class ContratoInactivo_Seeder extends Seeder
 			'finicio' => Carbon::parse('31-03-2005')->format('Y/m/d'),
 			'ftermino' => Carbon::parse('31-12-2016')->format('Y/m/d'),
 			'dominioContrato_id' => $dominioID,
-		]);
-
-		$contratoID = Contrato::where('numero', '4600004457')->value('id');
-
-		DominioContrato::create([
-			'DominioContrato_id' => $contratoID,
-			'DominioContrato_type' => 'Ubicacion',
 		]);
 
 		$empresaID = Empresa::where('nombre', 'KONECRANES')-> value('id');
@@ -3146,13 +1830,6 @@ class ContratoInactivo_Seeder extends Seeder
 			'dominioContrato_id' => $dominioID,
 		]);
 
-		$contratoID = Contrato::where('numero', '4600014269')->value('id');
-
-		DominioContrato::create([
-			'DominioContrato_id' => $contratoID,
-			'DominioContrato_type' => 'Ubicacion',
-		]);
-
 		$empresaID = Empresa::where('nombre', 'LET GRAF')-> value('id');
 
 		Contrato::create([
@@ -3161,13 +1838,6 @@ class ContratoInactivo_Seeder extends Seeder
 			'finicio' => Carbon::parse('04-02-2016')->format('Y/m/d'),
 			'ftermino' => Carbon::parse('04-02-2018')->format('Y/m/d'),
 			'dominioContrato_id' => $dominioID,
-		]);
-
-		$contratoID = Contrato::where('numero', '4501604278')->value('id');
-
-		DominioContrato::create([
-			'DominioContrato_id' => $contratoID,
-			'DominioContrato_type' => 'Ubicacion',
 		]);
 
 		$empresaID = Empresa::where('nombre', 'MECANICA DE ROCAS LTDA.')-> value('id');
@@ -3180,13 +1850,6 @@ class ContratoInactivo_Seeder extends Seeder
 			'dominioContrato_id' => $dominioID,
 		]);
 
-		$contratoID = Contrato::where('numero', '4501739678')->value('id');
-
-		DominioContrato::create([
-			'DominioContrato_id' => $contratoID,
-			'DominioContrato_type' => 'Ubicacion',
-		]);
-
 		$empresaID = Empresa::where('nombre', 'METAPROJECT')-> value('id');
 
 		Contrato::create([
@@ -3195,13 +1858,6 @@ class ContratoInactivo_Seeder extends Seeder
 			'finicio' => Carbon::parse('17-02-2015')->format('Y/m/d'),
 			'ftermino' => Carbon::parse('16-03-2017')->format('Y/m/d'),
 			'dominioContrato_id' => $dominioID,
-		]);
-
-		$contratoID = Contrato::where('numero', '4501522901')->value('id');
-
-		DominioContrato::create([
-			'DominioContrato_id' => $contratoID,
-			'DominioContrato_type' => 'Ubicacion',
 		]);
 
 		$empresaID = Empresa::where('nombre', 'MINETEC')-> value('id');
@@ -3214,13 +1870,6 @@ class ContratoInactivo_Seeder extends Seeder
 			'dominioContrato_id' => $dominioID,
 		]);
 
-		$contratoID = Contrato::where('numero', '4501722351')->value('id');
-
-		DominioContrato::create([
-			'DominioContrato_id' => $contratoID,
-			'DominioContrato_type' => 'Ubicacion',
-		]);
-
 		$empresaID = Empresa::where('nombre', 'MPM LTDA.')-> value('id');
 
 		Contrato::create([
@@ -3229,13 +1878,6 @@ class ContratoInactivo_Seeder extends Seeder
 			'finicio' => Carbon::parse('25-10-2017')->format('Y/m/d'),
 			'ftermino' => Carbon::parse('27-12-2017')->format('Y/m/d'),
 			'dominioContrato_id' => $dominioID,
-		]);
-
-		$contratoID = Contrato::where('numero', '4501734301')->value('id');
-
-		DominioContrato::create([
-			'DominioContrato_id' => $contratoID,
-			'DominioContrato_type' => 'Ubicacion',
 		]);
 
 		$empresaID = Empresa::where('nombre', 'OCYRE LTDA.')-> value('id');
@@ -3248,13 +1890,6 @@ class ContratoInactivo_Seeder extends Seeder
 			'dominioContrato_id' => $dominioID,
 		]);
 
-		$contratoID = Contrato::where('numero', '4501667426')->value('id');
-
-		DominioContrato::create([
-			'DominioContrato_id' => $contratoID,
-			'DominioContrato_type' => 'Ubicacion',
-		]);
-
 		$empresaID = Empresa::where('nombre', 'ORBIT')-> value('id');
 
 		Contrato::create([
@@ -3263,13 +1898,6 @@ class ContratoInactivo_Seeder extends Seeder
 			'finicio' => Carbon::parse('02-12-2016')->format('Y/m/d'),
 			'ftermino' => Carbon::parse('31-07-2017')->format('Y/m/d'),
 			'dominioContrato_id' => $dominioID,
-		]);
-
-		$contratoID = Contrato::where('numero', '4501662988')->value('id');
-
-		DominioContrato::create([
-			'DominioContrato_id' => $contratoID,
-			'DominioContrato_type' => 'Ubicacion',
 		]);
 
 		$empresaID = Empresa::where('nombre', 'ORICA CHILE S.A.')-> value('id');
@@ -3282,13 +1910,6 @@ class ContratoInactivo_Seeder extends Seeder
 			'dominioContrato_id' => $dominioID,
 		]);
 
-		$contratoID = Contrato::where('numero', '4501366362')->value('id');
-
-		DominioContrato::create([
-			'DominioContrato_id' => $contratoID,
-			'DominioContrato_type' => 'Ubicacion',
-		]);
-
 		$empresaID = Empresa::where('nombre', 'OTRACO CHILE')-> value('id');
 
 		Contrato::create([
@@ -3297,13 +1918,6 @@ class ContratoInactivo_Seeder extends Seeder
 			'finicio' => Carbon::parse('01-06-2018')->format('Y/m/d'),
 			'ftermino' => Carbon::parse('30-07-2018')->format('Y/m/d'),
 			'dominioContrato_id' => $dominioID,
-		]);
-
-		$contratoID = Contrato::where('numero', '4600012230')->value('id');
-
-		DominioContrato::create([
-			'DominioContrato_id' => $contratoID,
-			'DominioContrato_type' => 'Ubicacion',
 		]);
 
 		$empresaID = Empresa::where('nombre', 'SALFA MANTENCIONES S.A.')-> value('id');
@@ -3316,13 +1930,6 @@ class ContratoInactivo_Seeder extends Seeder
 			'dominioContrato_id' => $dominioID,
 		]);
 
-		$contratoID = Contrato::where('numero', '4501481970')->value('id');
-
-		DominioContrato::create([
-			'DominioContrato_id' => $contratoID,
-			'DominioContrato_type' => 'Ubicacion',
-		]);
-
 		$empresaID = Empresa::where('nombre', 'SALFA MONTAJES')-> value('id');
 
 		Contrato::create([
@@ -3331,13 +1938,6 @@ class ContratoInactivo_Seeder extends Seeder
 			'finicio' => Carbon::parse('01-12-2014')->format('Y/m/d'),
 			'ftermino' => Carbon::parse('07-06-2015')->format('Y/m/d'),
 			'dominioContrato_id' => $dominioID,
-		]);
-
-		$contratoID = Contrato::where('numero', '8401481970')->value('id');
-
-		DominioContrato::create([
-			'DominioContrato_id' => $contratoID,
-			'DominioContrato_type' => 'Ubicacion',
 		]);
 
 		$empresaID = Empresa::where('nombre', 'SANDVIK CHILE S.A.')-> value('id');
@@ -3350,13 +1950,6 @@ class ContratoInactivo_Seeder extends Seeder
 			'dominioContrato_id' => $dominioID,
 		]);
 
-		$contratoID = Contrato::where('numero', '4600014249')->value('id');
-
-		DominioContrato::create([
-			'DominioContrato_id' => $contratoID,
-			'DominioContrato_type' => 'Ubicacion',
-		]);
-
 		$empresaID = Empresa::where('nombre', 'SERVICIOS GEOFISICOS COMPROBE SPA')-> value('id');
 
 		Contrato::create([
@@ -3365,13 +1958,6 @@ class ContratoInactivo_Seeder extends Seeder
 			'finicio' => Carbon::parse('05-12-2017')->format('Y/m/d'),
 			'ftermino' => Carbon::parse('04-07-2018')->format('Y/m/d'),
 			'dominioContrato_id' => $dominioID,
-		]);
-
-		$contratoID = Contrato::where('numero', '402017')->value('id');
-
-		DominioContrato::create([
-			'DominioContrato_id' => $contratoID,
-			'DominioContrato_type' => 'Ubicacion',
 		]);
 
 		$empresaID = Empresa::where('nombre', 'SKF')-> value('id');
@@ -3384,13 +1970,6 @@ class ContratoInactivo_Seeder extends Seeder
 			'dominioContrato_id' => $dominioID,
 		]);
 
-		$contratoID = Contrato::where('numero', '4600014418')->value('id');
-
-		DominioContrato::create([
-			'DominioContrato_id' => $contratoID,
-			'DominioContrato_type' => 'Ubicacion',
-		]);
-
 		$empresaID = Empresa::where('nombre', 'SODEXO')-> value('id');
 
 		Contrato::create([
@@ -3399,13 +1978,6 @@ class ContratoInactivo_Seeder extends Seeder
 			'finicio' => Carbon::parse('01-04-2015')->format('Y/m/d'),
 			'ftermino' => Carbon::parse('31-03-2018')->format('Y/m/d'),
 			'dominioContrato_id' => $dominioID,
-		]);
-
-		$contratoID = Contrato::where('numero', '4501526737')->value('id');
-
-		DominioContrato::create([
-			'DominioContrato_id' => $contratoID,
-			'DominioContrato_type' => 'Ubicacion',
 		]);
 
 		$empresaID = Empresa::where('nombre', 'SOTRASER')-> value('id');
@@ -3417,26 +1989,12 @@ class ContratoInactivo_Seeder extends Seeder
 			'ftermino' => Carbon::parse('31-12-2017')->format('Y/m/d'),
 			'dominioContrato_id' => $dominioID,
 		]);
-
-		$contratoID = Contrato::where('numero', '4501392534')->value('id');
-
-		DominioContrato::create([
-			'DominioContrato_id' => $contratoID,
-			'DominioContrato_type' => 'Ubicacion',
-		]);
 		Contrato::create([
 			'empresa_id' => $empresaID, 
 			'numero' => '4501392532',
 			'finicio' => Carbon::parse('28-08-2013')->format('Y/m/d'),
 			'ftermino' => Carbon::parse('31-12-2017')->format('Y/m/d'),
 			'dominioContrato_id' => $dominioID,
-		]);
-
-		$contratoID = Contrato::where('numero', '4501392532')->value('id');
-
-		DominioContrato::create([
-			'DominioContrato_id' => $contratoID,
-			'DominioContrato_type' => 'Ubicacion',
 		]);
 
 		$empresaID = Empresa::where('nombre', 'TGI CONSULTORES')-> value('id');
@@ -3449,13 +2007,6 @@ class ContratoInactivo_Seeder extends Seeder
 			'dominioContrato_id' => $dominioID,
 		]);
 
-		$contratoID = Contrato::where('numero', '4501529825')->value('id');
-
-		DominioContrato::create([
-			'DominioContrato_id' => $contratoID,
-			'DominioContrato_type' => 'Ubicacion',
-		]);
-
 		$empresaID = Empresa::where('nombre', 'VAI')-> value('id');
 
 		Contrato::create([
@@ -3466,14 +2017,12 @@ class ContratoInactivo_Seeder extends Seeder
 			'dominioContrato_id' => $dominioID,
 		]);
 
-		$contratoID = Contrato::where('numero', '4501672038')->value('id');
-
-		DominioContrato::create([
-			'DominioContrato_id' => $contratoID,
-			'DominioContrato_type' => 'Ubicacion',
-		]);
-
-		$dominioID = Ubicacion::where('nombre', 'División Radomiro Tomic')->value('id');
+		$dominioID = DominioContrato::
+					join('Ubicacion', 'Ubicacion.id', '=', 'DominioContrato.dominio_id')
+					->select('DominioContrato.id')
+					->where('DominioContrato.dominio_type', 'Ubicacion')
+					->where('Ubicacion.nombre', 'División Radomiro Tomic')
+					->first()->id;
 		$empresaID = Empresa::where('nombre', 'AVA MONTAJES')-> value('id');
 
 		Contrato::create([
@@ -3482,13 +2031,6 @@ class ContratoInactivo_Seeder extends Seeder
 			'finicio' => Carbon::parse('30-10-2017')->format('Y/m/d'),
 			'ftermino' => Carbon::parse('28-01-2018')->format('Y/m/d'),
 			'dominioContrato_id' => $dominioID,
-		]);
-
-		$contratoID = Contrato::where('numero', '4501743397')->value('id');
-
-		DominioContrato::create([
-			'DominioContrato_id' => $contratoID,
-			'DominioContrato_type' => 'Ubicacion',
 		]);
 
 		$empresaID = Empresa::where('nombre', 'BAILAC')-> value('id');
@@ -3501,13 +2043,6 @@ class ContratoInactivo_Seeder extends Seeder
 			'dominioContrato_id' => $dominioID,
 		]);
 
-		$contratoID = Contrato::where('numero', '4600012173')->value('id');
-
-		DominioContrato::create([
-			'DominioContrato_id' => $contratoID,
-			'DominioContrato_type' => 'Ubicacion',
-		]);
-
 		$empresaID = Empresa::where('nombre', 'BROAD SPECTRUM')-> value('id');
 
 		Contrato::create([
@@ -3516,13 +2051,6 @@ class ContratoInactivo_Seeder extends Seeder
 			'finicio' => Carbon::parse('01-08-2013')->format('Y/m/d'),
 			'ftermino' => Carbon::parse('31-08-2018')->format('Y/m/d'),
 			'dominioContrato_id' => $dominioID,
-		]);
-
-		$contratoID = Contrato::where('numero', '4600012227')->value('id');
-
-		DominioContrato::create([
-			'DominioContrato_id' => $contratoID,
-			'DominioContrato_type' => 'Ubicacion',
 		]);
 
 		$empresaID = Empresa::where('nombre', 'BUILDTEK S.A.')-> value('id');
@@ -3534,26 +2062,12 @@ class ContratoInactivo_Seeder extends Seeder
 			'ftermino' => Carbon::parse('31-05-2018')->format('Y/m/d'),
 			'dominioContrato_id' => $dominioID,
 		]);
-
-		$contratoID = Contrato::where('numero', '4600012607')->value('id');
-
-		DominioContrato::create([
-			'DominioContrato_id' => $contratoID,
-			'DominioContrato_type' => 'Ubicacion',
-		]);
 		Contrato::create([
 			'empresa_id' => $empresaID,
 			'numero' => '4501710017',
 			'finicio' => Carbon::parse('15-06-2017')->format('Y/m/d'),
 			'ftermino' => Carbon::parse('13-10-2017')->format('Y/m/d'),
 			'dominioContrato_id' => $dominioID,
-		]);
-
-		$contratoID = Contrato::where('numero', '4501710017')->value('id');
-
-		DominioContrato::create([
-			'DominioContrato_id' => $contratoID,
-			'DominioContrato_type' => 'Ubicacion',
 		]);
 
 		$empresaID = Empresa::where('nombre', 'CESMEC S.A.')-> value('id');
@@ -3566,13 +2080,6 @@ class ContratoInactivo_Seeder extends Seeder
 			'dominioContrato_id' => $dominioID,
 		]);
 
-		$contratoID = Contrato::where('numero', '4501469402')->value('id');
-
-		DominioContrato::create([
-			'DominioContrato_id' => $contratoID,
-			'DominioContrato_type' => 'Ubicacion',
-		]);
-
 		$empresaID = Empresa::where('nombre', 'CONSORCIO ABENGOA MPM S.A.')-> value('id');
 
 		Contrato::create([
@@ -3581,13 +2088,6 @@ class ContratoInactivo_Seeder extends Seeder
 			'finicio' => Carbon::parse('18-12-2017')->format('Y/m/d'),
 			'ftermino' => Carbon::parse('30-07-2018')->format('Y/m/d'),
 			'dominioContrato_id' => $dominioID,
-		]);
-
-		$contratoID = Contrato::where('numero', '4501754357')->value('id');
-
-		DominioContrato::create([
-			'DominioContrato_id' => $contratoID,
-			'DominioContrato_type' => 'Ubicacion',
 		]);
 
 		$empresaID = Empresa::where('nombre', 'DERK INGENIERIA Y GEOLOGIA LTDA.')-> value('id');
@@ -3599,26 +2099,12 @@ class ContratoInactivo_Seeder extends Seeder
 			'ftermino' => Carbon::parse('30-08-2017')->format('Y/m/d'),
 			'dominioContrato_id' => $dominioID,
 		]);
-
-		$contratoID = Contrato::where('numero', '4501345598')->value('id');
-
-		DominioContrato::create([
-			'DominioContrato_id' => $contratoID,
-			'DominioContrato_type' => 'Ubicacion',
-		]);
 		Contrato::create([
 			'empresa_id' => $empresaID,
 			'numero' => '4501409897',
 			'finicio' => Carbon::parse('01-11-2013')->format('Y/m/d'),
 			'ftermino' => Carbon::parse('30-10-2016')->format('Y/m/d'),
 			'dominioContrato_id' => $dominioID,
-		]);
-
-		$contratoID = Contrato::where('numero', '4501409897')->value('id');
-
-		DominioContrato::create([
-			'DominioContrato_id' => $contratoID,
-			'DominioContrato_type' => 'Ubicacion',
 		]);
 
 		$empresaID = Empresa::where('nombre', 'DISAL CHILE LTDA.')-> value('id');
@@ -3631,13 +2117,6 @@ class ContratoInactivo_Seeder extends Seeder
 			'dominioContrato_id' => $dominioID,
 		]);
 
-		$contratoID = Contrato::where('numero', '4501308878')->value('id');
-
-		DominioContrato::create([
-			'DominioContrato_id' => $contratoID,
-			'DominioContrato_type' => 'Ubicacion',
-		]);
-
 		$empresaID = Empresa::where('nombre', 'DRILLCO TOOLS S.A.')-> value('id');
 
 		Contrato::create([
@@ -3646,13 +2125,6 @@ class ContratoInactivo_Seeder extends Seeder
 			'finicio' => Carbon::parse('01-08-2015')->format('Y/m/d'),
 			'ftermino' => Carbon::parse('31-07-2017')->format('Y/m/d'),
 			'dominioContrato_id' => $dominioID,
-		]);
-
-		$contratoID = Contrato::where('numero', '4600014172')->value('id');
-
-		DominioContrato::create([
-			'DominioContrato_id' => $contratoID,
-			'DominioContrato_type' => 'Ubicacion',
 		]);
 
 		$empresaID = Empresa::where('nombre', 'ELIQSA S.A.')-> value('id');
@@ -3665,13 +2137,6 @@ class ContratoInactivo_Seeder extends Seeder
 			'dominioContrato_id' => $dominioID,
 		]);
 
-		$contratoID = Contrato::where('numero', '4501733195')->value('id');
-
-		DominioContrato::create([
-			'DominioContrato_id' => $contratoID,
-			'DominioContrato_type' => 'Ubicacion',
-		]);
-
 		$empresaID = Empresa::where('nombre', 'ENAEX SERVICIOS S.A.')-> value('id');
 
 		Contrato::create([
@@ -3680,13 +2145,6 @@ class ContratoInactivo_Seeder extends Seeder
 			'finicio' => Carbon::parse('01-12-2014')->format('Y/m/d'),
 			'ftermino' => Carbon::parse('30-04-2016')->format('Y/m/d'),
 			'dominioContrato_id' => $dominioID,
-		]);
-
-		$contratoID = Contrato::where('numero', '4501494088')->value('id');
-
-		DominioContrato::create([
-			'DominioContrato_id' => $contratoID,
-			'DominioContrato_type' => 'Ubicacion',
 		]);
 
 		$empresaID = Empresa::where('nombre', 'ICEM S.A.')-> value('id');
@@ -3699,13 +2157,6 @@ class ContratoInactivo_Seeder extends Seeder
 			'dominioContrato_id' => $dominioID,
 		]);
 
-		$contratoID = Contrato::where('numero', '4501545891')->value('id');
-
-		DominioContrato::create([
-			'DominioContrato_id' => $contratoID,
-			'DominioContrato_type' => 'Ubicacion',
-		]);
-
 		$empresaID = Empresa::where('nombre', 'ICV S.A.')-> value('id');
 
 		Contrato::create([
@@ -3715,26 +2166,12 @@ class ContratoInactivo_Seeder extends Seeder
 			'ftermino' => Carbon::parse('30-06-2018')->format('Y/m/d'),
 			'dominioContrato_id' => $dominioID,
 		]);
-
-		$contratoID = Contrato::where('numero', '4501450059')->value('id');
-
-		DominioContrato::create([
-			'DominioContrato_id' => $contratoID,
-			'DominioContrato_type' => 'Ubicacion',
-		]);
 		Contrato::create([
 			'empresa_id' => $empresaID,
 			'numero' => '4501578214',
 			'finicio' => Carbon::parse('10-12-2015')->format('Y/m/d'),
 			'ftermino' => Carbon::parse('30-06-2018')->format('Y/m/d'),
 			'dominioContrato_id' => $dominioID,
-		]);
-
-		$contratoID = Contrato::where('numero', '4501578214')->value('id');
-
-		DominioContrato::create([
-			'DominioContrato_id' => $contratoID,
-			'DominioContrato_type' => 'Ubicacion',
 		]);
 
 		$empresaID = Empresa::where('nombre', 'INNOVATOR CONVEYOR BELT')-> value('id');
@@ -3747,13 +2184,6 @@ class ContratoInactivo_Seeder extends Seeder
 			'dominioContrato_id' => $dominioID,
 		]);
 
-		$contratoID = Contrato::where('numero', '4600014166')->value('id');
-
-		DominioContrato::create([
-			'DominioContrato_id' => $contratoID,
-			'DominioContrato_type' => 'Ubicacion',
-		]);
-
 		$empresaID = Empresa::where('nombre', 'JIGSAW TECHNOLOGIES LTDA.')-> value('id');
 
 		Contrato::create([
@@ -3762,13 +2192,6 @@ class ContratoInactivo_Seeder extends Seeder
 			'finicio' => Carbon::parse('01-08-2015')->format('Y/m/d'),
 			'ftermino' => Carbon::parse('01-08-2016')->format('Y/m/d'),
 			'dominioContrato_id' => $dominioID,
-		]);
-
-		$contratoID = Contrato::where('numero', '4500926099')->value('id');
-
-		DominioContrato::create([
-			'DominioContrato_id' => $contratoID,
-			'DominioContrato_type' => 'Ubicacion',
 		]);
 
 		$empresaID = Empresa::where('nombre', 'KATECS Y CIA')-> value('id');
@@ -3781,13 +2204,6 @@ class ContratoInactivo_Seeder extends Seeder
 			'dominioContrato_id' => $dominioID,
 		]);
 
-		$contratoID = Contrato::where('numero', '4501508693')->value('id');
-
-		DominioContrato::create([
-			'DominioContrato_id' => $contratoID,
-			'DominioContrato_type' => 'Ubicacion',
-		]);
-
 		$empresaID = Empresa::where('nombre', 'KONECRANES')-> value('id');
 
 		Contrato::create([
@@ -3796,13 +2212,6 @@ class ContratoInactivo_Seeder extends Seeder
 			'finicio' => Carbon::parse('05-01-2016')->format('Y/m/d'),
 			'ftermino' => Carbon::parse('05-01-2017')->format('Y/m/d'),
 			'dominioContrato_id' => $dominioID,
-		]);
-
-		$contratoID = Contrato::where('numero', '4600010907')->value('id');
-
-		DominioContrato::create([
-			'DominioContrato_id' => $contratoID,
-			'DominioContrato_type' => 'Ubicacion',
 		]);
 
 		$empresaID = Empresa::where('nombre', 'METALCAE')-> value('id');
@@ -3815,13 +2224,6 @@ class ContratoInactivo_Seeder extends Seeder
 			'dominioContrato_id' => $dominioID,
 		]);
 
-		$contratoID = Contrato::where('numero', '4501725868')->value('id');
-
-		DominioContrato::create([
-			'DominioContrato_id' => $contratoID,
-			'DominioContrato_type' => 'Ubicacion',
-		]);
-
 		$empresaID = Empresa::where('nombre', 'METRIKA LTDA.')-> value('id');
 
 		Contrato::create([
@@ -3831,26 +2233,12 @@ class ContratoInactivo_Seeder extends Seeder
 			'ftermino' => Carbon::parse('05-08-2018')->format('Y/m/d'),
 			'dominioContrato_id' => $dominioID,
 		]);
-
-		$contratoID = Contrato::where('numero', '4501775735')->value('id');
-
-		DominioContrato::create([
-			'DominioContrato_id' => $contratoID,
-			'DominioContrato_type' => 'Ubicacion',
-		]);
 		Contrato::create([
 			'empresa_id' => $empresaID,
 			'numero' => '4050177573',
 			'finicio' => Carbon::parse('09-04-2018')->format('Y/m/d'),
 			'ftermino' => Carbon::parse('05-08-2018')->format('Y/m/d'),
 			'dominioContrato_id' => $dominioID,
-		]);
-
-		$contratoID = Contrato::where('numero', '4050177573')->value('id');
-
-		DominioContrato::create([
-			'DominioContrato_id' => $contratoID,
-			'DominioContrato_type' => 'Ubicacion',
 		]);
 
 		$empresaID = Empresa::where('nombre', 'OTRACO CHILE')-> value('id');
@@ -3863,13 +2251,6 @@ class ContratoInactivo_Seeder extends Seeder
 			'dominioContrato_id' => $dominioID,
 		]);
 
-		$contratoID = Contrato::where('numero', '4600012229')->value('id');
-
-		DominioContrato::create([
-			'DominioContrato_id' => $contratoID,
-			'DominioContrato_type' => 'Ubicacion',
-		]);
-
 		$empresaID = Empresa::where('nombre', 'PAISAJISMO SERVICIOS OASIS')-> value('id');
 
 		Contrato::create([
@@ -3878,13 +2259,6 @@ class ContratoInactivo_Seeder extends Seeder
 			'finicio' => Carbon::parse('10-08-2015')->format('Y/m/d'),
 			'ftermino' => Carbon::parse('10-08-2018')->format('Y/m/d'),
 			'dominioContrato_id' => $dominioID,
-		]);
-
-		$contratoID = Contrato::where('numero', '4501558802')->value('id');
-
-		DominioContrato::create([
-			'DominioContrato_id' => $contratoID,
-			'DominioContrato_type' => 'Ubicacion',
 		]);
 
 		$empresaID = Empresa::where('nombre', 'PUCARA')-> value('id');
@@ -3897,13 +2271,6 @@ class ContratoInactivo_Seeder extends Seeder
 			'dominioContrato_id' => $dominioID,
 		]);
 
-		$contratoID = Contrato::where('numero', '4501436984')->value('id');
-
-		DominioContrato::create([
-			'DominioContrato_id' => $contratoID,
-			'DominioContrato_type' => 'Ubicacion',
-		]);
-
 		$empresaID = Empresa::where('nombre', 'SCHWAGER SERVICES S.A.')-> value('id');
 
 		Contrato::create([
@@ -3912,13 +2279,6 @@ class ContratoInactivo_Seeder extends Seeder
 			'finicio' => Carbon::parse('24-01-2018')->format('Y/m/d'),
 			'ftermino' => Carbon::parse('24-08-2018')->format('Y/m/d'),
 			'dominioContrato_id' => $dominioID,
-		]);
-
-		$contratoID = Contrato::where('numero', '4501761140')->value('id');
-
-		DominioContrato::create([
-			'DominioContrato_id' => $contratoID,
-			'DominioContrato_type' => 'Ubicacion',
 		]);
 
 		$empresaID = Empresa::where('nombre', 'SK GODELIUS S.A.')-> value('id');
@@ -3931,13 +2291,6 @@ class ContratoInactivo_Seeder extends Seeder
 			'dominioContrato_id' => $dominioID,
 		]);
 
-		$contratoID = Contrato::where('numero', '4501730815')->value('id');
-
-		DominioContrato::create([
-			'DominioContrato_id' => $contratoID,
-			'DominioContrato_type' => 'Ubicacion',
-		]);
-
 		$empresaID = Empresa::where('nombre', 'SMG INGENIERIA S.A.')-> value('id');
 
 		Contrato::create([
@@ -3946,13 +2299,6 @@ class ContratoInactivo_Seeder extends Seeder
 			'finicio' => Carbon::parse('15-03-2018')->format('Y/m/d'),
 			'ftermino' => Carbon::parse('31-07-2018')->format('Y/m/d'),
 			'dominioContrato_id' => $dominioID,
-		]);
-
-		$contratoID = Contrato::where('numero', '4501765976')->value('id');
-
-		DominioContrato::create([
-			'DominioContrato_id' => $contratoID,
-			'DominioContrato_type' => 'Ubicacion',
 		]);
 
 		$empresaID = Empresa::where('nombre', 'TECHMEC LTDA.')-> value('id');
@@ -3965,13 +2311,6 @@ class ContratoInactivo_Seeder extends Seeder
 			'dominioContrato_id' => $dominioID,
 		]);
 
-		$contratoID = Contrato::where('numero', '4501548500')->value('id');
-
-		DominioContrato::create([
-			'DominioContrato_id' => $contratoID,
-			'DominioContrato_type' => 'Ubicacion',
-		]);
-
 		$empresaID = Empresa::where('nombre', 'TECNOLOGIAS COBRA LTDA.')-> value('id');
 
 		Contrato::create([
@@ -3980,13 +2319,6 @@ class ContratoInactivo_Seeder extends Seeder
 			'finicio' => Carbon::parse('26-12-2017')->format('Y/m/d'),
 			'ftermino' => Carbon::parse('26-05-2018')->format('Y/m/d'),
 			'dominioContrato_id' => $dominioID,
-		]);
-
-		$contratoID = Contrato::where('numero', '4600015879')->value('id');
-
-		DominioContrato::create([
-			'DominioContrato_id' => $contratoID,
-			'DominioContrato_type' => 'Ubicacion',
 		]);
 
 		$empresaID = Empresa::where('nombre', 'TECNOLOGIA EN TRANSPORTE DE MINERALES S.A.')-> value('id');
@@ -3999,13 +2331,6 @@ class ContratoInactivo_Seeder extends Seeder
 			'dominioContrato_id' => $dominioID,
 		]);
 
-		$contratoID = Contrato::where('numero', '4501640214')->value('id');
-
-		DominioContrato::create([
-			'DominioContrato_id' => $contratoID,
-			'DominioContrato_type' => 'Ubicacion',
-		]);
-
 		$empresaID = Empresa::where('nombre', 'VALIDAR TRAIN')-> value('id');
 
 		Contrato::create([
@@ -4014,13 +2339,6 @@ class ContratoInactivo_Seeder extends Seeder
 			'finicio' => Carbon::parse('16-11-2015')->format('Y/m/d'),
 			'ftermino' => Carbon::parse('30-05-2016')->format('Y/m/d'),
 			'dominioContrato_id' => $dominioID,
-		]);
-
-		$contratoID = Contrato::where('numero', '4501518170')->value('id');
-
-		DominioContrato::create([
-			'DominioContrato_id' => $contratoID,
-			'DominioContrato_type' => 'Ubicacion',
 		]);
 	}
 }

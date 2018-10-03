@@ -13,17 +13,9 @@ class TipoModeloSeeder extends Seeder
 	public function run()
 	{
 		TipoModelo::truncate();
-
-		TipoModelo::create([
-			'nombre' => 'MOVIL'
-		]);
-
-		TipoModelo::create([
-			'nombre' => 'PORTATIL'
-		]);
-
-		TipoModelo::create([
-			'nombre' => 'BASE'
-		]);
+		
+		TipoModelo::create(['nombre' => 'MOVIL']);
+		TipoModelo::create(['nombre' => 'PORTATIL']);
+		TipoModelo::create(['nombre' => 'BASE']);
 	}
 }
