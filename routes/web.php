@@ -11,44 +11,46 @@
 |
 */
 
-Route::get('/', [
-	'uses'	=> 'PagesController@index',
-	'as'	=> 'index'
-]);
+Route::get('/', 'PagesController@index') -> name('index');
 
-Route::prefix('sistema')->group(function(){
-	Route::get('/', [
-		'uses'	=> 'DashBoardController@index',
-		'as'	=> 'dashboard.index'
-	]);
-	Route::get('inventario', [
-		'uses'	=> 'DashBoardController@inventario',
-		'as'	=> 'dashboard.inventario'
-	]);
+// RUTAS AJAX
+Route::prefix('ajax')->group(function(){
+	Route::prefix('radioTrabajo')->group(function(){
+		Route::get('modelos/{id}'      , 'ajax\RadioTrabajoController@modelos')      -> name('ajax.radioTrabajo.modelos');
+		Route::get('sistema/{id}'      , 'ajax\RadioTrabajoController@sistema')      -> name('ajax.radioTrabajo.sistema');
+		Route::get('areas/{id}'        , 'ajax\RadioTrabajoController@areas')        -> name('ajax.radioTrabajo.areas');
+		Route::get('bases/{id}'        , 'ajax\RadioTrabajoController@bases')        -> name('ajax.radioTrabajo.bases');
+		Route::get('tiposEquipos/{id}' , 'ajax\RadioTrabajoController@tiposEquipos') -> name('ajax.radioTrabajo.tiposEquipos');
+		Route::get('equipos/{id}'      , 'ajax\RadioTrabajoController@equipos')      -> name('ajax.radioTrabajo.equipos');
+	});
 });
 
+// RUTAS DEL SISTEMA
+Route::prefix('sistema')->group(function(){
+	Route::get('/'          , 'DashBoardController@index')      -> name('dashboard.index');
+	Route::get('inventario' , 'DashBoardController@inventario') -> name('dashboard.inventario');
+});
+
+// RUTAS DE TECNICOS
 Route::prefix('tecnicos')->group(function(){
 });
 
+// RUTAS DE SUPERVISORES
 Route::prefix('supervisores')->group(function(){
 });
 
+// RUTAS DE ADMINISTRADORES
 Route::prefix('administracion')->group(function(){
 	Route::prefix('activos')->group(function(){
-		Route::resource('radioTrabajo', 'RadioTrabajoController', [
-			'only' => ['create', 'store']
+		Route::resource('radioTrabajo'   , 'RadioTrabajoController', [
+			'as' => 'admin.activos',
+			'only' => ['create', 'store'],
 		]);
 	});
 	Route::prefix('cargaCSV')->group(function(){
 		Route::prefix('SATI')->group(function(){
-			Route::GET('/', [
-				'uses'	=> 'CSVController@cargarSATI',
-				'as'	=> 'csv.sati.cargarSati'
-			]);
-			Route::POST('store', [
-				'uses'	=> 'CSVController@guardarSATI',
-				'as'	=> 'csv.sati.guardarSati'
-			]);
+			Route::get('/'     , 'CSVController@cargarSATI')  -> name('csv.sati.cargarSati');
+			Route::get('store' , 'CSVController@guardarSATI') -> name('csv.sati.guardarSati');
 		});
 	});
 });

@@ -1,5 +1,6 @@
 <?php
 
+use App\DominioContrato;
 use App\Faena;
 use Illuminate\Database\Seeder;
 
@@ -13,9 +14,8 @@ class FaenaSeeder extends Seeder
     public function run()
     {
     	Faena::truncate();
-
-    	Faena::create([
-    		'nombre' => 'CODELCO NORTE'
-    	]);
+    	DominioContrato::truncate();
+    	
+		Faena::create(['nombre' => 'CODELCO NORTE'])->dominio()->create();
     }
 }

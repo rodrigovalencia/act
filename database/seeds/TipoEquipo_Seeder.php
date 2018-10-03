@@ -21,34 +21,42 @@ class TipoEquipo_Seeder extends Seeder
 			'nombre' => 'BULLDOZER',
 			'CatEquipo_id' => $catID,
 		]);
+
 		TipoEquipo::create([
 			'nombre' => 'WHEELDOZER',
 			'CatEquipo_id' => $catID,
 		]);
+
 		TipoEquipo::create([
 			'nombre' => 'MOTONIVELADORA',
 			'CatEquipo_id' => $catID,
 		]);
+
 		TipoEquipo::create([
 			'nombre' => 'REGADOR',
 			'CatEquipo_id' => $catID,
 		]);
+
 		TipoEquipo::create([
 			'nombre' => 'GRUA HORQUILLA',
 			'CatEquipo_id' => $catID,
 		]);
+
 		TipoEquipo::create([
 			'nombre' => 'GRUA NEUMATICO',
 			'CatEquipo_id' => $catID,
 		]);
+
 		TipoEquipo::create([
 			'nombre' => 'GRUA MORGAN',
 			'CatEquipo_id' => $catID,
 		]);
+
 		TipoEquipo::create([
 			'nombre' => 'CAMION TRANSPORTE ESCORIA',
 			'CatEquipo_id' => $catID,
 		]);
+
 		TipoEquipo::create([
 			'nombre' => 'GRUA PUENTE',
 			'CatEquipo_id' => $catID,
@@ -60,26 +68,32 @@ class TipoEquipo_Seeder extends Seeder
 			'nombre' => 'CAEX',
 			'CatEquipo_id' => $catID,
 		]);
+
 		TipoEquipo::create([
 			'nombre' => 'PALA',
 			'CatEquipo_id' => $catID,
 		]);
+
 		TipoEquipo::create([
 			'nombre' => 'RETROEXCAVADORA',
 			'CatEquipo_id' => $catID,
 		]);
+
 		TipoEquipo::create([
 			'nombre' => 'SPRADER',
 			'CatEquipo_id' => $catID,
 		]);
+
 		TipoEquipo::create([
 			'nombre' => 'WHEELLOADER',
 			'CatEquipo_id' => $catID,
 		]);
+
 		TipoEquipo::create([
 			'nombre' => 'BULLLOADER',
 			'CatEquipo_id' => $catID,
 		]);
+
 		TipoEquipo::create([
 			'nombre' => 'ROTOPALA',
 			'CatEquipo_id' => $catID,
@@ -91,14 +105,17 @@ class TipoEquipo_Seeder extends Seeder
 			'nombre' => 'CAMION',
 			'CatEquipo_id' => $catID,
 		]);
+
 		TipoEquipo::create([
 			'nombre' => 'CAMIONETA',
 			'CatEquipo_id' => $catID,
 		]);
+
 		TipoEquipo::create([
 			'nombre' => 'CARRY ALL',
 			'CatEquipo_id' => $catID,
 		]);
+
 		TipoEquipo::create([
 			'nombre' => 'AMBULANCIA',
 			'CatEquipo_id' => $catID,
@@ -117,6 +134,5 @@ class TipoEquipo_Seeder extends Seeder
 			'nombre' => 'LOCOMOTORA',
 			'CatEquipo_id' => $catID,
 		]);
-
     }
 }

@@ -1,4 +1,4 @@
-<div class="col-md-3 left_col">
+<div class="col-md-3 left_col menu_fixed">
 	<div class="left_col scroll-view">
 		<div class="navbar nav_title" style="border: 0;">
 			<a href="{{ route('dashboard.index') }}" class="site_title">
@@ -433,7 +433,7 @@
 						</a>
 						<ul class="nav child_menu">
 							<li>
-								<a href="{{ route('radioTrabajo.create') }}">Radios de Trabajo</a>
+								<a href="{{ route('admin.activos.radioTrabajo.create') }}">Radios de Trabajo</a>
 							</li>
 						</ul>
 					</li>
@@ -528,6 +528,15 @@
 			</div>
 		</div>
 	<!-- /sidebar menu -->
-
 	</div>
 </div>
+
+
+
+
+
+
+
+
+
+

@@ -23,8 +23,18 @@ class Sistema extends Model
 
 	function modelosRadio()
 	{
-		return $this->hasMany(
+		return $this->belongsToMany(
 			ModeloRadio::class,
+			'ModeloRadio_Sistema',
+			'Sistema_id',
+			'ModeloRadio_id'
+		);
+	}
+
+	function expReg()
+	{
+		return $this->hasOne(
+			ExpReg_RT::class,
 			'Sistema_id',
 			'id'
 		);

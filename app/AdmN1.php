@@ -19,13 +19,4 @@ class AdmN1 extends Model
 	* increments('id')
 	* string('nombre')
 	*/
-
-	function admN2()
-	{
-		return $this->hasMany(
-			AdmN2::class,
-			'AdmN1_id',
-			'id'
-		);
-	}
 }

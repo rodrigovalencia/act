@@ -2,16 +2,18 @@
 
 namespace App;
 
+use App\GrupoUsuario;
 use App\Usuario;
 use Illuminate\Database\Eloquent\Model;
 
-class TipoUsuario extends Model
+class GrupoEspecialista extends Model
 {
-	protected $table = 'TipoUsuario';
+	protected $table = 'GrupoEspecialista';
 	public $timestamps = false;
 
 	protected $fillable = [
 		'nombre',
+		// 'GrupoUsuario_id',
 	];
 
 	/*
@@ -19,13 +21,23 @@ class TipoUsuario extends Model
 	 *
 	 * increments('id')
 	 * string('nombre')
+	 * unsignedInteger('GrupoUsuario_id')
 	 */
+
+	function grupoUsuarios()
+	{
+		return $this->belongsTo(
+			GrupoUsuario::class,
+			'GrupoUsuario_id',
+			'id'
+		);
+	}
 
 	function usuarios()
 	{
 		return $this->hasMany(
 			Usuario::class,
-			'TipoUsuario_id',
+			'GrupoEspecialista_id',
 			'id'
 		);
 	}

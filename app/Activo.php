@@ -9,6 +9,7 @@ use App\Empresa;
 use App\EstadoActivo;
 use App\Mantencion;
 use App\Mantencion_Activo_Componente;
+use App\MesaAyuda;
 use App\PlanMantenimiento;
 use App\Programacion_Activo;
 use App\Reparacion;
@@ -91,6 +92,16 @@ class Activo extends Model
 			'Activo_id',
 			'ConfEquipo_id'
 		)->withPivot('detalle', 'observacion');
+	}
+
+	function mesasAyudas()
+	{
+		return $this->belongsToMany(
+			MesaAyuda::class,
+			'MesaAyuda_Activo',
+			'Activo_id',
+			'MesaAyuda_id'
+		);
 	}
 
 	function reparaciones()

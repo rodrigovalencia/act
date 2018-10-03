@@ -47,11 +47,11 @@ class Modelo extends Model
 		);
 	}
 
-	function procedimiento()
+	function procedimientos()
 	{
-		return $this->belongsTo(
+		return $this->hasMany(
 			Procedimiento::class,
-			'Procedimiento_id',
+			'Modelo_id',
 			'id'
 		);
 	}

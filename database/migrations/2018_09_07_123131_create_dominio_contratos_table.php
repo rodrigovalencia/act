@@ -15,8 +15,8 @@ class CreateDominioContratosTable extends Migration
 	{
 		Schema::create('DominioContrato', function (Blueprint $table) {
 			$table->increments('id');
-			$table->integer('DominioContrato_id');
-			$table->string('DominioContrato_type');
+			$table->integer('dominio_id');
+			$table->string('dominio_type');
 		});
 	}
 

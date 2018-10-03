@@ -16,7 +16,6 @@ class CreateModeloRadiosTable extends Migration
 		Schema::create('ModeloRadio', function (Blueprint $table) {
 			$table->increments('id');
 			$table->string('nombre');
-			$table->unsignedInteger('Sistema_id');
 			$table->unsignedInteger('TipoModelo_id');
 			$table->unsignedInteger('Fabricante_id');
 			$table->string('documento')->nullable();

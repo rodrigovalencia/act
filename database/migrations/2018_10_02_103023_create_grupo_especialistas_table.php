@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateTipoUsuariosTable extends Migration
+class CreateGrupoEspecialistasTable extends Migration
 {
 	/**
 	 * Run the migrations.
@@ -13,9 +13,10 @@ class CreateTipoUsuariosTable extends Migration
 	 */
 	public function up()
 	{
-		Schema::create('TipoUsuario', function (Blueprint $table) {
+		Schema::create('GrupoEspecialista', function (Blueprint $table) {
 			$table->increments('id');
 			$table->string('nombre');
+			$table->unsignedInteger('GrupoUsuario_id');
 		});
 	}
 
@@ -26,6 +27,6 @@ class CreateTipoUsuariosTable extends Migration
 	 */
 	public function down()
 	{
-		Schema::dropIfExists('TipoUsuario');
+		Schema::dropIfExists('GrupoEspecialista');
 	}
 }

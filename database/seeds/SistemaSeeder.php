@@ -13,13 +13,9 @@ class SistemaSeeder extends Seeder
     public function run()
     {
         Sistema::truncate();
-
-        Sistema::create([
-        	'nombre' => 'TRUNKING'
-        ]);
-
-		Sistema::create([
-			'nombre' => 'VHF'
-		]);
+		
+		Sistema::create(['nombre' => 'P25 - TRUNKING']);
+		Sistema::create(['nombre' => 'P16 - TRUNKING']);
+		Sistema::create(['nombre' => 'VHF']);
     }
 }
