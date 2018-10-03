@@ -19,13 +19,4 @@ class CatN1 extends Model
 	* increments('id')
 	* string('nombre')
 	*/
-
-	function catN2()
-	{
-		return $this->hasMany(
-			CatN2::class,
-			'CatN1_id',
-			'id'
-		);
-	}
 }

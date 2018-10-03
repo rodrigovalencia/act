@@ -14,7 +14,6 @@ class ModeloRadio extends Model
 
 	protected $fillable = [
 		'nombre',
-		// 'Sistema_id',
 		// 'TipoModelo_id',
 		// 'Fabricante_id',
 		'documento',
@@ -25,18 +24,18 @@ class ModeloRadio extends Model
 	 *
 	 * increments('id')
 	 * string('nombre')
-	 * unsignedInteger('Sistema_id')
 	 * unsignedInteger('TipoModelo_id')
 	 * unsignedInteger('Fabricante_id')
 	 * string('documento')->nullable()
 	 */
 
-	function sistema()
+	function sistemas()
 	{
-		return $this->belongsTo(
+		return $this->belongsToMany(
 			Sistema::class,
-			'Sistema_id',
-			'id'
+			'ModeloRadio_Sistema',
+			'ModeloRadio_id',
+			'Sistema_id'
 		);
 	}
 

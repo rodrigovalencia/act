@@ -10,6 +10,7 @@ class Activo_EstadoActivo extends Model
 	public $timestamps = false;
 
 	protected $fillable = [
+		// 'fecha'
 		// 'Activo_id',
 		// 'EstadoActivo_id',
 		// 'Ticket_id',
@@ -19,17 +20,16 @@ class Activo_EstadoActivo extends Model
 	 * Atributos 
 	 *
 	 * increments('id')
+	 * dateTime('fecha')
 	 * unsignedInteger('Activo_id')
 	 * unsignedInteger('EstadoActivo_id')
-	 * unsignedInteger('Ticket_id')
+	 * unsignedInteger('Servicio_id')
 	 */
 
 	function ticket()
 	{
-		//*Si tengo la fk
 		return $this->belongsTo(
 			Ticket::class,
-			//*FK que yo poseo
 			'Ticket_id',
 			'id'
 		);

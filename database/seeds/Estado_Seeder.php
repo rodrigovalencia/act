@@ -13,12 +13,8 @@ class Estado_Seeder extends Seeder
     public function run()
     {
 		Estado::truncate();
-
-		Estado::create([
-			'nombre' => 'RETIRADO'
-		]);
-		Estado::create([
-			'nombre' => 'VIGENTE'
-		]);
+		
+		Estado::create(['nombre' => 'RETIRADO']);
+		Estado::create(['nombre' => 'VIGENTE']);
     }
 }

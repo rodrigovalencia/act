@@ -24,11 +24,16 @@ class Base extends Model
 	 * unsignedInteger('TipoBase_id')
 	 */
 
-	public function URadio()
+	public function getNombre()
 	{
-		return $this->morphMany(
+		return $this->tipoBase->nombre . ' - ' . $this->nombre;
+	}
+
+	public function ubicacionRadio()
+	{
+		return $this->morphOne(
 			URadio::class,
-			'Uradio'
+			'ubicable'
 		);
 	}
 
@@ -36,7 +41,7 @@ class Base extends Model
 	{
 		return $this->belongsTo(
 			TipoBase::class,
-			'TipoEquipo_id',
+			'TipoBase_id',
 			'id'
 		);
 	}

@@ -24,11 +24,16 @@ class Equipo extends Model
      * unsignedInteger('TipoEquipo_id')
 	 */
 
-	public function URadio()
+	public function getNombre()
 	{
-		return $this->morphMany(
+		return $this->tipoEquipo->categoria->nombre . ' - ' . $this->tipoEquipo->nombre . ' - ' . $this->nombre;
+	}
+
+	public function ubicacionRadio()
+	{
+		return $this->morphOne(
 			URadio::class,
-			'URadio'
+			'ubicable'
 		);
 	}
 

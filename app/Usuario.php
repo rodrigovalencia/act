@@ -3,9 +3,10 @@
 namespace App;
 
 use App\ActualizacionPlan;
+use App\Capacitacion;
+use App\GrupoEspecialista;
 use App\Rol;
 use App\Servicio;
-use App\TipoUsuario;
 use App\Ubicacion;
 use Illuminate\Database\Eloquent\Model;
 
@@ -27,6 +28,7 @@ class Usuario extends Model
 		// 'Rol_id',
 		// 'Ubicacion_id',
 		// 'TipoUsuario_id',
+		// 'GrupoEspecialista_id'
 	];
 
 	/*
@@ -45,6 +47,7 @@ class Usuario extends Model
 	 * unsignedInteger('Rol_id')
 	 * unsignedInteger('Ubicacion_id')
 	 * unsignedInteger('TipoUsuario_id')
+	 * unsignedInteger('GrupoEspecialista_id')
 	 */
 
 	function rol()
@@ -56,11 +59,11 @@ class Usuario extends Model
 		);
 	}
 
-	function tipoUsuario()
+	function grupoEspecialista()
 	{
 		return $this->belongsTo(
-			TipoUsuario::class,
-			'TipoUsuario_id',
+			GrupoEspecialista::class,
+			'GrupoEspecialista_id',
 			'id'
 		);
 	}
@@ -88,6 +91,15 @@ class Usuario extends Model
 	{
 		return $this->hasMany(
 			ActualizacionPlan::class,
+			'Usuario_id',
+			'id'
+		);
+	}
+
+	function capacitaciones()
+	{
+		return $this->hasMany(
+			Capacitacion::class,
 			'Usuario_id',
 			'id'
 		);

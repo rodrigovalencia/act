@@ -36,7 +36,7 @@ class Centinela_Seeder extends Seeder
 		Centinela::create([
 			'nombre' => 'Mantenimiento',
 			'CatN5_id' => $catID,
-		]);
+		])->catTicket()->create();
 
 		$catID = CatN5::
 			join('CatN4', 'CatN4.id', '=', 'CatN5.CatN4_id')
@@ -54,11 +54,11 @@ class Centinela_Seeder extends Seeder
 		Centinela::create([
 			'nombre' => 'Mantenimiento',
 			'CatN5_id' => $catID,
-		]);
+		])->catTicket()->create();
 		Centinela::create([
 			'nombre' => 'Reparación',
 			'CatN5_id' => $catID,
-		]);
+		])->catTicket()->create();
 
 		$catID = CatN5::
 			join('CatN4', 'CatN4.id', '=', 'CatN5.CatN4_id')
@@ -76,7 +76,7 @@ class Centinela_Seeder extends Seeder
 		Centinela::create([
 			'nombre' => 'Mantenimiento',
 			'CatN5_id' => $catID,
-		]);
+		])->catTicket()->create();
 
 		$catID = CatN5::
 			join('CatN4', 'CatN4.id', '=', 'CatN5.CatN4_id')
@@ -94,11 +94,11 @@ class Centinela_Seeder extends Seeder
 		Centinela::create([
 			'nombre' => 'Mantenimiento',
 			'CatN5_id' => $catID,
-		]);
+		])->catTicket()->create();
 		Centinela::create([
 			'nombre' => 'Reparación',
 			'CatN5_id' => $catID,
-		]);
+		])->catTicket()->create();
 
 		$catID = CatN5::
 			join('CatN4', 'CatN4.id', '=', 'CatN5.CatN4_id')
@@ -116,7 +116,7 @@ class Centinela_Seeder extends Seeder
 		Centinela::create([
 			'nombre' => 'Mantenimiento',
 			'CatN5_id' => $catID,
-		]);
+		])->catTicket()->create();
 
 		$catID = CatN5::
 			join('CatN4', 'CatN4.id', '=', 'CatN5.CatN4_id')
@@ -134,11 +134,11 @@ class Centinela_Seeder extends Seeder
 		Centinela::create([
 			'nombre' => 'Mantenimiento',
 			'CatN5_id' => $catID,
-		]);
+		])->catTicket()->create();
 		Centinela::create([
 			'nombre' => 'Reparación',
 			'CatN5_id' => $catID,
-		]);
+		])->catTicket()->create();
 
 		$catID = CatN5::
 			join('CatN4', 'CatN4.id', '=', 'CatN5.CatN4_id')
@@ -156,7 +156,7 @@ class Centinela_Seeder extends Seeder
 		Centinela::create([
 			'nombre' => 'Revisión',
 			'CatN5_id' => $catID,
-		]);
+		])->catTicket()->create();
 
 		$catID = CatN5::
 			join('CatN4', 'CatN4.id', '=', 'CatN5.CatN4_id')
@@ -174,7 +174,7 @@ class Centinela_Seeder extends Seeder
 		Centinela::create([
 			'nombre' => 'Revisión',
 			'CatN5_id' => $catID,
-		]);
+		])->catTicket()->create();
 
 		$catID = CatN5::
 			join('CatN4', 'CatN4.id', '=', 'CatN5.CatN4_id')
@@ -192,7 +192,7 @@ class Centinela_Seeder extends Seeder
 		Centinela::create([
 			'nombre' => 'Mantenimiento',
 			'CatN5_id' => $catID,
-		]);
+		])->catTicket()->create();
 
 		$catID = CatN5::
 			join('CatN4', 'CatN4.id', '=', 'CatN5.CatN4_id')
@@ -210,11 +210,11 @@ class Centinela_Seeder extends Seeder
 		Centinela::create([
 			'nombre' => 'Mantenimiento',
 			'CatN5_id' => $catID,
-		]);
+		])->catTicket()->create();
 		Centinela::create([
 			'nombre' => 'Reparación',
 			'CatN5_id' => $catID,
-		]);
+		])->catTicket()->create();
 
 		$catID = CatN5::
 			join('CatN4', 'CatN4.id', '=', 'CatN5.CatN4_id')
@@ -232,7 +232,7 @@ class Centinela_Seeder extends Seeder
 		Centinela::create([
 			'nombre' => 'Mantenimiento',
 			'CatN5_id' => $catID,
-		]);
+		])->catTicket()->create();
 
 		$catID = CatN5::
 			join('CatN4', 'CatN4.id', '=', 'CatN5.CatN4_id')
@@ -250,11 +250,11 @@ class Centinela_Seeder extends Seeder
 		Centinela::create([
 			'nombre' => 'Mantenimiento',
 			'CatN5_id' => $catID,
-		]);
+		])->catTicket()->create();
 		Centinela::create([
 			'nombre' => 'Reparación',
 			'CatN5_id' => $catID,
-		]);
+		])->catTicket()->create();
 
 		$catID = CatN5::
 			join('CatN4', 'CatN4.id', '=', 'CatN5.CatN4_id')
@@ -272,7 +272,7 @@ class Centinela_Seeder extends Seeder
 		Centinela::create([
 			'nombre' => 'Mantenimiento',
 			'CatN5_id' => $catID,
-		]);
+		])->catTicket()->create();
 
 		$catID = CatN5::
 			join('CatN4', 'CatN4.id', '=', 'CatN5.CatN4_id')
@@ -290,11 +290,11 @@ class Centinela_Seeder extends Seeder
 		Centinela::create([
 			'nombre' => 'Mantenimiento',
 			'CatN5_id' => $catID,
-		]);
+		])->catTicket()->create();
 		Centinela::create([
 			'nombre' => 'Reparación',
 			'CatN5_id' => $catID,
-		]);
+		])->catTicket()->create();
 
 		$catID = CatN5::
 			join('CatN4', 'CatN4.id', '=', 'CatN5.CatN4_id')
@@ -312,7 +312,7 @@ class Centinela_Seeder extends Seeder
 		Centinela::create([
 			'nombre' => 'Mantenimiento',
 			'CatN5_id' => $catID,
-		]);
+		])->catTicket()->create();
 
 		$catID = CatN5::
 			join('CatN4', 'CatN4.id', '=', 'CatN5.CatN4_id')
@@ -330,11 +330,11 @@ class Centinela_Seeder extends Seeder
 		Centinela::create([
 			'nombre' => 'Mantenimiento',
 			'CatN5_id' => $catID,
-		]);
+		])->catTicket()->create();
 		Centinela::create([
 			'nombre' => 'Reparación',
 			'CatN5_id' => $catID,
-		]);
+		])->catTicket()->create();
 
 		$catID = CatN5::
 			join('CatN4', 'CatN4.id', '=', 'CatN5.CatN4_id')
@@ -352,7 +352,7 @@ class Centinela_Seeder extends Seeder
 		Centinela::create([
 			'nombre' => 'Mantenimiento',
 			'CatN5_id' => $catID,
-		]);
+		])->catTicket()->create();
 
 		$catID = CatN5::
 			join('CatN4', 'CatN4.id', '=', 'CatN5.CatN4_id')
@@ -370,11 +370,11 @@ class Centinela_Seeder extends Seeder
 		Centinela::create([
 			'nombre' => 'Mantenimiento',
 			'CatN5_id' => $catID,
-		]);
+		])->catTicket()->create();
 		Centinela::create([
 			'nombre' => 'Reparación',
 			'CatN5_id' => $catID,
-		]);
+		])->catTicket()->create();
 
 		$catID = CatN5::
 			join('CatN4', 'CatN4.id', '=', 'CatN5.CatN4_id')
@@ -392,7 +392,7 @@ class Centinela_Seeder extends Seeder
 		Centinela::create([
 			'nombre' => 'Mantenimiento',
 			'CatN5_id' => $catID,
-		]);
+		])->catTicket()->create();
 
 		$catID = CatN5::
 			join('CatN4', 'CatN4.id', '=', 'CatN5.CatN4_id')
@@ -410,11 +410,11 @@ class Centinela_Seeder extends Seeder
 		Centinela::create([
 			'nombre' => 'Mantenimiento',
 			'CatN5_id' => $catID,
-		]);
+		])->catTicket()->create();
 		Centinela::create([
 			'nombre' => 'Reparación',
 			'CatN5_id' => $catID,
-		]);
+		])->catTicket()->create();
 
 		$catID = CatN5::
 			join('CatN4', 'CatN4.id', '=', 'CatN5.CatN4_id')
@@ -432,7 +432,7 @@ class Centinela_Seeder extends Seeder
 		Centinela::create([
 			'nombre' => 'Mantenimiento',
 			'CatN5_id' => $catID,
-		]);
+		])->catTicket()->create();
 
 		$catID = CatN5::
 			join('CatN4', 'CatN4.id', '=', 'CatN5.CatN4_id')
@@ -450,11 +450,11 @@ class Centinela_Seeder extends Seeder
 		Centinela::create([
 			'nombre' => 'Mantenimiento',
 			'CatN5_id' => $catID,
-		]);
+		])->catTicket()->create();
 		Centinela::create([
 			'nombre' => 'Reparación',
 			'CatN5_id' => $catID,
-		]);
+		])->catTicket()->create();
 
 		$catID = CatN5::
 			join('CatN4', 'CatN4.id', '=', 'CatN5.CatN4_id')
@@ -472,7 +472,7 @@ class Centinela_Seeder extends Seeder
 		Centinela::create([
 			'nombre' => 'Mantenimiento',
 			'CatN5_id' => $catID,
-		]);
+		])->catTicket()->create();
 
 		$catID = CatN5::
 			join('CatN4', 'CatN4.id', '=', 'CatN5.CatN4_id')
@@ -490,11 +490,11 @@ class Centinela_Seeder extends Seeder
 		Centinela::create([
 			'nombre' => 'Mantenimiento',
 			'CatN5_id' => $catID,
-		]);
+		])->catTicket()->create();
 		Centinela::create([
 			'nombre' => 'Reparación',
 			'CatN5_id' => $catID,
-		]);
+		])->catTicket()->create();
 
 		$catID = CatN5::
 			join('CatN4', 'CatN4.id', '=', 'CatN5.CatN4_id')
@@ -512,7 +512,7 @@ class Centinela_Seeder extends Seeder
 		Centinela::create([
 			'nombre' => 'Mantenimiento',
 			'CatN5_id' => $catID,
-		]);
+		])->catTicket()->create();
 
 		$catID = CatN5::
 			join('CatN4', 'CatN4.id', '=', 'CatN5.CatN4_id')
@@ -530,11 +530,11 @@ class Centinela_Seeder extends Seeder
 		Centinela::create([
 			'nombre' => 'Mantenimiento',
 			'CatN5_id' => $catID,
-		]);
+		])->catTicket()->create();
 		Centinela::create([
 			'nombre' => 'Reparación',
 			'CatN5_id' => $catID,
-		]);
+		])->catTicket()->create();
 
 		$catID = CatN5::
 			join('CatN4', 'CatN4.id', '=', 'CatN5.CatN4_id')
@@ -552,11 +552,11 @@ class Centinela_Seeder extends Seeder
 		Centinela::create([
 			'nombre' => 'Cobertura',
 			'CatN5_id' => $catID,
-		]);
+		])->catTicket()->create();
 		Centinela::create([
 			'nombre' => 'Tronadura',
 			'CatN5_id' => $catID,
-		]);
+		])->catTicket()->create();
 
 		$catID = CatN5::
 			join('CatN4', 'CatN4.id', '=', 'CatN5.CatN4_id')
@@ -574,7 +574,7 @@ class Centinela_Seeder extends Seeder
 		Centinela::create([
 			'nombre' => 'Mantenimiento',
 			'CatN5_id' => $catID,
-		]);
+		])->catTicket()->create();
 
 		$catID = CatN5::
 			join('CatN4', 'CatN4.id', '=', 'CatN5.CatN4_id')
@@ -592,11 +592,11 @@ class Centinela_Seeder extends Seeder
 		Centinela::create([
 			'nombre' => 'Mantenimiento',
 			'CatN5_id' => $catID,
-		]);
+		])->catTicket()->create();
 		Centinela::create([
 			'nombre' => 'Reparación',
 			'CatN5_id' => $catID,
-		]);
+		])->catTicket()->create();
 
 		$catID = CatN5::
 			join('CatN4', 'CatN4.id', '=', 'CatN5.CatN4_id')
@@ -614,7 +614,7 @@ class Centinela_Seeder extends Seeder
 		Centinela::create([
 			'nombre' => 'Mantenimiento',
 			'CatN5_id' => $catID,
-		]);
+		])->catTicket()->create();
 
 		$catID = CatN5::
 			join('CatN4', 'CatN4.id', '=', 'CatN5.CatN4_id')
@@ -632,11 +632,11 @@ class Centinela_Seeder extends Seeder
 		Centinela::create([
 			'nombre' => 'Mantenimiento',
 			'CatN5_id' => $catID,
-		]);
+		])->catTicket()->create();
 		Centinela::create([
 			'nombre' => 'Reparación',
 			'CatN5_id' => $catID,
-		]);
+		])->catTicket()->create();
 
 		$catID = CatN5::
 			join('CatN4', 'CatN4.id', '=', 'CatN5.CatN4_id')
@@ -654,7 +654,7 @@ class Centinela_Seeder extends Seeder
 		Centinela::create([
 			'nombre' => 'Mantenimiento',
 			'CatN5_id' => $catID,
-		]);
+		])->catTicket()->create();
 
 		$catID = CatN5::
 			join('CatN4', 'CatN4.id', '=', 'CatN5.CatN4_id')
@@ -672,11 +672,11 @@ class Centinela_Seeder extends Seeder
 		Centinela::create([
 			'nombre' => 'Mantenimiento',
 			'CatN5_id' => $catID,
-		]);
+		])->catTicket()->create();
 		Centinela::create([
 			'nombre' => 'Reparación',
 			'CatN5_id' => $catID,
-		]);
+		])->catTicket()->create();
 
 		$catID = CatN5::
 			join('CatN4', 'CatN4.id', '=', 'CatN5.CatN4_id')
@@ -694,7 +694,7 @@ class Centinela_Seeder extends Seeder
 		Centinela::create([
 			'nombre' => 'Mantenimiento',
 			'CatN5_id' => $catID,
-		]);
+		])->catTicket()->create();
 
 		$catID = CatN5::
 			join('CatN4', 'CatN4.id', '=', 'CatN5.CatN4_id')
@@ -712,11 +712,11 @@ class Centinela_Seeder extends Seeder
 		Centinela::create([
 			'nombre' => 'Mantenimiento',
 			'CatN5_id' => $catID,
-		]);
+		])->catTicket()->create();
 		Centinela::create([
 			'nombre' => 'Reparación',
 			'CatN5_id' => $catID,
-		]);
+		])->catTicket()->create();
 
 		$catID = CatN5::
 			join('CatN4', 'CatN4.id', '=', 'CatN5.CatN4_id')
@@ -734,7 +734,7 @@ class Centinela_Seeder extends Seeder
 		Centinela::create([
 			'nombre' => 'Revisión',
 			'CatN5_id' => $catID,
-		]);
+		])->catTicket()->create();
 
 		$catID = CatN5::
 			join('CatN4', 'CatN4.id', '=', 'CatN5.CatN4_id')
@@ -752,7 +752,7 @@ class Centinela_Seeder extends Seeder
 		Centinela::create([
 			'nombre' => 'Revisión',
 			'CatN5_id' => $catID,
-		]);
+		])->catTicket()->create();
 
 		$catID = CatN5::
 			join('CatN4', 'CatN4.id', '=', 'CatN5.CatN4_id')
@@ -770,7 +770,7 @@ class Centinela_Seeder extends Seeder
 		Centinela::create([
 			'nombre' => 'Mantenimiento',
 			'CatN5_id' => $catID,
-		]);
+		])->catTicket()->create();
 
 		$catID = CatN5::
 			join('CatN4', 'CatN4.id', '=', 'CatN5.CatN4_id')
@@ -788,11 +788,11 @@ class Centinela_Seeder extends Seeder
 		Centinela::create([
 			'nombre' => 'Mantenimiento',
 			'CatN5_id' => $catID,
-		]);
+		])->catTicket()->create();
 		Centinela::create([
 			'nombre' => 'Reparación',
 			'CatN5_id' => $catID,
-		]);
+		])->catTicket()->create();
 
 		$catID = CatN5::
 			join('CatN4', 'CatN4.id', '=', 'CatN5.CatN4_id')
@@ -810,7 +810,7 @@ class Centinela_Seeder extends Seeder
 		Centinela::create([
 			'nombre' => 'Mantenimiento',
 			'CatN5_id' => $catID,
-		]);
+		])->catTicket()->create();
 
 		$catID = CatN5::
 			join('CatN4', 'CatN4.id', '=', 'CatN5.CatN4_id')
@@ -828,11 +828,11 @@ class Centinela_Seeder extends Seeder
 		Centinela::create([
 			'nombre' => 'Mantenimiento',
 			'CatN5_id' => $catID,
-		]);
+		])->catTicket()->create();
 		Centinela::create([
 			'nombre' => 'Reparación',
 			'CatN5_id' => $catID,
-		]);
+		])->catTicket()->create();
 
 		$catID = CatN5::
 			join('CatN4', 'CatN4.id', '=', 'CatN5.CatN4_id')
@@ -850,7 +850,7 @@ class Centinela_Seeder extends Seeder
 		Centinela::create([
 			'nombre' => 'Mantenimiento',
 			'CatN5_id' => $catID,
-		]);
+		])->catTicket()->create();
 
 		$catID = CatN5::
 			join('CatN4', 'CatN4.id', '=', 'CatN5.CatN4_id')
@@ -868,11 +868,11 @@ class Centinela_Seeder extends Seeder
 		Centinela::create([
 			'nombre' => 'Mantenimiento',
 			'CatN5_id' => $catID,
-		]);
+		])->catTicket()->create();
 		Centinela::create([
 			'nombre' => 'Reparación',
 			'CatN5_id' => $catID,
-		]);
+		])->catTicket()->create();
 
 		$catID = CatN5::
 			join('CatN4', 'CatN4.id', '=', 'CatN5.CatN4_id')
@@ -890,7 +890,7 @@ class Centinela_Seeder extends Seeder
 		Centinela::create([
 			'nombre' => 'Mantenimiento',
 			'CatN5_id' => $catID,
-		]);
+		])->catTicket()->create();
 
 		$catID = CatN5::
 			join('CatN4', 'CatN4.id', '=', 'CatN5.CatN4_id')
@@ -908,11 +908,11 @@ class Centinela_Seeder extends Seeder
 		Centinela::create([
 			'nombre' => 'Mantenimiento',
 			'CatN5_id' => $catID,
-		]);
+		])->catTicket()->create();
 		Centinela::create([
 			'nombre' => 'Reparación',
 			'CatN5_id' => $catID,
-		]);
+		])->catTicket()->create();
 
 		$catID = CatN5::
 			join('CatN4', 'CatN4.id', '=', 'CatN5.CatN4_id')
@@ -930,7 +930,7 @@ class Centinela_Seeder extends Seeder
 		Centinela::create([
 			'nombre' => 'Mantenimiento',
 			'CatN5_id' => $catID,
-		]);
+		])->catTicket()->create();
 
 		$catID = CatN5::
 			join('CatN4', 'CatN4.id', '=', 'CatN5.CatN4_id')
@@ -948,11 +948,11 @@ class Centinela_Seeder extends Seeder
 		Centinela::create([
 			'nombre' => 'Mantenimiento',
 			'CatN5_id' => $catID,
-		]);
+		])->catTicket()->create();
 		Centinela::create([
 			'nombre' => 'Reparación',
 			'CatN5_id' => $catID,
-		]);
+		])->catTicket()->create();
 
 		$catID = CatN5::
 			join('CatN4', 'CatN4.id', '=', 'CatN5.CatN4_id')
@@ -970,7 +970,7 @@ class Centinela_Seeder extends Seeder
 		Centinela::create([
 			'nombre' => 'Mantenimiento',
 			'CatN5_id' => $catID,
-		]);
+		])->catTicket()->create();
 
 		$catID = CatN5::
 			join('CatN4', 'CatN4.id', '=', 'CatN5.CatN4_id')
@@ -988,11 +988,11 @@ class Centinela_Seeder extends Seeder
 		Centinela::create([
 			'nombre' => 'Mantenimiento',
 			'CatN5_id' => $catID,
-		]);
+		])->catTicket()->create();
 		Centinela::create([
 			'nombre' => 'Reparación',
 			'CatN5_id' => $catID,
-		]);
+		])->catTicket()->create();
 
 		$catID = CatN5::
 			join('CatN4', 'CatN4.id', '=', 'CatN5.CatN4_id')
@@ -1010,7 +1010,7 @@ class Centinela_Seeder extends Seeder
 		Centinela::create([
 			'nombre' => 'Mantenimiento',
 			'CatN5_id' => $catID,
-		]);
+		])->catTicket()->create();
 
 		$catID = CatN5::
 			join('CatN4', 'CatN4.id', '=', 'CatN5.CatN4_id')
@@ -1028,11 +1028,11 @@ class Centinela_Seeder extends Seeder
 		Centinela::create([
 			'nombre' => 'Mantenimiento',
 			'CatN5_id' => $catID,
-		]);
+		])->catTicket()->create();
 		Centinela::create([
 			'nombre' => 'Reparación',
 			'CatN5_id' => $catID,
-		]);
+		])->catTicket()->create();
 
 		$catID = CatN5::
 			join('CatN4', 'CatN4.id', '=', 'CatN5.CatN4_id')
@@ -1050,7 +1050,7 @@ class Centinela_Seeder extends Seeder
 		Centinela::create([
 			'nombre' => 'Mantenimiento',
 			'CatN5_id' => $catID,
-		]);
+		])->catTicket()->create();
 
 		$catID = CatN5::
 			join('CatN4', 'CatN4.id', '=', 'CatN5.CatN4_id')
@@ -1068,11 +1068,11 @@ class Centinela_Seeder extends Seeder
 		Centinela::create([
 			'nombre' => 'Mantenimiento',
 			'CatN5_id' => $catID,
-		]);
+		])->catTicket()->create();
 		Centinela::create([
 			'nombre' => 'Reparación',
 			'CatN5_id' => $catID,
-		]);
+		])->catTicket()->create();
 
 		$catID = CatN5::
 			join('CatN4', 'CatN4.id', '=', 'CatN5.CatN4_id')
@@ -1090,11 +1090,11 @@ class Centinela_Seeder extends Seeder
 		Centinela::create([
 			'nombre' => 'Cobertura',
 			'CatN5_id' => $catID,
-		]);
+		])->catTicket()->create();
 		Centinela::create([
 			'nombre' => 'Tronadura',
 			'CatN5_id' => $catID,
-		]);
+		])->catTicket()->create();
 
 		$catID = CatN5::
 			join('CatN4', 'CatN4.id', '=', 'CatN5.CatN4_id')
@@ -1112,7 +1112,7 @@ class Centinela_Seeder extends Seeder
 		Centinela::create([
 			'nombre' => 'Mantenimiento',
 			'CatN5_id' => $catID,
-		]);
+		])->catTicket()->create();
 
 		$catID = CatN5::
 			join('CatN4', 'CatN4.id', '=', 'CatN5.CatN4_id')
@@ -1130,11 +1130,11 @@ class Centinela_Seeder extends Seeder
 		Centinela::create([
 			'nombre' => 'Mantenimiento',
 			'CatN5_id' => $catID,
-		]);
+		])->catTicket()->create();
 		Centinela::create([
 			'nombre' => 'Reparación',
 			'CatN5_id' => $catID,
-		]);
+		])->catTicket()->create();
 
 		$catID = CatN5::
 			join('CatN4', 'CatN4.id', '=', 'CatN5.CatN4_id')
@@ -1152,7 +1152,7 @@ class Centinela_Seeder extends Seeder
 		Centinela::create([
 			'nombre' => 'Mantenimiento',
 			'CatN5_id' => $catID,
-		]);
+		])->catTicket()->create();
 
 		$catID = CatN5::
 			join('CatN4', 'CatN4.id', '=', 'CatN5.CatN4_id')
@@ -1170,11 +1170,11 @@ class Centinela_Seeder extends Seeder
 		Centinela::create([
 			'nombre' => 'Mantenimiento',
 			'CatN5_id' => $catID,
-		]);
+		])->catTicket()->create();
 		Centinela::create([
 			'nombre' => 'Reparación',
 			'CatN5_id' => $catID,
-		]);
+		])->catTicket()->create();
 
 		$catID = CatN5::
 			join('CatN4', 'CatN4.id', '=', 'CatN5.CatN4_id')
@@ -1192,7 +1192,7 @@ class Centinela_Seeder extends Seeder
 		Centinela::create([
 			'nombre' => 'Mantenimiento',
 			'CatN5_id' => $catID,
-		]);
+		])->catTicket()->create();
 
 		$catID = CatN5::
 			join('CatN4', 'CatN4.id', '=', 'CatN5.CatN4_id')
@@ -1210,11 +1210,11 @@ class Centinela_Seeder extends Seeder
 		Centinela::create([
 			'nombre' => 'Mantenimiento',
 			'CatN5_id' => $catID,
-		]);
+		])->catTicket()->create();
 		Centinela::create([
 			'nombre' => 'Reparación',
 			'CatN5_id' => $catID,
-		]);
+		])->catTicket()->create();
 
 		$catID = CatN5::
 			join('CatN4', 'CatN4.id', '=', 'CatN5.CatN4_id')
@@ -1232,7 +1232,7 @@ class Centinela_Seeder extends Seeder
 		Centinela::create([
 			'nombre' => 'Mantenimiento',
 			'CatN5_id' => $catID,
-		]);
+		])->catTicket()->create();
 
 		$catID = CatN5::
 			join('CatN4', 'CatN4.id', '=', 'CatN5.CatN4_id')
@@ -1250,11 +1250,11 @@ class Centinela_Seeder extends Seeder
 		Centinela::create([
 			'nombre' => 'Mantenimiento',
 			'CatN5_id' => $catID,
-		]);
+		])->catTicket()->create();
 		Centinela::create([
 			'nombre' => 'Reparación',
 			'CatN5_id' => $catID,
-		]);
+		])->catTicket()->create();
 
 		$catID = CatN5::
 			join('CatN4', 'CatN4.id', '=', 'CatN5.CatN4_id')
@@ -1272,7 +1272,7 @@ class Centinela_Seeder extends Seeder
 		Centinela::create([
 			'nombre' => 'Revisión',
 			'CatN5_id' => $catID,
-		]);
+		])->catTicket()->create();
 
 		$catID = CatN5::
 			join('CatN4', 'CatN4.id', '=', 'CatN5.CatN4_id')
@@ -1290,7 +1290,7 @@ class Centinela_Seeder extends Seeder
 		Centinela::create([
 			'nombre' => 'Revisión',
 			'CatN5_id' => $catID,
-		]);
+		])->catTicket()->create();
 
 		$catID = CatN5::
 			join('CatN4', 'CatN4.id', '=', 'CatN5.CatN4_id')
@@ -1308,7 +1308,7 @@ class Centinela_Seeder extends Seeder
 		Centinela::create([
 			'nombre' => 'Mantenimiento',
 			'CatN5_id' => $catID,
-		]);
+		])->catTicket()->create();
 
 		$catID = CatN5::
 			join('CatN4', 'CatN4.id', '=', 'CatN5.CatN4_id')
@@ -1326,11 +1326,11 @@ class Centinela_Seeder extends Seeder
 		Centinela::create([
 			'nombre' => 'Mantenimiento',
 			'CatN5_id' => $catID,
-		]);
+		])->catTicket()->create();
 		Centinela::create([
 			'nombre' => 'Reparación',
 			'CatN5_id' => $catID,
-		]);
+		])->catTicket()->create();
 
 		$catID = CatN5::
 			join('CatN4', 'CatN4.id', '=', 'CatN5.CatN4_id')
@@ -1348,7 +1348,7 @@ class Centinela_Seeder extends Seeder
 		Centinela::create([
 			'nombre' => 'Mantenimiento',
 			'CatN5_id' => $catID,
-		]);
+		])->catTicket()->create();
 
 		$catID = CatN5::
 			join('CatN4', 'CatN4.id', '=', 'CatN5.CatN4_id')
@@ -1366,11 +1366,11 @@ class Centinela_Seeder extends Seeder
 		Centinela::create([
 			'nombre' => 'Mantenimiento',
 			'CatN5_id' => $catID,
-		]);
+		])->catTicket()->create();
 		Centinela::create([
 			'nombre' => 'Reparación',
 			'CatN5_id' => $catID,
-		]);
+		])->catTicket()->create();
 
 		$catID = CatN5::
 			join('CatN4', 'CatN4.id', '=', 'CatN5.CatN4_id')
@@ -1388,7 +1388,7 @@ class Centinela_Seeder extends Seeder
 		Centinela::create([
 			'nombre' => 'Mantenimiento',
 			'CatN5_id' => $catID,
-		]);
+		])->catTicket()->create();
 
 		$catID = CatN5::
 			join('CatN4', 'CatN4.id', '=', 'CatN5.CatN4_id')
@@ -1406,11 +1406,11 @@ class Centinela_Seeder extends Seeder
 		Centinela::create([
 			'nombre' => 'Mantenimiento',
 			'CatN5_id' => $catID,
-		]);
+		])->catTicket()->create();
 		Centinela::create([
 			'nombre' => 'Reparación',
 			'CatN5_id' => $catID,
-		]);
+		])->catTicket()->create();
 
 		$catID = CatN5::
 			join('CatN4', 'CatN4.id', '=', 'CatN5.CatN4_id')
@@ -1428,7 +1428,7 @@ class Centinela_Seeder extends Seeder
 		Centinela::create([
 			'nombre' => 'Mantenimiento',
 			'CatN5_id' => $catID,
-		]);
+		])->catTicket()->create();
 
 		$catID = CatN5::
 			join('CatN4', 'CatN4.id', '=', 'CatN5.CatN4_id')
@@ -1446,11 +1446,11 @@ class Centinela_Seeder extends Seeder
 		Centinela::create([
 			'nombre' => 'Mantenimiento',
 			'CatN5_id' => $catID,
-		]);
+		])->catTicket()->create();
 		Centinela::create([
 			'nombre' => 'Reparación',
 			'CatN5_id' => $catID,
-		]);
+		])->catTicket()->create();
 
 		$catID = CatN5::
 			join('CatN4', 'CatN4.id', '=', 'CatN5.CatN4_id')
@@ -1468,11 +1468,11 @@ class Centinela_Seeder extends Seeder
 		Centinela::create([
 			'nombre' => 'Cobertura',
 			'CatN5_id' => $catID,
-		]);
+		])->catTicket()->create();
 		Centinela::create([
 			'nombre' => 'Tronadura',
 			'CatN5_id' => $catID,
-		]);
+		])->catTicket()->create();
 
 		$catID = CatN5::
 			join('CatN4', 'CatN4.id', '=', 'CatN5.CatN4_id')
@@ -1490,7 +1490,7 @@ class Centinela_Seeder extends Seeder
 		Centinela::create([
 			'nombre' => 'Mantenimiento',
 			'CatN5_id' => $catID,
-		]);
+		])->catTicket()->create();
 
 		$catID = CatN5::
 			join('CatN4', 'CatN4.id', '=', 'CatN5.CatN4_id')
@@ -1508,11 +1508,11 @@ class Centinela_Seeder extends Seeder
 		Centinela::create([
 			'nombre' => 'Mantenimiento',
 			'CatN5_id' => $catID,
-		]);
+		])->catTicket()->create();
 		Centinela::create([
 			'nombre' => 'Reparación',
 			'CatN5_id' => $catID,
-		]);
+		])->catTicket()->create();
 
 		$catID = CatN5::
 			join('CatN4', 'CatN4.id', '=', 'CatN5.CatN4_id')
@@ -1530,7 +1530,7 @@ class Centinela_Seeder extends Seeder
 		Centinela::create([
 			'nombre' => 'Mantenimiento',
 			'CatN5_id' => $catID,
-		]);
+		])->catTicket()->create();
 
 		$catID = CatN5::
 			join('CatN4', 'CatN4.id', '=', 'CatN5.CatN4_id')
@@ -1548,11 +1548,11 @@ class Centinela_Seeder extends Seeder
 		Centinela::create([
 			'nombre' => 'Mantenimiento',
 			'CatN5_id' => $catID,
-		]);
+		])->catTicket()->create();
 		Centinela::create([
 			'nombre' => 'Reparación',
 			'CatN5_id' => $catID,
-		]);
+		])->catTicket()->create();
 
 		$catID = CatN5::
 			join('CatN4', 'CatN4.id', '=', 'CatN5.CatN4_id')
@@ -1570,7 +1570,7 @@ class Centinela_Seeder extends Seeder
 		Centinela::create([
 			'nombre' => 'Mantenimiento',
 			'CatN5_id' => $catID,
-		]);
+		])->catTicket()->create();
 
 		$catID = CatN5::
 			join('CatN4', 'CatN4.id', '=', 'CatN5.CatN4_id')
@@ -1588,11 +1588,11 @@ class Centinela_Seeder extends Seeder
 		Centinela::create([
 			'nombre' => 'Mantenimiento',
 			'CatN5_id' => $catID,
-		]);
+		])->catTicket()->create();
 		Centinela::create([
 			'nombre' => 'Reparación',
 			'CatN5_id' => $catID,
-		]);
+		])->catTicket()->create();
 
 		$catID = CatN5::
 			join('CatN4', 'CatN4.id', '=', 'CatN5.CatN4_id')
@@ -1610,7 +1610,7 @@ class Centinela_Seeder extends Seeder
 		Centinela::create([
 			'nombre' => 'Mantenimiento',
 			'CatN5_id' => $catID,
-		]);
+		])->catTicket()->create();
 
 		$catID = CatN5::
 			join('CatN4', 'CatN4.id', '=', 'CatN5.CatN4_id')
@@ -1628,11 +1628,11 @@ class Centinela_Seeder extends Seeder
 		Centinela::create([
 			'nombre' => 'Mantenimiento',
 			'CatN5_id' => $catID,
-		]);
+		])->catTicket()->create();
 		Centinela::create([
 			'nombre' => 'Reparación',
 			'CatN5_id' => $catID,
-		]);
+		])->catTicket()->create();
 
 		$catID = CatN5::
 			join('CatN4', 'CatN4.id', '=', 'CatN5.CatN4_id')
@@ -1650,7 +1650,7 @@ class Centinela_Seeder extends Seeder
 		Centinela::create([
 			'nombre' => 'Mantenimiento',
 			'CatN5_id' => $catID,
-		]);
+		])->catTicket()->create();
 
 		$catID = CatN5::
 			join('CatN4', 'CatN4.id', '=', 'CatN5.CatN4_id')
@@ -1668,11 +1668,11 @@ class Centinela_Seeder extends Seeder
 		Centinela::create([
 			'nombre' => 'Mantenimiento',
 			'CatN5_id' => $catID,
-		]);
+		])->catTicket()->create();
 		Centinela::create([
 			'nombre' => 'Reparación',
 			'CatN5_id' => $catID,
-		]);
+		])->catTicket()->create();
 
 		$catID = CatN5::
 			join('CatN4', 'CatN4.id', '=', 'CatN5.CatN4_id')
@@ -1690,7 +1690,7 @@ class Centinela_Seeder extends Seeder
 		Centinela::create([
 			'nombre' => 'Mantenimiento',
 			'CatN5_id' => $catID,
-		]);
+		])->catTicket()->create();
 
 		$catID = CatN5::
 			join('CatN4', 'CatN4.id', '=', 'CatN5.CatN4_id')
@@ -1708,11 +1708,11 @@ class Centinela_Seeder extends Seeder
 		Centinela::create([
 			'nombre' => 'Mantenimiento',
 			'CatN5_id' => $catID,
-		]);
+		])->catTicket()->create();
 		Centinela::create([
 			'nombre' => 'Reparación',
 			'CatN5_id' => $catID,
-		]);
+		])->catTicket()->create();
 
 		$catID = CatN5::
 			join('CatN4', 'CatN4.id', '=', 'CatN5.CatN4_id')
@@ -1730,7 +1730,7 @@ class Centinela_Seeder extends Seeder
 		Centinela::create([
 			'nombre' => 'Mantenimiento',
 			'CatN5_id' => $catID,
-		]);
+		])->catTicket()->create();
 
 		$catID = CatN5::
 			join('CatN4', 'CatN4.id', '=', 'CatN5.CatN4_id')
@@ -1748,11 +1748,11 @@ class Centinela_Seeder extends Seeder
 		Centinela::create([
 			'nombre' => 'Mantenimiento',
 			'CatN5_id' => $catID,
-		]);
+		])->catTicket()->create();
 		Centinela::create([
 			'nombre' => 'Reparación',
 			'CatN5_id' => $catID,
-		]);
+		])->catTicket()->create();
 
 		$catID = CatN5::
 			join('CatN4', 'CatN4.id', '=', 'CatN5.CatN4_id')
@@ -1770,7 +1770,7 @@ class Centinela_Seeder extends Seeder
 		Centinela::create([
 			'nombre' => 'Mantenimiento',
 			'CatN5_id' => $catID,
-		]);
+		])->catTicket()->create();
 
 		$catID = CatN5::
 			join('CatN4', 'CatN4.id', '=', 'CatN5.CatN4_id')
@@ -1788,11 +1788,11 @@ class Centinela_Seeder extends Seeder
 		Centinela::create([
 			'nombre' => 'Mantenimiento',
 			'CatN5_id' => $catID,
-		]);
+		])->catTicket()->create();
 		Centinela::create([
 			'nombre' => 'Reparación',
 			'CatN5_id' => $catID,
-		]);
+		])->catTicket()->create();
 
 		$catID = CatN5::
 			join('CatN4', 'CatN4.id', '=', 'CatN5.CatN4_id')
@@ -1810,7 +1810,7 @@ class Centinela_Seeder extends Seeder
 		Centinela::create([
 			'nombre' => 'Instalación',
 			'CatN5_id' => $catID,
-		]);
+		])->catTicket()->create();
 
 		$catID = CatN5::
 			join('CatN4', 'CatN4.id', '=', 'CatN5.CatN4_id')
@@ -1828,7 +1828,7 @@ class Centinela_Seeder extends Seeder
 		Centinela::create([
 			'nombre' => 'Retiro',
 			'CatN5_id' => $catID,
-		]);
+		])->catTicket()->create();
 
 		$catID = CatN5::
 			join('CatN4', 'CatN4.id', '=', 'CatN5.CatN4_id')
@@ -1846,7 +1846,7 @@ class Centinela_Seeder extends Seeder
 		Centinela::create([
 			'nombre' => 'Instalación',
 			'CatN5_id' => $catID,
-		]);
+		])->catTicket()->create();
 
 		$catID = CatN5::
 			join('CatN4', 'CatN4.id', '=', 'CatN5.CatN4_id')
@@ -1864,7 +1864,7 @@ class Centinela_Seeder extends Seeder
 		Centinela::create([
 			'nombre' => 'Retiro',
 			'CatN5_id' => $catID,
-		]);
+		])->catTicket()->create();
 
 		$catID = CatN5::
 			join('CatN4', 'CatN4.id', '=', 'CatN5.CatN4_id')
@@ -1882,7 +1882,7 @@ class Centinela_Seeder extends Seeder
 		Centinela::create([
 			'nombre' => 'Programación',
 			'CatN5_id' => $catID,
-		]);
+		])->catTicket()->create();
 
 		$catID = CatN5::
 			join('CatN4', 'CatN4.id', '=', 'CatN5.CatN4_id')
@@ -1900,7 +1900,7 @@ class Centinela_Seeder extends Seeder
 		Centinela::create([
 			'nombre' => 'Instalación',
 			'CatN5_id' => $catID,
-		]);
+		])->catTicket()->create();
 
 		$catID = CatN5::
 			join('CatN4', 'CatN4.id', '=', 'CatN5.CatN4_id')
@@ -1918,7 +1918,7 @@ class Centinela_Seeder extends Seeder
 		Centinela::create([
 			'nombre' => 'Retiro',
 			'CatN5_id' => $catID,
-		]);
+		])->catTicket()->create();
 
 		$catID = CatN5::
 			join('CatN4', 'CatN4.id', '=', 'CatN5.CatN4_id')
@@ -1936,7 +1936,7 @@ class Centinela_Seeder extends Seeder
 		Centinela::create([
 			'nombre' => 'Programación',
 			'CatN5_id' => $catID,
-		]);
+		])->catTicket()->create();
 
 		$catID = CatN5::
 			join('CatN4', 'CatN4.id', '=', 'CatN5.CatN4_id')
@@ -1954,7 +1954,7 @@ class Centinela_Seeder extends Seeder
 		Centinela::create([
 			'nombre' => 'Entrega',
 			'CatN5_id' => $catID,
-		]);
+		])->catTicket()->create();
 
 		$catID = CatN5::
 			join('CatN4', 'CatN4.id', '=', 'CatN5.CatN4_id')
@@ -1972,7 +1972,7 @@ class Centinela_Seeder extends Seeder
 		Centinela::create([
 			'nombre' => 'Retiro',
 			'CatN5_id' => $catID,
-		]);
+		])->catTicket()->create();
 
 		$catID = CatN5::
 			join('CatN4', 'CatN4.id', '=', 'CatN5.CatN4_id')
@@ -1990,7 +1990,7 @@ class Centinela_Seeder extends Seeder
 		Centinela::create([
 			'nombre' => 'Programación',
 			'CatN5_id' => $catID,
-		]);
+		])->catTicket()->create();
 
 		$catID = CatN5::
 			join('CatN4', 'CatN4.id', '=', 'CatN5.CatN4_id')
@@ -2008,7 +2008,7 @@ class Centinela_Seeder extends Seeder
 		Centinela::create([
 			'nombre' => 'Instalación',
 			'CatN5_id' => $catID,
-		]);
+		])->catTicket()->create();
 
 		$catID = CatN5::
 			join('CatN4', 'CatN4.id', '=', 'CatN5.CatN4_id')
@@ -2026,7 +2026,7 @@ class Centinela_Seeder extends Seeder
 		Centinela::create([
 			'nombre' => 'Retiro',
 			'CatN5_id' => $catID,
-		]);
+		])->catTicket()->create();
 
 		$catID = CatN5::
 			join('CatN4', 'CatN4.id', '=', 'CatN5.CatN4_id')
@@ -2044,7 +2044,7 @@ class Centinela_Seeder extends Seeder
 		Centinela::create([
 			'nombre' => 'Instalación',
 			'CatN5_id' => $catID,
-		]);
+		])->catTicket()->create();
 
 		$catID = CatN5::
 			join('CatN4', 'CatN4.id', '=', 'CatN5.CatN4_id')
@@ -2062,7 +2062,7 @@ class Centinela_Seeder extends Seeder
 		Centinela::create([
 			'nombre' => 'Retiro',
 			'CatN5_id' => $catID,
-		]);
+		])->catTicket()->create();
 
 		$catID = CatN5::
 			join('CatN4', 'CatN4.id', '=', 'CatN5.CatN4_id')
@@ -2080,7 +2080,7 @@ class Centinela_Seeder extends Seeder
 		Centinela::create([
 			'nombre' => 'Instalación',
 			'CatN5_id' => $catID,
-		]);
+		])->catTicket()->create();
 
 		$catID = CatN5::
 			join('CatN4', 'CatN4.id', '=', 'CatN5.CatN4_id')
@@ -2098,7 +2098,7 @@ class Centinela_Seeder extends Seeder
 		Centinela::create([
 			'nombre' => 'Retiro',
 			'CatN5_id' => $catID,
-		]);
+		])->catTicket()->create();
 
 		$catID = CatN5::
 			join('CatN4', 'CatN4.id', '=', 'CatN5.CatN4_id')
@@ -2116,7 +2116,7 @@ class Centinela_Seeder extends Seeder
 		Centinela::create([
 			'nombre' => 'Instalación',
 			'CatN5_id' => $catID,
-		]);
+		])->catTicket()->create();
 
 		$catID = CatN5::
 			join('CatN4', 'CatN4.id', '=', 'CatN5.CatN4_id')
@@ -2134,7 +2134,7 @@ class Centinela_Seeder extends Seeder
 		Centinela::create([
 			'nombre' => 'Retiro',
 			'CatN5_id' => $catID,
-		]);
+		])->catTicket()->create();
 
 		$catID = CatN5::
 			join('CatN4', 'CatN4.id', '=', 'CatN5.CatN4_id')
@@ -2152,7 +2152,7 @@ class Centinela_Seeder extends Seeder
 		Centinela::create([
 			'nombre' => 'Instalación',
 			'CatN5_id' => $catID,
-		]);
+		])->catTicket()->create();
 
 		$catID = CatN5::
 			join('CatN4', 'CatN4.id', '=', 'CatN5.CatN4_id')
@@ -2170,7 +2170,7 @@ class Centinela_Seeder extends Seeder
 		Centinela::create([
 			'nombre' => 'Retiro',
 			'CatN5_id' => $catID,
-		]);
+		])->catTicket()->create();
 
 		$catID = CatN5::
 			join('CatN4', 'CatN4.id', '=', 'CatN5.CatN4_id')
@@ -2188,11 +2188,11 @@ class Centinela_Seeder extends Seeder
 		Centinela::create([
 			'nombre' => 'Cobertura',
 			'CatN5_id' => $catID,
-		]);
+		])->catTicket()->create();
 		Centinela::create([
 			'nombre' => 'Tronadura',
 			'CatN5_id' => $catID,
-		]);
+		])->catTicket()->create();
 
 		$catID = CatN5::
 			join('CatN4', 'CatN4.id', '=', 'CatN5.CatN4_id')
@@ -2210,7 +2210,7 @@ class Centinela_Seeder extends Seeder
 		Centinela::create([
 			'nombre' => 'Mantenimiento',
 			'CatN5_id' => $catID,
-		]);
+		])->catTicket()->create();
 
 		$catID = CatN5::
 			join('CatN4', 'CatN4.id', '=', 'CatN5.CatN4_id')
@@ -2228,11 +2228,11 @@ class Centinela_Seeder extends Seeder
 		Centinela::create([
 			'nombre' => 'Mantenimiento',
 			'CatN5_id' => $catID,
-		]);
+		])->catTicket()->create();
 		Centinela::create([
 			'nombre' => 'Reparación',
 			'CatN5_id' => $catID,
-		]);
+		])->catTicket()->create();
 
 		$catID = CatN5::
 			join('CatN4', 'CatN4.id', '=', 'CatN5.CatN4_id')
@@ -2250,7 +2250,7 @@ class Centinela_Seeder extends Seeder
 		Centinela::create([
 			'nombre' => 'Instalación',
 			'CatN5_id' => $catID,
-		]);
+		])->catTicket()->create();
 
 		$catID = CatN5::
 			join('CatN4', 'CatN4.id', '=', 'CatN5.CatN4_id')
@@ -2268,7 +2268,7 @@ class Centinela_Seeder extends Seeder
 		Centinela::create([
 			'nombre' => 'Instalación',
 			'CatN5_id' => $catID,
-		]);
+		])->catTicket()->create();
 
 		$catID = CatN5::
 			join('CatN4', 'CatN4.id', '=', 'CatN5.CatN4_id')
@@ -2286,7 +2286,7 @@ class Centinela_Seeder extends Seeder
 		Centinela::create([
 			'nombre' => 'Retiro',
 			'CatN5_id' => $catID,
-		]);
+		])->catTicket()->create();
 
 		$catID = CatN5::
 			join('CatN4', 'CatN4.id', '=', 'CatN5.CatN4_id')
@@ -2304,7 +2304,7 @@ class Centinela_Seeder extends Seeder
 		Centinela::create([
 			'nombre' => 'Programación',
 			'CatN5_id' => $catID,
-		]);
+		])->catTicket()->create();
 
 		$catID = CatN5::
 			join('CatN4', 'CatN4.id', '=', 'CatN5.CatN4_id')
@@ -2322,7 +2322,7 @@ class Centinela_Seeder extends Seeder
 		Centinela::create([
 			'nombre' => 'Instalación',
 			'CatN5_id' => $catID,
-		]);
+		])->catTicket()->create();
 
 		$catID = CatN5::
 			join('CatN4', 'CatN4.id', '=', 'CatN5.CatN4_id')
@@ -2340,7 +2340,7 @@ class Centinela_Seeder extends Seeder
 		Centinela::create([
 			'nombre' => 'Retiro',
 			'CatN5_id' => $catID,
-		]);
+		])->catTicket()->create();
 
 		$catID = CatN5::
 			join('CatN4', 'CatN4.id', '=', 'CatN5.CatN4_id')
@@ -2358,7 +2358,7 @@ class Centinela_Seeder extends Seeder
 		Centinela::create([
 			'nombre' => 'Programación',
 			'CatN5_id' => $catID,
-		]);
+		])->catTicket()->create();
 
 		$catID = CatN5::
 			join('CatN4', 'CatN4.id', '=', 'CatN5.CatN4_id')
@@ -2376,7 +2376,7 @@ class Centinela_Seeder extends Seeder
 		Centinela::create([
 			'nombre' => 'Entrega',
 			'CatN5_id' => $catID,
-		]);
+		])->catTicket()->create();
 
 		$catID = CatN5::
 			join('CatN4', 'CatN4.id', '=', 'CatN5.CatN4_id')
@@ -2394,7 +2394,7 @@ class Centinela_Seeder extends Seeder
 		Centinela::create([
 			'nombre' => 'Retiro',
 			'CatN5_id' => $catID,
-		]);
+		])->catTicket()->create();
 
 		$catID = CatN5::
 			join('CatN4', 'CatN4.id', '=', 'CatN5.CatN4_id')
@@ -2412,7 +2412,7 @@ class Centinela_Seeder extends Seeder
 		Centinela::create([
 			'nombre' => 'Programación',
 			'CatN5_id' => $catID,
-		]);
+		])->catTicket()->create();
 
 		$catID = CatN5::
 			join('CatN4', 'CatN4.id', '=', 'CatN5.CatN4_id')
@@ -2430,7 +2430,7 @@ class Centinela_Seeder extends Seeder
 		Centinela::create([
 			'nombre' => 'Instalación',
 			'CatN5_id' => $catID,
-		]);
+		])->catTicket()->create();
 
 		$catID = CatN5::
 			join('CatN4', 'CatN4.id', '=', 'CatN5.CatN4_id')
@@ -2448,7 +2448,7 @@ class Centinela_Seeder extends Seeder
 		Centinela::create([
 			'nombre' => 'Retiro',
 			'CatN5_id' => $catID,
-		]);
+		])->catTicket()->create();
 
 		$catID = CatN5::
 			join('CatN4', 'CatN4.id', '=', 'CatN5.CatN4_id')
@@ -2466,7 +2466,7 @@ class Centinela_Seeder extends Seeder
 		Centinela::create([
 			'nombre' => 'Instalación',
 			'CatN5_id' => $catID,
-		]);
+		])->catTicket()->create();
 
 		$catID = CatN5::
 			join('CatN4', 'CatN4.id', '=', 'CatN5.CatN4_id')
@@ -2484,7 +2484,7 @@ class Centinela_Seeder extends Seeder
 		Centinela::create([
 			'nombre' => 'Retiro',
 			'CatN5_id' => $catID,
-		]);
+		])->catTicket()->create();
 
 		$catID = CatN5::
 			join('CatN4', 'CatN4.id', '=', 'CatN5.CatN4_id')
@@ -2502,7 +2502,7 @@ class Centinela_Seeder extends Seeder
 		Centinela::create([
 			'nombre' => 'Instalación',
 			'CatN5_id' => $catID,
-		]);
+		])->catTicket()->create();
 
 		$catID = CatN5::
 			join('CatN4', 'CatN4.id', '=', 'CatN5.CatN4_id')
@@ -2520,7 +2520,7 @@ class Centinela_Seeder extends Seeder
 		Centinela::create([
 			'nombre' => 'Retiro',
 			'CatN5_id' => $catID,
-		]);
+		])->catTicket()->create();
 
 		$catID = CatN5::
 			join('CatN4', 'CatN4.id', '=', 'CatN5.CatN4_id')
@@ -2538,7 +2538,7 @@ class Centinela_Seeder extends Seeder
 		Centinela::create([
 			'nombre' => 'Instalación',
 			'CatN5_id' => $catID,
-		]);
+		])->catTicket()->create();
 
 		$catID = CatN5::
 			join('CatN4', 'CatN4.id', '=', 'CatN5.CatN4_id')
@@ -2556,7 +2556,7 @@ class Centinela_Seeder extends Seeder
 		Centinela::create([
 			'nombre' => 'Retiro',
 			'CatN5_id' => $catID,
-		]);
+		])->catTicket()->create();
 
 		$catID = CatN5::
 			join('CatN4', 'CatN4.id', '=', 'CatN5.CatN4_id')
@@ -2574,11 +2574,11 @@ class Centinela_Seeder extends Seeder
 		Centinela::create([
 			'nombre' => 'Cobertura',
 			'CatN5_id' => $catID,
-		]);
+		])->catTicket()->create();
 		Centinela::create([
 			'nombre' => 'Tronadura',
 			'CatN5_id' => $catID,
-		]);
+		])->catTicket()->create();
 
 		$catID = CatN5::
 			join('CatN4', 'CatN4.id', '=', 'CatN5.CatN4_id')
@@ -2596,7 +2596,7 @@ class Centinela_Seeder extends Seeder
 		Centinela::create([
 			'nombre' => 'Instalación',
 			'CatN5_id' => $catID,
-		]);
+		])->catTicket()->create();
 
 		$catID = CatN5::
 			join('CatN4', 'CatN4.id', '=', 'CatN5.CatN4_id')
@@ -2614,7 +2614,7 @@ class Centinela_Seeder extends Seeder
 		Centinela::create([
 			'nombre' => 'Instalación',
 			'CatN5_id' => $catID,
-		]);
+		])->catTicket()->create();
 
 		$catID = CatN5::
 			join('CatN4', 'CatN4.id', '=', 'CatN5.CatN4_id')
@@ -2632,7 +2632,7 @@ class Centinela_Seeder extends Seeder
 		Centinela::create([
 			'nombre' => 'Retiro',
 			'CatN5_id' => $catID,
-		]);
+		])->catTicket()->create();
 
 		$catID = CatN5::
 			join('CatN4', 'CatN4.id', '=', 'CatN5.CatN4_id')
@@ -2650,7 +2650,7 @@ class Centinela_Seeder extends Seeder
 		Centinela::create([
 			'nombre' => 'Programación',
 			'CatN5_id' => $catID,
-		]);
+		])->catTicket()->create();
 
 		$catID = CatN5::
 			join('CatN4', 'CatN4.id', '=', 'CatN5.CatN4_id')
@@ -2668,7 +2668,7 @@ class Centinela_Seeder extends Seeder
 		Centinela::create([
 			'nombre' => 'Instalación',
 			'CatN5_id' => $catID,
-		]);
+		])->catTicket()->create();
 
 		$catID = CatN5::
 			join('CatN4', 'CatN4.id', '=', 'CatN5.CatN4_id')
@@ -2686,7 +2686,7 @@ class Centinela_Seeder extends Seeder
 		Centinela::create([
 			'nombre' => 'Retiro',
 			'CatN5_id' => $catID,
-		]);
+		])->catTicket()->create();
 
 		$catID = CatN5::
 			join('CatN4', 'CatN4.id', '=', 'CatN5.CatN4_id')
@@ -2704,7 +2704,7 @@ class Centinela_Seeder extends Seeder
 		Centinela::create([
 			'nombre' => 'Programación',
 			'CatN5_id' => $catID,
-		]);
+		])->catTicket()->create();
 
 		$catID = CatN5::
 			join('CatN4', 'CatN4.id', '=', 'CatN5.CatN4_id')
@@ -2722,7 +2722,7 @@ class Centinela_Seeder extends Seeder
 		Centinela::create([
 			'nombre' => 'Entrega',
 			'CatN5_id' => $catID,
-		]);
+		])->catTicket()->create();
 
 		$catID = CatN5::
 			join('CatN4', 'CatN4.id', '=', 'CatN5.CatN4_id')
@@ -2740,7 +2740,7 @@ class Centinela_Seeder extends Seeder
 		Centinela::create([
 			'nombre' => 'Retiro',
 			'CatN5_id' => $catID,
-		]);
+		])->catTicket()->create();
 
 		$catID = CatN5::
 			join('CatN4', 'CatN4.id', '=', 'CatN5.CatN4_id')
@@ -2758,7 +2758,7 @@ class Centinela_Seeder extends Seeder
 		Centinela::create([
 			'nombre' => 'Programación',
 			'CatN5_id' => $catID,
-		]);
+		])->catTicket()->create();
 
 		$catID = CatN5::
 			join('CatN4', 'CatN4.id', '=', 'CatN5.CatN4_id')
@@ -2776,7 +2776,7 @@ class Centinela_Seeder extends Seeder
 		Centinela::create([
 			'nombre' => 'Instalación',
 			'CatN5_id' => $catID,
-		]);
+		])->catTicket()->create();
 
 		$catID = CatN5::
 			join('CatN4', 'CatN4.id', '=', 'CatN5.CatN4_id')
@@ -2794,7 +2794,7 @@ class Centinela_Seeder extends Seeder
 		Centinela::create([
 			'nombre' => 'Retiro',
 			'CatN5_id' => $catID,
-		]);
+		])->catTicket()->create();
 
 		$catID = CatN5::
 			join('CatN4', 'CatN4.id', '=', 'CatN5.CatN4_id')
@@ -2812,7 +2812,7 @@ class Centinela_Seeder extends Seeder
 		Centinela::create([
 			'nombre' => 'Instalación',
 			'CatN5_id' => $catID,
-		]);
+		])->catTicket()->create();
 
 		$catID = CatN5::
 			join('CatN4', 'CatN4.id', '=', 'CatN5.CatN4_id')
@@ -2830,7 +2830,7 @@ class Centinela_Seeder extends Seeder
 		Centinela::create([
 			'nombre' => 'Retiro',
 			'CatN5_id' => $catID,
-		]);
+		])->catTicket()->create();
 
 		$catID = CatN5::
 			join('CatN4', 'CatN4.id', '=', 'CatN5.CatN4_id')
@@ -2848,7 +2848,7 @@ class Centinela_Seeder extends Seeder
 		Centinela::create([
 			'nombre' => 'Instalación',
 			'CatN5_id' => $catID,
-		]);
+		])->catTicket()->create();
 
 		$catID = CatN5::
 			join('CatN4', 'CatN4.id', '=', 'CatN5.CatN4_id')
@@ -2866,7 +2866,7 @@ class Centinela_Seeder extends Seeder
 		Centinela::create([
 			'nombre' => 'Retiro',
 			'CatN5_id' => $catID,
-		]);
+		])->catTicket()->create();
 
 		$catID = CatN5::
 			join('CatN4', 'CatN4.id', '=', 'CatN5.CatN4_id')
@@ -2884,7 +2884,7 @@ class Centinela_Seeder extends Seeder
 		Centinela::create([
 			'nombre' => 'Instalación',
 			'CatN5_id' => $catID,
-		]);
+		])->catTicket()->create();
 
 		$catID = CatN5::
 			join('CatN4', 'CatN4.id', '=', 'CatN5.CatN4_id')
@@ -2902,7 +2902,7 @@ class Centinela_Seeder extends Seeder
 		Centinela::create([
 			'nombre' => 'Retiro',
 			'CatN5_id' => $catID,
-		]);
+		])->catTicket()->create();
 
 		$catID = CatN5::
 			join('CatN4', 'CatN4.id', '=', 'CatN5.CatN4_id')
@@ -2920,11 +2920,11 @@ class Centinela_Seeder extends Seeder
 		Centinela::create([
 			'nombre' => 'Cobertura',
 			'CatN5_id' => $catID,
-		]);
+		])->catTicket()->create();
 		Centinela::create([
 			'nombre' => 'Tronadura',
 			'CatN5_id' => $catID,
-		]);
+		])->catTicket()->create();
 
 		$catID = CatN5::
 			join('CatN4', 'CatN4.id', '=', 'CatN5.CatN4_id')
@@ -2942,7 +2942,7 @@ class Centinela_Seeder extends Seeder
 		Centinela::create([
 			'nombre' => 'Mantenimiento',
 			'CatN5_id' => $catID,
-		]);
+		])->catTicket()->create();
 
 		$catID = CatN5::
 			join('CatN4', 'CatN4.id', '=', 'CatN5.CatN4_id')
@@ -2960,11 +2960,11 @@ class Centinela_Seeder extends Seeder
 		Centinela::create([
 			'nombre' => 'Mantenimiento',
 			'CatN5_id' => $catID,
-		]);
+		])->catTicket()->create();
 		Centinela::create([
 			'nombre' => 'Reparación',
 			'CatN5_id' => $catID,
-		]);
+		])->catTicket()->create();
 
 		$catID = CatN5::
 			join('CatN4', 'CatN4.id', '=', 'CatN5.CatN4_id')
@@ -2982,7 +2982,7 @@ class Centinela_Seeder extends Seeder
 		Centinela::create([
 			'nombre' => 'Instalación',
 			'CatN5_id' => $catID,
-		]);
+		])->catTicket()->create();
 
 		$catID = CatN5::
 			join('CatN4', 'CatN4.id', '=', 'CatN5.CatN4_id')
@@ -3001,7 +3001,7 @@ class Centinela_Seeder extends Seeder
 		Centinela::create([
 			'nombre' => 'Instalación',
 			'CatN5_id' => $catID,
-		]);
+		])->catTicket()->create();
 
 		$catID = CatN5::
 			join('CatN4', 'CatN4.id', '=', 'CatN5.CatN4_id')
@@ -3019,7 +3019,7 @@ class Centinela_Seeder extends Seeder
 		Centinela::create([
 			'nombre' => 'Retiro',
 			'CatN5_id' => $catID,
-		]);
+		])->catTicket()->create();
 
 		$catID = CatN5::
 			join('CatN4', 'CatN4.id', '=', 'CatN5.CatN4_id')
@@ -3037,7 +3037,7 @@ class Centinela_Seeder extends Seeder
 		Centinela::create([
 			'nombre' => 'Programación',
 			'CatN5_id' => $catID,
-		]);
+		])->catTicket()->create();
 
 		$catID = CatN5::
 			join('CatN4', 'CatN4.id', '=', 'CatN5.CatN4_id')
@@ -3055,7 +3055,7 @@ class Centinela_Seeder extends Seeder
 		Centinela::create([
 			'nombre' => 'Instalación',
 			'CatN5_id' => $catID,
-		]);
+		])->catTicket()->create();
 
 		$catID = CatN5::
 			join('CatN4', 'CatN4.id', '=', 'CatN5.CatN4_id')
@@ -3073,7 +3073,7 @@ class Centinela_Seeder extends Seeder
 		Centinela::create([
 			'nombre' => 'Retiro',
 			'CatN5_id' => $catID,
-		]);
+		])->catTicket()->create();
 
 		$catID = CatN5::
 			join('CatN4', 'CatN4.id', '=', 'CatN5.CatN4_id')
@@ -3091,7 +3091,7 @@ class Centinela_Seeder extends Seeder
 		Centinela::create([
 			'nombre' => 'Programación',
 			'CatN5_id' => $catID,
-		]);
+		])->catTicket()->create();
 
 		$catID = CatN5::
 			join('CatN4', 'CatN4.id', '=', 'CatN5.CatN4_id')
@@ -3109,7 +3109,7 @@ class Centinela_Seeder extends Seeder
 		Centinela::create([
 			'nombre' => 'Entrega',
 			'CatN5_id' => $catID,
-		]);
+		])->catTicket()->create();
 
 		$catID = CatN5::
 			join('CatN4', 'CatN4.id', '=', 'CatN5.CatN4_id')
@@ -3127,7 +3127,7 @@ class Centinela_Seeder extends Seeder
 		Centinela::create([
 			'nombre' => 'Retiro',
 			'CatN5_id' => $catID,
-		]);
+		])->catTicket()->create();
 
 		$catID = CatN5::
 			join('CatN4', 'CatN4.id', '=', 'CatN5.CatN4_id')
@@ -3145,7 +3145,7 @@ class Centinela_Seeder extends Seeder
 		Centinela::create([
 			'nombre' => 'Programación',
 			'CatN5_id' => $catID,
-		]);
+		])->catTicket()->create();
 
 		$catID = CatN5::
 			join('CatN4', 'CatN4.id', '=', 'CatN5.CatN4_id')
@@ -3163,7 +3163,7 @@ class Centinela_Seeder extends Seeder
 		Centinela::create([
 			'nombre' => 'Instalación',
 			'CatN5_id' => $catID,
-		]);
+		])->catTicket()->create();
 
 		$catID = CatN5::
 			join('CatN4', 'CatN4.id', '=', 'CatN5.CatN4_id')
@@ -3181,7 +3181,7 @@ class Centinela_Seeder extends Seeder
 		Centinela::create([
 			'nombre' => 'Retiro',
 			'CatN5_id' => $catID,
-		]);
+		])->catTicket()->create();
 
 		$catID = CatN5::
 			join('CatN4', 'CatN4.id', '=', 'CatN5.CatN4_id')
@@ -3199,7 +3199,7 @@ class Centinela_Seeder extends Seeder
 		Centinela::create([
 			'nombre' => 'Instalación',
 			'CatN5_id' => $catID,
-		]);
+		])->catTicket()->create();
 		$catID = CatN5::
 			join('CatN4', 'CatN4.id', '=', 'CatN5.CatN4_id')
 			->join('CatN3', 'CatN3.id', '=', 'CatN4.CatN3_id')
@@ -3216,7 +3216,7 @@ class Centinela_Seeder extends Seeder
 		Centinela::create([
 			'nombre' => 'Retiro',
 			'CatN5_id' => $catID,
-		]);
+		])->catTicket()->create();
 
 		$catID = CatN5::
 			join('CatN4', 'CatN4.id', '=', 'CatN5.CatN4_id')
@@ -3234,7 +3234,7 @@ class Centinela_Seeder extends Seeder
 		Centinela::create([
 			'nombre' => 'Instalación',
 			'CatN5_id' => $catID,
-		]);
+		])->catTicket()->create();
 
 		$catID = CatN5::
 			join('CatN4', 'CatN4.id', '=', 'CatN5.CatN4_id')
@@ -3252,7 +3252,7 @@ class Centinela_Seeder extends Seeder
 		Centinela::create([
 			'nombre' => 'Retiro',
 			'CatN5_id' => $catID,
-		]);
+		])->catTicket()->create();
 
 		$catID = CatN5::
 			join('CatN4', 'CatN4.id', '=', 'CatN5.CatN4_id')
@@ -3270,7 +3270,7 @@ class Centinela_Seeder extends Seeder
 		Centinela::create([
 			'nombre' => 'Instalación',
 			'CatN5_id' => $catID,
-		]);
+		])->catTicket()->create();
 
 		$catID = CatN5::
 			join('CatN4', 'CatN4.id', '=', 'CatN5.CatN4_id')
@@ -3288,7 +3288,7 @@ class Centinela_Seeder extends Seeder
 		Centinela::create([
 			'nombre' => 'Retiro',
 			'CatN5_id' => $catID,
-		]);
+		])->catTicket()->create();
 
 		$catID = CatN5::
 			join('CatN4', 'CatN4.id', '=', 'CatN5.CatN4_id')
@@ -3306,7 +3306,7 @@ class Centinela_Seeder extends Seeder
 		Centinela::create([
 			'nombre' => 'Instalación',
 			'CatN5_id' => $catID,
-		]);
+		])->catTicket()->create();
 
 		$catID = CatN5::
 			join('CatN4', 'CatN4.id', '=', 'CatN5.CatN4_id')
@@ -3324,7 +3324,7 @@ class Centinela_Seeder extends Seeder
 		Centinela::create([
 			'nombre' => 'Retiro',
 			'CatN5_id' => $catID,
-		]);
+		])->catTicket()->create();
 
 		$catID = CatN5::
 			join('CatN4', 'CatN4.id', '=', 'CatN5.CatN4_id')
@@ -3342,7 +3342,7 @@ class Centinela_Seeder extends Seeder
 		Centinela::create([
 			'nombre' => 'Instalación',
 			'CatN5_id' => $catID,
-		]);
+		])->catTicket()->create();
 
 		$catID = CatN5::
 			join('CatN4', 'CatN4.id', '=', 'CatN5.CatN4_id')
@@ -3360,6 +3360,6 @@ class Centinela_Seeder extends Seeder
 		Centinela::create([
 			'nombre' => 'Retiro',
 			'CatN5_id' => $catID,
-		]);
+		])->catTicket()->create();
 	}
 }

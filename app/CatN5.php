@@ -21,41 +21,16 @@ class CatN5 extends Model
 	* unsignedInteger('CatN4_id')
 	*/
 
-	function centinela()
-	{
-		return $this->hasMany(
-			Centinela::class,
-			'CatN5_id',
-			'id'
-		);		
+	function getNombre(){
+		return $this->nombre . ' - ' . $this->hijo->getNombre();
 	}
 
-	function catN4()
+	function hijo()
 	{
 		return $this->belongsTo(
 			CatN4::class,
 			'CatN4_id',
 			'id'
 		);
-	}
-
-	function catN4_Name()
-	{
-		return $this->catN4->nombre;
-	}
-
-	function catN3_Name()
-	{
-		return $this->catN4->catN3_Name();
-	}
-
-	function catN2_Name()
-	{
-		return $this->catN4->catN2_Name();
-	}
-
-	function catN1_Name()
-	{
-		return $this->catN4->catN1_Name();
 	}
 }

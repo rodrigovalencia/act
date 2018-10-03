@@ -4,6 +4,7 @@ namespace App;
 
 use App\Modelo;
 use App\ModeloConsumible;
+use App\ModeloRadio;
 use App\ModeloSW;
 use App\TipoActivo;
 use Illuminate\Database\Eloquent\Model;
@@ -58,6 +59,15 @@ class Fabricante extends Model
 			'Fabricante_TipoActivo',
 			'Fabricante_id',
 			'TipoActivo_id'
+		);
+	}
+
+	function modelosRadio()
+	{
+		return $this->hasMany(
+			ModeloRadio::class,
+			'Fabricante_id',
+			'id'
 		);
 	}
 }

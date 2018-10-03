@@ -13,9 +13,9 @@ class URadio extends Model
 	public $timestamps = false;
 
 	protected $fillable = [
-		// 'Ubicacion_id',
-		// 'URadio_id',
-		// 'URadio_type',
+		'Ubicacion_id',
+		// 'ubicable_id',
+		// 'ubicable_type',
 	];
 
 	/*
@@ -23,8 +23,8 @@ class URadio extends Model
 	 *
 	 * increments('id')
 	 * unsignedInteger('Ubicacion_id')
-	 * integer('URadio_id')
-	 * string('URadio_type')
+	 * integer('ubicable_id')
+	 * string('ubicable_type')
 	 */
 
 	function radioComercial()
@@ -54,7 +54,7 @@ class URadio extends Model
 		);
 	}
 
-	public function URadio()
+	public function ubicable()
 	{
 		return $this->morphTo();
 	}
