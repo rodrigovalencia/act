@@ -14,48 +14,29 @@ class TipoActivoSeeder extends Seeder
 	{
 		TipoActivo::truncate();
 
-		TipoActivo::create([
-			'nombre' => 'CCTV',
-		]);
+		TipoActivo::create(['nombre' => 'CCTV',]);
+		TipoActivo::create(['nombre' => 'Computador',]);
+		TipoActivo::create(['nombre' => 'DispRed',]);
+		TipoActivo::create(['nombre' => 'RadioComercial',]);
+		TipoActivo::create(['nombre' => 'RadioTrabajo',]);
+		TipoActivo::create(['nombre' => 'Impresora',]);
+		TipoActivo::create(['nombre' => 'Celular',]);
 
-		TipoActivo::create([
-			'nombre' => 'Computador',
-		]);
 
-		TipoActivo::create([
-			'nombre' => 'DispRed',
-		]);
+		// TipoActivo::create([
+		// 	'nombre' => 'Monitor',
+		// ]);
 
-		TipoActivo::create([
-			'nombre' => 'RadioComercial',
-		]);
+		// TipoActivo::create([
+		// 	'nombre' => 'CableRadiante',
+		// ]);
 
-		TipoActivo::create([
-			'nombre' => 'RadioTrabajo',
-		]);
+		// TipoActivo::create([
+		// 	'nombre' => 'CarroAmplificacion',
+		// ]);
 
-		TipoActivo::create([
-			'nombre' => 'Impresora',
-		]);
-
-		TipoActivo::create([
-			'nombre' => 'Monitor',
-		]);
-
-		TipoActivo::create([
-			'nombre' => 'Celular',
-		]);
-
-		TipoActivo::create([
-			'nombre' => 'CableRadiante',
-		]);
-
-		TipoActivo::create([
-			'nombre' => 'CarroAmplificacion',
-		]);
-
-		TipoActivo::create([
-			'nombre' => 'Repetidor',
-		]);
+		// TipoActivo::create([
+		// 	'nombre' => 'Repetidor',
+		// ]);
 	}
 }

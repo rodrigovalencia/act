@@ -17,51 +17,12 @@ class FabricanteSeeder extends Seeder
 		Fabricante::truncate();
 		Fabricante_TipoActivo::truncate();
 
+		//Radios de Trabajo
 		$tipoID = TipoActivo::where('nombre', 'RadioTrabajo')->first()->id;
-
-		$fabricante = Fabricante::create([
-			'nombre' => 'MOTOROLA',
-		]);
-
-		Fabricante_TipoActivo::create([
-			'Fabricante_id' => $fabricante->id,
-			'TipoActivo_id' => $tipoID,
-		]);
-
-		$fabricante = Fabricante::create([
-			'nombre' => 'KENWOOD',
-		]);
-
-		Fabricante_TipoActivo::create([
-			'Fabricante_id' => $fabricante->id,
-			'TipoActivo_id' => $tipoID,
-		]);
-
-		$fabricante = Fabricante::create([
-			'nombre' => 'ASTRON',
-		]);
-
-		Fabricante_TipoActivo::create([
-			'Fabricante_id' => $fabricante->id,
-			'TipoActivo_id' => $tipoID,
-		]);
-
-		$fabricante = Fabricante::create([
-			'nombre' => 'SEPURA',
-		]);
-
-		Fabricante_TipoActivo::create([
-			'Fabricante_id' => $fabricante->id,
-			'TipoActivo_id' => $tipoID,
-		]);
-
-		$fabricante = Fabricante::create([
-			'nombre' => 'AIRBUS',
-		]);
-
-		Fabricante_TipoActivo::create([
-			'Fabricante_id' => $fabricante->id,
-			'TipoActivo_id' => $tipoID,
-		]);
+		Fabricante::create(['nombre' => 'MOTOROLA']) -> tiposActivos() -> attach($tipoID);
+		Fabricante::create(['nombre' => 'KENWOOD'])  -> tiposActivos() -> attach($tipoID);
+		Fabricante::create(['nombre' => 'ASTRON'])   -> tiposActivos() -> attach($tipoID);
+		Fabricante::create(['nombre' => 'SEPURA'])   -> tiposActivos() -> attach($tipoID);
+		Fabricante::create(['nombre' => 'AIRBUS'])   -> tiposActivos() -> attach($tipoID);
 	}
 }

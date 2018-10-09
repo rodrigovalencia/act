@@ -1,6 +1,7 @@
 <?php
 
 use App\TipoBase;
+
 use Illuminate\Database\Seeder;
 
 class TipoBase_Seeder extends Seeder
@@ -13,15 +14,9 @@ class TipoBase_Seeder extends Seeder
 	public function run()
 	{
 		TipoBase::truncate();
-
-		TipoBase::create([
-			'nombre' => 'Oficina'
-		]);
-		TipoBase::create([
-			'nombre' => 'Consola'
-		]);
-		TipoBase::create([
-			'nombre' => 'Despacho'
-		]);
+		
+		TipoBase::create(['nombre' => 'Oficina']);
+		TipoBase::create(['nombre' => 'Consola']);
+		TipoBase::create(['nombre' => 'Despacho']);
 	}
 }

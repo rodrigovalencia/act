@@ -21,16 +21,11 @@ class AdmN2 extends Model
 	* unsignedInteger('AdmN1_id')
 	*/
 
-	function admN3()
-	{
-		return $this->hasMany(
-			AdmN3::class,
-			'AdmN2_id',
-			'id'
-		);		
+	function getNombre(){
+		return $this->nombre . ' - ' . $this->hijo->nombre;
 	}
 
-	function admN1()
+	function hijo()
 	{
 		return $this->belongsTo(
 			AdmN1::class,

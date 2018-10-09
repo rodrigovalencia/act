@@ -2,7 +2,7 @@
 
 namespace App;
 
-use App\CatCodelco;
+use App\CategoriaTicket;
 use Illuminate\Database\Eloquent\Model;
 
 class Codelco extends Model
@@ -23,7 +23,11 @@ class Codelco extends Model
 	* unsignedInteger('CatCodelco_id')
 	*/
 
-	function catCodelco()
+	function getNombre(){
+		return $this->nombre . ' - ' . $this->hijo->nombre;
+	}
+
+	function hijo()
 	{
 		return $this->belongsTo(
 			CatCodelco::class,
@@ -34,6 +38,6 @@ class Codelco extends Model
 
 	function catTicket()
 	{
-		return $this->morphMany('CategoriaTicket','Categoria');
+		return $this->morphMany(CategoriaTicket::class,'categoria');
 	}
 }

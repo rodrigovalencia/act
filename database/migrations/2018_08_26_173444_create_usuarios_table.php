@@ -26,7 +26,7 @@ class CreateUsuariosTable extends Migration
 			$table->boolean('usuarioActivo');
 			$table->unsignedInteger('Rol_id');
 			$table->unsignedInteger('Ubicacion_id');
-			$table->unsignedInteger('TipoUsuario_id');
+			$table->unsignedInteger('GrupoEspecialista_id');
 		});
 	}
 

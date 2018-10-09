@@ -14,6 +14,7 @@ class Procedimiento extends Model
 		'descripcion',
 		'documento',
 		// 'TipoServicio_id',
+		// 'Modelo_id'
 	];
 
 	/*
@@ -24,13 +25,14 @@ class Procedimiento extends Model
 	 * string('descripcion')
 	 * string('documento')
 	 * unsignedInteger('TipoServicio_id')
+	 * unsignedInteger('Modelo_id')
 	 */
 
-	function modelos()
+	function modelo()
 	{
-		return $this->hasMany(
+		return $this->belongsTo(
 			Modelo::class,
-			'Procedimiento_id',
+			'Modelo_id',
 			'id'
 		);
 	}

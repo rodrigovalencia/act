@@ -1,219 +1,165 @@
 <?php
 
-use App\Activo;
-use App\Activo_Empresa;
-use App\Activo_EstadoActivo;
 use App\Area;
 use App\CCTV;
-use App\CableRadiante;
-use App\CarroAmplificacion;
-use App\Celular;
 use App\Computador;
 use App\Contrato;
 use App\DispRed;
-use App\Empresa;
-use App\EstadoActivo;
-use App\Impresora;
 use App\Modelo;
 use App\ModeloRadio;
-use App\Monitor;
 use App\RadioComercial;
 use App\RadioTrabajo;
-use App\Repetidor;
 use App\SATI;
 use App\Sistema;
-use App\Ticket;
-use App\TipoActivo;
 use App\URadio;
 use App\Ubicacion;
 use Faker\Generator as Faker;
-use Illuminate\Contracts\Support\Responsable;
 
-$factory->define(Activo::class, function (Faker $faker) {
-	
-	$estadoID = EstadoActivo::all()->pluck('id')->toArray();
-	$cctvID = CCTV::all()->pluck('id')->toArray();
-	$computadorID = Computador::all()->pluck('id')->toArray();
-	$dispredID = DispRed::all()->pluck('id')->toArray();
-	$radiocomercialID = RadioComercial::all()->pluck('id')->toArray();
-	$radiotrabajoID = RadioTrabajo::all()->pluck('id')->toArray();
-	$impresoraID = Impresora::all()->pluck('id')->toArray();
-	$monitorID = Monitor::all()->pluck('id')->toArray();
-	$celularID = Celular::all()->pluck('id')->toArray();
-	$cableradianteID = CableRadiante::all()->pluck('id')->toArray();
-	$carroamplificacionID = CarroAmplificacion::all()->pluck('id')->toArray();
-	$repetidorID = Repetidor::all()->pluck('id')->toArray();
-	$activotypeID = TipoActivo::all()->pluck('id')->toArray();
 
-	$opcion = $faker->numberBetween($min=0,$max=10);
+// -- ACTIVOS --
+			// Activo_Empresa
+			// --
+			// RadioComercial
+			// RadioTrabajo
+			// Impresora
+			// Celular
 
-	switch ($opcion) {
-		case '0':
-			$aux = factory(CCTV::class)->create();
-			return [
-				'Estado_id' => $faker->randomElement($estadoID),
-				'Activo_id' => $aux->id,
-				'Activo_type' => 'CCTV',
-			];
-			break;
-		case '1':
-			$aux = factory(Computador::class)->create();
-			return [
-				'Estado_id' => $faker->randomElement($estadoID),
-				'Activo_id' => $aux->id,
-				'Activo_type' => 'Computador',
-			];
-			break;
-		case '2':
-			$aux = factory(DispRed::class)->create();
-			return [
-				'Estado_id' => $faker->randomElement($estadoID),
-				'Activo_id' => $aux->id,
-				'Activo_type' => 'DispRed',
-			];
-			break;
-		case '3':
-			$aux = factory(RadioComercial::class)->create();
-			return [
-				'Estado_id' => $faker->randomElement($estadoID),
-				'Activo_id' => $aux->id,
-				'Activo_type' => 'RadioComercial',
-			];
-			break;
-		case '4':
-			$aux = factory(RadioTrabajo::class)->create();
-			return [
-				'Estado_id' => $faker->randomElement($estadoID),
-				'Activo_id' => $aux->id,
-				'Activo_type' => 'RadioTrabajo',
-			];
-			break;
-		case '5':
-			$aux = factory(Impresora::class)->create();
-			return [
-				'Estado_id' => $faker->randomElement($estadoID),
-				'Activo_id' => $aux->id,
-				'Activo_type' => 'Impresora',
-			];
-			break;
-		case '6':
-			$aux = factory(Monitor::class)->create();
-			return [
-				'Estado_id' => $faker->randomElement($estadoID),
-				'Activo_id' => $aux->id,
-				'Activo_type' => 'Monitor',
-			];
-			break;
-		case '7':
-			$aux = factory(Celular::class)->create();
-			return [
-				'Estado_id' => $faker->randomElement($estadoID),
-				'Activo_id' => $aux->id,
-				'Activo_type' => 'Celular',
-			];
-			break;
-		case '8':
-			$aux = factory(CableRadiante::class)->create();
-			return [
-				'Estado_id' => $faker->randomElement($estadoID),
-				'Activo_id' => $aux->id,
-				'Activo_type' => 'CableRadiante',
-			];
-			break;
-		case '9':
-			$aux = factory(CarroAmplificacion::class)->create();
-			return [
-				'Estado_id' => $faker->randomElement($estadoID),
-				'Activo_id' => $aux->id,
-				'Activo_type' => 'CarroAmplificacion',
-			];
-			break;
-		case '10':
-			$aux = factory(Repetidor::class)->create();
-			return [
-				'Estado_id' => $faker->randomElement($estadoID),
-				'Activo_id' => $aux->id,
-				'Activo_type' => 'Repetidor',
-			];
-			break;
-	}
-});
+
 
 $factory->define(CCTV::class, function (Faker $faker) {
+	$flagMAC = $faker->boolean(90);
+	$flagIP = $faker->boolean(80);
 	
-	$modeloID = Modelo::all()->pluck('id')->toArray();
-	$AreaID = Area::all()->pluck('id')->toArray();
-	$ContratoID = Contrato::all()->pluck('id')->toArray();
-	$ResponsableID = SATI::all()->pluck('id')->toArray();
+	$modeloID = Modelo::all()->random()->id;
+	$areaID = Area::all()->random()->id;
+	$contratoID = Contrato::all()->random()->id;
+	$responsableID = SATI::all()->random()->id;
 
 	return [
-		'mac' => $faker->macAddress,
-		'ip' => $faker->localIpv4,
-		'Modelo_id' => $faker->randomElement($modeloID),
-		'Contrato_id' => $faker->randomElement($ContratoID),
-		'Responsable_id' => $faker->randomElement($ResponsableID),
-		'Area_id' => $faker->randomElement($AreaID),
+		'mac' => ($flagSAP) ? $faker->macAddress : null,
+		'ip' => ($flagSAP) ? $faker->localIpv4 : null,
+		'Modelo_id' => $modeloID,
+		'Contrato_id' => $contratoID,
+		'Responsable_id' => $responsableID,
+		'Area_id' => $areaID,
 	];
 });
 
 $factory->define(Computador::class, function (Faker $faker) {
+	$flagMAC = $faker->boolean(90);
+	$flagIP = $faker->boolean(80);
 	
-	$modeloID = Modelo::all()->pluck('id')->toArray();
-	$AreaID = Area::all()->pluck('id')->toArray();
-	$ContratoID = Contrato::all()->pluck('id')->toArray();
-	$ResponsableID = SATI::all()->pluck('id')->toArray();
+	$modeloID = Modelo::all()->random()->id;
+	$areaID = Area::all()->random()->id;
+	$contratoID = Contrato::all()->random()->id;
+	$responsableID = SATI::all()->random()->id;
 
 	return [
-		'mac' => $faker->macAddress,
-		'ip' => $faker->localIpv4,
-		'Modelo_id' => $faker->randomElement($modeloID),
-		'Contrato_id' => $faker->randomElement($ContratoID),
-		'Responsable_id' => $faker->randomElement($ResponsableID),
-		'Area_id' => $faker->randomElement($AreaID),
+		'mac' => ($flagSAP) ? $faker->macAddress : null,
+		'ip' => ($flagSAP) ? $faker->localIpv4 : null,
+		'Modelo_id' => $modeloID,
+		'Contrato_id' => $contratoID,
+		'Responsable_id' => $responsableID,
+		'Area_id' => $areaID,
 	];
 });
 
 $factory->define(DispRed::class, function (Faker $faker) {
-	
-	$modeloID = Modelo::all()->pluck('id')->toArray();
-	$AreaID = Area::all()->pluck('id')->toArray();
-	$ContratoID = Contrato::all()->pluck('id')->toArray();
-	$ResponsableID = SATI::all()->pluck('id')->toArray();
+	$modeloID = Modelo::all()->random()->id;
+	$areaID = Area::all()->random()->id;
+	$contratoID = Contrato::all()->random()->id;
+	$responsableID = SATI::all()->random()->id;
 
 	return [
 		'mac' => $faker->macAddress,
 		'ip' => $faker->localIpv4,
-		'Modelo_id' => $faker->randomElement($modeloID),
-		'Contrato_id' => $faker->randomElement($ContratoID),
-		'Responsable_id' => $faker->randomElement($ResponsableID),
-		'Area_id' => $faker->randomElement($AreaID),
+		'Modelo_id' => $modeloID,
+		'Contrato_id' => $contratoID,
+		'Responsable_id' => $responsableID,
+		'Area_id' => $areaID,
 	];
 });
 
 $factory->define(RadioComercial::class, function (Faker $faker) {
-	
-	$modeloID = Modelo::all()->pluck('id')->toArray();
-	$UbicacionID = Ubicacion::all()->pluck('id')->toArray();
-	$ResponsableID = SATI::all()->pluck('id')->toArray();
-	$uradioID = URadio::all()->pluck('id')->toArray();
+	$modeloID = Modelo::all()->random()->id;
+	$ubicacionID = Ubicacion::all()->random()->id;
+	$responsableID = SATI::all()->random()->id;
+	$uRadioID = URadio::all()->random()->id;
 
 	return [
-		'serie' => $faker->numerify('############'),
-		'Modelo_id' => $faker->randomElement($modeloID),
-		'Responsable_id' => $faker->randomElement($ResponsableID),
-		'Ubicacion_id' => $faker->randomElement($UbicacionID),
-		'URadio_id' => $faker->randomElement($uradioID),
+		'serie' => $faker->regexify('[0-9]{12}'),
+		'Modelo_id' => $modeloID,
+		'Responsable_id' => $responsableID,
+		'Ubicacion_id' => $ubicacionID,
+		'URadio_id' => $uRadioID,
 	];
 });
 
+
+
+	/*
+	 * Atributos RadioTrabajo
+	 *
+	 * increments('id')
+	 * string('serie')
+	 * string('idSistema')
+	 * string('flashPort')->nullable()
+	 * string('centroCostos')
+	 * boolean('comodato')
+	 * unsignedInteger('ModeloRadio_id')
+	 * unsignedInteger('Area_id')
+	 * unsignedInteger('Contrato_id')
+	 * unsignedInteger('Mandante_id')
+	 * unsignedInteger('Tercero_id')->nullable()
+	 * unsignedInteger('URadio_id')->nullable()
+	 */
 $factory->define(RadioTrabajo::class, function (Faker $faker) {
+	$flagFlash = $faker->boolean(90);
+	$flagTercero = $faker->boolean(60);
 	
-	$modeloID = ModeloRadio::all()->pluck('id')->toArray();
-	$sistemaID = Sistema::all()->pluck('id')->toArray();
-	$AreaID = Area::all()->pluck('id')->toArray();
-	$ContratoID = Contrato::all()->pluck('id')->toArray();
-	$mandanteID = SATI::all()->pluck('id')->toArray();
-	$uradioID = URadio::all()->pluck('id')->toArray();
+	$satis = SATI::all()->pluck('id');
+	$sistema = Sistema::all()->random();
+
+	if ($sistema->nombre === 'P25 - TRUNKING') {
+		$exp1 = '[0-9]{3}[a-z]{3}[0-9]{4}';
+		$exp2 = '[0-9]{10}';
+		$exp3 = '[0-9]{7}';
+	} else if ($sistema->nombre === 'P16 - TRUNKING') {
+		# code...
+	} else {
+		# code...
+	}
+
+
+		$sistemaID = Sistema::where('nombre', 'P25 - TRUNKING')->first()->id;
+		ExpReg_RT::create([
+			'nSerie'     => '999AAA9999',     // (0-9){3}(a-z){3}(0-9){4}
+			'flashPort'  => '9999999999',     // (0-9){10}
+			'idSistema'  => '9999999',        // (0-9){7}
+			'Sistema_id' => $sistemaID,
+		]);
+
+		$sistemaID = Sistema::where('nombre', 'P25 - TRUNKING')->first()->id;
+		ExpReg_RT::create([
+			'nSerie'     => '999AAA9999',     // (0-9){3}(a-z){3}(0-9){4}
+			'flashPort'  => '9999999999',     // (0-9){10}
+			'idSistema'  => '999999',         // (0-9){6}
+			'Sistema_id' => $sistemaID,
+		]);
+
+		$sistemaID = Sistema::where('nombre', 'P25 - TRUNKING')->first()->id;
+		ExpReg_RT::create([
+			'nSerie'     => '999AAA(9|A)999', // (0-9){3}(a-z){3}(0-9|a-z)(0-9){3}
+			'idSistema'  => '9999',           // (0-9){4}
+			'Sistema_id' => $sistemaID,
+		]);
+
+	
+
+	$modeloID = ModeloRadio::all()->random()->id;
+	$AreaID = Area::all()->random()->id;
+	$ContratoID = Contrato::all()->random()->id;
+	$uradioID = URadio::all()->random()->id;
 
 	return [
 		'serie' => $faker->bothify('###???####'),
@@ -229,6 +175,35 @@ $factory->define(RadioTrabajo::class, function (Faker $faker) {
 		'URadio_id' => $faker->randomElement($uradioID),
 	];
 });
+
+	/*
+	 * Atributos Impresora
+	 *
+	 * increments('id')
+	 * string('mac')
+	 * string('ip')->nullable()
+	 * unsignedInteger('Modelo_id')
+	 * unsignedInteger('Area_id')
+	 * unsignedInteger('Contrato_id')
+	 * unsignedInteger('Responsable_id')
+	 */
+
+
+	/*
+	 * Atributos Celular
+	 *
+	 * increments('id')
+	 * integer('numero')
+	 * integer('imei')
+	 * unsignedInteger('Modelo_id')
+	 * unsignedInteger('Responsable_id')
+	 */
+
+
+
+
+
+
 
 $factory->define(Impresora::class, function (Faker $faker) {
 	

@@ -15,9 +15,10 @@ class CreateActivoEstadoActivosTable extends Migration
 	{
 		Schema::create('Activo_EstadoActivo', function (Blueprint $table) {
 			$table->increments('id');
+			$table->dateTime('fecha');
 			$table->unsignedInteger('Activo_id');
 			$table->unsignedInteger('EstadoActivo_id');
-			$table->unsignedInteger('Ticket_id');
+			$table->unsignedInteger('Servicio_id');
 		});
 	}
 
