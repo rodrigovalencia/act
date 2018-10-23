@@ -85,6 +85,24 @@ $factory->define(RadioComercial::class, function (Faker $faker) {
 	];
 });
 
+
+
+	/*
+	 * Atributos RadioTrabajo
+	 *
+	 * increments('id')
+	 * string('serie')
+	 * string('idSistema')
+	 * string('flashPort')->nullable()
+	 * string('centroCostos')
+	 * boolean('comodato')
+	 * unsignedInteger('ModeloRadio_id')
+	 * unsignedInteger('Area_id')
+	 * unsignedInteger('Contrato_id')
+	 * unsignedInteger('Mandante_id')
+	 * unsignedInteger('Tercero_id')->nullable()
+	 * unsignedInteger('URadio_id')->nullable()
+	 */
 $factory->define(RadioTrabajo::class, function (Faker $faker) {
 	$flagTercero = $faker->boolean(60);
 	$flagUbicacion = $faker->boolean(60);
@@ -125,6 +143,35 @@ $factory->define(RadioTrabajo::class, function (Faker $faker) {
 		'URadio_id'      => ($flagUbicacion) ? URadio::all()->random()->id : null,
 	];
 });
+
+	/*
+	 * Atributos Impresora
+	 *
+	 * increments('id')
+	 * string('mac')
+	 * string('ip')->nullable()
+	 * unsignedInteger('Modelo_id')
+	 * unsignedInteger('Area_id')
+	 * unsignedInteger('Contrato_id')
+	 * unsignedInteger('Responsable_id')
+	 */
+
+
+	/*
+	 * Atributos Celular
+	 *
+	 * increments('id')
+	 * integer('numero')
+	 * integer('imei')
+	 * unsignedInteger('Modelo_id')
+	 * unsignedInteger('Responsable_id')
+	 */
+
+
+
+
+
+
 
 $factory->define(Impresora::class, function (Faker $faker) {
 	$flagIP = $faker->boolean(80);

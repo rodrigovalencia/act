@@ -16,9 +16,7 @@ class EstadoActivoSeeder extends Seeder
 
 		//FALTA DEFINIR EL ID DE CODELCO DE TODOS LOS ESTADOS DE ACTIVOS
 
-
 		//Solicitado a don Patricio ACT
-
 		EstadoActivo::create([
 			'nombre'=>'ALMACENADO BODEGA',
 			'idCodelco'=>0,
