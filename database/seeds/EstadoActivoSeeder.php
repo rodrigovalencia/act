@@ -5,7 +5,6 @@ use Illuminate\Database\Seeder;
 
 class EstadoActivoSeeder extends Seeder
 {
-<<<<<<< HEAD
 	/**
 	 * Run the database seeds.
 	 *
@@ -13,25 +12,11 @@ class EstadoActivoSeeder extends Seeder
 	 */
 	public function run()
 	{
-=======
-    /**
-     * Run the database seeds.
-     *
-     * @return void
-     */
-    public function run()
-    {
->>>>>>> JNunez
 		EstadoActivo::truncate();
 
 		//FALTA DEFINIR EL ID DE CODELCO DE TODOS LOS ESTADOS DE ACTIVOS
 
-<<<<<<< HEAD
-
 		//Solicitado a don Patricio ACT
-
-=======
->>>>>>> JNunez
 		EstadoActivo::create([
 			'nombre'=>'ALMACENADO BODEGA',
 			'idCodelco'=>0,
@@ -111,11 +96,5 @@ class EstadoActivoSeeder extends Seeder
 			'nombre'=>'VENDIDO',
 			'idCodelco'=>0,
 		]);
-<<<<<<< HEAD
 	}
 }
-=======
-
-    }
-}
->>>>>>> JNunez

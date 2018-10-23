@@ -2,17 +2,11 @@
 
 use App\Area;
 use App\CCTV;
-<<<<<<< HEAD
 use App\Celular;
 use App\Computador;
 use App\Contrato;
 use App\DispRed;
 use App\Impresora;
-=======
-use App\Computador;
-use App\Contrato;
-use App\DispRed;
->>>>>>> JNunez
 use App\Modelo;
 use App\ModeloRadio;
 use App\RadioComercial;
@@ -22,26 +16,11 @@ use App\Sistema;
 use App\URadio;
 use App\Ubicacion;
 use Faker\Generator as Faker;
-<<<<<<< HEAD
-=======
-
-
-// -- ACTIVOS --
-			// Activo_Empresa
-			// --
-			// RadioComercial
-			// RadioTrabajo
-			// Impresora
-			// Celular
-
-
->>>>>>> JNunez
 
 $factory->define(CCTV::class, function (Faker $faker) {
 	$flagMAC = $faker->boolean(90);
 	$flagIP = $faker->boolean(80);
 	
-<<<<<<< HEAD
 	$modeloID      = Modelo::all()->random()->id;
 	$contratoID    = Contrato::all()->random()->id;
 	$responsableID = SATI::all()->random()->id;
@@ -54,28 +33,10 @@ $factory->define(CCTV::class, function (Faker $faker) {
 		'Contrato_id'    => $contratoID,
 		'Responsable_id' => $responsableID,
 		'Area_id'        => $areaID,
-=======
-	$modeloID = Modelo::all()->random()->id;
-	$areaID = Area::all()->random()->id;
-	$contratoID = Contrato::all()->random()->id;
-	$responsableID = SATI::all()->random()->id;
-
-	return [
-		'mac' => ($flagSAP) ? $faker->macAddress : null,
-		'ip' => ($flagSAP) ? $faker->localIpv4 : null,
-		'Modelo_id' => $modeloID,
-		'Contrato_id' => $contratoID,
-		'Responsable_id' => $responsableID,
-		'Area_id' => $areaID,
->>>>>>> JNunez
 	];
 });
 
 $factory->define(Computador::class, function (Faker $faker) {
-<<<<<<< HEAD
-=======
-	$flagMAC = $faker->boolean(90);
->>>>>>> JNunez
 	$flagIP = $faker->boolean(80);
 	
 	$modeloID = Modelo::all()->random()->id;
@@ -84,21 +45,12 @@ $factory->define(Computador::class, function (Faker $faker) {
 	$responsableID = SATI::all()->random()->id;
 
 	return [
-<<<<<<< HEAD
 		'mac' => $faker->macAddress,
 		'ip' => ($flagIP) ? $faker->localIpv4 : null,
 		'Modelo_id' => $modeloID,
 		'Area_id' => $areaID,
 		'Contrato_id' => $contratoID,
 		'Responsable_id' => $responsableID,
-=======
-		'mac' => ($flagSAP) ? $faker->macAddress : null,
-		'ip' => ($flagSAP) ? $faker->localIpv4 : null,
-		'Modelo_id' => $modeloID,
-		'Contrato_id' => $contratoID,
-		'Responsable_id' => $responsableID,
-		'Area_id' => $areaID,
->>>>>>> JNunez
 	];
 });
 
@@ -112,15 +64,9 @@ $factory->define(DispRed::class, function (Faker $faker) {
 		'mac' => $faker->macAddress,
 		'ip' => $faker->localIpv4,
 		'Modelo_id' => $modeloID,
-<<<<<<< HEAD
 		'Area_id' => $areaID,
 		'Contrato_id' => $contratoID,
 		'Responsable_id' => $responsableID,
-=======
-		'Contrato_id' => $contratoID,
-		'Responsable_id' => $responsableID,
-		'Area_id' => $areaID,
->>>>>>> JNunez
 	];
 });
 
@@ -133,13 +79,8 @@ $factory->define(RadioComercial::class, function (Faker $faker) {
 	return [
 		'serie' => $faker->regexify('[0-9]{12}'),
 		'Modelo_id' => $modeloID,
-<<<<<<< HEAD
 		'Ubicacion_id' => $ubicacionID,
 		'Responsable_id' => $responsableID,
-=======
-		'Responsable_id' => $responsableID,
-		'Ubicacion_id' => $ubicacionID,
->>>>>>> JNunez
 		'URadio_id' => $uRadioID,
 	];
 });
@@ -163,13 +104,8 @@ $factory->define(RadioComercial::class, function (Faker $faker) {
 	 * unsignedInteger('URadio_id')->nullable()
 	 */
 $factory->define(RadioTrabajo::class, function (Faker $faker) {
-<<<<<<< HEAD
 	$flagTercero = $faker->boolean(60);
 	$flagUbicacion = $faker->boolean(60);
-=======
-	$flagFlash = $faker->boolean(90);
-	$flagTercero = $faker->boolean(60);
->>>>>>> JNunez
 	
 	$satis = SATI::all()->pluck('id');
 	$sistema = Sistema::all()->random();
@@ -179,7 +115,6 @@ $factory->define(RadioTrabajo::class, function (Faker $faker) {
 		$exp2 = '[0-9]{10}';
 		$exp3 = '[0-9]{7}';
 	} else if ($sistema->nombre === 'P16 - TRUNKING') {
-<<<<<<< HEAD
 		$exp1 = '[0-9]{3}[a-z]{3}[0-9]{4}';
 		$exp2 = '[0-9]{10}';
 		$exp3 = '[0-9]{6}';
@@ -190,43 +125,6 @@ $factory->define(RadioTrabajo::class, function (Faker $faker) {
 	}
 
 	$contratoID = Contrato::all()->random()->id;
-=======
-		# code...
-	} else {
-		# code...
-	}
-
-
-		$sistemaID = Sistema::where('nombre', 'P25 - TRUNKING')->first()->id;
-		ExpReg_RT::create([
-			'nSerie'     => '999AAA9999',     // (0-9){3}(a-z){3}(0-9){4}
-			'flashPort'  => '9999999999',     // (0-9){10}
-			'idSistema'  => '9999999',        // (0-9){7}
-			'Sistema_id' => $sistemaID,
-		]);
-
-		$sistemaID = Sistema::where('nombre', 'P25 - TRUNKING')->first()->id;
-		ExpReg_RT::create([
-			'nSerie'     => '999AAA9999',     // (0-9){3}(a-z){3}(0-9){4}
-			'flashPort'  => '9999999999',     // (0-9){10}
-			'idSistema'  => '999999',         // (0-9){6}
-			'Sistema_id' => $sistemaID,
-		]);
-
-		$sistemaID = Sistema::where('nombre', 'P25 - TRUNKING')->first()->id;
-		ExpReg_RT::create([
-			'nSerie'     => '999AAA(9|A)999', // (0-9){3}(a-z){3}(0-9|a-z)(0-9){3}
-			'idSistema'  => '9999',           // (0-9){4}
-			'Sistema_id' => $sistemaID,
-		]);
-
-	
-
-	$modeloID = ModeloRadio::all()->random()->id;
-	$AreaID = Area::all()->random()->id;
-	$ContratoID = Contrato::all()->random()->id;
-	$uradioID = URadio::all()->random()->id;
->>>>>>> JNunez
 
 	return [
 		'serie'          => $faker->regexify($exp1),

@@ -523,7 +523,6 @@
 								<a href="{{ route('csv.sati.cargarSati') }}">SATI</a>
 							</li>
 						</ul>
-<<<<<<< HEAD
 					</li>
 					<li>
 						<a>
@@ -539,8 +538,6 @@
 								<a href="{{ route('admin.base.tipoBase.index') }}">Tipos de Base</a>
 							</li>
 						</ul>
-=======
->>>>>>> JNunez
 					</li>
 				</ul>
 			</div>
