@@ -1,14 +1,24 @@
 <?php
 
 use App\Activo;
+use App\Activo_Empresa;
+use App\Area;
+use App\CCTV;
 use App\Capacitacion;
 use App\Categoria;
+use App\Celular;
+use App\Computador;
+use App\DispRed;
 use App\DocComodato;
+use App\Empresa;
 use App\EstadoActivo;
 use App\GrupoEspecialista;
+use App\Impresora;
 use App\Modelo;
 use App\Persona;
 use App\Procedimiento;
+use App\RadioComercial;
+use App\RadioTrabajo;
 use App\Rol;
 use App\SATI;
 use App\TipoActivo;
@@ -108,46 +118,74 @@ class FakerSeeder extends Seeder
 		// // <<<<<<<<<< ACTIVOS >>>>>>>>>>
 		// // <<<<<<<<<<         >>>>>>>>>>
 
+		// Activo::truncate();
+		// Activo_Empresa::truncate();
 
-		Activo::truncate();
-		CCTV::truncate();
-		$estado = EstadoActivo::where('nombre', 'DISPONIBLE')->first()->id;
-		$cant = rand(10, 20);
-		factory(CCTV::class, $cant)->create()->each(function($e){
-			$e->activo()->create(['Estado_id'=>$estado]);
-			// Falta considerar los propietarios de los activos
-			// $e->activo->propietarios()->attach
-		});
+		// $empresas = Empresa::all();
+		// $estado = EstadoActivo::where('nombre', 'DISPONIBLE')->first()->id;
 
-			
+		// CCTV::truncate();
+		// $cant = rand(50, 200);
+		// echo "---> Creando $cant CCTV \n";
+		// factory(CCTV::class, $cant)->create()->each(function($cctv) use ($empresas, $estado){
+		// 	$cctv->activo()->create(['Estado_id'=>$estado]);
+		// 	$cctv->activo->propietarios()->attach($empresas->random());
+		// });
 
-			// -- ACTIVOS --
-			// Activo
-			// Activo_EstadoActivo
-			// Activo_Empresa
-			// --
-			// CCTV
-			// Computador
-			// DispRed
-			// RadioComercial
-			// RadioTrabajo
-			// Impresora
-			// Monitor
-			// Celular
-			// CableRadiante
-			// CarroAmplificacion
-			// Repetidor
-			// ******
+		// Computador::truncate();
+		// $cant = rand(50, 200);
+		// echo "---> Creando $cant Computador \n";
+		// factory(Computador::class, $cant)->create()->each(function($pc) use ($empresas, $estado){
+		// 	$pc->activo()->create(['Estado_id'=>$estado]);
+		// 	$pc->activo->propietarios()->attach($empresas->random());
+		// });
+
+		// DispRed::truncate();
+		// $cant = rand(50, 200);
+		// echo "---> Creando $cant DispRed \n";
+		// factory(DispRed::class, $cant)->create()->each(function($dispRed) use ($empresas, $estado){
+		// 	$dispRed->activo()->create(['Estado_id'=>$estado]);
+		// 	$dispRed->activo->propietarios()->attach($empresas->random());
+		// });
+
+		// RadioComercial::truncate();
+		// $cant = rand(50, 200);
+		// echo "---> Creando $cant RadioComercial \n";
+		// factory(RadioComercial::class, $cant)->create()->each(function($radio) use ($empresas, $estado){
+		// 	$radio->activo()->create(['Estado_id'=>$estado]);
+		// 	$radio->activo->propietarios()->attach($empresas->random());
+		// });
+
+		// RadioTrabajo::truncate();
+		// $cant = rand(50, 200);
+		// echo "---> Creando $cant RadioTrabajo \n";
+		// factory(RadioTrabajo::class, $cant)->create()->each(function($radio) use ($empresas, $estado){
+		// 	$radio->activo()->create(['Estado_id'=>$estado]);
+		// 	$radio->activo->propietarios()->attach($empresas->random());
+		// });
+
+		// Impresora::truncate();
+		// $cant = rand(50, 200);
+		// echo "---> Creando $cant Impresora \n";
+		// factory(Impresora::class, $cant)->create()->each(function($imp) use ($empresas, $estado){
+		// 	$imp->activo()->create(['Estado_id'=>$estado]);
+		// 	$imp->activo->propietarios()->attach($empresas->random());
+		// });
+
+		// Celular::truncate();
+		// $cant = rand(50, 200);
+		// echo "---> Creando $cant Celular \n";
+		// factory(Celular::class, $cant)->create()->each(function($cel) use ($empresas, $estado){
+		// 	$cel->activo()->create(['Estado_id'=>$estado]);
+		// 	$cel->activo->propietarios()->attach($empresas->random());
+		// });
+
+		// // <<<<<<<<<<           >>>>>>>>>>
+		// // <<<<<<<<<< SERVICIOS >>>>>>>>>>
+		// // <<<<<<<<<<           >>>>>>>>>>
 
 
-
-
-
-
-
-
-
-
+		// FALTARIAN TODOS ESTOS...
 			
 			// -- TICKETS --
 			// Ticket_EstadoTicket

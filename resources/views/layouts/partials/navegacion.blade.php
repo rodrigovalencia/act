@@ -524,19 +524,24 @@
 							</li>
 						</ul>
 					</li>
+					<li>
+						<a>
+							<i class="fa fa-dashboard"></i>
+							Base
+							<span class="fa fa-chevron-down"></span>
+						</a>
+						<ul class="nav child_menu">
+							<li>
+								<a href="{{ route('admin.base.catEquipo.index') }}">Categorías de Equipos</a>
+							</li>
+							<li>
+								<a href="{{ route('admin.base.tipoBase.index') }}">Tipos de Base</a>
+							</li>
+						</ul>
+					</li>
 				</ul>
 			</div>
 		</div>
 	<!-- /sidebar menu -->
 	</div>
 </div>
-
-
-
-
-
-
-
-
-
-

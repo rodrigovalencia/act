@@ -1,5 +1,9 @@
 <?php
 
+use App\Exports\TestExport;
+use App\Imports\TestImport;
+use Maatwebsite\Excel\Facades\Excel;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -11,7 +15,16 @@
 |
 */
 
-Route::get('/', 'PagesController@index') -> name('index');
+// Activar para el LOGIN
+// Route::get('/', 'PagesController@index') -> name('index');
+Route::get('/', 'DashBoardController@index') -> name('dashboard.index');
+
+Route::get('/testExport', function(){
+        return Excel::download(new TestExport, 'algo.pdf');
+});
+Route::get('/testImport', function(){
+        return Excel::import(new TestImport, 'algo.xlsx');
+});
 
 // RUTAS AJAX
 Route::prefix('ajax')->group(function(){
@@ -39,8 +52,21 @@ Route::prefix('tecnicos')->group(function(){
 Route::prefix('supervisores')->group(function(){
 });
 
+Route::prefix('algo')->group(function (){
+});
+
 // RUTAS DE ADMINISTRADORES
 Route::prefix('administracion')->group(function(){
+	Route::prefix('base')->group(function(){
+		Route::resource('catEquipo', 'CategoriaEquipoController', [
+			'as' => 'admin.base',
+			'only' => ['index'],
+		]);
+		Route::resource('tipoBase', 'TipoBaseController', [
+			'as' => 'admin.base',
+			'only' => ['index'],
+		]);
+	});
 	Route::prefix('activos')->group(function(){
 		Route::resource('radioTrabajo'   , 'RadioTrabajoController', [
 			'as' => 'admin.activos',

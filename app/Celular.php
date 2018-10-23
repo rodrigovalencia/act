@@ -31,7 +31,7 @@ class Celular extends Model
 
 	public function activo()
 	{
-		return $this->morphMany(
+		return $this->morphOne(
 			Activo::class,
 			'Activo'
 		);
