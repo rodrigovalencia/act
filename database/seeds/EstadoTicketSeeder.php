@@ -14,10 +14,7 @@ class EstadoTicketSeeder extends Seeder
     {
 		EstadoTicket::truncate();
 
-		// Cruzar contra funcionalidades
-
 		EstadoTicket::create(['nombre'=>'Creado']);
-		EstadoTicket::create(['nombre'=>'Asignar']);
 		EstadoTicket::create(['nombre'=>'En Progreso']);
 		EstadoTicket::create(['nombre'=>'En Espera']);
 		EstadoTicket::create(['nombre'=>'Resuelto Telefonico']);
