@@ -1,6 +1,7 @@
 <?php
 
 use App\Activo;
+<<<<<<< HEAD
 use App\Activo_Empresa;
 use App\Area;
 use App\CCTV;
@@ -19,6 +20,16 @@ use App\Persona;
 use App\Procedimiento;
 use App\RadioComercial;
 use App\RadioTrabajo;
+=======
+use App\Capacitacion;
+use App\Categoria;
+use App\DocComodato;
+use App\EstadoActivo;
+use App\GrupoEspecialista;
+use App\Modelo;
+use App\Persona;
+use App\Procedimiento;
+>>>>>>> JNunez
 use App\Rol;
 use App\SATI;
 use App\TipoActivo;
@@ -118,6 +129,7 @@ class FakerSeeder extends Seeder
 		// // <<<<<<<<<< ACTIVOS >>>>>>>>>>
 		// // <<<<<<<<<<         >>>>>>>>>>
 
+<<<<<<< HEAD
 		// Activo::truncate();
 		// Activo_Empresa::truncate();
 
@@ -186,6 +198,48 @@ class FakerSeeder extends Seeder
 
 
 		// FALTARIAN TODOS ESTOS...
+=======
+
+		Activo::truncate();
+		CCTV::truncate();
+		$estado = EstadoActivo::where('nombre', 'DISPONIBLE')->first()->id;
+		$cant = rand(10, 20);
+		factory(CCTV::class, $cant)->create()->each(function($e){
+			$e->activo()->create(['Estado_id'=>$estado]);
+			// Falta considerar los propietarios de los activos
+			// $e->activo->propietarios()->attach
+		});
+
+			
+
+			// -- ACTIVOS --
+			// Activo
+			// Activo_EstadoActivo
+			// Activo_Empresa
+			// --
+			// CCTV
+			// Computador
+			// DispRed
+			// RadioComercial
+			// RadioTrabajo
+			// Impresora
+			// Monitor
+			// Celular
+			// CableRadiante
+			// CarroAmplificacion
+			// Repetidor
+			// ******
+
+
+
+
+
+
+
+
+
+
+>>>>>>> JNunez
 			
 			// -- TICKETS --
 			// Ticket_EstadoTicket

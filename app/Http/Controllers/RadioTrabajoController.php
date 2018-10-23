@@ -29,7 +29,10 @@ class RadioTrabajoController extends Controller
 	 */
 	public function create()
 	{
+<<<<<<< HEAD
 	    
+=======
+>>>>>>> JNunez
 		$fabricantes = TipoActivo::where('nombre', 'RadioTrabajo')->first()->fabricantes;
 		$empresas = Empresa::all();
 		$satis = SATI::all()->map(function($s){
