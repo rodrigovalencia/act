@@ -27,15 +27,15 @@
 				<td>{{ $item->modeloRadio->fabricante->nombre }}</td>
 				<td>{{ $item->modeloRadio->nombre }}</td>
 				<td>{{ $item->serie }}</td>
-				<td>{{ $item->modeloRadio->sistema->nombre }}</td>
+				<td>{{ $item->modeloRadio->sistemas->pluck('nombre') }}</td>
 				<td>{{ $item->idSistema }}</td>
 				<td>{{ $item->flashPort }}</td>
 				<td>{{ $item->area->ubicacion->faena->nombre }}</td>
 				<td>{{ $item->area->ubicacion->nombre }}</td>
 				<td>{{ $item->area->nombre }}</td>
 				<td>{{ $item->mandante->getNombreCompleto() }}</td>
-				<td>{{ $item->tercero->getNombreCompleto() }}</td>
-				<td>{{ $item->ubicacionRadio->ubicable->getNombre() }}</td>
+				<td>{{ ($item->tercero) ? $item->tercero->getNombreCompleto() : '' }}</td>
+				<td>{{ ($item->ubicacionRadio) ? $item->ubicacionRadio->ubicable->getNombre() : '' }}</td>
 			</tr>
 		@endforeach
 	</tbody>
