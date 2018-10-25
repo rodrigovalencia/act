@@ -24,7 +24,7 @@ class Codelco extends Model
 	*/
 
 	function getNombre(){
-		return $this->nombre . ' - ' . $this->hijo->nombre;
+		return ($this->nombre == "NULL") ? $this->hijo->nombre : $this->nombre . ' - ' . $this->hijo->nombre;
 	}
 
 	function hijo()
