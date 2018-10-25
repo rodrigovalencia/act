@@ -19,6 +19,7 @@ class EstadoTicketSeeder extends Seeder
 		EstadoTicket::create(['nombre'=>'En Espera']);
 		EstadoTicket::create(['nombre'=>'Resuelto Telefonico']);
 		EstadoTicket::create(['nombre'=>'Resuelto Tecnico']);
+		EstadoTicket::create(['nombre'=>'Resuelto Administrativo']);
 		EstadoTicket::create(['nombre'=>'Cerrado']);
     }
 }
