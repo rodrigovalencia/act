@@ -3,13 +3,12 @@
 namespace App\Http\Controllers\ajax;
 
 use App\CatEquipo;
-use App\Http\Controllers\Controller;
 use App\ModeloRadio;
 use App\SATI;
 use App\TipoBase;
 use App\TipoEquipo;
 use App\Ubicacion;
-use Illuminate\Http\Request;
+use App\Http\Controllers\Controller;
 
 class RadioTrabajoController extends Controller
 {

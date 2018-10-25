@@ -1,10 +1,10 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\general;
 
 use App\RadioTrabajo;
 use App\TipoActivo;
-use Illuminate\Http\Request;
+use App\Http\Controllers\Controller;
 
 class DashBoardController extends Controller
 {

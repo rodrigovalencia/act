@@ -1,9 +1,9 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\admin\base;
 
 use App\CatEquipo;
-use Illuminate\Http\Request;
+use App\Http\Controllers\Controller;
 
 class CategoriaEquipoController extends Controller
 {
