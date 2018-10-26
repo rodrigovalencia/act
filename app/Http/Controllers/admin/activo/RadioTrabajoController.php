@@ -4,11 +4,12 @@ namespace App\Http\Controllers\admin\activo;
 
 use App\CatEquipo;
 use App\Empresa;
+use App\Http\Controllers\Controller;
+use App\RadioTrabajo;
 use App\SATI;
 use App\TipoActivo;
 use App\TipoBase;
 use App\Ubicacion;
-use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 
 class RadioTrabajoController extends Controller
@@ -20,7 +21,8 @@ class RadioTrabajoController extends Controller
 	 */
 	public function index()
 	{
-		return view('admin.activos.radioTrabajo.index');
+		$radios = RadioTrabajo::with('modeloRadio.fabricante','contrato.empresa','activo.estado')->get();
+		return view('admin.activos.radioTrabajo.index', compact('radios'));
 	}
 
 	/**
@@ -83,7 +85,8 @@ class RadioTrabajoController extends Controller
 	 */
 	public function show($id)
 	{
-		//
+		$radio = RadioTrabajo::findOrFail($id);
+		return view('admin.activos.radioTrabajo.show', compact('radio'));
 	}
 
 	/**
