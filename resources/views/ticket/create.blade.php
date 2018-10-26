@@ -3,7 +3,14 @@
 @section('titulo', ' Crear Ticket')
 
 @push('estilos')
+
 <style>
+	div.of {
+		border: 1px solid;
+		border-radius: 10px;
+		height: 150px;
+		overflow: auto;
+	}
 	.espacio{
 		height: 50px;
 	}
@@ -135,7 +142,7 @@
 			<h5 class="text-center">Datos de Activos</h5>
 		</div>
 	</div>
-	<div class="col-md-10 col-md-offset-1">
+	<div class="row">
 		<div class="col-md-4">
 			<div class="row">
 				<div class="form-group">
@@ -161,7 +168,7 @@
 				</div>
 			</div>
 		</div>
-		<div class="col-md-5 col-md-offset-3">
+		<div class="col-md-6 col-md-offset-2 of">
 			<table class="table table-inverse">
 				<thead>
 					<tr>
@@ -172,6 +179,30 @@
 					</tr>
 				</thead>
 				<tbody>
+					<tr>
+						<td>Serie1</td>
+						<td>Empresa1</td>
+						<td>Formulario1</td>
+						<td><button class="btn btn-danger"> - </button> </td>
+					</tr>
+					<tr>
+						<td>Serie1</td>
+						<td>Empresa1</td>
+						<td>Formulario1</td>
+						<td><button class="btn btn-danger"> - </button> </td>
+					</tr>
+					<tr>
+						<td>Serie1</td>
+						<td>Empresa1</td>
+						<td>Formulario1</td>
+						<td><button class="btn btn-danger"> - </button> </td>
+					</tr>
+					<tr>
+						<td>Serie1</td>
+						<td>Empresa1</td>
+						<td>Formulario1</td>
+						<td><button class="btn btn-danger"> - </button> </td>
+					</tr>
 					<tr>
 						<td>Serie1</td>
 						<td>Empresa1</td>
