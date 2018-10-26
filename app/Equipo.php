@@ -26,7 +26,7 @@ class Equipo extends Model
 
 	public function getNombre()
 	{
-		return $this->tipoEquipo->categoria->nombre . ' - ' . $this->tipoEquipo->nombre . ' - ' . $this->nombre;
+		return $this->tipoEquipo->getNombre() . ' - ' . $this->numero;
 	}
 
 	public function ubicacionRadio()

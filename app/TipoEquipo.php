@@ -24,6 +24,11 @@ class TipoEquipo extends Model
 	 * unsignedInteger('CatEquipo_id')
 	 */
 
+	function getNombre()
+	{
+		return $this->categoria->getNombre() . ' - ' . $this->nombre;
+	}
+
 	function equipos()
 	{
 		return $this->hasMany(

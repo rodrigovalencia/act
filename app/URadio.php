@@ -54,6 +54,11 @@ class URadio extends Model
 		);
 	}
 
+	public function getNombre()
+	{
+		return $this->ubicable->getNombre();
+	}
+
 	public function ubicable()
 	{
 		return $this->morphTo();
