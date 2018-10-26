@@ -39,6 +39,13 @@ Route::prefix('administracion')->namespace('admin')->name('admin.')->group(funct
 });
 
 /*
+ * Impresion de documentos
+ */
+Route::prefix('impresion')->namespace('impresion')->name('impresora.')->group(function(){
+	Route::get('test', 'ImpresoraController@test')->name('test');
+});
+
+/*
  * AJAX
  */
 Route::prefix('ajax')->namespace('ajax')->name('ajax.')->group(function(){
