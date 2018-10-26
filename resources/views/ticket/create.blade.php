@@ -226,7 +226,7 @@
 	<hr>
 	<div class="row">
 		<div class="col-md-2 col-md-offset-3">
-			<button class="btn btn-block btn-primary">Imprimir</button>
+			<a href="{{ route('impresora.test') }}" class="btn btn-block btn-primary">Imprimir</a>
 		</div>
 		<div class="col-md-2 col-md-offset-2">
 			<button class="btn btn-block btn-primary">Validar Ticket</button>
