@@ -10,7 +10,6 @@
 @endpush
 
 @push('acciones')
-	{{-- QUE ONDA ACA...?? --}}
 	<!-- jquery.inputmask -->
 	<script src="/components/jquery.inputmask/dist/min/jquery.inputmask.bundle.min.js"></script>
 	<!-- Switchery -->
@@ -20,27 +19,39 @@
 	<script>
 		$('#marcaRadio').on('change', function(e){
 			var Fabricante_id = e.target.value;
+			
+			//debuging
+			alert(e.target.value);
+			console.log(e);
 
 			var url = '{{ route("ajax.radioTrabajo.modelos", ":id") }}';
 			url = url.replace(':id', Fabricante_id);
+
 
 			$.get(url, function(data) {
 				$('#modeloRadio').empty();
 				$('#modeloRadio').append('<option value="0" disable="true" selected="true">*** Seleccione un Modelo ***</option>');
 
+				$('#sistema').empty();
+				$('#sistema').append('<option value="0" disable="true" selected="true">*** Seleccione un Modelo ***</option>');
+
 				$.each(data, function(index, modelo){
 					$('#modeloRadio').append('<option value="'+ index +'">'+ modelo +'</option>');
-				})
+				});
 			});
 		});
 
 		$('#modeloRadio').on('change', function(e){
 			var ModeloRadio_id = e.target.value;
-
-			var url = '{{ route("ajax.radioTrabajo.sistema", ":id") }}';
+			alert(e.target.value);
+			var url = '{{ route("ajax.radioTrabajo.sistemas", ":id") }}';
 			url = url.replace(':id', ModeloRadio_id);
 
 			$.get(url, function(data) {
+				$('#sistema').empty();
+				$('#sistema').append('<option value="0" disable="true" selected="true">*** Seleccione un Modelo ***</option>');
+				// alert('hola');
+
 				// $('#sistema').value = data['nombre'];
 				document.getElementById("sistema").value = data['nombre'];
 			});
@@ -110,7 +121,7 @@
 					<div class="form-group">
 						<label class="control-label col-md-3 col-sm-3 col-xs-12">Marca</label>
 						<div class="col-md-9 col-sm-9 col-xs-12">
-							<select id="marcaRadio" class="select2_single form-control" tabindex="-1">
+							<select id="marcaRadio" class="select2_single form-control" value="10">
 								<option value="0" disable="true" selected="true">*** Seleccione una Marca ***</option>
 								@foreach ($fabricantes as $fabricante)
 									<option value="{{ $fabricante->id }}">{{ $fabricante->nombre }}</option>

@@ -3,8 +3,8 @@
 namespace App\Http\Controllers\ajax;
 
 use App\CatEquipo;
+use App\Fabricante;
 use App\ModeloRadio;
-use App\SATI;
 use App\TipoBase;
 use App\TipoEquipo;
 use App\Ubicacion;
@@ -14,13 +14,13 @@ class RadioTrabajoController extends Controller
 {
 	public function modelos($id)
 	{
-		$modelos = ModeloRadio::where('Fabricante_id', $id)->get()->pluck('nombre', 'id');
+		$modelos = Fabricante::findOrFail($id)->modelosRadio->pluck('nombre', 'id');
 		return response()->json($modelos);
 	}
-	public function sistema($id)
+	public function sistemas($id)
 	{
-		$sistema = ModeloRadio::findOrFail($id)->sistema;
-		return response()->json($sistema);
+		$sistemas = ModeloRadio::findOrFail($id)->sistemas;
+		return response()->json($sistemas);
 	}
 	public function areas($id)
 	{
