@@ -30,11 +30,11 @@ class TicketController extends Controller
 	 */
 	public function create()
 	{
-		$categorias = CategoriaTicket::all();
+		$categorias = CategoriaTicket::all()->pluck('categoria_type')->unique();
 		$faenas = Faena::all();
 		$empresas = Empresa::all();
-		$tipoactivos = TipoActivo::all();
-		return view('ticket.create', compact('categorias','faenas','empresas','tipoactivos'));
+		$tipoActivos = TipoActivo::all();
+		return view('ticket.create', compact('categorias','faenas','empresas','tipoActivos'));
 	}
 
 	/**

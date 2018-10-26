@@ -86,8 +86,8 @@
 				<div class="col-md-9 col-xs-12">
 					<select id="catTicket" class="select2_single form-control" tabindex="-1">
 						<option value="0" disable="true" selected="true">** Seleccione una Categoria **</option>
-							@foreach ($categorias as $categoria)
-								<option value="{{ $categoria->id }}">{{ $categoria->nombre }}</option>
+							@foreach ($categorias as $categoria => $nombre)
+								<option value="{{ substr($nombre, 4) }}">{{ substr($nombre, 4) }}</option>
 							@endforeach
 					</select>
 				</div>
@@ -99,9 +99,9 @@
 				<div class="col-md-9 col-xs-12">
 					<select id="subcatTicket" class="select2_single form-control" tabindex="-1">
 						<option value="0" disable="true" selected="true">** Seleccione una SubCategoria **</option>
-						@foreach ($categorias as $categoria)
+						{{-- @foreach ($categorias as $categoria)
 							<option value="{{ $categoria->id }}">{{ $categoria->nombre }}</option>
-						@endforeach
+						@endforeach --}}
 					</select>
 				</div>
 			</div>
@@ -187,8 +187,8 @@
 					<div class="col-md-8 col-xs-12">
 						<select id="selFaena" class="select2_single form-control" tabindex="-1">
 							<option value="0" disable="true" selected="true">** Seleccione un tipo de Activo **</option>
-							@foreach ($tipoactivos as $tipoactivo)
-								<option value="{{ $tipoactivo->id }}">{{ $tipoactivo->nombre }}</option>
+							@foreach ($tipoActivos as $tipoActivo)
+								<option value="{{ $tipoActivo->id }}">{{ $tipoActivo->nombre }}</option>
 							@endforeach
 						</select>
 					</div>

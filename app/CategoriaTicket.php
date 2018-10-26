@@ -24,7 +24,7 @@ class CategoriaTicket extends Model
 
 
 	function getNombre(){
-		return $this->categoria->getNombre;
+		return $this->categoria->getNombre();
 	}
 
 	public function categoria()
