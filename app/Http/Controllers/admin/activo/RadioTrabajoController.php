@@ -120,6 +120,9 @@ class RadioTrabajoController extends Controller
 	 */
 	public function destroy($id)
 	{
-		//
+		RadioTrabajo::findOrFail($id)->delete();
+
+		return redirect()->back();
+		// return redirect()->back()->with('eliminacionExitosa', $id);
 	}
 }

@@ -31,6 +31,10 @@
 	<script src="/components/pdfmake/build/vfs_fonts.js"></script>
 	<script>
 		$('#datatable').DataTable();
+
+		function validarAccion(cadena){
+			return confirm('¿Esta seguro de querer eliminar la Radio (Serie): ' + cadena + ' ?');
+		}
 	</script>
 @endpush
 
@@ -72,20 +76,29 @@
 						<th>{{ $radio->contrato->empresa->nombre }}</th>
 						<th>{{ $radio->activo->estado->nombre }}</th>
 						<th class="text-center">
-							<div class="btn-group">
-								<a href="{{ route('admin.activos.radioTrabajo.show', $radio->id) }}"
-									class="btn btn-sm btn-round btn-primary">
-										Reporte
-								</a>
-								<a href="{{ route('admin.activos.radioTrabajo.edit', $radio->id) }}"
-									class="btn btn-sm btn-round btn-warning">
-										Modificar
-								</a>
-								<a href="{{ route('admin.activos.radioTrabajo.destroy', $radio->id) }}"
-									class="btn btn-sm btn-round btn-danger">
-										Eliminar
-								</a>
-							</div>
+							<form
+								method="POST"
+								action="{{ route('admin.activos.radioTrabajo.destroy', $radio->id) }}"
+								style='display:inline-flex'>
+									{{ csrf_field() }}
+									{{ method_field('DELETE') }}
+									<div class="btn-group">
+										<a href="{{ route('admin.activos.radioTrabajo.show', $radio->id) }}"
+											class="btn btn-sm btn-round btn-primary">
+												Reporte
+										</a>
+										<a href="{{ route('admin.activos.radioTrabajo.edit', $radio->id) }}"
+											class="btn btn-sm btn-round btn-warning">
+												Modificar
+										</a>
+										<button
+											class="btn btn-sm btn-round btn-danger"
+											type="submit"
+											onclick="return validarAccion('{{ $radio->serie }}')">
+												Eliminar
+										</button>
+									</div>
+							</form>
 						</th>
 					</tr>
 				@endforeach
