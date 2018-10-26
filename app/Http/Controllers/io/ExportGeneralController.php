@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\io;
 
 use App\Exports\TerminalesExport;
+use App\Exports\TerminalesExportView;
 use App\Http\Controllers\Controller;
 
 class ExportGeneralController extends Controller
@@ -14,6 +15,6 @@ class ExportGeneralController extends Controller
 		return (new TerminalesExport)->download('terminales.xlsx');
 	}
 	function terminalesPDF(){
-		return (new TerminalesExport)->download('terminales.pdf');
+		return (new TerminalesExportView)->download('terminales.pdf');
 	}
 }

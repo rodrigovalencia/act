@@ -33,6 +33,9 @@
 						<th>
 							<a class="btn btn-sm btn-round btn-info" href="{{ route('reporte.uAsig.terminalesXLSX') }}">XLSX</a>
 						</th>
+						<th>
+							<a class="btn btn-sm btn-round btn-info" href="{{ route('reporte.uAsig.terminalesPDF') }}">PDF</a>
+						</th>
 					</tr>
 					<tr>
 						<th>Vehículos Asignados</th>
@@ -42,6 +45,9 @@
 						<th>
 							<a class="btn btn-sm btn-round btn-info" href="{{ route('reporte.uAsig.terminalesXLSX') }}">XLSX</a>
 						</th>
+						<th>
+							<a class="btn btn-sm btn-round btn-info" href="{{ route('reporte.uAsig.terminalesPDF') }}">PDF</a>
+						</th>
 					</tr>
 					<tr>
 						<th>Terminales</th>
@@ -50,6 +56,9 @@
 						</th>
 						<th>
 							<a class="btn btn-sm btn-round btn-info" href="{{ route('reporte.uAsig.terminalesXLSX') }}">XLSX</a>
+						</th>
+						<th>
+							<a class="btn btn-sm btn-round btn-info" href="{{ route('reporte.uAsig.terminalesPDF') }}">PDF</a>
 						</th>
 					</tr>
 				</tbody>
