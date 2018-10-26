@@ -50,6 +50,10 @@ Route::prefix('ajax')->namespace('ajax')->name('ajax.')->group(function(){
 		Route::get('tiposEquipos/{id}' , 'RadioTrabajoController@tiposEquipos') -> name('tiposEquipos');
 		Route::get('equipos/{id}'      , 'RadioTrabajoController@equipos')      -> name('equipos');
 	});
+	Route::prefix('faena')->name('faena.')->group(function(){
+		Route::get('ubicaciones/{id}'	,'FaenaController@ubicaciones')		->name('ubicaciones');
+		Route::get('areas/{id}'	,'FaenaController@areas')		->name('areas');
+	});
 });
 
 /*

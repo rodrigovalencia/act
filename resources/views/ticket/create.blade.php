@@ -11,6 +11,40 @@
 @endpush
 
 @push('acciones')
+
+	<script>
+		$('#selFaena').on('change', function(e){
+			var Faena_id = e.target.value;
+
+			url = '{{ route("ajax.faena.ubicaciones", ":id") }}';
+			url = url.replace(':id', Faena_id);
+
+			$.get(url, function(data) {
+					$('#selUbicacion').empty();
+					$('#selUbicacion').append('<option value="0" selected="true">** Seleccione una Ubicación **</option>');
+					$.each(data, function(index, ubicacion){
+						$('#selUbicacion').append('<option value="'+ ubicacion['id'] +'">'+ ubicacion['nombre'] +'</option>');
+					})
+				});
+
+		});
+
+		$('#selUbicacion').on('change', function(e){
+			var Ubicacion_id = e.target.value;
+
+			url = '{{ route("ajax.faena.areas", ":id") }}';
+			url = url.replace(':id', Ubicacion_id);
+
+			$.get(url, function(data) {
+					$('#selArea').empty();
+					$('#selArea').append('<option value="0" selected="true">** Seleccione un Área **</option>');
+					$.each(data, function(index, area){
+						$('#selArea').append('<option value="'+ area['id'] +'">'+ area['nombre'] +'</option>');
+					})
+				});
+
+		});
+	</script>
 @endpush
 
 @section('contenido')
@@ -52,6 +86,9 @@
 				<div class="col-md-9 col-xs-12">
 					<select id="catTicket" class="select2_single form-control" tabindex="-1">
 						<option value="0" disable="true" selected="true">** Seleccione una Categoria **</option>
+							@foreach ($categorias as $categoria)
+								<option value="{{ $categoria->id }}">{{ $categoria->nombre }}</option>
+							@endforeach
 					</select>
 				</div>
 			</div>
@@ -62,6 +99,9 @@
 				<div class="col-md-9 col-xs-12">
 					<select id="subcatTicket" class="select2_single form-control" tabindex="-1">
 						<option value="0" disable="true" selected="true">** Seleccione una SubCategoria **</option>
+						@foreach ($categorias as $categoria)
+							<option value="{{ $categoria->id }}">{{ $categoria->nombre }}</option>
+						@endforeach
 					</select>
 				</div>
 			</div>
@@ -74,7 +114,9 @@
 				<div class="col-md-9 col-xs-12">
 					<select id="selFaena" class="select2_single form-control" tabindex="-1">
 						<option value="0" disable="true" selected="true">** Seleccione una Faena **</option>
-						
+						@foreach ($faenas as $faena)
+							<option value="{{ $faena->id }}">{{ $faena->nombre }}</option>
+						@endforeach
 					</select>
 				</div>
 			</div>
@@ -123,7 +165,9 @@
 				<div class="col-md-9 col-xs-12">
 					<select id="selEmpresa" class="select2_single form-control" tabindex="-1">
 						<option value="0" disable="true" selected="true">** Seleccione una Empresa **</option>
-						
+						@foreach ($empresas as $empresa)
+							<option value="{{ $empresa->id }}">{{ $empresa->nombre }}</option>
+						@endforeach
 					</select>
 				</div>
 			</div>
@@ -143,6 +187,9 @@
 					<div class="col-md-8 col-xs-12">
 						<select id="selFaena" class="select2_single form-control" tabindex="-1">
 							<option value="0" disable="true" selected="true">** Seleccione un tipo de Activo **</option>
+							@foreach ($tipoactivos as $tipoactivo)
+								<option value="{{ $tipoactivo->id }}">{{ $tipoactivo->nombre }}</option>
+							@endforeach
 						</select>
 					</div>
 				</div>
