@@ -18,11 +18,6 @@
 @endpush
 
 @push('acciones')
-<script>
-	$('#tipoTicket').on('change', function(e){
-		alert(e.target.value);
-	});
-</script>
 @endpush
 
 @section('contenido')

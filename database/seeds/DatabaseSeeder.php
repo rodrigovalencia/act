@@ -33,85 +33,85 @@ class DatabaseSeeder extends Seeder
 // <<<<<<<<<< SEEDERS >>>>>>>>>>
 // <<<<<<<<<<         >>>>>>>>>>
 
-			// // -- BASE --
-			// // Se dispone de:
-			// // - 'CCTV'
-			// // - 'Computador'
-			// // - 'DispRed'
-			// // - 'RadioComercial'
-			// // - 'RadioTrabajo'
-			// // - 'Impresora'
-			// // - 'Celular'
-			// TipoActivoSeeder::class,
-			// //Solo de RadioTrabajo
-			// FabricanteSeeder::class,
-			// // --
-			// SistemaSeeder::class,
-			// ExpReg_RTSeeder::class,
-			// TipoModeloSeeder::class,
-			// // Solo fabricante MOTOROLA
-			// ModeloRadioSeeder::class,
-			// // --
-			// // Solo CODELCO NORTE
-			// FaenaSeeder::class,
-			// UbicacionSeeder::class,
-			// AreaSeeder::class,
-			// // --
-			// // Hay algunas empresas que no poseen rut
-			// EmpresaSeeder::class,
-			// Contrato_Seeder::class,
-			// ContratoInactivo_Seeder::class,
-			// // --
-			// TipoContrato_Seeder::class,
-			// Estado_Seeder::class,
-			// // --
-			// TipoBase_Seeder::class,
-			// Base_Seeder::class,
-			// CatEquipo_Seeder::class,
-			// TipoEquipo_Seeder::class,
+			// -- BASE --
+			// Se dispone de:
+			// - 'CCTV'
+			// - 'Computador'
+			// - 'DispRed'
+			// - 'RadioComercial'
+			// - 'RadioTrabajo'
+			// - 'Impresora'
+			// - 'Celular'
+			TipoActivoSeeder::class,
+			//Solo de RadioTrabajo
+			FabricanteSeeder::class,
+			// --
+			SistemaSeeder::class,
+			ExpReg_RTSeeder::class,
+			TipoModeloSeeder::class,
+			// Solo fabricante MOTOROLA
+			ModeloRadioSeeder::class,
+			// --
+			// Solo CODELCO NORTE
+			FaenaSeeder::class,
+			UbicacionSeeder::class,
+			AreaSeeder::class,
+			// --
+			// Hay algunas empresas que no poseen rut
+			EmpresaSeeder::class,
+			Contrato_Seeder::class,
+			ContratoInactivo_Seeder::class,
+			// --
+			TipoContrato_Seeder::class,
+			Estado_Seeder::class,
+			// --
+			TipoBase_Seeder::class,
+			Base_Seeder::class,
+			CatEquipo_Seeder::class,
+			TipoEquipo_Seeder::class,
+			// ->>>> TRABAJARLO
+			Equipo_Seeder::class,
+
+			// -- PROCEDIMIENTOS --
+			TipoServicioSeeder::class,
+
+			// -- GESTION DEL SW --
+			TipoKeySeeder::class,
+			TipoLicenciaSeeder::class,
+
+			// -- USUARIOS --
+			RolSeeder::class,
+			GrupoUsuarioSeeder::class,
+			GrupoEspecialistaSeeder::class,
+
+			// -- CAPACITACIONES --
+			// ->>>> TRABAJARLO
+			CategoriaSeeder::class,
+
+			// -- TICKETS --
 			// // ->>>> TRABAJARLO
-			// Equipo_Seeder::class,
+			EstadoTicketSeeder::class,
 
-			// // -- PROCEDIMIENTOS --
-			// TipoServicioSeeder::class,
+			// -- ACTIVOS --
+			// ->>>> TRABAJARLO
+			EstadoActivoSeeder::class,
 
-			// // -- GESTION DEL SW --
-			// TipoKeySeeder::class,
-			// TipoLicenciaSeeder::class,
-
-			// // -- USUARIOS --
-			// RolSeeder::class,
-			// GrupoUsuarioSeeder::class,
-			// GrupoEspecialistaSeeder::class,
-
-			// // -- CAPACITACIONES --
-			// // ->>>> TRABAJARLO
-			// CategoriaSeeder::class,
-
-			// // -- TICKETS --
-			// // // ->>>> TRABAJARLO
-			// EstadoTicketSeeder::class,
-
-			// // -- ACTIVOS --
-			// // ->>>> TRABAJARLO
-			// EstadoActivoSeeder::class,
-
-			// // -- CATEGORIA TICKETS --
-			// AdmN1_Seeder::class,
-			// AdmN2_Seeder::class,
-			// AdmN3_Seeder::class,
-			// AdmN4_Seeder::class,
-			// Administrativo_Seeder::class,
-			// // --
-			// CatN1_Seeder::class,
-			// CatN2_Seeder::class,
-			// CatN3_Seeder::class,
-			// CatN4_Seeder::class,
-			// CatN5_Seeder::class,
-			// Centinela_Seeder::class,
-			// // --
-			// CatCodelco_Seeder::class,
-			// Codelco_Seeder::class,
+			// -- CATEGORIA TICKETS --
+			AdmN1_Seeder::class,
+			AdmN2_Seeder::class,
+			AdmN3_Seeder::class,
+			AdmN4_Seeder::class,
+			Administrativo_Seeder::class,
+			// --
+			CatN1_Seeder::class,
+			CatN2_Seeder::class,
+			CatN3_Seeder::class,
+			CatN4_Seeder::class,
+			CatN5_Seeder::class,
+			Centinela_Seeder::class,
+			// --
+			CatCodelco_Seeder::class,
+			Codelco_Seeder::class,
 
 
 // <<<<<<<<<<           >>>>>>>>>>
