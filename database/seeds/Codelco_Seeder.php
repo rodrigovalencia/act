@@ -107,17 +107,17 @@ class Codelco_Seeder extends Seeder
 
 		Codelco::create([
 			'nombre' => 'NULL',
-			'CatCodelco_id' => $CatCodelco::where('nombre', 'Llamado')->value('id'),
+			'CatCodelco_id' => CatCodelco::where('nombre', 'Llamado')->value('id'),
 		])->catTicket()->create();
 
 		Codelco::create([
 			'nombre' => 'NULL',
-			'CatCodelco_id' => $CatCodelco::where('nombre', 'Instalación')->value('id'),
+			'CatCodelco_id' => CatCodelco::where('nombre', 'Instalación')->value('id'),
 		])->catTicket()->create();
 
 		Codelco::create([
 			'nombre' => 'NULL',
-			'CatCodelco_id' => $CatCodelco::where('nombre', 'Desinstalación')->value('id'),
+			'CatCodelco_id' => CatCodelco::where('nombre', 'Desinstalación')->value('id'),
 		])->catTicket()->create();		
 	}
 }

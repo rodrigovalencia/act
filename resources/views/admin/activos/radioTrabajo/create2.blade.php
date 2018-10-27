@@ -11,41 +11,39 @@
 
 @push('acciones')
 	<!-- jquery.inputmask -->
-	<script src="/components/jquery.inputmask4/dist/min/jquery.inputmask.bundle.min.js"></script>
+	<script src="/components/jquery.inputmask/dist/min/jquery.inputmask.bundle.min.js"></script>
 	<!-- Switchery -->
 	<script src="/components/switchery/dist/switchery.min.js"></script>
 	<!-- Scritp Personal -->
 	<script src="/js/custom.js"></script>
 	<script>
-		var marcaRadio = document.getElementById("marcaRadio");
-		var modeloRadio = document.getElementById("modeloRadio");
-		var sistema = document.getElementById("sistema");
-
-		marcaRadio.on('change', function(e){
+		$('#marcaRadio').on('change', function(e){
 			var Fabricante_id = e.target.value;
 			
+			//debuging
+			alert(e.target.value);
+			console.log(e);
+
 			var url = '{{ route("ajax.radioTrabajo.modelos", ":id") }}';
 			url = url.replace(':id', Fabricante_id);
 
-			$.get(url, function(data) {
 
-				var count = Object.keys(data).length;
+			$.get(url, function(data) {
 				$('#modeloRadio').empty();
 				$('#modeloRadio').append('<option value="0" disable="true" selected="true">*** Seleccione un Modelo ***</option>');
+
+				$('#sistema').empty();
+				$('#sistema').append('<option value="0" disable="true" selected="true">*** Seleccione un Modelo ***</option>');
 
 				$.each(data, function(index, modelo){
 					$('#modeloRadio').append('<option value="'+ index +'">'+ modelo +'</option>');
 				});
-
-				document.getElementById("sistema").disabled = true;
-				$('#sistema').empty();
-				$('#sistema').append('<option value="0" disable="true" selected="true">*** Seleccione un Modelo ***</option>');
 			});
 		});
 
 		$('#modeloRadio').on('change', function(e){
 			var ModeloRadio_id = e.target.value;
-			
+			alert(e.target.value);
 			var url = '{{ route("ajax.radioTrabajo.sistemas", ":id") }}';
 			url = url.replace(':id', ModeloRadio_id);
 
