@@ -7,6 +7,11 @@
 <link href="/components/switchery/dist/switchery.min.css" rel="stylesheet">
 <!-- Estilos Personales -->
 <link href="/css/custom2.css" rel="stylesheet">
+<style>
+	.espacio{
+		height: 50px;
+	}
+</style>
 @endpush
 
 @push('acciones')
@@ -18,8 +23,16 @@
 <script src="/js/custom.js"></script>
 
 <script>
+	var serie = document.getElementById("serie");
+	var flashPort = document.getElementById("flashPort");
+	var idSistema = document.getElementById("idSistema");
+
 	$('#marca').on('change', function(e){
 		var id = e.target.value;
+
+		serie.value = '';
+		flashPort.value = '';
+		idSistema.value = '';
 		if (id==0) {
 			$('#modelo').attr({'disabled': 'disabled'});
 			$('#sistema').attr({'disabled': 'disabled'});
@@ -31,9 +44,6 @@
 			$('#modelo').append('<option value="0" selected>- Seleccione una Marca -</option>');
 			$('#sistema').empty();
 			$('#sistema').append('<option value="0" selected>- Seleccione una Marca -</option>');
-			$('#serie').value = '';
-			$('#flashPort').value = '';
-			$('#idSistema').value = '';
 		} else {
 			$('#modelo').removeAttr('disabled');
 			$('#sistema').attr({'disabled': 'disabled'});
@@ -46,18 +56,27 @@
 
 			$.get(url, function(data) {
 				$('#modelo').empty();
-				$('#modelo').append('<option value="0" selected>- Seleccione un Modelo -</option>');
-				$.each(data, function(index, modelo){
-					$('#modelo').append('<option value="'+ index +'">'+ modelo +'</option>');
-				});
-				$('#serie').empty();
-				$('#serie').append('<option value="0" selected>- Seleccione un Modelo -</option>');
+				$('#sistema').empty();
+				if (Object.keys(data).length == 0) {
+					$('#modelo').append('<option value="0" selected>- No hay modelos disponibles -</option>');
+					$('#sistema').append('<option value="0" selected>- No hay modelos disponibles -</option>');
+				} else {
+					$('#modelo').append('<option value="0" selected>- Seleccione un Modelo -</option>');
+					$.each(data, function(index, valor){
+						$('#modelo').append('<option value="'+ index +'">'+ valor +'</option>');
+					});
+					$('#sistema').append('<option value="0" selected>- Seleccione un Modelo -</option>');
+				}
 			});
 		}
 	});
 
 	$('#modelo').on('change', function(e){
 		var id = e.target.value;
+
+		serie.value = '';
+		flashPort.value = '';
+		idSistema.value = '';
 		if (id==0) {
 			$('#sistema').attr({'disabled': 'disabled'});
 			$('#serie').attr({'disabled': 'disabled'});
@@ -66,9 +85,6 @@
 
 			$('#sistema').empty();
 			$('#sistema').append('<option value="0" selected>- Seleccione un Modelo -</option>');
-			$('#serie').value = '';
-			$('#flashPort').value = '';
-			$('#idSistema').value = '';
 		} else {
 			$('#sistema').removeAttr('disabled');
 			$('#serie').attr({'disabled': 'disabled'});
@@ -80,55 +96,158 @@
 
 			$.get(url, function(data) {
 				$('#sistema').empty();
-				$('#sistema').append('<option value="0" selected>- Seleccione un Sistema -</option>');
-				$.each(data, function(index, modelo){
-					$('#sistema').append('<option value="'+ index +'">'+ modelo +'</option>');
+				if (Object.keys(data).length == 1) {
+					$('#serie').removeAttr('disabled');
+					$('#flashPort').removeAttr('disabled');
+					$('#idSistema').removeAttr('disabled');
+					$('#sistema').append('<option value="' + Object.keys(data)[0] + '" selected>' + data[Object.keys(data)[0]] + '</option>');
+					mascarasDatos();
+				} else {
+					$('#sistema').append('<option value="0" selected>- Seleccione un Sistema -</option>');
+					$.each(data, function(index, valor){
+						$('#sistema').append('<option value="'+ index +'">'+ valor +'</option>');
+					});
+				}
+			});
+		}
+	});
+
+	$('#sistema').on('change', function(e){
+		var id = e.target.value;
+
+		serie.value = '';
+		flashPort.value = '';
+		idSistema.value = '';
+		if (id==0) {
+			$('#serie').attr({'disabled': 'disabled'});
+			$('#flashPort').attr({'disabled': 'disabled'});
+			$('#idSistema').attr({'disabled': 'disabled'});
+		} else {
+			$('#serie').removeAttr('disabled');
+			$('#flashPort').removeAttr('disabled');
+			$('#idSistema').removeAttr('disabled');
+			mascarasDatos();
+		}
+	});
+
+	function mascarasDatos(){
+		var id = document.getElementById("sistema").value;
+		var url = '{{ route("ajax.radioTrabajo.expReg", ":id") }}';
+		url = url.replace(':id', id);
+		$.get(url, function(data) {
+			$('#serie').inputmask(data.nSerie,{ "clearIncomplete": true });
+			if (data.flashPort == null) {
+				$('#flashPort').attr({'disabled': 'disabled'});
+				$('#flashPort').inputmask('remove');
+				flashPort.value = "No aplica";
+			} else {
+				$('#flashPort').inputmask(data.flashPort,{ "clearIncomplete": true });
+			}
+			$('#idSistema').inputmask(data.idSistema,{ "clearIncomplete": true });
+		});
+	}
+
+	var comodato = document.getElementById("comodato");
+	var contrato = document.getElementById("nContrato");
+	var cecoGrafo = document.getElementById("cecoGrafo");
+	var responsable = document.getElementById("responsable");
+	var tercero = document.getElementById("tercero");
+
+	$('#empresa').on('change', function(e){
+		var id = e.target.value;
+
+		comodato.value = 0;
+		contrato.value = '';
+		cecoGrafo.value = '';
+		responsable.value = '';
+		tercero.value = '';
+		if (id==0) {
+			$('#comodato').attr({'disabled': 'disabled'});
+			$('#nContrato').attr({'disabled': 'disabled'});
+			$('#cecoGrafo').attr({'disabled': 'disabled'});
+			$('#responsable').attr({'disabled': 'disabled'});
+			$('#tercero').attr({'disabled': 'disabled'});
+		} else {
+			$('#comodato').removeAttr('disabled');
+			$('#nContrato').removeAttr('disabled');
+			$('#cecoGrafo').removeAttr('disabled');
+			$('#responsable').removeAttr('disabled');
+			$('#tercero').removeAttr('disabled');
+
+			$('#nContrato').inputmask("(9{9}|9{10})");
+			$('#cecoGrafo').inputmask("(A{2}9{3}|9{10})");
+		}
+	});
+
+	$('#ubicacion').on('change', function(e){
+		var id = e.target.value;
+
+		reiniciarModales();
+		if (id==0) {
+			$('#area').empty();
+			$('#area').append('<option value="0" selected>- Seleccione una Ubicación -</option>');
+			$('#area').attr({'disabled': 'disabled'});
+		} else {
+			$('#area').removeAttr('disabled');
+
+			var url = '{{ route("ajax.radioTrabajo.areas", ":id") }}';
+			url = url.replace(':id', id);
+			$.get(url, function(data) {
+				$('#area').empty();
+				$('#area').append('<option value="0" selected>- Seleccione un Area -</option>');
+				$.each(data, function(index, valor){
+					$('#area').append('<option value="'+ index +'">'+ valor +'</option>');
+				});
+			});
+
+			var url = '{{ route("ajax.radioTrabajo.tiposUbicaciones", ":id") }}';
+			url = url.replace(':id', id);
+			$.get(url, function(data) {
+				$.each(data, function(index, valor){
+					if (valor == 'Equipo') {
+						$('#btnVehiculo').removeAttr('disabled');
+						url = '{{ route("ajax.radioTrabajo.categoriasEquipos", ":id") }}';
+						url = url.replace(':id', id);
+						$.get(url, function(data) {
+							$.each(data, function(index, valor){
+								$('#catEquipo').append('<option value="'+ index +'">'+ valor +'</option>');
+							});
+						});
+					} else if (valor == 'Base') {
+						$('#btnOficina').removeAttr('disabled');
+						url = '{{ route("ajax.radioTrabajo.tiposBases", ":id") }}';
+						url = url.replace(':id', id);
+						$.get(url, function(data) {
+							$.each(data, function(index, valor){
+								$('#tipoBase').append('<option value="'+ index +'">'+ valor +'</option>');
+							});
+						});
+					}
 				});
 			});
 		}
 	});
 
+	function reiniciarModales(){
+		$('#btnOficina').attr({'disabled': 'disabled'});
+		$('#tipoBase').empty();
+		$('#tipoBase').append('<option value="0" selected>- Seleccione un Tipo de Estación -</option>');
+		$('#baseBase').empty();
+		$('#baseBase').append('<option value="0" selected>- Seleccione un Tipo de Estación -</option>');
 
-	var empresa = document.getElementById("empresa");
-	var nContrato = document.getElementById("nContrato");
+		$('#btnVehiculo').attr({'disabled': 'disabled'});
+		$('#catEquipo').empty();
+		$('#catEquipo').append('<option value="0" selected>- Seleccione una Categoría -</option>');
+		$('#tipoEquipo').empty();
+		$('#tipoEquipo').append('<option value="0" selected>- Seleccione una Categoría -</option>');
+		$('#equipoEquipo').empty();
+		$('#equipoEquipo').append('<option value="0" selected>- Seleccione una Categoría -</option>');
 
-	var responsable = document.getElementById("responsable");
-	var tercero = document.getElementById("tercero");
-	var cecoGrafo = document.getElementById("cecoGrafo");
-	var comodato = document.getElementById("comodato");
+		document.getElementById("URadio_id").value = "";
+		document.getElementById("lugarInstalacion").value = "";
+	}
 
-	var ubicacion = document.getElementById("ubicacion");
-	var area = document.getElementById("area");
-
-	var uRadio = document.getElementById("URadio_id");
-	var lugarInstalacion = document.getElementById("lugarInstalacion");
-
-
-	$('#ubicaciones').on('change', function(e){
-		var Ubicacion_id = e.target.value;
-
-		var url = '{{ route("ajax.radioTrabajo.areas", ":id") }}';
-		url = url.replace(':id', Ubicacion_id);
-
-		$.get(url, function(data) {
-			$('#areas').empty();
-			$('#areas').append('<option value="0" disable selected>*** Seleccione un Area ***</option>');
-
-			$.each(data, function(index, modelo){
-				$('#areas').append('<option value="'+ modelo['id'] +'">'+ modelo['nombre'] +'</option>');
-			})
-		});
-	});
 	$(":input").inputmask();
-
-
-
-
-
-
-
-
-
 
 	var satis = @json($satis);
 
@@ -166,7 +285,7 @@
 	<div class="row">
 		<h4><strong>Carga Individual</strong></h4>
 		
-		<form method="POST" action="{{ route('admin.activos.radioTrabajo.store') }}" class="form-horizontal form-label-left">
+		<form method="POST" action="{{ route('admin.activos.radioTrabajo.store') }}" class="form-horizontal form-label-left" autocomplete="off">
 			@csrf
 			<div class="row">
 				<h5>Datos de la Radio</h5>
@@ -174,7 +293,7 @@
 					<div class="form-group">
 						<label class="control-label col-md-3 col-xs-12">Marca</label>
 						<div class="col-md-9 col-xs-12">
-							<select id="marca" name="marca_test" class="select2_single form-control">
+							<select id="marca" class="select2_single form-control">
 								<option value="0">- Seleccione una Marca -</option>
 								@foreach ($fabricantes as $fabricante)
 									<option value="{{ $fabricante->id }}">{{ $fabricante->nombre }}</option>
@@ -247,7 +366,7 @@
 						<label class="control-label col-md-3 col-xs-12">Empresa</label>
 						<div class="col-md-9 col-xs-12">
 							<select id="empresa" name="Empresa_id" class="select2_single form-control">
-								<option>- Seleccione una Empresa -</option>
+								<option value="0">- Seleccione una Empresa -</option>
 								@foreach ($empresas as $empresa)
 									<option value="{{ $empresa->id }}">{{ $empresa->nombre }}</option>
 								@endforeach
@@ -266,8 +385,34 @@
 								disabled>
 						</div>
 					</div>
+					<div class="form-group">
+						<label class="control-label col-md-3 col-xs-12">Centro de Costos</label>
+						<div class="col-md-9 col-xs-12">
+							<input
+								id="cecoGrafo"
+								name="cecoGrafo"
+								type="text"
+								class="form-control"
+								placeholder="CECO / GRAFO"
+								disabled>
+						</div>
+					</div>
 				</div>
 				<div class="col-md-6">
+					<div class="form-group">
+						<label class="control-label col-md-3 col-xs-12">Comodato</label>
+						<div class="col-md-9 col-xs-12">
+							<label>
+								<input
+									id="comodato"
+									name="comodato"
+									type="checkbox"
+									class="js-switch"
+									placeholder="Comodato"
+									disabled>
+							</label>
+						</div>
+					</div>
 					<div class="form-group">
 						<label class="control-label col-md-3 col-xs-12">Responsable</label>
 						<div class="col-md-9 col-xs-12">
@@ -290,32 +435,6 @@
 								class="form-control"
 								placeholder="Tercero"
 								disabled>
-						</div>
-					</div>
-					<div class="form-group">
-						<label class="control-label col-md-3 col-xs-12">Centro de Costos</label>
-						<div class="col-md-9 col-xs-12">
-							<input
-								id="cecoGrafo"
-								name="cecoGrafo"
-								type="text"
-								class="form-control"
-								placeholder="CECO / GRAFO"
-								disabled>
-						</div>
-					</div>
-					<div class="form-group">
-						<label class="control-label col-md-3 col-xs-12">Comodato</label>
-						<div class="col-md-9 col-xs-12">
-							<label>
-								<input
-									id="comodato"
-									name="comodato"
-									type="checkbox"
-									class="js-switch"
-									placeholder="Comodato"
-									disabled>
-							</label>
 						</div>
 					</div>
 				</div>
@@ -353,10 +472,10 @@
 						</div>
 					</div>
 					<div class="col-md-4 col-md-offset-2">
-						<button type="button" class="btn btn-block btn-success btn-round" data-toggle="modal" data-target=".modalOficina">Oficina</button>
+						<button id="btnOficina" type="button" class="btn btn-block btn-success btn-round" data-toggle="modal" data-target=".modalOficina" disabled>Oficina</button>
 					</div>
 					<div class="col-md-4">
-						<button type="button" class="btn btn-block btn-success btn-round" data-toggle="modal" data-target=".modalVehiculo">Vehiculo</button>
+						<button id="btnVehiculo" type="button" class="btn btn-block btn-success btn-round" data-toggle="modal" data-target=".modalVehiculo" disabled>Vehiculo</button>
 					</div>
 				</div>
 			</div>
@@ -371,6 +490,7 @@
 			<a class="btn btn-block btn-danger" href="{{ route('dashboard.index') }}">Cancelar</a>
 		</div>
 	</div>
+	<div class="espacio"></div>
 </form>
 
 @include('admin.activos.radioTrabajo.partials.oficina')

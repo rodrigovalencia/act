@@ -43,9 +43,7 @@ class RadioTrabajoController extends Controller
 				'nombre' => $u->getNombre()
 			];
 		});
-		$tiposBase = TipoBase::all();
-		$catEquipos = CatEquipo::All();
-		return view('admin.activos.radioTrabajo.create', compact('fabricantes', 'empresas', 'satis', 'ubicaciones', 'tiposBase', 'catEquipos'));
+		return view('admin.activos.radioTrabajo.create', compact('fabricantes', 'empresas', 'satis', 'ubicaciones'));
 	}
 
 	/**

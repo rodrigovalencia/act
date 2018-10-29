@@ -50,12 +50,19 @@ Route::prefix('impresion')->namespace('impresion')->name('impresora.')->group(fu
  */
 Route::prefix('ajax')->namespace('ajax')->name('ajax.')->group(function(){
 	Route::prefix('radioTrabajo')->name('radioTrabajo.')->group(function(){
-		Route::get('modelos/{id}'      , 'RadioTrabajoController@modelos')      -> name('modelos');
-		Route::get('sistemas/{id}'     , 'RadioTrabajoController@sistemas')     -> name('sistemas');
-		Route::get('areas/{id}'        , 'RadioTrabajoController@areas')        -> name('areas');
-		Route::get('bases/{id}'        , 'RadioTrabajoController@bases')        -> name('bases');
-		Route::get('tiposEquipos/{id}' , 'RadioTrabajoController@tiposEquipos') -> name('tiposEquipos');
-		Route::get('equipos/{id}'      , 'RadioTrabajoController@equipos')      -> name('equipos');
+		Route::get('modelos/{id}'               , 'RadioTrabajoController@modelos')           -> name('modelos');
+		Route::get('sistemas/{id}'              , 'RadioTrabajoController@sistemas')          -> name('sistemas');
+		Route::get('expReg/{id}'                , 'RadioTrabajoController@expReg')            -> name('expReg');
+		Route::get('areas/{id}'                 , 'RadioTrabajoController@areas')             -> name('areas');
+
+		Route::get('tiposUbicaciones/{id}'      , 'RadioTrabajoController@tiposUbicaciones')  -> name('tiposUbicaciones');
+
+		Route::get('tiposBases/{id}'            , 'RadioTrabajoController@tiposBases')        -> name('tiposBases');
+		Route::get('bases/{T_id}/{U_id}'        , 'RadioTrabajoController@bases')             -> name('bases');
+
+		Route::get('categoriasEquipos/{id}'     , 'RadioTrabajoController@categoriasEquipos') -> name('categoriasEquipos');
+		Route::get('tiposEquipos/{C_id}/{U_id}' , 'RadioTrabajoController@tiposEquipos')      -> name('tiposEquipos');
+		Route::get('equipos/{T_id}/{U_id}'      , 'RadioTrabajoController@equipos')           -> name('equipos');
 	});
 });
 
