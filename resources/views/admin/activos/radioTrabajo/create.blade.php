@@ -134,6 +134,7 @@
 		var id = document.getElementById("sistema").value;
 		var url = '{{ route("ajax.radioTrabajo.expReg", ":id") }}';
 		url = url.replace(':id', id);
+
 		$.get(url, function(data) {
 			$('#serie').inputmask(data.nSerie,{ "clearIncomplete": true });
 			if (data.flashPort == null) {
@@ -246,8 +247,6 @@
 		document.getElementById("URadio_id").value = "";
 		document.getElementById("lugarInstalacion").value = "";
 	}
-
-	$(":input").inputmask();
 
 	var satis = @json($satis);
 
@@ -402,15 +401,11 @@
 					<div class="form-group">
 						<label class="control-label col-md-3 col-xs-12">Comodato</label>
 						<div class="col-md-9 col-xs-12">
-							<label>
-								<input
-									id="comodato"
-									name="comodato"
-									type="checkbox"
-									class="js-switch"
-									placeholder="Comodato"
-									disabled>
-							</label>
+							<select id="comodato" name="comodato" class="select2_single form-control" disabled>
+								<option value="0">- Seleccione una Opcion -</option>
+								<option value="1">Si</option>
+								<option value="0">No</option>
+							</select>
 						</div>
 					</div>
 					<div class="form-group">

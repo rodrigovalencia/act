@@ -39,7 +39,6 @@ class RadioTrabajoController extends Controller
 		$tipos = Ubicacion::findOrFail($id)->ubicacionesRadios->pluck('ubicable_type')->unique();
 		return response()->json($tipos);
 	}
-
 	public function tiposBases($id)
 	{
 		$tipos = TipoBase::
@@ -63,7 +62,6 @@ class RadioTrabajoController extends Controller
 			->get()->unique()->pluck('direccion', 'id');
 		return response()->json($bases);
 	}
-
 	public function categoriasEquipos($id)
 	{
 		$categorias = CatEquipo::

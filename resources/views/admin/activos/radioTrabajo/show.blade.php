@@ -198,7 +198,6 @@
 								<th>Area</th>
 								<th>{{ $radio->area->nombre }}</th>
 							</tr>
-							->ubicacionRadio->getNombre()
 							<tr>
 								<th>Lugar de Instalacion</th>
 								<th>{{ (isset($radio->URadio_id)) ? $radio->ubicacionRadio->getNombre() : 'No aplica' }}</th>
