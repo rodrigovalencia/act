@@ -42,3 +42,7 @@ class TerminalesExport implements FromQuery, WithMapping, WithHeadings, ShouldAu
 		];
 	}
 }
+	//Terminales
+	/**
+	//informacion de todas las radios
+	*/

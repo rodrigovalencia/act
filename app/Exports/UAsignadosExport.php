@@ -2,7 +2,7 @@
 
 namespace App\Exports;
 
-use App\Usuario;
+use App\RadioTrabajo;
 use Maatwebsite\Excel\Concerns\Exportable;
 use Maatwebsite\Excel\Concerns\FromQuery;
 use Maatwebsite\Excel\Concerns\ShouldAutoSize;
@@ -13,32 +13,51 @@ class UAsignadosExport implements FromQuery, WithMapping, WithHeadings, ShouldAu
 {
 	use Exportable;
 
-	public function query()
+	public function __construct(int $id)
 	{
-		return Usuario::with('rol');
+		$this->id = $id;
 	}
 
-	public function map($usuario): array
+	public function query()
+	{
+		return RadioTrabajo::
+			where('Mandante_id', $this->id)
+			->with(
+				'mandante',
+				'area.ubicacion',
+				'contrato.empresa',
+				'ubicacionRadio',
+				'activo.estado'
+			);
+	}
+
+	public function map($radio): array
 	{
 		return [
-			$usuario->rut,
-			$usuario->nombre,
-			$usuario->apPaterno,
-			$usuario->apMaterno,
-			$usuario->mail,
-			$usuario->rol->nombre
+			$radio->mandante->getNombreCompleto(),
+			$radio->mandante->userID,
+			$radio->mandante->cecoGrafo,
+			$radio->serie,
+			$radio->idSistema,
+			$radio->area->ubicacion->nombre,
+			$radio->contrato->empresa->nombre,
+			$radio->ubicacionRadio->getNombre(),
+			$radio->activo->estado->nombre
 		];
 	}
 
 	public function headings(): array
 	{
 		return [
-			'rut',
-			'nombre',
-			'apPaterno',
-			'apMaterno',
-			'mail',
-			'nombre'
+			'Nombre',
+			'User ID',
+			'CECO',
+			'Serie',
+			'ID Sistema',
+			'Ubicacion',
+			'Empresa',
+			'Lugar de Instalacion',
+			'Estado'
 		];
 	}
 }

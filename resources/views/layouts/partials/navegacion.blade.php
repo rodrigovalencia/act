@@ -62,7 +62,7 @@
 					<li>
 						<a href="{{ route('reporte.index') }}">
 							<i class="fa fa-files-o"></i>
-							Exportación de Reportes
+							Reportes
 						</a>
 					</li>
 				</ul>

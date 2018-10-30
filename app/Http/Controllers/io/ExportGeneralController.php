@@ -2,19 +2,30 @@
 
 namespace App\Http\Controllers\io;
 
-use App\Exports\TerminalesExport;
 use App\Exports\TerminalesExportView;
+use App\Exports\UAsignadosExport;
+use App\Exports\VAsignadosExport;
 use App\Http\Controllers\Controller;
 
 class ExportGeneralController extends Controller
 {
-	function terminalesCSV(){
-		return (new TerminalesExport)->download('terminales.csv');
+	//CAMBIAR LOS ID
+	function uAsigCSV(){
+		return (new UAsignadosExport(4101))->download('UAsignados.csv');
 	}
-	function terminalesXLSX(){
-		return (new TerminalesExport)->download('terminales.xlsx');
+	function uAsigXLSX(){
+		return (new UAsignadosExport(4101))->download('UAsignados.xlsx');
 	}
-	function terminalesPDF(){
-		return (new TerminalesExportView)->download('terminales.pdf');
+	function uAsigPDF(){
+		return (new TerminalesExportView)->download('UAsignados.pdf');
+	}
+	function vAsigCSV(){
+		return (new VAsignadosExport)->download('VAsignados.csv');
+	}
+	function vAsigXLSX(){
+		return (new VAsignadosExport)->download('VAsignados.xlsx');
+	}
+	function vAsigPDF(){
+		return (new TerminalesExportView)->download('UAsignados.pdf');
 	}
 }

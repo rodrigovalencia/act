@@ -54,12 +54,9 @@ Route::prefix('ajax')->namespace('ajax')->name('ajax.')->group(function(){
 		Route::get('sistemas/{id}'              , 'RadioTrabajoController@sistemas')          -> name('sistemas');
 		Route::get('expReg/{id}'                , 'RadioTrabajoController@expReg')            -> name('expReg');
 		Route::get('areas/{id}'                 , 'RadioTrabajoController@areas')             -> name('areas');
-
 		Route::get('tiposUbicaciones/{id}'      , 'RadioTrabajoController@tiposUbicaciones')  -> name('tiposUbicaciones');
-
 		Route::get('tiposBases/{id}'            , 'RadioTrabajoController@tiposBases')        -> name('tiposBases');
 		Route::get('bases/{T_id}/{U_id}'        , 'RadioTrabajoController@bases')             -> name('bases');
-
 		Route::get('categoriasEquipos/{id}'     , 'RadioTrabajoController@categoriasEquipos') -> name('categoriasEquipos');
 		Route::get('tiposEquipos/{C_id}/{U_id}' , 'RadioTrabajoController@tiposEquipos')      -> name('tiposEquipos');
 		Route::get('equipos/{T_id}/{U_id}'      , 'RadioTrabajoController@equipos')           -> name('equipos');
@@ -82,8 +79,13 @@ Route::prefix('cargaMasiva')->namespace('io')->name('carga.')->group(function(){
 Route::prefix('reportes')->namespace('io')->name('reporte.')->group(function (){
 	Route::get('/', 'ExportController@index') -> name('index');
 	Route::prefix('general')->name('uAsig.')->group(function(){
-		Route::get('terminalesCSV'  , 'ExportGeneralController@terminalesCSV')  -> name('terminalesCSV');
-		Route::get('terminalesXLSX' , 'ExportGeneralController@terminalesXLSX') -> name('terminalesXLSX');
-		Route::get('terminalesPDF'  , 'ExportGeneralController@terminalesPDF')  -> name('terminalesPDF');
+		Route::get('uAsigCSV'  , 'ExportGeneralController@uAsigCSV')  -> name('CSV');
+		Route::get('uAsigXLSX' , 'ExportGeneralController@uAsigXLSX') -> name('XLSX');
+		Route::get('uAsigPDF'  , 'ExportGeneralController@uAsigPDF')  -> name('PDF');
+	});
+	Route::prefix('general')->name('vAsig.')->group(function(){
+		Route::get('vAsigCSV'  , 'ExportGeneralController@vAsigCSV')  -> name('CSV');
+		Route::get('vAsigXLSX' , 'ExportGeneralController@vAsigXLSX') -> name('XLSX');
+		Route::get('vAsigPDF'  , 'ExportGeneralController@vAsigPDF')  -> name('PDF');
 	});
 });
