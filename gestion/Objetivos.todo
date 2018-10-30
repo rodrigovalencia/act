@@ -1,0 +1,31 @@
+Metas:
+    Administracion:
+      ☐ Configurar Base
+      ☐ Administracion de Radios de Trabajo
+      ☐ Componentes
+      ☐ Reportes
+    Ejecucion:
+      Creacion de Ticket:
+        ☐ Mesa Ayuda
+        ☐ Tecnico
+      Servicios:
+        ☐ Programacion de Radio
+        ☐ Mantenimiento
+        ☐ Reparacion
+        ☐ Componentes
+Objetivos:
+  Pendientes:
+    ☐ Definir la logica de los servicios: Programacion, Mantencion, Reparacion
+  Lunes 29/10:
+    Samuel:
+      ✔ Re sanear la vista de creacion de radios @done (18-10-29 22:41)
+      @SReyes @created(18-10-29 09:35) @started(18-10-29 12:00) 
+      ☐ Terminar el controlador de la administracion de radios de trabajo
+      @SReyes @created(18-10-29 09:35) @started(18-10-29 12:00)
+      ✔ Establecer las exportaciones de reportes @done (18-10-30 01:18)
+      @SReyes @created(18-10-29 09:35) @started(18-10-29 12:00)
+    Julio:
+      ☐ Terminar la Creacion de los Tickets
+      @JNuñez @created(18-10-29 09:35) @started
+      ☐ Abordar la derivacion de los Tickets
+      @JNuñez @created(18-10-29 09:35) @started

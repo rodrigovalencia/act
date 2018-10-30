@@ -1,0 +1,16 @@
+SistTickets:
+  Iteracion1 (Radios de Trabajo):
+    Administracion:
+      ☐ Configurar Base
+      ☐ Administracion de Radios de Trabajo
+      ☐ Componentes
+      ☐ Reportes
+    Ejecucion:
+      Creacion de Ticket:
+        ☐ Mesa Ayuda
+        ☐ Tecnico
+      Servicios:
+        ☐ Programacion de Radio
+        ☐ Mantenimiento
+        ☐ Reparacion
+        ☐ Componentes
