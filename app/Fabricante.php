@@ -25,7 +25,7 @@ class Fabricante extends Model
 	 * string('nombre')
 	 */
 
-	function modelo()
+	function modelos()
 	{
 		return $this->hasMany(
 			Modelo::class,
@@ -50,6 +50,12 @@ class Fabricante extends Model
 			'Fabricante_id',
 			'id'
 		);
+	}
+
+	function belongsToTipoActivo($a)
+	{
+		$tiposActivos = $this->tiposActivos()->pluck('nombre');
+		return $tiposActivos->contains($a);
 	}
 
 	function tiposActivos()

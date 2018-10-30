@@ -36,6 +36,15 @@ class Activo extends Model
 	 * string('Activo_type')
 	 */
 
+	function estado()
+	{
+		return $this->belongsTo(
+			EstadoActivo::class,
+			'Estado_id',
+			'id'
+		);
+	}
+
 	function estados()
 	{
 		return $this->belongsToMany(

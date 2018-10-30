@@ -1,56 +1,91 @@
 <?php
 
+// Activar para el LOGIN
+// Route::get('/', 'PagesController@index') -> name('index');
+Route::get('/', 'general\DashBoardController@index') -> name('dashboard.index');
+
 /*
-|--------------------------------------------------------------------------
-| Web Routes
-|--------------------------------------------------------------------------
-|
-| Here is where you can register web routes for your application. These
-| routes are loaded by the RouteServiceProvider within a group which
-| contains the "web" middleware group. Now create something great!
-|
-*/
-
-Route::get('/', 'PagesController@index') -> name('index');
-
-// RUTAS AJAX
-Route::prefix('ajax')->group(function(){
-	Route::prefix('radioTrabajo')->group(function(){
-		Route::get('modelos/{id}'      , 'ajax\RadioTrabajoController@modelos')      -> name('ajax.radioTrabajo.modelos');
-		Route::get('sistema/{id}'      , 'ajax\RadioTrabajoController@sistema')      -> name('ajax.radioTrabajo.sistema');
-		Route::get('areas/{id}'        , 'ajax\RadioTrabajoController@areas')        -> name('ajax.radioTrabajo.areas');
-		Route::get('bases/{id}'        , 'ajax\RadioTrabajoController@bases')        -> name('ajax.radioTrabajo.bases');
-		Route::get('tiposEquipos/{id}' , 'ajax\RadioTrabajoController@tiposEquipos') -> name('ajax.radioTrabajo.tiposEquipos');
-		Route::get('equipos/{id}'      , 'ajax\RadioTrabajoController@equipos')      -> name('ajax.radioTrabajo.equipos');
-	});
+ * Sistema
+ */
+Route::prefix('sistema')->namespace('general')->name('dashboard.')->group(function(){
+	Route::get('/'          , 'DashBoardController@index')      -> name('index');
+	Route::get('inventario' , 'DashBoardController@inventario') -> name('inventario');
 });
 
-// RUTAS DEL SISTEMA
-Route::prefix('sistema')->group(function(){
-	Route::get('/'          , 'DashBoardController@index')      -> name('dashboard.index');
-	Route::get('inventario' , 'DashBoardController@inventario') -> name('dashboard.inventario');
+/*
+ * Ticket
+ */
+Route::namespace('ticket')->group(function(){
+	Route::resource('ticket', 'TicketController', [
+		'only' => ['index', 'create'],
+	]);
 });
 
-// RUTAS DE TECNICOS
-Route::prefix('tecnicos')->group(function(){
-});
-
-// RUTAS DE SUPERVISORES
-Route::prefix('supervisores')->group(function(){
-});
-
-// RUTAS DE ADMINISTRADORES
-Route::prefix('administracion')->group(function(){
-	Route::prefix('activos')->group(function(){
-		Route::resource('radioTrabajo'   , 'RadioTrabajoController', [
-			'as' => 'admin.activos',
-			'only' => ['create', 'store'],
+/*
+ * Administracion
+ */
+Route::prefix('administracion')->namespace('admin')->name('admin.')->group(function(){
+	Route::prefix('base')->namespace('base')->name('base.')->group(function(){
+		Route::resource('catEquipo', 'CategoriaEquipoController', [
+			'only' => ['index'],
+		]);
+		Route::resource('tipoBase', 'TipoBaseController', [
+			'only' => ['index'],
 		]);
 	});
-	Route::prefix('cargaCSV')->group(function(){
-		Route::prefix('SATI')->group(function(){
-			Route::get('/'     , 'CSVController@cargarSATI')  -> name('csv.sati.cargarSati');
-			Route::get('store' , 'CSVController@guardarSATI') -> name('csv.sati.guardarSati');
-		});
+	Route::prefix('activos')->namespace('activo')->name('activos.')->group(function(){
+		Route::resource('radioTrabajo', 'RadioTrabajoController');
+	});
+});
+
+/*
+ * Impresion de documentos
+ */
+Route::prefix('impresion')->namespace('impresion')->name('impresora.')->group(function(){
+	Route::get('test', 'ImpresoraController@test')->name('test');
+});
+
+/*
+ * AJAX
+ */
+Route::prefix('ajax')->namespace('ajax')->name('ajax.')->group(function(){
+	Route::prefix('radioTrabajo')->name('radioTrabajo.')->group(function(){
+		Route::get('modelos/{id}'               , 'RadioTrabajoController@modelos')           -> name('modelos');
+		Route::get('sistemas/{id}'              , 'RadioTrabajoController@sistemas')          -> name('sistemas');
+		Route::get('expReg/{id}'                , 'RadioTrabajoController@expReg')            -> name('expReg');
+		Route::get('areas/{id}'                 , 'RadioTrabajoController@areas')             -> name('areas');
+		Route::get('tiposUbicaciones/{id}'      , 'RadioTrabajoController@tiposUbicaciones')  -> name('tiposUbicaciones');
+		Route::get('tiposBases/{id}'            , 'RadioTrabajoController@tiposBases')        -> name('tiposBases');
+		Route::get('bases/{T_id}/{U_id}'        , 'RadioTrabajoController@bases')             -> name('bases');
+		Route::get('categoriasEquipos/{id}'     , 'RadioTrabajoController@categoriasEquipos') -> name('categoriasEquipos');
+		Route::get('tiposEquipos/{C_id}/{U_id}' , 'RadioTrabajoController@tiposEquipos')      -> name('tiposEquipos');
+		Route::get('equipos/{T_id}/{U_id}'      , 'RadioTrabajoController@equipos')           -> name('equipos');
+	});
+});
+
+/*
+ * Cargas Masivas
+ */
+Route::prefix('cargaMasiva')->namespace('io')->name('carga.')->group(function(){
+	Route::prefix('SATI')->name('sati.')->group(function(){
+		Route::get('/'          , 'ImportController@cargarSATI')  -> name('cargarSati');
+		Route::post('storeSati' , 'ImportController@guardarSATI') -> name('guardarSati');
+	});
+});
+
+/*
+ * Reportes
+ */
+Route::prefix('reportes')->namespace('io')->name('reporte.')->group(function (){
+	Route::get('/', 'ExportController@index') -> name('index');
+	Route::prefix('general')->name('uAsig.')->group(function(){
+		Route::get('uAsigCSV'  , 'ExportGeneralController@uAsigCSV')  -> name('CSV');
+		Route::get('uAsigXLSX' , 'ExportGeneralController@uAsigXLSX') -> name('XLSX');
+		Route::get('uAsigPDF'  , 'ExportGeneralController@uAsigPDF')  -> name('PDF');
+	});
+	Route::prefix('general')->name('vAsig.')->group(function(){
+		Route::get('vAsigCSV'  , 'ExportGeneralController@vAsigCSV')  -> name('CSV');
+		Route::get('vAsigXLSX' , 'ExportGeneralController@vAsigXLSX') -> name('XLSX');
+		Route::get('vAsigPDF'  , 'ExportGeneralController@vAsigPDF')  -> name('PDF');
 	});
 });

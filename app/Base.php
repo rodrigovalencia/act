@@ -26,7 +26,7 @@ class Base extends Model
 
 	public function getNombre()
 	{
-		return $this->tipoBase->nombre . ' - ' . $this->nombre;
+		return $this->tipoBase->nombre . ' - ' . $this->direccion;
 	}
 
 	public function ubicacionRadio()

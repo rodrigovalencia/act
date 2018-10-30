@@ -36,36 +36,38 @@
 						</a>
 					</li>
 					<li>
+						<a>
+							<i class="fa fa-ticket"></i>
+							Sistema de Tickets
+							<span class="fa fa-chevron-down"></span>
+						</a>
+						<ul class="nav child_menu">
+							<li>
+								<a href="{{ route('ticket.create') }}">Crear Ticket</a>
+							</li>
+							<li>
+								<a href="{{ route('ticket.index') }}">Visualizar Ticket</a>
+							</li>
+							{{-- <li>
+								<a href="{{ route('ticket.index') }}">Asignación Ticket</a>
+							</li> --}}
+						</ul>
+					</li>
+					<li>
 						<a href="{{ route('dashboard.inventario') }}">
 							<i class="fa fa-home"></i>
 							Inventario
 						</a>
 					</li>
-				</ul>
-			</div>
-			{{-- <div class="menu_section">
-				<h3>Sistema de Tickets</h3>
-				<ul class="nav side-menu">
 					<li>
-						<a href="{{ route('index') }}">
-							<i class="fa fa-home"></i>
-							Crear Ticket
-						</a>
-					</li>
-					<li>
-						<a href="{{ route('index') }}">
-							<i class="fa fa-home"></i>
-							Visualizar Ticket
-						</a>
-					</li>
-					<li>
-						<a href="{{ route('index') }}">
-							<i class="fa fa-home"></i>
-							Asignación Ticket
+						<a href="{{ route('reporte.index') }}">
+							<i class="fa fa-files-o"></i>
+							Reportes
 						</a>
 					</li>
 				</ul>
 			</div>
+			{{--
 			<div class="menu_section">
 				<h3>Mantenciones</h3>
 				<ul class="nav side-menu">
@@ -375,53 +377,7 @@
 					</li>
 				</ul>
 			</div>
-			<div class="menu_section">
-				<h3>Reportes</h3>
-				<ul class="nav side-menu">
-					<li>
-						<a>
-							<i class="fa fa-dashboard"></i>
-							Generales
-							<span class="fa fa-chevron-down"></span>
-						</a>
-						<ul class="nav child_menu">
-							<li>
-								<a href="{{ route('cargarSati') }}">Tickets</a>
-							</li>
-							<li>
-								<a href="{{ route('cargarSati') }}">Usuarios Asignados</a>
-							</li>
-							<li>
-								<a href="{{ route('cargarSati') }}">Vehículos Asignados</a>
-							</li>
-							<li>
-								<a href="{{ route('cargarSati') }}">Terminales</a>
-							</li>
-							<li>
-								<a href="{{ route('cargarSati') }}">Carros de Amplificación</a>
-							</li>
-							<li>
-								<a href="{{ route('cargarSati') }}">Cables Radiantes</a>
-							</li>
-							<li>
-								<a href="{{ route('cargarSati') }}">Repuestos</a>
-							</li>
-						</ul>
-					</li>
-					<li>
-						<a>
-							<i class="fa fa-dashboard"></i>
-							Específicos
-							<span class="fa fa-chevron-down"></span>
-						</a>
-						<ul class="nav child_menu">
-							<li>
-								<a href="{{ route('cargarSati') }}">Persona Específica</a>
-							</li>
-						</ul>
-					</li>
-				</ul>
-			</div> --}}
+			--}}
 			<div class="menu_section">
 				<h3>Administración</h3>
 				<ul class="nav side-menu">
@@ -433,7 +389,7 @@
 						</a>
 						<ul class="nav child_menu">
 							<li>
-								<a href="{{ route('admin.activos.radioTrabajo.create') }}">Radios de Trabajo</a>
+								<a href="{{ route('admin.activos.radioTrabajo.index') }}">Radios de Trabajo</a>
 							</li>
 						</ul>
 					</li>
@@ -520,7 +476,22 @@
 						</a>
 						<ul class="nav child_menu">
 							<li>
-								<a href="{{ route('csv.sati.cargarSati') }}">SATI</a>
+								<a href="{{ route('carga.sati.cargarSati') }}">SATI</a>
+							</li>
+						</ul>
+					</li>
+					<li>
+						<a>
+							<i class="fa fa-dashboard"></i>
+							Base
+							<span class="fa fa-chevron-down"></span>
+						</a>
+						<ul class="nav child_menu">
+							<li>
+								<a href="{{ route('admin.base.catEquipo.index') }}">Categorías de Equipos</a>
+							</li>
+							<li>
+								<a href="{{ route('admin.base.tipoBase.index') }}">Tipos de Base</a>
 							</li>
 						</ul>
 					</li>

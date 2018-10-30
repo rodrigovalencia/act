@@ -66,7 +66,7 @@ class Codelco_Seeder extends Seeder
 			'nombre' => 'Mantención General',
 			'CatCodelco_id' => $catID,
 		])->catTicket()->create();
-		
+	
 
 		$catID = CatCodelco::where('nombre', 'Diagnóstico')->value('id');
 
@@ -104,6 +104,20 @@ class Codelco_Seeder extends Seeder
 			'nombre' => 'Devolución',
 			'CatCodelco_id' => $catID,
 		])->catTicket()->create();
-		
+
+		Codelco::create([
+			'nombre' => 'NULL',
+			'CatCodelco_id' => CatCodelco::where('nombre', 'Llamado')->value('id'),
+		])->catTicket()->create();
+
+		Codelco::create([
+			'nombre' => 'NULL',
+			'CatCodelco_id' => CatCodelco::where('nombre', 'Instalación')->value('id'),
+		])->catTicket()->create();
+
+		Codelco::create([
+			'nombre' => 'NULL',
+			'CatCodelco_id' => CatCodelco::where('nombre', 'Desinstalación')->value('id'),
+		])->catTicket()->create();		
 	}
 }

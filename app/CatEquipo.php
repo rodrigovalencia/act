@@ -21,6 +21,11 @@ class CatEquipo extends Model
 	 * string('nombre')
 	 */
 
+	function getNombre()
+	{
+		return $this->nombre;
+	}
+
 	function tiposEquipos()
 	{
 		return $this->hasMany(
