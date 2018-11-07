@@ -42,7 +42,7 @@ class DatabaseSeeder extends Seeder
 			// // - 'RadioTrabajo'
 			// // - 'Impresora'
 			// // - 'Celular'
-			TipoActivoSeeder::class,
+			// TipoActivoSeeder::class,
 			// //Solo de RadioTrabajo
 			// FabricanteSeeder::class,
 			// // --
@@ -53,12 +53,12 @@ class DatabaseSeeder extends Seeder
 			// ModeloRadioSeeder::class,
 			// // --
 			// // Solo CODELCO NORTE
-			FaenaSeeder::class,
-			UbicacionSeeder::class,
-			AreaSeeder::class,
+			// FaenaSeeder::class,
+			// UbicacionSeeder::class,
+			// AreaSeeder::class,
 			// // --
 			// // Hay algunas empresas que no poseen rut
-			EmpresaSeeder::class,
+			// EmpresaSeeder::class,
 			// Contrato_Seeder::class,
 			// ContratoInactivo_Seeder::class,
 			// // --
@@ -94,7 +94,7 @@ class DatabaseSeeder extends Seeder
 
 			// // -- ACTIVOS --
 			// // ->>>> TRABAJARLO
-			EstadoActivoSeeder::class,
+			// EstadoActivoSeeder::class,
 
 			// // -- CATEGORIA TICKETS --
 			// AdmN1_Seeder::class,
@@ -110,7 +110,7 @@ class DatabaseSeeder extends Seeder
 			// CatN5_Seeder::class,
 			// Centinela_Seeder::class,
 			// // --
-			CatCodelco_Seeder::class,
+			// CatCodelco_Seeder::class,
 			Codelco_Seeder::class,
 
 

@@ -17,8 +17,9 @@ Route::prefix('sistema')->namespace('general')->name('dashboard.')->group(functi
  */
 Route::namespace('ticket')->group(function(){
 	Route::resource('ticket', 'TicketController', [
-		'only' => ['index', 'create'],
+		'only' => ['index', 'create','store'],
 	]);
+	// Route::post('ticket', 'TicketController@store');
 });
 
 /*
@@ -51,8 +52,10 @@ Route::prefix('ajax')->namespace('ajax')->name('ajax.')->group(function(){
 		Route::get('equipos/{id}'      , 'RadioTrabajoController@equipos')      -> name('equipos');
 	});
 	Route::prefix('faena')->name('faena.')->group(function(){
-		Route::get('ubicaciones/{id}'	,'FaenaController@ubicaciones')		->name('ubicaciones');
-		Route::get('areas/{id}'	,'FaenaController@areas')		->name('areas');
+		Route::get('ubicaciones/{id}'	,'FaenaController@ubicaciones')						->name('ubicaciones');
+		Route::get('areas/{id}'	,'FaenaController@areas')									->name('areas');
+		Route::get('subCategoriasTicket/{id}'	,'FaenaController@subCategoriasTicket')		->name('subCategoriasTicket');
+		Route::get('buscarActivo/{id}/{activeType}'	,'FaenaController@buscarActivo')		->name('buscarActivo');
 	});
 });
 

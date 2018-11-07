@@ -70,7 +70,7 @@ class FakerSeeder extends Seeder
 		}
 
 		SATI::truncate();
-		$cant = rand(15000, 22000);
+		$cant = rand(3000,5000);
 		echo "---> Creando $cant SATI's \n";
 		factory(SATI::class, $cant)->create();
 
