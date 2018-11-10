@@ -48,11 +48,29 @@
 							<li>
 								<a href="{{ route('ticket.index') }}">Visualizar Ticket</a>
 							</li>
+							<li>
+								<a href="{{ route('mantencion.index') }}">Mantenciones Pendientes</a>
+							</li>
+							<li>
+								<a href="{{ route('programacionRadio.index') }}">Programacion Radios Pendientes</a>
+							</li>
+							<li>
+								<a href="{{ route('reparacion.index') }}">Reparaciones Pendientes</a>
+							</li>
+							</ul>
+								
+								{{-- <li>
+									<a href="{{ route('index') }}">
+										<i class="fa fa-home"></i>
+										Cronograma
+									</a>
+								</li> --}}
 							{{-- <li>
 								<a href="{{ route('ticket.index') }}">Asignación Ticket</a>
 							</li> --}}
 						</ul>
 					</li>
+				<ul class="nav side-menu">
 					<li>
 						<a href="{{ route('dashboard.inventario') }}">
 							<i class="fa fa-home"></i>
@@ -66,25 +84,9 @@
 						</a>
 					</li>
 				</ul>
+				
 			</div>
 			{{--
-			<div class="menu_section">
-				<h3>Mantenciones</h3>
-				<ul class="nav side-menu">
-					<li>
-						<a href="{{ route('index') }}">
-							<i class="fa fa-home"></i>
-							Mantenciones Pendientes
-						</a>
-					</li>
-					<li>
-						<a href="{{ route('index') }}">
-							<i class="fa fa-home"></i>
-							Cronograma
-						</a>
-					</li>
-				</ul>
-			</div>
 			<div class="menu_section">
 				<h3>Reparaciones</h3>
 				<ul class="nav side-menu">

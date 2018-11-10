@@ -19,7 +19,6 @@ Route::namespace('ticket')->group(function(){
 	Route::resource('ticket', 'TicketController', [
 		'only' => ['index', 'create','store'],
 	]);
-	// Route::post('ticket', 'TicketController@store');
 });
 
 /*
@@ -79,4 +78,28 @@ Route::prefix('reportes')->namespace('io')->name('reporte.')->group(function (){
 		Route::get('terminalesXLSX' , 'ExportGeneralController@terminalesXLSX') -> name('terminalesXLSX');
 		Route::get('terminalesPDF'  , 'ExportGeneralController@terminalesPDF')  -> name('terminalesPDF');
 	});
+});
+/*
+ * Mantenciones
+ */
+Route::namespace('mantencion')->group(function(){
+	Route::resource('mantencion', 'MantencionController', [
+		'only' => ['index', 'create','store'],
+	]);
+});
+/*
+ * Programaciones de Radio
+ */
+Route::namespace('programacionRadio')->group(function(){
+	Route::resource('programacionRadio', 'ProgramacionRadioController', [
+		'only' => ['index', 'create','store'],
+	]);
+});
+/*
+ * Reparaciones
+ */
+Route::namespace('reparacion')->group(function(){
+	Route::resource('reparacion', 'ReparacionController', [
+		'only' => ['index', 'create','store'],
+	]);
 });

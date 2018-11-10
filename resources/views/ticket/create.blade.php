@@ -63,9 +63,15 @@
 
 @push('acciones')
 	<script>
-		/*$("#btnValidaTicket").on('click', function(e){
-			// e.preventDefault();
-		});*/
+		$("#btnValidaTicket").on('click', function(e){
+			var filas = $("#tableActivos").find("tr"); 
+			var valores ="";
+			for (i=0; i<filas.length; i++){
+				var celdas = $(filas[i]).find("td");
+				valores = valores + $(celdas[0]).text() + ";";
+			}
+			$("#idRadiosHidden").val(valores.substring(1,valores.length-1));
+		});
 		$("#btnImprimeTicket").on('click', function(e){
 			e.preventDefault();
 		});
@@ -120,12 +126,6 @@
 					$('#subcatTicket').append('<option value="' + nombre['id'] + '">' + nombre['nombre'] + '</option>');	
 				});
 				$('#subcatTicket').prop('disabled', false);
-				/*$("#ddSubCategorias").append('<ul class="dropdown-menu multi-level" role="menu" aria-labelledby="dropdownMenu" id="catMenu">');
-				$.each(data,function (index,nombre){
-					$("#catMenu").append('<li class="dropdown-item clickli" data-name="' + nombre['id'] + '"><a href="#">' + nombre['nombre'] + '</a></li>');
-				})
-				$("#catMenu").append('</ul>');
-				$('#catMenu').prop('disabled', false);*/
 			});
 		});
 		$('#subcatTicket').on('change', function(e){
@@ -147,8 +147,9 @@
 						alert("Activo no ha sido ingrado al Sistema, por favor cree Activo en el Sistema.");
 					}
 					else{
-						var addfila = "<tr><td>" + data["serie"] + "</td><td>" + data["empresa"] + "</td><td>Formulario1</td><td><button id ='btnEliminar' class='btn btn-danger' onclick='deleteRow(this)'> - </button></td></tr>";
+						var addfila = "<tr><td style:'display:none'>" + data["id"] + "</td><td>" + data["serie"] + "</td><td>" + data["empresa"] + "</td><td>Formulario1</td><td><button id ='btnEliminar' class='btn btn-danger' onclick='deleteRow(this)'> - </button></td></tr>";
 						$('#tableActivos tbody').append(addfila);
+						$('td:nth-child(1)').hide();
 					}
 				});
 			}
@@ -200,7 +201,7 @@
 				<div class="form-group">
 					<label class="control-label col-md-3 col-xs-12">Categoría</label>
 					<div class="col-md-9 col-xs-12">
-						<select id="catTicket" class="select2_single form-control" tabindex="-1" disabled>
+						<select id="catTicket" name="catTicket" class="select2_single form-control" tabindex="-1" disabled>
 							<option value="0" disable="true" selected="true">** Seleccione una Categoria **</option>
 								@foreach ($categorias as $categoria => $nombre)
 									<option value="{{ substr($nombre, 4) }}">{{ substr($nombre, 4) }}</option>
@@ -213,38 +214,7 @@
 				<div class="form-group">
 					<label class="control-label col-md-3 col-xs-12">SubCategoría</label>
 					<div class="col-md-9 col-xs-12">
-						<!-- <div class="dropdown dropleft" id="ddSubCategorias" name="ddSubCategorias">
-							<button class="btn btn-secondary dropdown-toggle" type="button" id="btnSubCategorias" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">** Selecciones una Subcategoría **</button>
-							<ul class="dropdown-menu multi-level" role="menu" aria-labelledby="dropdownMenu">
-								<li class="dropdown-item"><a href="#">Some action</a></li>
-								<li class="dropdown-item"><a href="#">Some other action</a></li>
-								<li class="dropdown-divider"></li>
-								<li class="dropdown-submenu">
-								  <a  class="dropdown-item" tabindex="-1" href="#">Hover me for more options</a>
-								  <ul class="dropdown-menu">
-									<li class="dropdown-item"><a tabindex="-1" href="#">Second level</a></li>
-									<li class="dropdown-submenu">
-									  <a class="dropdown-item" href="#">Even More..</a>
-									  <ul class="dropdown-menu">
-										  <li class="dropdown-item"><a href="#">3rd level</a></li>
-											<li class="dropdown-submenu"><a class="dropdown-item" href="#">another level</a>
-											<ul class="dropdown-menu">
-												<li class="dropdown-item"><a href="#">4th level</a></li>
-												<li class="dropdown-item"><a href="#">4th level</a></li>
-												<li class="dropdown-item"><a href="#">4th level</a></li>
-											</ul>
-										  </li>
-											<li class="dropdown-item"><a href="#">3rd level</a></li>
-									  </ul>
-									</li>
-									<li class="dropdown-item"><a href="#">Second level</a></li>
-									<li class="dropdown-item"><a href="#">Second level</a></li>
-								  </ul>
-								</li>
-							  </ul>
-						</div> -->
-
-						<select id="subcatTicket" class="select2_single form-control" tabindex="-1" disabled>
+						<select id="subcatTicket" name="subcatTicket" class="select2_single form-control" tabindex="-1" disabled>
 							<option value="0" disable="true" selected="true">** Seleccione una SubCategoria **</option>
 						</select>
 					</div>
@@ -256,7 +226,7 @@
 				<div class="form-group">
 					<label class="control-label col-md-3 col-xs-12">Faena</label>
 					<div class="col-md-9 col-xs-12">
-						<select id="selFaena" class="select2_single form-control" tabindex="-1" disabled>
+						<select id="selFaena" name="selFaena" class="select2_single form-control" tabindex="-1" disabled>
 							<option value="0" disable="true" selected="true">** Seleccione una Faena **</option>
 							@foreach ($faenas as $faena)
 								<option value="{{ $faena->id }}">{{ $faena->nombre }}</option>
@@ -269,7 +239,7 @@
 				<div class="form-group">
 					<label class="control-label col-md-3 col-xs-12">Ubicación</label>
 					<div class="col-md-9 col-xs-12">
-						<select id="selUbicacion" class="select2_single form-control" tabindex="-1" disabled>
+						<select id="selUbicacion" name="selUbicacion" class="select2_single form-control" tabindex="-1" disabled>
 							<option value="0" disable="true" selected="true">** Seleccione una Ubicación **</option>
 						</select>
 					</div>
@@ -279,7 +249,7 @@
 				<div class="form-group">
 					<label class="control-label col-md-3 col-xs-12">Área</label>
 					<div class="col-md-9 col-xs-12">
-						<select id="selArea" class="select2_single form-control" tabindex="-1" disabled>
+						<select id="selArea" name="selArea" class="select2_single form-control" tabindex="-1" disabled>
 							<option value="0" disable="true" selected="true">** Seleccione un Área **</option>
 						</select>
 					</div>
@@ -307,7 +277,7 @@
 				<div class="form-group">
 					<label class="control-label col-md-3 col-xs-12">Empresa</label>
 					<div class="col-md-9 col-xs-12">
-						<select id="selEmpresa" class="select2_single form-control" tabindex="-1" disabled>
+						<select id="selEmpresa" name="selEmpresa" class="select2_single form-control" tabindex="-1" disabled>
 							<option value="0" disable="true" selected="true">** Seleccione una Empresa **</option>
 							@foreach ($empresas as $empresa)
 								<option value="{{ $empresa->id }}">{{ $empresa->nombre }}</option>
@@ -329,7 +299,7 @@
 					<div class="form-group">
 						<label class="control-label col-md-4 col-xs-12">Tipo de Activo</label>
 						<div class="col-md-8 col-xs-12">
-							<select id="selTipoActivo" class="select2_single form-control" tabindex="-1" disabled>
+							<select id="selTipoActivo" name="selTipoActivo" class="select2_single form-control" tabindex="-1" disabled>
 								<option value="0" disable="true" selected="true">** Seleccione un tipo de Activo **</option>
 								@foreach ($tipoActivos as $tipoActivo)
 									<option value="{{ $tipoActivo->id }}">{{ $tipoActivo->nombre }}</option>
@@ -342,7 +312,7 @@
 					<div class="form-group">
 						<label class="control-label col-md-4 col-xs-12">Nº de Serie</label>
 						<div class="col-md-8 col-xs-12">
-							<input class="form-control" title="Ingrese N° d Serie" id="nSerie" name="nSerie" required disabled>
+							<input class="form-control" title="Ingrese N° d Serie" id="nSerie" name="nSerie" disabled>
 						</div>
 					</div>
 				</div>
@@ -357,6 +327,7 @@
 					<table class="table table-inverse" id="tableActivos" name="tableActivos">
 						<thead>
 							<tr>
+								<th style="display:none">idRadio</th>
 								<th>Serie</th>
 								<th>Empresa</th>
 								<th>Formulario Asignacion</th>
@@ -375,7 +346,8 @@
 					<label class="control-label">Observaciones</label>
 				</div>
 				<div class="row">
-					<textarea class="form-control" id="txtObservaciones" rows="5" disabled></textarea>
+					<textarea class="form-control" id="txtObservaciones" name="txtObservaciones" rows="5" disabled></textarea>
+					<input type="hidden" id="idRadiosHidden" name="idRadiosHidden">
 				</div>
 			</div>
 		</div>

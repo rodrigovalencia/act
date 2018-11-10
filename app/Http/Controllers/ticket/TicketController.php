@@ -4,6 +4,7 @@ namespace App\Http\Controllers\ticket;
 
 use App\Area;
 use App\CategoriaTicket;
+use App\Contacto;
 use App\Empresa;
 use App\Faena;
 use App\Http\Controllers\Controller;
@@ -58,8 +59,25 @@ class TicketController extends Controller
 	 */
 	public function store(Request $request)
 	{
-		dd($request->all);
-		return 'paso por el store';
+		$datos = $request->except('nSerie','catTicket');
+		// $array = explode(",", $cadena);
+
+		$contacto = new Contacto;
+
+		$solicitante = explode(" ", $datos->txtNombre);
+		$contacto->nombre = $solicitante[2];
+		$contacto->apPaterno = $solicitante[0];
+		$contacto->apMaterno = $solicitante[1];
+		$contacto->fono = $datos->txtTelefono;
+		$contacto->fecha = date('d-m-Y');
+
+
+		$ticket = new Ticket;
+		$ticket->finicio = date('d-m-Y');
+		$ticket->fCompromiso = date('d-m-Y')->add(new DateInterval('P10D');
+		$ticket->CategoriaTicket_id = $datos->subcatTicket;
+		$ticket->Area_id = $datos->selArea;
+		$ticket->Observaciones = $datos->txtObservaciones;
 	}
 
 	/**

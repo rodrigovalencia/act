@@ -40,7 +40,7 @@ class FaenaController extends Controller
 				if($activos->isNotEmpty()){
 					$empresa = $activos->first()->contrato->empresa->nombre;
 					$serie = $activos->first()->serie;
-					$datos = array("serie"=> $activos->first()->serie, "empresa"=>$activos->first()->contrato->empresa->nombre);
+					$datos = array("id"=> $activos->first()->id, "serie"=> $activos->first()->serie, "empresa"=>$activos->first()->contrato->empresa->nombre);
 					return response()->json($datos);
 				}
 				else{
