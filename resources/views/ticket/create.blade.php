@@ -78,18 +78,15 @@
 		$('#tipoTicket').on('change', function(e){
 			$('#catTicket').prop('disabled', false);
 		});
-		$('#selArea').on('change', function(e){
+		$('#Area_id').on('change', function(e){
 			$('#txtNombre').prop('disabled', false);
 			$('#txtTelefono').prop('disabled', false);
-			$('#selEmpresa').prop('disabled', false);
-		});
-		$('#selEmpresa').on('change', function(e){
 			$('#selTipoActivo').prop('disabled', false);
 		});
 		$('#selTipoActivo').on('change', function(e){
 			$('#nSerie').prop('disabled', false);
 			$('#btnAgregarActivo').prop('disabled', false);
-			$('#txtObservaciones').prop('disabled', false);
+			$('#observaciones').prop('disabled', false);
 		});
 		$('#selFaena').on('change', function(e){
 			var Faena_id = e.target.value;
@@ -109,12 +106,12 @@
 			url = '{{ route("ajax.faena.areas", ":id") }}';
 			url = url.replace(':id', Ubicacion_id);
 			$.get(url, function(data) {
-				$('#selArea').empty();
-				$('#selArea').append('<option value="0" selected="true">** Seleccione un Área **</option>');
+				$('#Area_id').empty();
+				$('#Area_id').append('<option value="0" selected="true">** Seleccione un Área **</option>');
 				$.each(data, function(index, area){
-					$('#selArea').append('<option value="'+ area['id'] +'">'+ area['nombre'] +'</option>');
+					$('#Area_id').append('<option value="'+ area['id'] +'">'+ area['nombre'] +'</option>');
 				})
-				$('#selArea').prop('disabled', false);
+				$('#Area_id').prop('disabled', false);
 			});
 		});
 		$('#catTicket').on('change', function(e){
@@ -123,12 +120,12 @@
 			url = url.replace(':id', catTicket_id);
 			$.get(url, function(data) {
 				$.each(data,function (index,nombre){
-					$('#subcatTicket').append('<option value="' + nombre['id'] + '">' + nombre['nombre'] + '</option>');	
+					$('#CategoriaTicket_id').append('<option value="' + nombre['id'] + '">' + nombre['nombre'] + '</option>');	
 				});
-				$('#subcatTicket').prop('disabled', false);
+				$('#CategoriaTicket_id').prop('disabled', false);
 			});
 		});
-		$('#subcatTicket').on('change', function(e){
+		$('#CategoriaTicket_id').on('change', function(e){
 			$('#selFaena').prop('disabled', false);
 		});
 		$('#btnAgregarActivo').on('click', function(e){
@@ -147,15 +144,32 @@
 						alert("Activo no ha sido ingrado al Sistema, por favor cree Activo en el Sistema.");
 					}
 					else{
-						var addfila = "<tr><td style:'display:none'>" + data["id"] + "</td><td>" + data["serie"] + "</td><td>" + data["empresa"] + "</td><td>Formulario1</td><td><button id ='btnEliminar' class='btn btn-danger' onclick='deleteRow(this)'> - </button></td></tr>";
-						$('#tableActivos tbody').append(addfila);
-						$('td:nth-child(1)').hide();
+						if($("#empresa").val() == ""){
+							$("#empresa").val(data["empresa"]);
+							var addfila = "<tr><td style:'display:none'>" + data["id"] + "</td><td>" + data["serie"] + "</td><td>" + data["empresa"] + "</td><td>Formulario1</td><td><button id ='btnEliminar' class='btn btn-danger' onclick='deleteRow(this)'> - </button></td></tr>";
+								$('#tableActivos tbody').append(addfila);
+								$('td:nth-child(1)').hide();
+						}
+						else{
+							if($("#empresa").val() == data["empresa"]){
+								var addfila = "<tr><td style:'display:none'>" + data["id"] + "</td><td>" + data["serie"] + "</td><td>" + data["empresa"] + "</td><td>Formulario1</td><td><button id ='btnEliminar' class='btn btn-danger' onclick='deleteRow(this)'> - </button></td></tr>";
+								$('#tableActivos tbody').append(addfila);
+								$('td:nth-child(1)').hide();
+							}
+							else{
+								alert("Activo pertenece a Empresa " + data["empresa"] + ", por favor verifique información.");
+							}
+						}
 					}
 				});
 			}
 		});
 		function deleteRow(btn){ 
 			var row = btn.parentNode.parentNode; row.parentNode.removeChild(row); 
+			var rowCount = $('#tableActivos >tbody >tr').length;
+			if(rowCount==0){
+				$("#empresa").val("");
+			}
 		};
 	</script>
 	{{-- <script src="/components/jquery.inputmask/dist/min/jquery.inputmask.bundle.min.js"></script> --}}
@@ -214,7 +228,7 @@
 				<div class="form-group">
 					<label class="control-label col-md-3 col-xs-12">SubCategoría</label>
 					<div class="col-md-9 col-xs-12">
-						<select id="subcatTicket" name="subcatTicket" class="select2_single form-control" tabindex="-1" disabled>
+						<select id="CategoriaTicket_id" name="CategoriaTicket_id" class="select2_single form-control" tabindex="-1" disabled>
 							<option value="0" disable="true" selected="true">** Seleccione una SubCategoria **</option>
 						</select>
 					</div>
@@ -249,7 +263,7 @@
 				<div class="form-group">
 					<label class="control-label col-md-3 col-xs-12">Área</label>
 					<div class="col-md-9 col-xs-12">
-						<select id="selArea" name="selArea" class="select2_single form-control" tabindex="-1" disabled>
+						<select id="Area_id" name="Area_id" class="select2_single form-control" tabindex="-1" disabled>
 							<option value="0" disable="true" selected="true">** Seleccione un Área **</option>
 						</select>
 					</div>
@@ -277,12 +291,7 @@
 				<div class="form-group">
 					<label class="control-label col-md-3 col-xs-12">Empresa</label>
 					<div class="col-md-9 col-xs-12">
-						<select id="selEmpresa" name="selEmpresa" class="select2_single form-control" tabindex="-1" disabled>
-							<option value="0" disable="true" selected="true">** Seleccione una Empresa **</option>
-							@foreach ($empresas as $empresa)
-								<option value="{{ $empresa->id }}">{{ $empresa->nombre }}</option>
-							@endforeach
-						</select>
+						<input type="text" id="empresa" name="empresa" class="form-control text-center" readonly="readonly">
 					</div>
 				</div>
 			</div>
@@ -346,7 +355,7 @@
 					<label class="control-label">Observaciones</label>
 				</div>
 				<div class="row">
-					<textarea class="form-control" id="txtObservaciones" name="txtObservaciones" rows="5" disabled></textarea>
+					<textarea class="form-control" id="observaciones" name="observaciones" rows="5" disabled></textarea>
 					<input type="hidden" id="idRadiosHidden" name="idRadiosHidden">
 				</div>
 			</div>

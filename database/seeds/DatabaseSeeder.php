@@ -80,9 +80,9 @@ class DatabaseSeeder extends Seeder
 			// TipoLicenciaSeeder::class,
 
 			// // -- USUARIOS --
-			// RolSeeder::class,
-			// GrupoUsuarioSeeder::class,
-			// GrupoEspecialistaSeeder::class,
+			RolSeeder::class,
+			GrupoUsuarioSeeder::class,
+			GrupoEspecialistaSeeder::class,
 
 			// // -- CAPACITACIONES --
 			// // ->>>> TRABAJARLO
@@ -111,7 +111,7 @@ class DatabaseSeeder extends Seeder
 			// Centinela_Seeder::class,
 			// // --
 			// CatCodelco_Seeder::class,
-			Codelco_Seeder::class,
+			// Codelco_Seeder::class,
 
 
 // <<<<<<<<<<           >>>>>>>>>>
@@ -202,7 +202,7 @@ class DatabaseSeeder extends Seeder
 			// Mantencion_Activo
 			// Mantencion_Activo_Componente
 
-			// FakerSeeder::class,
+			FakerSeeder::class,
 
 
 

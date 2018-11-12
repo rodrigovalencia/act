@@ -42,7 +42,7 @@ class FakerSeeder extends Seeder
 		// <<<<<<<<<< BASES >>>>>>>>>>
 		// <<<<<<<<<<       >>>>>>>>>>
 
-		Modelo::truncate();
+		/*Modelo::truncate();
 		Procedimiento::truncate();
 		$tipos = TipoActivo::with('fabricantes')->get();
 		$tiposServicio = TipoServicio::all();
@@ -72,7 +72,7 @@ class FakerSeeder extends Seeder
 		SATI::truncate();
 		$cant = rand(3000,5000);
 		echo "---> Creando $cant SATI's \n";
-		factory(SATI::class, $cant)->create();
+		factory(SATI::class, $cant)->create();*/
 
 		// <<<<<<<<<<          >>>>>>>>>>
 		// <<<<<<<<<< USUARIOS >>>>>>>>>>
@@ -99,7 +99,7 @@ class FakerSeeder extends Seeder
 		// <<<<<<<<<< CAPACITACIONES >>>>>>>>>>
 		// <<<<<<<<<<                >>>>>>>>>>
 
-		Capacitacion::truncate();
+		/*Capacitacion::truncate();
 		Persona::truncate();
 		$categorias = Categoria::all();
 		foreach ($categorias as $categoria) {
@@ -113,12 +113,12 @@ class FakerSeeder extends Seeder
 				$c->personas()->attach(factory(Persona::class, $cant)->create(), ['asiste' => rand(0, 1)]);
 			});
 		}
-
+*/
 		// <<<<<<<<<<         >>>>>>>>>>
 		// <<<<<<<<<< ACTIVOS >>>>>>>>>>
 		// <<<<<<<<<<         >>>>>>>>>>
 
-		Activo::truncate();
+		/*Activo::truncate();
 		Activo_Empresa::truncate();
 
 		$empresas = Empresa::all();
@@ -178,7 +178,7 @@ class FakerSeeder extends Seeder
 		factory(Celular::class, $cant)->create()->each(function($cel) use ($empresas, $estado){
 			$cel->activo()->create(['Estado_id'=>$estado]);
 			$cel->activo->propietarios()->attach($empresas->random());
-		});
+		});*/
 
 		// <<<<<<<<<<           >>>>>>>>>>
 		// <<<<<<<<<< SERVICIOS >>>>>>>>>>
